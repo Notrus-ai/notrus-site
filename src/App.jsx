@@ -41,9 +41,11 @@ function App() {
               <a href="#sio" className="text-gray-700 hover:text-blue-600 transition-colors">SIO</a>
               <a href="#beneficios" className="text-gray-700 hover:text-blue-600 transition-colors">Benefícios</a>
               <a href="#contato" className="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              <a href="mailto:“notrus@ai.com">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" >
                 Solicitar Demo
               </Button>
+              </a>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -63,9 +65,11 @@ function App() {
                 <a href="#sio" className="text-gray-700 hover:text-blue-600 transition-colors">SIO</a>
                 <a href="#beneficios" className="text-gray-700 hover:text-blue-600 transition-colors">Benefícios</a>
                 <a href="#contato" className="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
+                <a href="mailto:“notrus@ai.com">
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full">
                   Solicitar Demo
                 </Button>
+                </a>
               </div>
             </nav>
           )}
@@ -90,13 +94,12 @@ function App() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a href="mailto:“notrus@ai.com">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-4">
               Solicitar Demo Gratuita
               <ArrowRight className="ml-2" size={20} />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              Ver Como Funciona
-            </Button>
+            </a>
           </div>
 
           {/* Hero Visual */}
@@ -317,10 +320,12 @@ function App() {
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Junte-se às empresas que já transformaram sua operação com a Notrus
           </p>
+          <a href="mailto:“notrus@ai.com">
           <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
             Solicitar Demo Gratuita
             <ArrowRight className="ml-2" size={20} />
           </Button>
+          </a>
         </div>
       </section>
 
