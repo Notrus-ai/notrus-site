@@ -25,7 +25,7 @@ import notrusLogo from './assets/notrus-logo.jpeg'
 const translations = {
   en: {
     navProduto: 'Product',
-    navSio: 'SIO',
+    navSio: 'IOS',
     navBenefits: 'Benefits',
     navContact: 'Contact',
     navDemo: 'Request Demo',
@@ -90,7 +90,7 @@ const translations = {
   },
   pt: {
     navProduto: 'Produto',
-    navSio: 'SIO',
+    navSio: 'IOS',
     navBenefits: 'Benefícios',
     navContact: 'Contato',
     navDemo: 'Solicitar Demo',
@@ -135,7 +135,7 @@ const translations = {
     feature4Title: 'Integração Completa',
     feature4Desc:
       'Conecte-se com seus sistemas existentes sem complicações',
-    sioPanelTitle: 'Painel de Controle SIO',
+    sioPanelTitle: 'Painel de Controle IOS',
     panel1Label: 'Pagamentos Processados',
     panel2Label: 'Reembolsos Automáticos',
     panel3Label: 'Retornos Gerenciados',
