@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -54,7 +54,7 @@ const translations = {
     benefit4Desc:
       'Fully automated processes without human intervention',
     sioBadge: 'Intelligent System',
-    sioTitle: 'SIO - Intelligent Operations System',
+    sioTitle: 'IOS - Intelligent Operations System',
     sioSubtitle:
       'Automate any action of your business with advanced artificial intelligence',
     feature1Title: 'Automated Payments',
@@ -68,7 +68,7 @@ const translations = {
       'Coordinate product returns, reverse logistics and inventory restocking',
     feature4Title: 'Complete Integration',
     feature4Desc: 'Connect with your existing systems effortlessly',
-    sioPanelTitle: 'SIO Control Panel',
+    sioPanelTitle: 'IOS Control Panel',
     panel1Label: 'Processed Payments',
     panel2Label: 'Automatic Refunds',
     panel3Label: 'Managed Returns',
@@ -162,12 +162,17 @@ function App() {
   // Track whether the mobile navigation is open
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   // Language state: 'en' for English (default) or 'pt' for Portuguese
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState(navigator.language !== 'en' ? 'pt' : 'en')
   // Helper to fetch the correct translation for a given key
   const t = (key) => {
     // Fallback to the key name itself if translation is missing
     return translations[language][key] ?? key
   }
+
+    useEffect(() => {
+    const userLang = navigator.language !== 'en' ? 'pt-BR' : 'en';
+    document.documentElement.lang = userLang;
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
