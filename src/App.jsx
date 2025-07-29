@@ -162,7 +162,7 @@ function App() {
   // Track whether the mobile navigation is open
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   // Language state: 'en' for English (default) or 'pt' for Portuguese
-  const [language, setLanguage] = useState(navigator.language !== 'en' ? 'pt' : 'en')
+  const [language, setLanguage] = useState(navigator.language.includes('en') ? 'en' : 'pt-BR')
   // Helper to fetch the correct translation for a given key
   const t = (key) => {
     // Fallback to the key name itself if translation is missing
@@ -170,7 +170,7 @@ function App() {
   }
 
     useEffect(() => {
-    const userLang = navigator.language !== 'en' ? 'pt-BR' : 'en';
+    const userLang = navigator.language.includes('en') ? 'en' : 'pt-BR';
     document.documentElement.lang = userLang;
   }, []);
 
