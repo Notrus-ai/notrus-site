@@ -23,7 +23,7 @@ function Home({t, notrusLogo}){
     return (
         <>
         {/* Hero Section */}
-        <section className="py-20 px-4">
+        <section id= "produto" className="py-20 px-4">
         <div className="container mx-auto text-center">
           <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
             {t('heroBadge')}
