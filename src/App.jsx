@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import notrusLogo from './assets/notrus-logo.jpeg'
 
+
 // Translation dictionary for Portuguese (pt) and English (en)
 // The site defaults to English but can be switched via the language selector in the header.
 // Each key maps to both language versions of the same phrase. When adding new
@@ -157,6 +158,7 @@ const translations = {
   },
 }
 import './App.css'
+import CookieBanner from './CookieBanner'
 
 function App() {
   // Track whether the mobile navigation is open
@@ -247,7 +249,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section id= "produto" className="py-20 px-4">
         <div className="container mx-auto text-center">
           <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
             {t('heroBadge')}
@@ -513,6 +515,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <CookieBanner />
     </div>
   )
 }
