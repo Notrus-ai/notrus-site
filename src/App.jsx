@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -17,7 +18,6 @@ import {
   X
 } from 'lucide-react'
 import notrusLogo from './assets/notrus-logo.jpeg'
-
 
 // Translation dictionary for Portuguese (pt) and English (en)
 // The site defaults to English but can be switched via the language selector in the header.
@@ -160,6 +160,16 @@ const translations = {
 import './App.css'
 import CookieBanner from './CookieBanner'
 
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen text-center p-6">
+      <h1 className="text-7xl font-bold text-red-500">404</h1>
+      <h2 className="text-2xl mt-4">Página não encontrada</h2>
+      <a href="/" className="mt-6 text-blue-600 underline">Voltar ao início</a>
+    </div>
+  )
+}
+
 function App() {
   // Track whether the mobile navigation is open
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -177,7 +187,12 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <Router>
+      <Routes>
+      <Route 
+      path='/' 
+      element={
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-4 py-4">
@@ -517,6 +532,11 @@ function App() {
       </footer>
       <CookieBanner />
     </div>
+    }
+    />
+    <Route path='*' element={<NotFound />} />  
+    </Routes>
+  </Router>
   )
 }
 
