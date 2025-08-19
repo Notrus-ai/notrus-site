@@ -159,16 +159,7 @@ const translations = {
 }
 import './App.css'
 import CookieBanner from './CookieBanner'
-
-function NotFound() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center p-6">
-      <h1 className="text-7xl font-bold text-red-500">404</h1>
-      <h2 className="text-2xl mt-4">Página não encontrada</h2>
-      <a href="/" className="mt-6 text-blue-600 underline">Voltar ao início</a>
-    </div>
-  )
-}
+import NotFound from './pages/NotFound'
 
 function App() {
   // Track whether the mobile navigation is open
@@ -534,7 +525,7 @@ function App() {
     </div>
     }
     />
-    <Route path='*' element={<NotFound />} />  
+    <Route path="*" element={<NotFound />} />  
     </Routes>
   </Router>
   )
