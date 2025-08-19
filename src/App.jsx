@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { Button } from '@/components/ui/button.jsx'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { 
   Bot, 
@@ -525,7 +525,7 @@ function App() {
     </div>
     }
     />
-    <Route path="*" element={<NotFound />} />  
+    <Route path="*" element={<NotFound appLang={language} />} />  
     </Routes>
   </Router>
   )
