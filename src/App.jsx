@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -157,6 +158,8 @@ const translations = {
   },
 }
 import './App.css'
+import CookieBanner from './CookieBanner'
+import NotFound from './pages/NotFound'
 
 function App() {
   // Track whether the mobile navigation is open
@@ -175,7 +178,12 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <Router>
+      <Routes>
+      <Route 
+      path='/' 
+      element={
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-4 py-4">
@@ -247,7 +255,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section id= "produto" className="py-20 px-4">
         <div className="container mx-auto text-center">
           <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200">
             {t('heroBadge')}
@@ -513,7 +521,13 @@ function App() {
           </div>
         </div>
       </footer>
+      <CookieBanner />
     </div>
+    }
+    />
+    <Route path="*" element={<NotFound />} />  
+    </Routes>
+  </Router>
   )
 }
 
