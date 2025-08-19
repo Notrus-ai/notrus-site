@@ -521,7 +521,7 @@ function App() {
           </div>
         </div>
       </footer>
-      <CookieBanner />
+      <CookieBanner appLang={language} />
     </div>
     }
     />
