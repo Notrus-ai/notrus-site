@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ t }: HeroSectionProps) {
     return (
-        <section id="produto" className="py-20 px-4 text-center">
+        <section id={t('product')} className="py-20 px-4 text-center">
             <Badge className="mb-6 bg-blue-100 text-blue-800">{t('heroBadge')}</Badge>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
@@ -23,7 +23,7 @@ export function HeroSection({ t }: HeroSectionProps) {
             </p>
 
             <a href="mailto:contact@notrus.ai">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-lg px-8 py-4">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-lg px-8 py-4 text-white">
                     {t('heroButton')}
                     <ArrowRight className="ml-2" size={20} />
                 </Button>

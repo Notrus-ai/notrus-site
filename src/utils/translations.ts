@@ -1,5 +1,8 @@
 export const translations = {
   en: {
+    contact: 'contact',
+    product: 'product',
+    benefits: 'benefits',
     navProduto: 'Product',
     navSio: 'IOS',
     navBenefits: 'Benefits',
@@ -65,6 +68,9 @@ export const translations = {
     footerSubtitle: 'Transforming the future of customer service',
   },
   pt: {
+    contact: 'contato',
+    product: 'produto',
+    benefits: 'beneficios',
     navProduto: 'Produto',
     navSio: 'IOS',
     navBenefits: 'Benefícios',

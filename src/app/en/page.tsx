@@ -14,14 +14,14 @@ import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
 
 export default function Home() {
-
+  const [language, setLanguage] = useState(navigator.language.includes('en') ? 'en' : 'pt')
   const t = (key: string) => {
-    return translations['en'][key] ?? key
+    return translations[language][key] ?? key
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <Header t={t} />
+      <Header t={t} setLanguage={setLanguage} language={language} />
       <HeroSection t={t} />
       <Benefits t={t} />
       <SIO t={t} />

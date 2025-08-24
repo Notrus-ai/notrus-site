@@ -3,7 +3,7 @@ import { Button } from "./button";
 
 export default function Cta({ t }) {
     return (
-        <section className="py-20 px-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+        <section id={t('contact')} className="py-20 px-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
             <div className="container mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                     {t('finalTitle')}
