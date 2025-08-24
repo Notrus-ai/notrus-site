@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight, Phone, Mail, Building, User } from 'lucide-react';
-import { Header } from '@/components/ui/Header';
+import { Menu, X, ArrowRight, Phone, Mail, Building, User } from 'lucide-react';
 import { translations } from '@/utils/translations';
 
 const ISPAutomacaoPage = ({ onBackToHome }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const t = (key: string) => {
-        return translations['en'][key] ?? key
+        return translations['pt'][key] ?? key
     }
     const [formData, setFormData] = useState({
         name: '',
@@ -173,7 +173,53 @@ const ISPAutomacaoPage = ({ onBackToHome }) => {
 
     return (
         <div className="min-h-screen">
-            <Header t={t} />
+            <header className="fixed top-0 left-0 right-0 z-50 bg-white notrus-shadow-sm">
+                <div className="max-w-6xl mx-auto px-5">
+                    <div className="flex justify-between items-center py-4">
+                        <a
+                            href="https://notrus.ai"
+                            className="text-2xl font-bold text-[#4F46E5] hover:opacity-80 transition-opacity"
+                        >
+                            Notrus
+                        </a>
+
+                        <nav className="hidden md:flex items-center gap-8">
+                            <a href="mailto:contact@notrus.ai">
+                                <Button
+                                    className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity"
+                                >
+                                    Fale com a gente
+                                </Button>
+                            </a>
+                        </nav>
+
+                        <button
+                            className="md:hidden p-2"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            {isMenuOpen ? (
+                                <X className="w-6 h-6 notrus-text-primary" />
+                            ) : (
+                                <Menu className="w-6 h-6 notrus-text-primary" />
+                            )}
+                        </button>
+                    </div>
+
+                    {isMenuOpen && (
+                        <div className="md:hidden py-4 border-t border-gray-200">
+                            <nav className="flex flex-col gap-4">
+                                <a href="mailto:contact@notrus.ai">
+                                    <Button
+                                        className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity mt-2"
+                                    >
+                                        Contact Us
+                                    </Button>
+                                </a>
+                            </nav>
+                        </div>
+                    )}
+                </div>
+            </header>
             {/* Hero Section */}
             <section className="bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 text-white py-32 px-5 text-center relative overflow-hidden">
                 <div className="max-w-4xl mx-auto relative z-10">
