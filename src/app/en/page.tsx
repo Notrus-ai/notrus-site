@@ -12,10 +12,11 @@ import { CookieBanner } from '@/components/ui/CookieBanner';
 import Metrics from '@/components/ui/Metrics';
 import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
+import { usePathname } from 'next/navigation';
 
 export default function Home() {
-
-  const [language, setLanguage] = useState(location.href.includes('/en') ? 'en' : 'pt')
+  const pathname = usePathname();
+  const [language, setLanguage] = useState(pathname.includes('/en') ? 'en' : 'pt')
   const t = (key: string) => {
     return translations[language][key] ?? key
   }

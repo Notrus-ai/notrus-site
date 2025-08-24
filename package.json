@@ -5,10 +5,10 @@
   "homepage": "https://notrus.ai",
   "scripts": {
     "dev": "next dev --turbopack",
+    "export": "next export",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "deploy": "yarn run build && gh-pages -d out"
+    "lint": "eslint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

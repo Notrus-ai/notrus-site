@@ -4,14 +4,13 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Menu, X, ArrowRight, Phone, Mail, Building, User } from 'lucide-react';
+import { ArrowRight, Phone, Mail, Building, User } from 'lucide-react';
 import { Header } from '@/components/ui/Header';
 import { translations } from '@/utils/translations';
 
 const ISPAutomacaoPage = ({ onBackToHome }) => {
     const t = (key: string) => {
-        const lng = location.href.includes('/en') ? 'en' : 'pt'
-        return translations[lng][key] ?? key;
+        return translations['en'][key] ?? key
     }
     const [formData, setFormData] = useState({
         name: '',
