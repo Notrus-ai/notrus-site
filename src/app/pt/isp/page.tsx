@@ -10,7 +10,8 @@ import { translations } from '@/utils/translations';
 
 const ISPAutomacaoPage = ({ onBackToHome }) => {
     const t = (key: string) => {
-        return translations['en'][key] ?? key
+        const lng = location.href.includes('/en') ? 'en' : 'pt'
+        return translations[lng][key] ?? key;
     }
     const [formData, setFormData] = useState({
         name: '',

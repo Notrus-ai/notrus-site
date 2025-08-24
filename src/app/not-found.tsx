@@ -2,7 +2,7 @@ import Link from "next/link";
 import './globals.css'
 
 export default function NotFound() {
-    const lang = navigator.language?.includes('en') ? 'en' : 'pt';
+    const lang = location.href.includes('/en') ? 'en' : 'pt';
 
     const texts = {
         en: {

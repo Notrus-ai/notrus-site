@@ -14,7 +14,7 @@ import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
 
 export default function Home() {
-  const [language, setLanguage] = useState(navigator.language.includes('en') ? 'en' : 'pt')
+  const [language, setLanguage] = useState(location.href.includes('/en') ? 'en' : 'pt')
   const t = (key: string) => {
     return translations[language][key] ?? key
   }
