@@ -82,7 +82,9 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5498699782273630"
           crossOrigin="anonymous"
-        />
+        />        
+        {/* Canonical */}
+        <link rel="canonical" href="https://notrus.ai/pt/" />      
         {/* Hreflang */}
         <link rel="alternate" hrefLang="en" href="https://www.notrus.ai/en" />
         <link rel="alternate" hrefLang="pt" href="https://www.notrus.ai/pt" />
