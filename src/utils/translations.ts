@@ -16,7 +16,7 @@ export const translations = {
     heroButton: 'Request Free Demo',
     chatUserMessage: 'Hello! I need to process a refund for order #12345',
     chatBotMessage:
-      "Perfect! I've identified your order. The refund of £ 299.90 will be processed automatically within 2 business days. Can I help with anything else?",
+      "Perfect! I've identified your order. The refund of $299.90 will be processed automatically within 2 business days. Can I help with anything else?",
     whyTitle: 'Why choose Notrus?',
     whySubtitle:
       'Our platform provides complete solutions to transform your customer service',
