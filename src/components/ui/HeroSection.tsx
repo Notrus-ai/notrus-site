@@ -14,8 +14,7 @@ export function HeroSection({ t }: HeroSectionProps) {
             <Badge className="mb-6 bg-blue-100 text-blue-800">{t('heroBadge')}</Badge>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-                {t('heroTitle1')}
-                <span className="block">{t('heroTitle2')}</span>
+                {t('heroTitle1')} {t('heroTitle2')}                
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
