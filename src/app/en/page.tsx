@@ -13,6 +13,7 @@ import Metrics from '@/components/ui/Metrics';
 import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
 import { usePathname } from 'next/navigation';
+import ContactForm from '@/components/ui/ContactForm';
 
 export default function Home() {
   const pathname = usePathname();
@@ -29,6 +30,7 @@ export default function Home() {
       <SIO t={t} />
       <Metrics t={t} />
       <Cta t={t} />
+      <ContactForm language={language} />
       <Footer t={t} />
       <CookieBanner appLang="en" privacyPolicyUrl="/cookie-policy" />
     </div>
