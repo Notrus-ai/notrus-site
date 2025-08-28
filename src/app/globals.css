@@ -28,3 +28,7 @@ body {
 button {
   cursor: pointer;
 }
+
+form label {
+  margin-bottom: 0.5rem;
+}
