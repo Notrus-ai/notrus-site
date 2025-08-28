@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Notrus AI",
-    description: "Automate your customer service with artificial intelligence.",
+    title: "Customer Service Automation for Internet Providers | Notrus",
+    description: "Automate up to 70% of your customer support, boost satisfaction, and cut costs with Notrus’ AI-powered automation platform for ISPs.",
 };
 
 

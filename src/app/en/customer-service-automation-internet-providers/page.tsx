@@ -459,7 +459,7 @@ const ISPAutomacaoPage = () => {
             </section>
 
             {/* Botão Voltar */}
-            <section className="py-8 px-5 text-center">
+            {/* <section className="py-8 px-5 text-center">
                 <Button
                     onClick={() => { }}
                     variant="outline"
@@ -467,7 +467,7 @@ const ISPAutomacaoPage = () => {
                 >
                     ← Back to home
                 </Button>
-            </section>
+            </section> */}
             <footer className="notrus-gradient-primary text-white py-8">
                 <div className="max-w-6xl mx-auto px-5">
                     <div className="text-center">
