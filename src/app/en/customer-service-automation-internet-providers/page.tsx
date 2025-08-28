@@ -143,7 +143,7 @@ const ISPAutomacaoPage = () => {
                 <div className="max-w-6xl mx-auto px-5">
                     <div className="flex justify-between items-center py-4">
                         <a
-                            href="https://notrus.ai"
+                            href="https://notrus.ai/en"
                             className="text-2xl font-bold text-[#4F46E5] hover:opacity-80 transition-opacity"
                         >
                             Notrus
