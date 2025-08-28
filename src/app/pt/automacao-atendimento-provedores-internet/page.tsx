@@ -551,7 +551,11 @@ const ISPAutomacaoPage = ({ onBackToHome }) => {
             </section>
 
             {/* Botão Voltar */}
+<<<<<<< HEAD
             {/* <section className="py-8 px-5 text-center">
+=======
+            <section className="py-8 px-5 text-center">
+>>>>>>> 9d4ad9a (adding new url, meta title and meta description)
                 <Button
                     onClick={onBackToHome}
                     variant="outline"
@@ -559,7 +563,11 @@ const ISPAutomacaoPage = ({ onBackToHome }) => {
                 >
                     ← Voltar às Landing Pages
                 </Button>
+<<<<<<< HEAD
             </section> */}
+=======
+            </section>
+>>>>>>> 9d4ad9a (adding new url, meta title and meta description)
             <footer className="notrus-gradient-primary text-white py-8">
                 <div className="max-w-6xl mx-auto px-5">
                     <div className="text-center">
