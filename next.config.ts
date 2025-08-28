@@ -6,4 +6,16 @@ const nextConfig: NextConfig = {
   },
 };
 
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/pt/isp',
+        destination: '/pt/automacao-atendimento-provedores-internet',
+        permanent: true, // 301 redirect (melhor para SEO)
+      },
+    ]
+  },
+}
+
 export default nextConfig;
