@@ -178,3 +178,68 @@ export const cookieTexts = {
     linkLabel: 'Política de Privacidade',
   },
 };
+
+export const contactFormTranslations = {
+  pt: {
+    title: "Entre em contato",
+    description: "Preencha o formulário e entraremos em contato",
+    ctaText: "Enviar mensagem",
+    fullName: "Nome completo",
+    email: "E-mail",
+    company: "Empresa",
+    whatsapp: "WhatsApp",
+    message: "Mensagem",
+    namePlaceholder: "Seu nome",
+    emailPlaceholder: "seu@email.com",
+    companyPlaceholder: "Nome da empresa",
+    phonePlaceholder: "(11) 99999-9999",
+    messagePlaceholder: "Como podemos ajudar?",
+    sending: "Enviando...",
+    messageSent: "Mensagem enviada!",
+    contactResponse: "Entraremos em contato em até 2 horas úteis.",
+    whatsappNow: "Falar agora no WhatsApp",
+    whatsappDirect: "Ou fale direto no WhatsApp",
+    whatsappMessage: `Olá! Vim do site da Notrus e gostaria de saber mais sobre automação de WhatsApp.
+
+*Dados:*
+Nome: {name}
+Email: {email}
+Empresa: {company}
+Telefone: {phone}
+
+{message}`
+  },
+  en: {
+    title: "Get in touch",
+    description: "Fill out the form and we'll get back to you",
+    ctaText: "Send message",
+    fullName: "Full name",
+    email: "Email",
+    company: "Company",
+    whatsapp: "WhatsApp",
+    message: "Message",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "your@email.com",
+    companyPlaceholder: "Company name",
+    phonePlaceholder: "+1 (555) 123-4567",
+    messagePlaceholder: "How can we help you?",
+    sending: "Sending...",
+    messageSent: "Message sent!",
+    contactResponse: "We'll get back to you within 2 business hours.",
+    whatsappNow: "Chat now on WhatsApp",
+    whatsappDirect: "Or chat directly on WhatsApp",
+    whatsappMessage: `Hello! I came from Notrus website and would like to know more about WhatsApp automation.
+
+*Details:*
+Name: {name}
+Email: {email}
+Company: {company}
+Phone: {phone}
+
+{message}`
+  }
+}
+
+export type ContactFormTranslations = typeof contactFormTranslations
+export type ContactFormLang = keyof ContactFormTranslations
+export type ContactFormKeys = keyof ContactFormTranslations["pt"]
