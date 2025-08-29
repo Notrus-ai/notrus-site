@@ -9,8 +9,7 @@ export const translations = {
     navContact: 'Contact',
     navDemo: 'Request Demo',
     heroBadge: '🚀 Revolutionize Your Customer Service',
-    heroTitle1: 'Transform Your Customer Service with',
-    heroTitle2: 'Intelligent AI Agents',
+    heroTitle1: 'Transform Your Customer Service with Intelligent AI Agents',
     heroSubtitle:
       'Automate processes, reduce operational costs and improve the customer experience with our conversational AI platform available 24/7',
     heroButton: 'Request Free Demo',
@@ -77,8 +76,7 @@ export const translations = {
     navContact: 'Contato',
     navDemo: 'Solicitar Demo',
     heroBadge: '🚀 Revolucione seu Atendimento ao Cliente',
-    heroTitle1: 'Transforme seu Atendimento com',
-    heroTitle2: 'Agentes IA Inteligentes',
+    heroTitle1: 'Transforme seu Atendimento com Agentes IA Inteligentes',
     heroSubtitle:
       'Automatize processos, reduza custos operacionais e melhore a experiência do cliente com nossa plataforma de IA conversacional disponível 24/7',
     heroButton: 'Solicitar Demo Gratuita',
