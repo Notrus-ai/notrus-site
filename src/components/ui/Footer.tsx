@@ -2,14 +2,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Footer({ t }) {
-    const pathname = usePathname();
-    const isEnglish = pathname.startsWith('/en');
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith('/en');
 
-    const linkedinUrl = isEnglish 
-        ? "https://www.linkedin.com/company/notrus-ai-international?locale=en_US"
-        : "https://www.linkedin.com/company/notrus-ai?locale=pt_BR";
+  const linkedinUrl = isEnglish
+    ? "https://www.linkedin.com/company/notrus-ai-international?locale=en_US"
+    : "https://www.linkedin.com/company/notrus-ai?locale=pt_BR";
 
-    return (
+  return (
     <footer className="py-12 px-4 bg-gray-900 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -44,11 +44,11 @@ export default function Footer({ t }) {
                   height={20}
                   unoptimized
                   className="w-8 h-8"
-                /> 
-                <span>LinkedIn</span>               
+                />
+                <span>LinkedIn</span>
               </a>
               <a
-                href="mailto:seuemail@gmail.com"
+                href="mailto:contact@notrus.ai"
                 className="inline-flex items-center gap-2 hover:text-white transition-colors text-gray-300"
               >
                 <Image
