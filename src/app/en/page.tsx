@@ -31,7 +31,6 @@ export default function Home() {
       <SIO t={t} />
       <Metrics t={t} />
       <Cta t={t} />
-      <ContactForm language={language} />
       <Footer t={t} />
       <CookieBanner appLang="en" privacyPolicyUrl="/cookie-policy" />
     </div>
