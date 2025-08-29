@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Benefits from '@/components/ui/Benefits';
 import Cta from '@/components/ui/Cta';
@@ -12,12 +12,13 @@ import { CookieBanner } from '@/components/ui/CookieBanner';
 import Metrics from '@/components/ui/Metrics';
 import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 import ContactForm from '@/components/ui/ContactForm';
 
 export default function Home() {
   const pathname = usePathname();
   const [language, setLanguage] = useState(pathname.includes('/en') ? 'en' : 'pt')
+
   const t = (key: string) => {
     return translations[language][key] ?? key
   }

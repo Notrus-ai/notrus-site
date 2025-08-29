@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./button";
 import { Menu, X } from "lucide-react";
+import { redirect } from "next/navigation";
 
 interface HeaderProps {
   t: (key: string) => string;
@@ -16,6 +17,11 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
   const productLink = `#${t('product')}`;
   const benefitsLink = `#${t('benefits')}`;
   const contactLink = `#${t('contact')}`;
+
+  const handleToggle = (language: string) => {
+    setLanguage(language)
+    redirect(`/${language}`);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -45,7 +51,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           </a>
           <select
             value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+            onChange={(e) => handleToggle(e.target.value)}
             className="border border-gray-300 rounded-md px-2 py-1 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="en">EN</option>
@@ -70,7 +76,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           </a>
           <select
             value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+            onChange={(e) => handleToggle(e.target.value)}
             className="border border-gray-300 rounded-md px-2 py-2 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="en">EN</option>
