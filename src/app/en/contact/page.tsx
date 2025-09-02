@@ -4,12 +4,25 @@ import Footer from '@/components/ui/Footer';
 import { Header } from '@/components/ui/Header';
 import React from 'react';
 import { translations } from '@/utils/translations';
+import { usePathname } from 'next/navigation';
 
 export default function Contact() {
-  const [language, setLanguage] = React.useState('en');
+  const pathname = usePathname();
+  const getLangFromPath = (path?: string) => {
+    if (!path) return 'en';
+    const seg = path.split('/')[1];
+    return seg === 'pt' ? 'pt' : 'en';
+  };
+  
+  const [language, setLanguage] = React.useState(() => getLangFromPath(pathname));
   const t = (key: string) => {
     return translations[language]?.[key] || key;
-  };
+  };   
+  
+  React.useEffect(() => {
+    const lng = getLangFromPath(pathname);
+    if (lng !== language) setLanguage(lng);
+  }, [pathname]);
 
   const priorityCountries = [
     { code: 'BR', name: 'Brazil', dialCode: '+55', format: '(XX) XXXX-XXXX', flag: '🇧🇷' },
