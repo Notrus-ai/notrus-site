@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Link from 'next/link';
 
-export default function Footer({ t }) {
+export default function Footer({ t }: { t: (k: string) => string }) {
   const pathname = usePathname();
-  const isEnglish = pathname.startsWith('/en');
+
+  // Detecta linguagem a partir do prefixo da URL
+  const isEnglish = pathname?.startsWith("/en");
+  const language = isEnglish ? "en" : "pt";
+
+  const localized = (en: string, pt: string) => (language === "en" ? en : pt);
+  const contactLink = localized("/en/contact", "/pt/contato");
 
   const linkedinUrl = isEnglish
     ? "https://www.linkedin.com/company/notrus-ai-international?locale=en_US"
@@ -47,8 +54,9 @@ export default function Footer({ t }) {
                 />
                 <span>LinkedIn</span>
               </a>
-              <a
-                href="mailto:contact@notrus.ai"
+
+              <Link
+                href={contactLink}
                 className="inline-flex items-center gap-2 hover:text-white transition-colors text-gray-300"
               >
                 <Image
@@ -59,7 +67,7 @@ export default function Footer({ t }) {
                   className="w-8 h-8"
                 />
                 <span>Email</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
