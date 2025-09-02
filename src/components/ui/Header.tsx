@@ -17,7 +17,6 @@ interface HeaderProps {
 export function Header({ t, setLanguage, language }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // ✅ ADICIONAR esses hooks
   const pathname = usePathname();
   const router = useRouter();
   
@@ -28,25 +27,21 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
   const contactLink = localized("/en/contact", "/pt/contato");
   const demoLink = contactLink;
 
-  // ✅ SUBSTITUIR sua função handleToggle por esta:
   const handleToggle = (lng: string) => {
     setLanguage(lng);
 
-    // exemplo: /pt/formulario-contato → currentLang=pt, currentPath=/formulario-contato
     const segments = pathname.split("/");
     const currentLang = segments[1]; 
     const currentPath = "/" + segments.slice(2).join("/");
 
     let newPath = "/";
 
-    // procura no mapa a rota equivalente
     for (const key in routeMap) {
       if (routeMap[key][currentLang as "pt" | "en"] === currentPath) {
         newPath = routeMap[key][lng as "pt" | "en"];
       }
     }
 
-    // se não achou nada no map → mantém só prefixo
     if (newPath === "/") newPath = currentPath;
 
     router.push(`/${lng}${newPath}`);
