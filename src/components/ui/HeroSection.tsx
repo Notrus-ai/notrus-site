@@ -13,7 +13,6 @@ interface HeroSectionProps {
 export function HeroSection({ t }: HeroSectionProps) {
     const pathname = usePathname();
     const language = pathname.includes('/en') ? 'en' : 'pt'
-    // const contactLink = language === 'en' ? '/en/contact' : '/pt/contato';
     const localized = (en: string, pt: string) => (language === "en" ? en : pt);
     const contactLink = localized("/en/contact", "/pt/contato");
     const demoLink = contactLink;
