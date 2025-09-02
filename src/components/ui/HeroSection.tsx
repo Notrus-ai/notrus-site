@@ -3,12 +3,20 @@
 import { Badge } from "./badge";
 import { Button } from "./button";
 import { Bot, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface HeroSectionProps {
     t: (key: string) => string;
 }
 
 export function HeroSection({ t }: HeroSectionProps) {
+    const pathname = usePathname();
+    const language = pathname.includes('/en') ? 'en' : 'pt'
+    const localized = (en: string, pt: string) => (language === "en" ? en : pt);
+    const contactLink = localized("/en/contact", "/pt/contato");
+    const demoLink = contactLink;
+
     return (
         <section id={t('product')} className="py-20 px-4 text-center">
             <Badge className="mb-6 bg-blue-100 text-blue-800">{t('heroBadge')}</Badge>
@@ -21,12 +29,12 @@ export function HeroSection({ t }: HeroSectionProps) {
                 {t('heroSubtitle')}
             </p>
 
-            <a href="mailto:contact@notrus.ai">
+            <Link href={demoLink} >
                 <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-lg px-8 py-4 text-white">
                     {t('heroButton')}
                     <ArrowRight className="ml-2" size={20} />
                 </Button>
-            </a>
+            </Link>
 
             <div className="relative max-w-4xl mx-auto mt-12">
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 shadow-2xl">

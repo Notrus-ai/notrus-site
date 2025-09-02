@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./button";
 import { Menu, X } from "lucide-react";
-import { redirect } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { routeMap } from "@/utils/routeMap";
+import Link from 'next/link';
 
 interface HeaderProps {
   t: (key: string) => string;
@@ -14,14 +16,38 @@ interface HeaderProps {
 
 export function Header({ t, setLanguage, language }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const productLink = `#${t('product')}`;
-  const benefitsLink = `#${t('benefits')}`;
-  const contactLink = `#${t('contact')}`;
+  
+  const pathname = usePathname();
+  const router = useRouter();
+  
+  const productLink = "/#produto";
+  const sioLink = "/#sio";
+  const benefitsLink = "/#beneficios";
+  const localized = (en: string, pt: string) => (language === "en" ? en : pt);
+  const contactLink = localized("/en/contact", "/pt/contato");
+  const demoLink = contactLink;
 
-  const handleToggle = (language: string) => {
-    setLanguage(language)
-    redirect(`/${language}`);
+  const handleToggle = (lng: string) => {
+    setLanguage(lng);
+
+    const segments = pathname.split("/");
+    const currentLang = segments[1]; 
+    const currentPath = "/" + segments.slice(2).join("/");
+
+    let newPath = "/";
+
+    for (const key in routeMap) {
+      if (routeMap[key][currentLang as "pt" | "en"] === currentPath) {
+        newPath = routeMap[key][lng as "pt" | "en"];
+      }
+    }
+
+    if (newPath === "/") newPath = currentPath;
+
+    router.push(`/${lng}${newPath}`);
   };
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -42,13 +68,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
         {/* Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href={productLink} className="text-gray-700 hover:text-blue-600">{t('navProduto')}</a>
-          <a href="#sio" className="text-gray-700 hover:text-blue-600">{t('navSio')}</a>
-          <a href={benefitsLink} className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</a>
-          <a href={contactLink} className="text-gray-700 hover:text-blue-600">{t('navContact')}</a>
-          <a href="mailto:contact@notrus.ai" >
+          <Link href={productLink} className="text-gray-700 hover:text-blue-600">{t('navProduto')}</Link>
+          <Link href={sioLink} className="text-gray-700 hover:text-blue-600">{t('navSio')}</Link>
+          <Link href={benefitsLink} className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</Link>
+          <Link href={contactLink} className="text-gray-700 hover:text-blue-600">{t('navContact')}</Link>
+          <Link href={demoLink} >
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">{t('navDemo')}</Button>
-          </a>
+          </Link>
           <select
             value={language}
             onChange={(e) => handleToggle(e.target.value)}
@@ -67,13 +93,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
       {isMenuOpen && (
         <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 px-4 flex flex-col space-y-4">
-          <a href="#produto" className="text-gray-700 hover:text-blue-600">{t('navProduto')}</a>
-          <a href="#sio" className="text-gray-700 hover:text-blue-600">{t('navSio')}</a>
-          <a href="#beneficios" className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</a>
-          <a href="#contato" className="text-gray-700 hover:text-blue-600">{t('navContact')}</a>
-          <a href="mailto:contact@notrus.ai">
+          <Link href={productLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navProduto')}</Link>
+          <Link href={sioLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navSio')}</Link>
+          <Link href={benefitsLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</Link>
+          <Link href={contactLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navContact')}</Link>
+          <Link href={demoLink}>
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">{t('navDemo')}</Button>
-          </a>
+          </Link>
           <select
             value={language}
             onChange={(e) => handleToggle(e.target.value)}
