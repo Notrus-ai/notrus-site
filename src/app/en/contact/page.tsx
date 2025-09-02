@@ -6,13 +6,11 @@ import React from 'react';
 import { translations } from '@/utils/translations';
 
 export default function Contact() {
-  // You'll need to define these or get them from your i18n setup
-  const [language, setLanguage] = React.useState('en'); // or get from context/props
+  const [language, setLanguage] = React.useState('en');
   const t = (key: string) => {
     return translations[language]?.[key] || key;
-  }; // placeholder translation function
+  };
 
-  // Countries data
   const priorityCountries = [
     { code: 'BR', name: 'Brazil', dialCode: '+55', format: '(XX) XXXX-XXXX', flag: '🇧🇷' },
     { code: 'GB', name: 'United Kingdom', dialCode: '+44', format: 'XXXX XXX XXXX', flag: '🇬🇧' },
@@ -222,14 +220,13 @@ const otherCountries = [
     message: ''
   });
   
-  const [selectedCountry, setSelectedCountry] = React.useState(priorityCountries[1]); // Default to United States
+  const [selectedCountry, setSelectedCountry] = React.useState(priorityCountries[1]);
   const [showCountryDropdown, setShowCountryDropdown] = React.useState(false);
   const [countrySearch, setCountrySearch] = React.useState('');
   const [errors, setErrors] = React.useState({});
   const [isLoading, setIsLoading] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
 
-  // Filter countries based on search
   const filteredCountries = React.useMemo(() => {
     if (!countrySearch) return allCountries;
     return allCountries.filter(country => 
@@ -284,7 +281,6 @@ const otherCountries = [
       [name]: formattedValue
     }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -308,7 +304,6 @@ const otherCountries = [
     setShowCountryDropdown(false);
     setCountrySearch('');
     
-    // Reformat existing phone number with new country format
     if (formData.phone) {
       const formattedPhone = formatPhoneByCountry(formData.phone, country);
       setFormData(prev => ({
@@ -321,7 +316,6 @@ const otherCountries = [
   const handleSubmit = async (e) => {
   e.preventDefault();
   
-  // Validate required fields
   const newErrors = {};
   const requiredFields = ['email', 'firstName', 'lastName', 'company', 'tickets'];
   
@@ -334,7 +328,6 @@ const otherCountries = [
     }
   });
 
-  // Validate optional fields
   Object.keys(formData).forEach(field => {
     if (!requiredFields.includes(field) && formData[field]) {
       const fieldError = validateField(field, formData[field]);
@@ -351,7 +344,6 @@ const otherCountries = [
   setIsLoading(true);
   
   try {
-    // Prepare form data for Web3Forms
     const formDataToSend = new FormData();
     formDataToSend.append('access_key', '9a1df9df-6912-4d9c-95af-17e7ca56cb3c');
     formDataToSend.append('email', formData.email);
@@ -380,7 +372,6 @@ const otherCountries = [
         message: ''
       });
       
-      // Hide success message after 3 seconds
       setTimeout(() => setShowSuccess(false), 3000);
     } else {
       throw new Error('Failed to send message');
