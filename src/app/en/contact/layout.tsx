@@ -28,7 +28,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
 
-        {/* ✅ Google Analytics via next/script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FMYBGJ967S"
           strategy="afterInteractive"
