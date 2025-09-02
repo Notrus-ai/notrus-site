@@ -5,7 +5,6 @@ import Link from 'next/link';
 export default function Footer({ t }: { t: (k: string) => string }) {
   const pathname = usePathname();
 
-  // Detecta linguagem a partir do prefixo da URL
   const isEnglish = pathname?.startsWith("/en");
   const language = isEnglish ? "en" : "pt";
 
@@ -20,7 +19,6 @@ export default function Footer({ t }: { t: (k: string) => string }) {
     <footer className="py-12 px-4 bg-gray-900 text-white">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo + Nome */}
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
             <Image
               src="/notrus-logo-transparent.png"
