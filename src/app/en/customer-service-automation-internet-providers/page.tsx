@@ -1,14 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Menu, X, ArrowRight, Phone, Mail, Building, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { contactFormTranslations } from "@/utils/translations";
 import ContactForm from "@/components/ui/ContactForm";
+import { usePathname } from "next/navigation";
 
-const ISPAutomacaoPage = ({ onBackToHome }) => {
+const ISPAutomacaoPage = () => {
+  const pathname = usePathname();
+  const getLangFromPath = (path?: string) => {
+    if (!path) return "en";
+    const seg = path.split("/")[1];
+    return seg === "pt" ? "pt" : "en";
+  };
+
+  const [language, setLanguage] = useState(() =>
+    getLangFromPath(pathname));
+
+  useEffect(() => {
+    const lng = getLangFromPath(pathname);
+    if (lng !== language) setLanguage(lng);
+  }, [pathname]);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = (key: string) => {
     return contactFormTranslations["en"][key] ?? key;

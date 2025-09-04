@@ -1,18 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Menu, X, ArrowRight, Phone, Mail, Building, User } from "lucide-react";
-import { contactFormTranslations } from "@/utils/translations";
+import { Menu, X } from "lucide-react";
 import ContactForm from "@/components/ui/ContactForm";
+import { usePathname } from "next/navigation";
 
-const ISPAutomacaoPage = ({ onBackToHome }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = (key: string) => {
-    return contactFormTranslations["pt"][key] ?? key;
+const ISPAutomacaoPage = () => {
+  const pathname = usePathname();
+  const getLangFromPath = (path?: string) => {
+    if (!path) return "en";
+    const seg = path.split("/")[1];
+    return seg === "pt" ? "pt" : "en";
   };
+
+  const [language, setLanguage] = useState(() =>
+    getLangFromPath(pathname));
+
+  useEffect(() => {
+    const lng = getLangFromPath(pathname);
+    if (lng !== language) setLanguage(lng);
+  }, [pathname]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -489,7 +499,7 @@ const ISPAutomacaoPage = ({ onBackToHome }) => {
         <div className="mx-auto">
           <ContactForm language={language} />
         </div>
-      </section>     
+      </section>
 
       {/* Botão Voltar */}
       {/* <section className="py-8 px-5 text-center">
