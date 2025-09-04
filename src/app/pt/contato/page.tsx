@@ -263,7 +263,7 @@ export default function Contact() {
       <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600">
         {/* Main Content */}
         <main className="py-8 sm:py-12 md:py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-24 items-start">
               {/* Left Side - Information */}
               <div className="text-white">
