@@ -239,12 +239,7 @@ export default function WhatsAppAutomacao() {
                         Agende uma demonstração gratuita e veja como podemos transformar seu negócio
                     </p>
 
-                    <ContactForm
-                        title="Agende sua demo grátis"
-                        description="Preencha os dados e entraremos em contato em até 2 horas"
-                        ctaText="Agendar demo grátis"
-                        variant="demo"
-                    />
+                    <ContactForm language={language} />
                 </div>
             </section>
         </div>

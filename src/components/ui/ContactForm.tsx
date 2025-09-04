@@ -1,9 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { contactFormTranslations } from '@/utils/translations';
 
-export default function ContactForm({ t }) {
+type ContactFormProps = {
+  language?: 'pt' | 'en';
+}
+
+export default function ContactForm({ language: lang }: ContactFormProps) {
   const pathname = usePathname();
   const getLangFromPath = (path?: string) => {
     if (!path) return "en";
@@ -11,10 +16,10 @@ export default function ContactForm({ t }) {
     return seg === "pt" ? "pt" : "en";
   };
 
-  const [language, setLanguage] = React.useState(() =>
-    getLangFromPath(pathname)
-  );
-
+  const [language, setLanguage] = useState(lang || getLangFromPath(pathname) || "en");
+  const t = (key: string) => {
+    return contactFormTranslations[language]?.[key] || key;
+  };
   React.useEffect(() => {
     const lng = getLangFromPath(pathname);
     if (lng !== language) setLanguage(lng);
@@ -1559,11 +1564,10 @@ export default function ContactForm({ t }) {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                        errors.email
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                      }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.email
+                        ? "border-red-400 bg-red-50"
+                        : "border-gray-300"
+                        }`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -1584,11 +1588,10 @@ export default function ContactForm({ t }) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                          errors.firstName
-                            ? "border-red-400 bg-red-50"
-                            : "border-gray-300"
-                        }`}
+                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.firstName
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                          }`}
                       />
                       {errors.firstName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -1607,11 +1610,10 @@ export default function ContactForm({ t }) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                          errors.lastName
-                            ? "border-red-400 bg-red-50"
-                            : "border-gray-300"
-                        }`}
+                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.lastName
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                          }`}
                       />
                       {errors.lastName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -1623,7 +1625,7 @@ export default function ContactForm({ t }) {
 
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
-                     {t("company")} *
+                      {t("company")} *
                     </label>
                     <input
                       type="text"
@@ -1632,11 +1634,10 @@ export default function ContactForm({ t }) {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                        errors.company
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                      }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.company
+                        ? "border-red-400 bg-red-50"
+                        : "border-gray-300"
+                        }`}
                     />
                     {errors.company && (
                       <p className="text-red-500 text-sm mt-1">
@@ -1648,7 +1649,7 @@ export default function ContactForm({ t }) {
                   {/* Phone with Country Selector */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
-                      {t("phone")} 
+                      {t("phone")}
                     </label>
                     <div className="flex">
                       {/* Country Selector */}
@@ -1770,11 +1771,10 @@ export default function ContactForm({ t }) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         placeholder={selectedCountry.format}
-                        className={`flex-1 bg-gray-100 border rounded-r-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 text-sm ${
-                          errors.phone
-                            ? "border-red-400 bg-red-50"
-                            : "border-gray-300"
-                        }`}
+                        className={`flex-1 bg-gray-100 border rounded-r-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 text-sm ${errors.phone
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                          }`}
                       />
                     </div>
                     {errors.phone && (
@@ -1786,18 +1786,17 @@ export default function ContactForm({ t }) {
 
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
-                      {t("monthlyTickets")} 
+                      {t("monthlyTickets")}
                     </label>
                     <select
                       name="tickets"
                       value={formData.tickets}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-500 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 cursor-pointer ${
-                        errors.tickets
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                      }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-500 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 cursor-pointer ${errors.tickets
+                        ? "border-red-400 bg-red-50"
+                        : "border-gray-300"
+                        }`}
                     >
                       <option value="">{t("selectOptions")}</option>
                       <option value="0-100">0-100</option>
@@ -1830,11 +1829,10 @@ export default function ContactForm({ t }) {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-xl text-lg font-semibold transition-all duration-200 mt-4 ${
-                      isLoading
-                        ? "opacity-70 cursor-not-allowed"
-                        : "hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40"
-                    }`}
+                    className={`w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-xl text-lg font-semibold transition-all duration-200 mt-4 ${isLoading
+                      ? "opacity-70 cursor-not-allowed"
+                      : "hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40"
+                      }`}
                   >
                     {isLoading ? (
                       <div className="flex items-center justify-center">

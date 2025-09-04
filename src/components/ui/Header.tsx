@@ -16,10 +16,10 @@ interface HeaderProps {
 
 export function Header({ t, setLanguage, language }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   const pathname = usePathname();
   const router = useRouter();
-  
+
   const productLink = "/#produto";
   const sioLink = "/#sio";
   const benefitsLink = "/#beneficios";
@@ -31,7 +31,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     setLanguage(lng);
 
     const segments = pathname.split("/");
-    const currentLang = segments[1]; 
+    const currentLang = segments[1];
     const currentPath = "/" + segments.slice(2).join("/");
 
     let newPath = "/";

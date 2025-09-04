@@ -335,7 +335,7 @@ export default function Contact() {
 
               {/* Right Side - Form */}
               <div className="flex justify-center">
-                <ContactForm />                
+                <ContactForm language={language} />                
               </div>
             </div>
           </div>

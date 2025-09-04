@@ -239,12 +239,7 @@ export default function WhatsAppAutomation() {
                         Book a free demo and see how we can transform your business
                     </p>
 
-                    <ContactForm
-                        title="Book your free demo"
-                        description="Fill in your details and we will contact you within 2 hours"
-                        ctaText="Schedule free demo"
-                        variant="demo"
-                    />
+                    <ContactForm language={language} />
                 </div>
             </section>
         </div>

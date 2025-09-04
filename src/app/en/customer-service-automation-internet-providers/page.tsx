@@ -391,7 +391,7 @@ const ISPAutomacaoPage = ({ onBackToHome }) => {
       {/* Formulário de Demo */}
       <section id="contact" className="py-16 px-5 notrus-bg-light">
         <div className="mx-auto">
-          <ContactForm t={t} />
+          <ContactForm language={language} />
         </div>
       </section>
 

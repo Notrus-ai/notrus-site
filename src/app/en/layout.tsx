@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import Head from "next/head";
-import { Script } from "next/script";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Notrus AI",
@@ -58,42 +45,10 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({
+export default function EnLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      {/* Google Analytics */}
-      <script src="https://www.googletagmanager.com/gtag/js?id=G-FMYBGJ967S"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-FMYBGJ967S');
-            `,
-        }}
-      />
-      {/* Google Ads */}
-      <script
-        
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5498699782273630"
-        crossOrigin="anonymous"
-      />
-      {/* Canonical */}
-      <link rel="canonical" href="https://notrus.ai/en/" />
-      {/* Hreflang */}
-      <link rel="alternate" hrefLang="en" href="https://www.notrus.ai/en" />
-      <link rel="alternate" hrefLang="pt" href="https://www.notrus.ai/pt" />
-      <link rel="alternate" hrefLang="x-default" href="https://www.notrus.ai" />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+  return <>{children}</>;
 }
