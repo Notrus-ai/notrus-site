@@ -1,31 +1,42 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Benefits from '@/components/ui/Benefits';
 import Cta from '@/components/ui/Cta';
 import Footer from '@/components/ui/Footer';
-import { Header } from '@/components/ui/Header';
+import { Header } from '@/components/ui/HeaderEN';
 import { HeroSection } from '@/components/ui/HeroSection';
 import { CookieBanner } from '@/components/ui/CookieBanner';
 import Metrics from '@/components/ui/Metrics';
 import SIO from '@/components/ui/SIO';
 import { translations } from '@/utils/translations';
-import { redirect, usePathname } from 'next/navigation';
-import ContactForm from '@/components/ui/ContactForm';
+import { usePathname } from 'next/navigation';
 
 export default function Home() {
   const pathname = usePathname();
-  const [language, setLanguage] = useState(pathname.includes('/en') ? 'en' : 'pt')
+  // Initialize with default value that matches server rendering
+  const [language, setLanguage] = useState<'pt' | 'en'>('en');
+
+  // Update language after component mounts (client-side only)
+  useEffect(() => {
+    const detectedLanguage = pathname.includes('/en') ? 'en' : 'pt';
+    setLanguage(detectedLanguage);
+  }, [pathname]);
 
   const t = (key: string) => {
-    return translations[language][key] ?? key
+    const translation = translations[language as keyof typeof translations];
+    return (translation as Record<string, string>)[key] ?? key;
   }
+
+  const handleLanguageChange = (newLanguage: string) => {
+    setLanguage(newLanguage as 'pt' | 'en');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <Header t={t} setLanguage={setLanguage} language={language} />
+      <Header t={t} setLanguage={handleLanguageChange} language={language} />
       <HeroSection t={t} />
       <Benefits t={t} />
       <SIO t={t} />

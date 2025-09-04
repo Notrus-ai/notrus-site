@@ -20,10 +20,10 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const productLink = "/#produto";
+  const productLink = "/#product";
   const sioLink = "/#sio";
-  const benefitsLink = "/#beneficios";
-  const contactLink = "/pt/contato"
+  const benefitsLink = "/#benefits";
+  const contactLink = "/en/contact";
   const demoLink = contactLink;
 
   const handleToggle = (lng: string) => {

@@ -9,7 +9,7 @@ export function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith(`/${lang}`)) {
     return NextResponse.next();
   }
-  console.log(new URL(`/${lang}`, req.url))
+
   return NextResponse.redirect(new URL(`/${lang}`, req.url));
 }
 

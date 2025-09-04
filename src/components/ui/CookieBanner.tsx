@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+// @ts-expect-error - js-cookie types may not be available
 import Cookies from "js-cookie";
 import { cookieTexts } from "@/utils/translations";
 
@@ -9,7 +10,11 @@ const CONSENT_TTL_DAYS = 180;
 
 function getDefaultLang(appLang?: string) {
   if (appLang === "en" || appLang === "pt") return appLang;
-  return navigator.language?.includes("en") ? "en" : "pt";
+  // Check if we're on the client side before accessing navigator
+  if (typeof window !== 'undefined' && navigator.language) {
+    return navigator.language.includes("en") ? "en" : "pt";
+  }
+  return "pt"; // Default fallback
 }
 
 function getStoredConsent() {
@@ -46,17 +51,18 @@ function applyConsentToScripts(consent: Record<string, boolean> | null) {
       `script[type="text/plain"][data-consent="${cat}"]`
     );
     pending.forEach((oldScript) => {
+      const scriptElement = oldScript as HTMLScriptElement;
       const s = document.createElement("script");
       [...oldScript.attributes].forEach((attr) => {
         if (attr.name === "type") return;
         s.setAttribute(attr.name, attr.value);
       });
       s.type = "text/javascript";
-      s.text = oldScript.text;
-      if (oldScript.src) {
-        s.src = oldScript.src;
-        s.async = oldScript.async;
-        s.defer = oldScript.defer;
+      s.text = scriptElement.text;
+      if (scriptElement.src) {
+        s.src = scriptElement.src;
+        s.async = scriptElement.async;
+        s.defer = scriptElement.defer;
       }
       oldScript.parentNode?.insertBefore(s, oldScript);
       oldScript.remove();
@@ -71,24 +77,32 @@ export const CookieBanner = ({
   appLang?: string;
   privacyPolicyUrl?: string;
 }) => {
+  const [isMounted, setIsMounted] = React.useState(false);
   const lang = getDefaultLang(appLang);
   const text = cookieTexts[lang] || cookieTexts.en;
 
-  const stored = getStoredConsent();
-  const [open, setOpen] = React.useState(!stored);
+  const [open, setOpen] = React.useState(false);
   const [prefOpen, setPrefOpen] = React.useState(false);
-  const [prefs, setPrefs] = React.useState(
-    stored ?? {
-      necessary: true,
-      performance: false,
-      functional: false,
-      marketing: false,
-    }
-  );
+  const [prefs, setPrefs] = React.useState({
+    necessary: true,
+    performance: false,
+    functional: false,
+    marketing: false,
+  });
 
+  // Only run after component mounts on client
   React.useEffect(() => {
-    if (stored) applyConsentToScripts(stored);
-  }, []); // eslint-disable-line
+    setIsMounted(true);
+    const storedConsent = getStoredConsent();
+    setOpen(!storedConsent);
+    if (storedConsent) {
+      setPrefs(storedConsent);
+      applyConsentToScripts(storedConsent);
+    }
+  }, []);
+
+  // Don't render anything until component is mounted on client
+  if (!isMounted) return null;
 
   function acceptAll() {
     const value = {
