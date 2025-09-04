@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from '@/components/ui/Footer';
-import { Header } from '@/components/ui/Header';
+import { Header } from '@/components/ui/HeaderEN';
 import React from 'react';
 import { translations } from '@/utils/translations';
 import { usePathname } from 'next/navigation';

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Benefits from '@/components/ui/Benefits';
 import Cta from '@/components/ui/Cta';
 import Footer from '@/components/ui/Footer';
-import { Header } from '@/components/ui/Header';
+import { Header } from '@/components/ui/HeaderEN';
 import { HeroSection } from '@/components/ui/HeroSection';
 import { CookieBanner } from '@/components/ui/CookieBanner';
 import Metrics from '@/components/ui/Metrics';
