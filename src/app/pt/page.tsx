@@ -33,6 +33,6 @@ export default function Home() {
       <Cta t={t} />
       <Footer t={t} />
       <CookieBanner appLang="en" privacyPolicyUrl="/cookie-policy" />
-    </div>
+    </div>    
   );
 }

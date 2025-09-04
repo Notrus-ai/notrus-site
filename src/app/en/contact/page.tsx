@@ -5,6 +5,7 @@ import { Header } from '@/components/ui/Header';
 import React from 'react';
 import { translations } from '@/utils/translations';
 import { usePathname } from 'next/navigation';
+import ContactForm from '@/components/ui/ContactForm';
 
 export default function Contact() {
   const pathname = usePathname();
@@ -456,260 +457,14 @@ const otherCountries = [
 
       {/* Right Side - Form */}
       <div className="flex justify-center">
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 w-full max-w-lg shadow-2xl mx-2 sm:mx-0">
-          <h2 className="text-gray-800 text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-center">
-            Get in touch
-          </h2>
-          
-          <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST" className="space-y-4 sm:space-y-6">              
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        onBlur={handleBlur}
-                        required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                          errors.email ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                        }`}
-                      />
-                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-gray-600 text-sm font-medium mb-2">
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          onBlur={handleBlur}
-                          required
-                          className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                            errors.firstName ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                          }`}
-                        />
-                        {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
-                      </div>
-                      <div>
-                        <label className="block text-gray-600 text-sm font-medium mb-2">
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          onBlur={handleBlur}
-                          required
-                          className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                            errors.lastName ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                          }`}
-                        />
-                        {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        onBlur={handleBlur}
-                        required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
-                          errors.company ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                        }`}
-                      />
-                      {errors.company && <p className="text-red-500 text-sm mt-1">{errors.company}</p>}
-                    </div>
-
-                    {/* Phone with Country Selector */}
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">
-                        Phone / WhatsApp
-                      </label>
-                      <div className="flex">
-                        {/* Country Selector */}
-                        <div className="relative">
-                          <button
-                            type="button"
-                            onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                            className="bg-gray-100 border border-gray-300 border-r-0 rounded-l-lg px-3 py-3 flex items-center gap-2 hover:bg-gray-50 transition-colors focus:outline-none focus:border-indigo-500 text-gray-500"
-                          >
-                            <span className='text-sm flex items-center gap-1'>
-                              <span className="uppercase mr-1">{selectedCountry.code}</span>
-                              {selectedCountry.dialCode}
-                            </span>
-                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                          </button>
-
-                          {/* Country Dropdown */}
-                          {showCountryDropdown && (
-                            <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-64 overflow-hidden text-gray-500">
-                              {/* Search */}
-                              <div className="p-3 border-b border-gray-200">
-                                <input
-                                  type="text"
-                                  placeholder="Search country..."
-                                  value={countrySearch}
-                                  onChange={(e) => setCountrySearch(e.target.value)}
-                                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-indigo-500"
-                                />
-                              </div>
-                              
-                              {/* Countries List */}
-                              <div className="max-h-48 overflow-y-auto">
-                                {/* Priority Countries */}
-                                {!countrySearch && (
-                                  <>
-                                    <div className="px-3 py-2 text-xs font-semibold text-gray-500 bg-gray-50">
-                                      MAIN COUNTRIES
-                                    </div>
-                                    {priorityCountries.map((country) => (
-                                      <button
-                                        key={country.code}
-                                        type="button"
-                                        onClick={() => handleCountrySelect(country)}
-                                        className="w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center gap-3 text-sm"
-                                      >
-                                        <span className="text-lg">{country.flag}</span>
-                                        <span className="flex-1">{country.name}</span>
-                                        <span className="text-gray-500">{country.dialCode}</span>
-                                      </button>
-                                    ))}
-                                    <div className="px-3 py-2 text-xs font-semibold text-gray-500 bg-gray-50">
-                                      OTHER COUNTRIES
-                                    </div>
-                                  </>
-                                )}
-                                
-                                {/* Filtered Countries */}
-                                {filteredCountries.map((country) => {
-                                  if (!countrySearch && priorityCountries.includes(country)) return null;
-                                  return (
-                                    <button
-                                      key={country.code}
-                                      type="button"
-                                      onClick={() => handleCountrySelect(country)}
-                                      className="w-full px-3 py-2 text-left hover:bg-gray-50 flex items-center gap-3 text-sm"
-                                    >
-                                      <span className="text-lg">{country.flag}</span>
-                                      <span className="flex-1">{country.name}</span>
-                                      <span className="text-gray-500">{country.dialCode}</span>
-                                    </button>
-                                  );
-                                })}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Phone Input */}
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          onBlur={handleBlur}
-                          placeholder={selectedCountry.format}
-                          className={`flex-1 bg-gray-100 border rounded-r-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 text-sm ${
-                            errors.phone ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                          }`}
-                        />
-                      </div>
-                      {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                    </div>
-
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">
-                        Monthly support tickets 
-                      </label>
-                      <select
-                        name="tickets"
-                        value={formData.tickets}
-                        onChange={handleInputChange}
-                        onBlur={handleBlur}                        
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-500 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 cursor-pointer ${
-                          errors.tickets ? 'border-red-400 bg-red-50' : 'border-gray-300'
-                        }`}
-                      >
-                        <option value="">Select an option</option>
-                        <option value="0-100">0-100</option>
-                        <option value="100-500">100-500</option>
-                        <option value="500-1000">500-1000</option>
-                        <option value="1000-5000">1000-5000</option>
-                        <option value="5000+">5000+</option>
-                      </select>
-                      {errors.tickets && <p className="text-red-500 text-sm mt-1">{errors.tickets}</p>}
-                    </div>
-
-                    <div>
-                      <label className="block text-gray-600 text-sm font-medium mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows={4}
-                        placeholder="Tell us about your needs..."
-                        className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 resize-vertical min-h-24"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className={`w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-xl text-lg font-semibold transition-all duration-200 mt-4 ${
-                        isLoading 
-                          ? 'opacity-70 cursor-not-allowed' 
-                          : 'hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40'
-                      }`}
-                    >
-                      {isLoading ? (
-                        <div className="flex items-center justify-center">
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                          Sending...
-                        </div>
-                      ) : (
-                        'Send message'
-                      )}
-                    </button>
-                  </form>
-
-                  <div className="text-center mt-6 pt-6 border-t border-gray-200">
-                    <a
-                      href="https://wa.me/+447418638908"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 rounded bg-[rgb(37,211,102)] text-white text-sm 
-                                hover:bg-green-600 transition-colors duration-300"
-                    >
-                      Or chat directly on WhatsApp
-                    </a>
-                  </div>
+        <ContactForm />                 
                 </div>
               </div>
             </div>
-          </div>
         </main>
 
         {/* Success Modal */}
-        {showSuccess && (
+        {/* {showSuccess && (
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
             <div className="bg-white rounded-2xl p-8 text-center max-w-md mx-4 transform animate-pulse">
               <div className="text-6xl mb-4">✅</div>
@@ -721,7 +476,7 @@ const otherCountries = [
               </p>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Overlay to close dropdown */}
         {showCountryDropdown && (

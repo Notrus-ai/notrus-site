@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Head from "next/head";
+import { Script } from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Google Analytics */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMYBGJ967S"></script>
+      <script src="https://www.googletagmanager.com/gtag/js?id=G-FMYBGJ967S"></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -78,7 +79,7 @@ export default function RootLayout({
       />
       {/* Google Ads */}
       <script
-        async
+        
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5498699782273630"
         crossOrigin="anonymous"
       />
