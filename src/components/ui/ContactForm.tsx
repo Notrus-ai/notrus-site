@@ -1,4 +1,3 @@
-// Código modificado para selecionar país baseado na linguagem: Brasil (pt) = índice 0, Reino Unido (en) = índice 1
 "use client";
 
 import React, { useState } from "react";
@@ -27,7 +26,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     const lng = getLangFromPath(pathname);
     if (lng !== language) {
       setLanguage(lng);
-      // Atualiza o país selecionado quando a linguagem muda
       setSelectedCountry(getDefaultCountryByLanguage(lng));
     }
   }, [pathname, language]);
@@ -1367,8 +1365,8 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     lng: string
   ) => {
     try {
-      if (typeof Intl !== "undefined" && (Intl as any).DisplayNames) {
-        const dn = new (Intl as any).DisplayNames([lng], { type: "region" });
+      if (typeof Intl !== "undefined" && Intl.DisplayNames) {
+        const dn = new Intl.DisplayNames([lng], { type: "region" });
         const localized = dn.of(country.code);
         if (localized) return localized;
       }
