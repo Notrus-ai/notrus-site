@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import { contactFormTranslations } from '@/utils/translations';
+import { contactFormTranslations } from "@/utils/translations";
 
 type ContactFormProps = {
-  language?: 'pt' | 'en';
-}
+  language?: "pt" | "en";
+};
 
 export default function ContactForm({ language: lang }: ContactFormProps) {
   const pathname = usePathname();
@@ -16,14 +16,19 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     return seg === "pt" ? "pt" : "en";
   };
 
-  const [language, setLanguage] = useState(lang || getLangFromPath(pathname) || "en");
+  const [language, setLanguage] = useState(
+    lang || getLangFromPath(pathname) || "en"
+  );
   const t = (key: string) => {
     return contactFormTranslations[language]?.[key] || key;
   };
   React.useEffect(() => {
     const lng = getLangFromPath(pathname);
-    if (lng !== language) setLanguage(lng);
-  }, [pathname]);
+    if (lng !== language) {
+      setLanguage(lng);
+      setSelectedCountry(getDefaultCountryByLanguage(lng));
+    }
+  }, [pathname, language]);
 
   const priorityCountries = [
     {
@@ -1355,8 +1360,30 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     message: "",
   });
 
+  const getCountryDisplayName = (
+    country: { code: string; name: string },
+    lng: string
+  ) => {
+    try {
+      if (typeof Intl !== "undefined" && Intl.DisplayNames) {
+        const dn = new Intl.DisplayNames([lng], { type: "region" });
+        const localized = dn.of(country.code);
+        if (localized) return localized;
+      }
+    } catch (e) {}
+    return country.name;
+  };
+
+  const getDefaultCountryByLanguage = (lang: string) => {
+    if (lang === "pt") {
+      return priorityCountries[0];
+    } else {
+      return priorityCountries[1];
+    }
+  };
+
   const [selectedCountry, setSelectedCountry] = React.useState(
-    priorityCountries[0]
+    getDefaultCountryByLanguage(language)
   );
   const [showCountryDropdown, setShowCountryDropdown] = React.useState(false);
   const [countrySearch, setCountrySearch] = React.useState("");
@@ -1366,12 +1393,17 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
 
   const filteredCountries = React.useMemo(() => {
     if (!countrySearch) return allCountries;
-    return allCountries.filter(
-      (country) =>
-        country.name.toLowerCase().includes(countrySearch.toLowerCase()) ||
-        country.dialCode.includes(countrySearch)
-    );
-  }, [countrySearch]);
+    const q = countrySearch.toLowerCase();
+    return allCountries.filter((country) => {
+      const displayName = getCountryDisplayName(
+        country,
+        language
+      ).toLowerCase();
+      return (
+        displayName.includes(q) || country.dialCode.includes(countrySearch)
+      );
+    });
+  }, [countrySearch, language]);
 
   const formatPhoneByCountry = (value, country) => {
     const numbers = value.replace(/\D/g, "");
@@ -1503,7 +1535,10 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       );
       formDataToSend.append("tickets", formData.tickets);
       formDataToSend.append("message", formData.message);
-      formDataToSend.append("country", selectedCountry.name);
+      formDataToSend.append(
+        "country",
+        getCountryDisplayName(selectedCountry, language)
+      );
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -1539,7 +1574,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       <div>
         {/* Main Content */}
         <main className="py-8 sm:py-12 md:py-16">
-          <div className="container mx-auto px-4">
+          <div className="container max-w-6xl mx-auto px-4">
             {/* Right Side - Form */}
             <div className="flex justify-center">
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 w-full shadow-2xl mx-2 sm:mx-0">
@@ -1564,10 +1599,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.email
-                        ? "border-red-400 bg-red-50"
-                        : "border-gray-300"
-                        }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
+                        errors.email
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                      }`}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -1588,10 +1624,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.firstName
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                          }`}
+                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
+                          errors.firstName
+                            ? "border-red-400 bg-red-50"
+                            : "border-gray-300"
+                        }`}
                       />
                       {errors.firstName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -1610,10 +1647,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         required
-                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.lastName
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                          }`}
+                        className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
+                          errors.lastName
+                            ? "border-red-400 bg-red-50"
+                            : "border-gray-300"
+                        }`}
                       />
                       {errors.lastName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -1634,10 +1672,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${errors.company
-                        ? "border-red-400 bg-red-50"
-                        : "border-gray-300"
-                        }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
+                        errors.company
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                      }`}
                     />
                     {errors.company && (
                       <p className="text-red-500 text-sm mt-1">
@@ -1719,7 +1758,10 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                                         {country.flag}
                                       </span>
                                       <span className="flex-1">
-                                        {country.name}
+                                        {getCountryDisplayName(
+                                          country,
+                                          language
+                                        )}
                                       </span>
                                       <span className="text-gray-500">
                                         {country.dialCode}
@@ -1750,7 +1792,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                                       {country.flag}
                                     </span>
                                     <span className="flex-1">
-                                      {country.name}
+                                      {getCountryDisplayName(country, language)}
                                     </span>
                                     <span className="text-gray-500">
                                       {country.dialCode}
@@ -1771,10 +1813,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         placeholder={selectedCountry.format}
-                        className={`flex-1 bg-gray-100 border rounded-r-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 text-sm ${errors.phone
-                          ? "border-red-400 bg-red-50"
-                          : "border-gray-300"
-                          }`}
+                        className={`flex-1 bg-gray-100 border rounded-r-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 text-sm ${
+                          errors.phone
+                            ? "border-red-400 bg-red-50"
+                            : "border-gray-300"
+                        }`}
                       />
                     </div>
                     {errors.phone && (
@@ -1793,10 +1836,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       value={formData.tickets}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
-                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-500 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 cursor-pointer ${errors.tickets
-                        ? "border-red-400 bg-red-50"
-                        : "border-gray-300"
-                        }`}
+                      className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-500 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 cursor-pointer ${
+                        errors.tickets
+                          ? "border-red-400 bg-red-50"
+                          : "border-gray-300"
+                      }`}
                     >
                       <option value="">{t("selectOptions")}</option>
                       <option value="0-100">0-100</option>
@@ -1829,10 +1873,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-xl text-lg font-semibold transition-all duration-200 mt-4 ${isLoading
-                      ? "opacity-70 cursor-not-allowed"
-                      : "hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40"
-                      }`}
+                    className={`w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-xl text-lg font-semibold transition-all duration-200 mt-4 ${
+                      isLoading
+                        ? "opacity-70 cursor-not-allowed"
+                        : "hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40"
+                    }`}
                   >
                     {isLoading ? (
                       <div className="flex items-center justify-center">
@@ -1869,9 +1914,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                 {t("messageSent")}
               </h3>
-              <p className="text-gray-600">
-                {t("contactResponse")}
-              </p>
+              <p className="text-gray-600">{t("contactResponse")}</p>
             </div>
           </div>
         )}
