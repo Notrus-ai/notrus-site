@@ -15,8 +15,7 @@ const ISPAutomacaoPage = () => {
     return seg === "pt" ? "pt" : "en";
   };
 
-  const [language, setLanguage] = useState(() =>
-    getLangFromPath(pathname));
+  const [language, setLanguage] = useState(() => getLangFromPath(pathname));
 
   useEffect(() => {
     const lng = getLangFromPath(pathname);
@@ -185,11 +184,16 @@ const ISPAutomacaoPage = () => {
             </a>
 
             <nav className="hidden md:flex items-center gap-8">
-              <a href="mailto:contact@notrus.ai">
-                <Button className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity">
-                  Contact Us
-                </Button>
-              </a>
+              <Button
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+                className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity"
+              >
+                Contact us
+              </Button>
             </nav>
 
             <button
@@ -207,11 +211,16 @@ const ISPAutomacaoPage = () => {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-gray-200">
               <nav className="flex flex-col gap-4">
-                <a href="mailto:contact@notrus.ai">
-                  <Button className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity mt-2">
-                    Contact Us
-                  </Button>
-                </a>
+                <Button
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity"
+                >
+                  Contact us
+                </Button>
               </nav>
             </div>
           )}
@@ -237,7 +246,7 @@ const ISPAutomacaoPage = () => {
           <Button
             onClick={() =>
               document
-                .getElementById("demo")
+                .getElementById("contact")
                 .scrollIntoView({ behavior: "smooth" })
             }
             className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4 font-semibold"
