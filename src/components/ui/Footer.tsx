@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer({ t }: { t: (k: string) => string }) {
   const pathname = usePathname();
@@ -21,7 +21,7 @@ export default function Footer({ t }: { t: (k: string) => string }) {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
             <Image
-              src="/notrus-logo-transparent.png"
+              src="/notrus-logo-transparent.webp"
               alt="Notrus"
               priority
               width={200}
