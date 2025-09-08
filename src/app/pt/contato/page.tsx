@@ -17,7 +17,8 @@ export default function Contact() {
   };
 
   const [language, setLanguage] = React.useState(() =>
-    getLangFromPath(pathname));  
+    getLangFromPath(pathname)
+  );
   const t = (key: string) => {
     return translations[language]?.[key] || key;
   };
@@ -264,7 +265,7 @@ export default function Contact() {
         {/* Main Content */}
         <main className="py-8 sm:py-12 md:py-16">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-24 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start pl-4 pr-4">
               {/* Left Side - Information */}
               <div className="text-white">
                 <div className="inline-block bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
@@ -335,7 +336,7 @@ export default function Contact() {
 
               {/* Right Side - Form */}
               <div className="flex justify-center">
-                <ContactForm language={language} />                
+                <ContactForm language={language} />
               </div>
             </div>
           </div>
