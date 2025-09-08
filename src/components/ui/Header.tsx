@@ -57,7 +57,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             className="flex items-center space-x-3"
           >
             <Image
-              src="/notrus-logo-transparent.png"
+              src="/notrus-logo-transparent.webp"
               alt="Notrus"
               priority
               width={200}

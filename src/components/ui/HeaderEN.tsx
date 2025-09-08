@@ -6,11 +6,11 @@ import { Button } from "./button";
 import { Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { routeMap } from "@/utils/routeMap";
-import Link from 'next/link';
+import Link from "next/link";
 
 interface HeaderProps {
   t: (key: string) => string;
-  setLanguage: (value: string) => void
+  setLanguage: (value: string) => void;
   language: string;
 }
 
@@ -53,7 +53,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <Image
-            src="/notrus-logo-transparent.png"
+            src="/notrus-logo-transparent.webp"
             alt="Notrus"
             priority
             width={200}
@@ -67,12 +67,31 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
         {/* Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href={productLink} className="text-gray-700 hover:text-blue-600">{t('navProduto')}</Link>
-          <Link href={sioLink} className="text-gray-700 hover:text-blue-600">{t('navSio')}</Link>
-          <Link href={benefitsLink} className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</Link>
-          <Link href={contactLink} className="text-gray-700 hover:text-blue-600">{t('navContact')}</Link>
-          <Link href={demoLink} >
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">{t('navDemo')}</Button>
+          <Link
+            href={productLink}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navProduto")}
+          </Link>
+          <Link href={sioLink} className="text-gray-700 hover:text-blue-600">
+            {t("navSio")}
+          </Link>
+          <Link
+            href={benefitsLink}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navBenefits")}
+          </Link>
+          <Link
+            href={contactLink}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navContact")}
+          </Link>
+          <Link href={demoLink}>
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              {t("navDemo")}
+            </Button>
           </Link>
           <select
             value={language}
@@ -85,19 +104,48 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         </nav>
 
         {/* Mobile */}
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button
+          className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {isMenuOpen && (
         <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 px-4 flex flex-col space-y-4">
-          <Link href={productLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navProduto')}</Link>
-          <Link href={sioLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navSio')}</Link>
-          <Link href={benefitsLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navBenefits')}</Link>
-          <Link href={contactLink} onClick={closeMenu} className="text-gray-700 hover:text-blue-600">{t('navContact')}</Link>
+          <Link
+            href={productLink}
+            onClick={closeMenu}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navProduto")}
+          </Link>
+          <Link
+            href={sioLink}
+            onClick={closeMenu}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navSio")}
+          </Link>
+          <Link
+            href={benefitsLink}
+            onClick={closeMenu}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navBenefits")}
+          </Link>
+          <Link
+            href={contactLink}
+            onClick={closeMenu}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navContact")}
+          </Link>
           <Link href={demoLink}>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">{t('navDemo')}</Button>
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+              {t("navDemo")}
+            </Button>
           </Link>
           <select
             value={language}
