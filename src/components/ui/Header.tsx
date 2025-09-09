@@ -94,7 +94,10 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navContact")}
           </Link>
           <Link href={demoLink}>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <Button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+              aria-label={t("navDemo")}
+            >
               {t("navDemo")}
             </Button>
           </Link>
@@ -111,6 +114,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         {/* Mobile */}
         <button
           className="md:hidden"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -148,7 +152,10 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navContact")}
           </Link>
           <Link href={demoLink}>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+            <Button
+              className="bg-gradient-to-r from-blue-600 to-purple-600 w-full"
+              aria-label={t("navDemo")}
+            >
               {t("navDemo")}
             </Button>
           </Link>

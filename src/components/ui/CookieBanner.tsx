@@ -11,7 +11,7 @@ const CONSENT_TTL_DAYS = 180;
 function getDefaultLang(appLang?: string) {
   if (appLang === "en" || appLang === "pt") return appLang;
   // Check if we're on the client side before accessing navigator
-  if (typeof window !== 'undefined' && navigator.language) {
+  if (typeof window !== "undefined" && navigator.language) {
     return navigator.language.includes("en") ? "en" : "pt";
   }
   return "pt"; // Default fallback
@@ -172,12 +172,14 @@ export const CookieBanner = ({
               <button
                 onClick={acceptAll}
                 className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700"
+                aria-label={text.buttons.acceptAll}
               >
                 {text.buttons.acceptAll}
               </button>
               <button
                 onClick={rejectNonEssential}
                 className="px-4 py-2 rounded-md bg-gray-100 text-gray-800 hover:bg-gray-200"
+                aria-label={text.buttons.rejectNonEssential}
               >
                 {text.buttons.rejectNonEssential}
               </button>
@@ -186,6 +188,7 @@ export const CookieBanner = ({
               <button
                 onClick={() => setPrefOpen(true)}
                 className="px-4 py-2 rounded-md border border-gray-300 text-gray-800 hover:bg-gray-50"
+                aria-label={text.buttons.preferences}
               >
                 {text.buttons.preferences}
               </button>
@@ -222,9 +225,7 @@ export const CookieBanner = ({
                   title={text.categories.performance.label}
                   desc={text.categories.performance.desc}
                   checked={prefs.performance}
-                  onChange={(v) =>
-                    setPrefs((p) => ({ ...p, performance: v }))
-                  }
+                  onChange={(v) => setPrefs((p) => ({ ...p, performance: v }))}
                 />
                 <Category
                   title={text.categories.functional.label}
@@ -244,6 +245,7 @@ export const CookieBanner = ({
                 <button
                   onClick={() => setPrefOpen(false)}
                   className="px-4 py-2 rounded-md bg-gray-100 text-gray-800 hover:bg-gray-200"
+                  aria-label={text.buttons.close}
                 >
                   {text.buttons.close}
                 </button>
@@ -291,12 +293,14 @@ function Category({
             disabled={disabled}
           />
           <div
-            className={`w-11 h-6 rounded-full transition ${disabled ? "bg-gray-200" : checked ? "bg-blue-600" : "bg-gray-300"
-              } relative`}
+            className={`w-11 h-6 rounded-full transition ${
+              disabled ? "bg-gray-200" : checked ? "bg-blue-600" : "bg-gray-300"
+            } relative`}
           >
             <span
-              className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition ${checked ? "translate-x-5" : ""
-                }`}
+              className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition ${
+                checked ? "translate-x-5" : ""
+              }`}
             />
           </div>
         </label>
