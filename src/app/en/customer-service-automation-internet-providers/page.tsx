@@ -191,6 +191,7 @@ const ISPAutomacaoPage = () => {
                     .scrollIntoView({ behavior: "smooth" })
                 }
                 className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity"
+                aria-label="Contact us"
               >
                 Contact us
               </Button>
@@ -198,6 +199,7 @@ const ISPAutomacaoPage = () => {
 
             <button
               className="md:hidden p-2"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -218,6 +220,7 @@ const ISPAutomacaoPage = () => {
                       .scrollIntoView({ behavior: "smooth" })
                   }
                   className="notrus-gradient-primary text-white hover:opacity-90 transition-opacity"
+                  aria-label="Contact us"
                 >
                   Contact us
                 </Button>
@@ -250,6 +253,7 @@ const ISPAutomacaoPage = () => {
                 .scrollIntoView({ behavior: "smooth" })
             }
             className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-4 font-semibold"
+            aria-label="Schedule a Demo"
           >
             Schedule a Demo
           </Button>

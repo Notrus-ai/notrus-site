@@ -235,6 +235,7 @@ function SidebarTrigger({
       variant="ghost"
       size="icon"
       className={cn("size-7", className)}
+      aria-label="Toggle Sidebar"
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
