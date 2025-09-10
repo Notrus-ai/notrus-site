@@ -2,6 +2,12 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export function useGtagNavigate() {
   const router = useRouter();
 
@@ -10,7 +16,7 @@ export function useGtagNavigate() {
       url: string,
       options?: {
         eventName?: string;
-        eventParams?: Record<string, any>;
+        eventParams?: Record<string, unknown>;
         timeoutMs?: number;
       }
     ) => {
@@ -36,10 +42,7 @@ export function useGtagNavigate() {
         }
       };
 
-      if (
-        typeof window === "undefined" ||
-        typeof (window as any).gtag !== "function"
-      ) {
+      if (typeof window === "undefined" || typeof window.gtag !== "function") {
         performNavigation();
         return;
       }
@@ -52,7 +55,7 @@ export function useGtagNavigate() {
         }
       }, timeoutMs);
 
-      (window as any).gtag("event", eventName, {
+      window.gtag("event", eventName, {
         ...eventParams,
         event_callback: () => {
           if (!didNavigate) {
@@ -74,13 +77,12 @@ export function GtagLink(
   props: React.PropsWithChildren<
     Omit<React.ComponentProps<typeof Link>, "onClick"> & {
       eventName?: string;
-      eventParams?: Record<string, any>;
+      eventParams?: Record<string, unknown>;
       timeoutMs?: number;
     }
   >
 ) {
-  const { href, children, eventName, eventParams, timeoutMs, ...rest } =
-    props as any;
+  const { href, children, eventName, eventParams, timeoutMs, ...rest } = props;
 
   const gnav = useGtagNavigate();
 
@@ -110,7 +112,7 @@ export function GtagButton({
   {
     to: string;
     eventName?: string;
-    eventParams?: Record<string, any>;
+    eventParams?: Record<string, unknown>;
     timeoutMs?: number;
   } & React.ButtonHTMLAttributes<HTMLButtonElement>
 >) {
