@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { contactFormTranslations } from "@/utils/translations";
+import { useGtagNavigate } from "@/components/ui/gtagNavigation";
 
 type ContactFormProps = {
   language?: "pt" | "en";
 };
 
 export default function ContactForm({ language: lang }: ContactFormProps) {
+  const gnav = useGtagNavigate();
   const pathname = usePathname();
   const getLangFromPath = (path?: string) => {
     if (!path) return "en";
@@ -1555,6 +1557,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           phone: "",
           tickets: "",
           message: "",
+        });
+
+        gnav("/obrigado", {
+          eventName: "conversion_event_submit_lead_form",
+          eventParams: { lead_source: "contact_form" },
         });
 
         setTimeout(() => setShowSuccess(false), 3000);
