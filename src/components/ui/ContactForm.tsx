@@ -1559,11 +1559,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           message: "",
         });
 
-        gnav("/obrigado", {
-          eventName: "conversion_event_submit_lead_form",
-          eventParams: { lead_source: "contact_form" },
-        });
-
         setTimeout(() => setShowSuccess(false), 3000);
       } else {
         throw new Error("Failed to send message");
