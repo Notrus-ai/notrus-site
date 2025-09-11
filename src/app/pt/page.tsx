@@ -1,37 +1,36 @@
-
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Benefits from '@/components/ui/Benefits';
-import Cta from '@/components/ui/Cta';
-import Footer from '@/components/ui/Footer';
-import { Header } from '@/components/ui/Header';
-import { HeroSection } from '@/components/ui/HeroSection';
-import { CookieBanner } from '@/components/ui/CookieBanner';
-import Metrics from '@/components/ui/Metrics';
-import SIO from '@/components/ui/SIO';
-import { translations } from '@/utils/translations';
-import { usePathname } from 'next/navigation';
+import Benefits from "@/components/ui/Benefits";
+import Cta from "@/components/ui/Cta";
+import Footer from "@/components/ui/Footer";
+import { Header } from "@/components/ui/Header";
+import { HeroSection } from "@/components/ui/HeroSection";
+import { CookieBanner } from "@/components/ui/CookieBanner";
+import Metrics from "@/components/ui/Metrics";
+import SIO from "@/components/ui/SIO";
+import { translations } from "@/utils/translations";
+import { usePathname } from "next/navigation";
 
 export default function Home() {
   const pathname = usePathname();
   // Initialize with default value that matches server rendering
-  const [language, setLanguage] = useState<'pt' | 'en'>('pt');
+  const [language, setLanguage] = useState<"pt" | "en">("pt");
 
   // Update language after component mounts (client-side only)
   useEffect(() => {
-    const detectedLanguage = pathname.includes('/en') ? 'en' : 'pt';
+    const detectedLanguage = pathname.includes("/en") ? "en" : "pt";
     setLanguage(detectedLanguage);
   }, [pathname]);
 
   const t = (key: string) => {
     const translation = translations[language as keyof typeof translations];
     return (translation as Record<string, string>)[key] ?? key;
-  }
+  };
 
   const handleLanguageChange = (newLanguage: string) => {
-    setLanguage(newLanguage as 'pt' | 'en');
+    setLanguage(newLanguage as "pt" | "en");
   };
 
   return (
@@ -43,7 +42,7 @@ export default function Home() {
       <Metrics t={t} />
       <Cta t={t} />
       <Footer t={t} />
-      <CookieBanner appLang="pt" privacyPolicyUrl="/cookie-policy" />
-    </div>    
+      <CookieBanner appLang="pt" privacyPolicyUrl="/pt/politica-privacidade" />
+    </div>
   );
 }

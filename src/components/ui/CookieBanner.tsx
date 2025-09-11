@@ -1,7 +1,7 @@
+// components/CookieBanner.tsx
 "use client";
 
 import React from "react";
-// @ts-expect-error - js-cookie types may not be available
 import Cookies from "js-cookie";
 import { cookieTexts } from "@/utils/translations";
 
@@ -10,11 +10,10 @@ const CONSENT_TTL_DAYS = 180;
 
 function getDefaultLang(appLang?: string) {
   if (appLang === "en" || appLang === "pt") return appLang;
-  // Check if we're on the client side before accessing navigator
   if (typeof window !== "undefined" && navigator.language) {
     return navigator.language.includes("en") ? "en" : "pt";
   }
-  return "pt"; // Default fallback
+  return "pt";
 }
 
 function getStoredConsent() {
@@ -72,7 +71,7 @@ function applyConsentToScripts(consent: Record<string, boolean> | null) {
 
 export const CookieBanner = ({
   appLang,
-  privacyPolicyUrl = "/cookie-policy",
+  privacyPolicyUrl,
 }: {
   appLang?: string;
   privacyPolicyUrl?: string;
@@ -90,7 +89,10 @@ export const CookieBanner = ({
     marketing: false,
   });
 
-  // Only run after component mounts on client
+  const finalPrivacyUrl =
+    privacyPolicyUrl ||
+    (lang === "en" ? "/en/privacy-policy" : "/pt/politica-privacidade");
+
   React.useEffect(() => {
     setIsMounted(true);
     const storedConsent = getStoredConsent();
@@ -101,7 +103,6 @@ export const CookieBanner = ({
     }
   }, []);
 
-  // Don't render anything until component is mounted on client
   if (!isMounted) return null;
 
   function acceptAll() {
@@ -158,8 +159,7 @@ export const CookieBanner = ({
             {text.desc}{" "}
             <a
               className="text-blue-600 hover:underline"
-              href={privacyPolicyUrl}
-              target="_blank"
+              href={finalPrivacyUrl}
               rel="noreferrer"
             >
               {text.linkLabel}
