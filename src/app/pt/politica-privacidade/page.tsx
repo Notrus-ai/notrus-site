@@ -1,4 +1,3 @@
-// app/pt/politica-privacidade/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
