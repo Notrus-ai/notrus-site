@@ -52,17 +52,22 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Image
-            src="/notrus-logo-transparent.webp"
-            alt="Notrus"
-            priority
-            width={200}
-            height={200}
-            className="h-10 w-10 rounded-lg"
-          />
-          <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Notrus
-          </span>
+          <Link
+            href={language === "pt" ? "/" : "/en"}
+            className="flex items-center space-x-3"
+          >
+            <Image
+              src="/notrus-logo-transparent.webp"
+              alt="Notrus"
+              priority
+              width={200}
+              height={200}
+              className="h-10 w-10 rounded-lg"
+            />
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Notrus
+            </span>
+          </Link>
         </div>
 
         {/* Desktop */}
