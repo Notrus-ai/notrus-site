@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://notrus.ai
+
+# Sitemaps
+Sitemap: https://notrus.ai/sitemap.xml
