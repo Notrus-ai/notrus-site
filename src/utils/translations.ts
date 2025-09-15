@@ -11,9 +11,9 @@ export const translations = {
     navContact: 'Contact',
     navDemo: 'Request Demo',
     heroBadge: 'Revolutionize Your Customer Service',
-    heroTitle1: 'Transform Your Customer Service with Intelligent AI Agents',
+    heroTitle1: 'Transform your customer experience with AI agents',
     heroSubtitle:
-      'Automate processes, reduce operational costs and improve the customer experience with our conversational AI platform available 24/7',
+      'Automate processes, reduce operating costs and improve customer experience with our platform of enterprise-grade AI agents',
     heroButton: 'Request Free Demo',
     chatUserMessage: 'Hello! I need to process a refund for order #12345',
     chatBotMessage:
@@ -57,7 +57,7 @@ export const translations = {
       'Integration with Single Sign-on (SSO), multi-factor authentication, role-based access controls, and audit logs for complete security oversight.',
     securityFeature3Title: 'Data Protection Compliance',
     securityFeature3Desc: 
-      'Regular security audits, penetration testing, and compliance with international data protection standards (SOC2, GDPR, LGPD).',
+      'Regular security audits, penetration testing, and compliance with international data protection standards (GDPR, LGPD).',
     securityFeature4Title: 'Containerization of Client Data',
     securityFeature4Desc: 
       'Default exclusion of client data from model training and separation of client data in containers.',
@@ -87,7 +87,7 @@ export const translations = {
     panel2Label: 'Automatic Refunds',
     panel3Label: 'Managed Returns',
     panel4Label: 'Savings Generated',
-    metricsTitle: 'Results that Impress',
+    metricsTitle: 'Impressive results',
     metric1Title: 'Cost Reduction',
     metric1Desc: 'Average savings in operational costs',
     metric2Title: 'Availability',
@@ -161,7 +161,7 @@ export const translations = {
       'Integração com Single Sign-on (SSO), autenticação multifator, controles de acesso baseados em funções e logs de auditoria para supervisão completa da segurança.',
     securityFeature3Title: 'Conformidade com Proteção de Dados',
     securityFeature3Desc: 
-      'Auditorias regulares de segurança, testes de penetração e conformidade com padrões internacionais (SOC2, GDPR, LGPD).',
+      'Auditorias regulares de segurança, testes de penetração e conformidade com padrões internacionais (GDPR, LGPD).',
     securityFeature4Title: 'Containerização dos Dados do Cliente',
     securityFeature4Desc: 
       'Exclusão padrão dos dados do cliente do treinamento de modelos e separação dos dados em containers.',
