@@ -12,6 +12,7 @@ import Metrics from "@/components/ui/Metrics";
 import SIO from "@/components/ui/SIO";
 import { translations } from "@/utils/translations";
 import { usePathname } from "next/navigation";
+import SecurityFeatures from "@/components/ui/SecurityFeatures";
 
 export default function Home() {
   const pathname = usePathname();
@@ -38,6 +39,7 @@ export default function Home() {
       <Header t={t} setLanguage={handleLanguageChange} language={language} />
       <HeroSection t={t} />
       <Benefits t={t} />
+      <SecurityFeatures t={t} />
       <SIO t={t} />
       <Metrics t={t} />
       <Cta t={t} />

@@ -23,6 +23,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
   const productLink = "/#produto";
   const sioLink = "/#sio";
   const benefitsLink = "/#beneficios";
+  const securityLink = "/#seguranca";
   const contactLink = "/pt/contato";
   const demoLink = contactLink;
 
@@ -44,6 +45,21 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     if (newPath === "/") newPath = currentPath;
 
     router.push(`/${lng}${newPath}`);
+  };
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const id = href.replace("/#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      setIsMenuOpen(false);
+    }
   };
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -74,18 +90,31 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             href={productLink}
+            onClick={(e) => handleSmoothScroll(e, productLink)}
             className="text-gray-700 hover:text-blue-600"
           >
             {t("navProduto")}
           </Link>
-          <Link href={sioLink} className="text-gray-700 hover:text-blue-600">
-            {t("navSio")}
-          </Link>
           <Link
             href={benefitsLink}
+            onClick={(e) => handleSmoothScroll(e, benefitsLink)}
             className="text-gray-700 hover:text-blue-600"
           >
             {t("navBenefits")}
+          </Link>
+          <Link
+            href={securityLink}
+            onClick={(e) => handleSmoothScroll(e, securityLink)}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navSecurity")}
+          </Link>
+          <Link
+            href={sioLink}
+            onClick={(e) => handleSmoothScroll(e, sioLink)}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navSio")}
           </Link>
           <Link
             href={contactLink}
@@ -125,24 +154,31 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 px-4 flex flex-col space-y-4">
           <Link
             href={productLink}
-            onClick={closeMenu}
+            onClick={(e) => handleSmoothScroll(e, productLink)}
             className="text-gray-700 hover:text-blue-600"
           >
             {t("navProduto")}
           </Link>
           <Link
-            href={sioLink}
-            onClick={closeMenu}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navSio")}
-          </Link>
-          <Link
             href={benefitsLink}
-            onClick={closeMenu}
+            onClick={(e) => handleSmoothScroll(e, benefitsLink)}
             className="text-gray-700 hover:text-blue-600"
           >
             {t("navBenefits")}
+          </Link>
+          <Link
+            href={securityLink}
+            onClick={(e) => handleSmoothScroll(e, securityLink)}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navSecurity")}
+          </Link>
+          <Link
+            href={sioLink}
+            onClick={(e) => handleSmoothScroll(e, sioLink)}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navSio")}
           </Link>
           <Link
             href={contactLink}
