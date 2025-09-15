@@ -114,9 +114,9 @@ export const translations = {
     navContact: 'Contato',
     navDemo: 'Solicitar Demo',
     heroBadge: 'Revolucione seu Atendimento ao Cliente',
-    heroTitle1: 'Transforme seu Atendimento com Agentes IA Inteligentes',
+    heroTitle1: 'Transforme a experiência do cliente com agentes de IA',
     heroSubtitle:
-      'Automatize processos, reduza custos operacionais e melhore a experiência do cliente com nossa plataforma de IA conversacional disponível 24/7',
+      'Automatize processos, reduza custos operacionais e melhore a experiência do cliente com nossa plataforma de agentes de IA de nível empresarial',
     heroButton: 'Solicitar Demo Gratuita',
     chatUserMessage:
       'Olá! Preciso processar um reembolso para o pedido #12345',
