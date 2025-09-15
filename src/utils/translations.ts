@@ -3,12 +3,14 @@ export const translations = {
     contact: 'contact',
     product: 'product',
     benefits: 'benefits',
+    security: 'security',
     navProduto: 'Product',
     navSio: 'IOS',
     navBenefits: 'Benefits',
+    navSecurity: 'Security',
     navContact: 'Contact',
     navDemo: 'Request Demo',
-    heroBadge: '🚀 Revolutionize Your Customer Service',
+    heroBadge: 'Revolutionize Your Customer Service',
     heroTitle1: 'Transform Your Customer Service with Intelligent AI Agents',
     heroSubtitle:
       'Automate processes, reduce operational costs and improve the customer experience with our conversational AI platform available 24/7',
@@ -31,6 +33,40 @@ export const translations = {
     benefit4Title: 'Total Automation',
     benefit4Desc:
       'Fully automated processes without human intervention',
+    benefit5Title: 'Seamless Integration',
+    benefit5Desc: 
+      'Full Notrus support to set up Notrus and integrate AI in your CX teams',
+    benefit6Title: 'The Notrus Way',
+    benefit6Desc: 
+      'Full customer solution improvement platform with insights and ways to upgrade the all-in customer experience',
+    benefit7Title: 'Security as a Priority',
+    benefit7Desc: 
+      'Designed for enterprises, built with security and data privacy guardrails',
+    benefit8Title: 'Instant ROI on the Metrics that Matter',
+    benefit8Desc: 
+      'See results from day one, driving impact on the metrics that truly matter to your business.',
+    securityBadge: 'Security & Compliance',
+    securityFeaturesTitle: 'Enterprise-Grade Security',
+    securityFeaturesSubTitle: 
+      'Built with security and data privacy at its core, with built-in enterprise-level grade compliance and security features.',
+    securityFeature1Title: 'Data Security',
+    securityFeature1Desc: 
+      'End-to-end encryption for all customer data with AES-128 and AES-256 encryption standards and secure data transmission and storage protocols.',
+    securityFeature2Title: 'Access Control',
+    securityFeature2Desc: 
+      'Integration with Single Sign-on (SSO), multi-factor authentication, role-based access controls, and audit logs for complete security oversight.',
+    securityFeature3Title: 'Data Protection Compliance',
+    securityFeature3Desc: 
+      'Regular security audits, penetration testing, and compliance with international data protection standards (SOC2, GDPR, LGPD).',
+    securityFeature4Title: 'Containerization of Client Data',
+    securityFeature4Desc: 
+      'Default exclusion of client data from model training and separation of client data in containers.',
+    securityFeature5Title: 'Cybersecurity',
+    securityFeature5Desc: 
+      'Guardrails and safeguards against code vulnerabilities, protection against data injection and poisoning.',
+    securityFeature6Title: 'Continuity and Disaster Recovery',
+    securityFeature6Desc: 
+      'Communication plan to maintain information security continuity in the event of major business disruptions and unavailability of key personnel.',
     sioBadge: 'Intelligent System',
     sioTitle: 'IOS - Intelligent Operations System',
     sioSubtitle:
@@ -64,18 +100,20 @@ export const translations = {
     finalButton: 'Request Free Demo',
     agentLabel: 'Notrus AI Agent',
     footerRights: '© 2025 Notrus. All rights reserved.',
-    footerSubtitle: 'Transforming the future of customer service',
+    footerSubtitle: 'Transforming the future of customer service',    
   },
   pt: {
     contact: 'contato',
     product: 'produto',
     benefits: 'beneficios',
+    security: 'seguranca',
     navProduto: 'Produto',
     navSio: 'IOS',
     navBenefits: 'Benefícios',
+    navSecurity: 'Segurança',
     navContact: 'Contato',
     navDemo: 'Solicitar Demo',
-    heroBadge: '🚀 Revolucione seu Atendimento ao Cliente',
+    heroBadge: 'Revolucione seu Atendimento ao Cliente',
     heroTitle1: 'Transforme seu Atendimento com Agentes IA Inteligentes',
     heroSubtitle:
       'Automatize processos, reduza custos operacionais e melhore a experiência do cliente com nossa plataforma de IA conversacional disponível 24/7',
@@ -99,6 +137,40 @@ export const translations = {
     benefit4Title: 'Automação Total',
     benefit4Desc:
       'Processos completamente automatizados sem intervenção humana',
+    benefit5Title: 'Integração Sem Complicações',
+    benefit5Desc: 
+      'Suporte completo da Notrus para configurar a Notrus e integrar IA nas suas equipes de CX',
+    benefit6Title: 'O Jeito Notrus',
+    benefit6Desc: 
+      'Plataforma completa de melhoria da solução para clientes, com insights e formas de aprimorar a experiência total do cliente',
+    benefit7Title: 'Segurança como Prioridade',
+    benefit7Desc: 
+      'Projetado para empresas, construído com diretrizes de segurança e privacidade de dados',
+    benefit8Title: 'Retorno Imediato nas Métricas que Importam',
+    benefit8Desc: 
+      'Resultados visíveis desde o início, com impacto direto nas métricas que mais importam para o seu negócio.',
+    securityBadge: 'Segurança e Conformidade',
+    securityFeaturesTitle: 'Segurança de Nível Empresarial',
+    securityFeaturesSubTitle: 
+      'Construído com segurança e privacidade de dados no seu núcleo, com conformidade e recursos de segurança integrados em nível empresarial.',
+    securityFeature1Title: 'Segurança de Dados',
+    securityFeature1Desc: 
+      'Criptografia de ponta a ponta para todos os dados dos clientes com padrões AES-128 e AES-256 e protocolos seguros de transmissão e armazenamento.',
+    securityFeature2Title: 'Controle de Acesso',
+    securityFeature2Desc: 
+      'Integração com Single Sign-on (SSO), autenticação multifator, controles de acesso baseados em funções e logs de auditoria para supervisão completa da segurança.',
+    securityFeature3Title: 'Conformidade com Proteção de Dados',
+    securityFeature3Desc: 
+      'Auditorias regulares de segurança, testes de penetração e conformidade com padrões internacionais (SOC2, GDPR, LGPD).',
+    securityFeature4Title: 'Containerização dos Dados do Cliente',
+    securityFeature4Desc: 
+      'Exclusão padrão dos dados do cliente do treinamento de modelos e separação dos dados em containers.',
+    securityFeature5Title: 'Cibersegurança',
+    securityFeature5Desc: 
+      'Diretrizes e salvaguardas contra vulnerabilidades de código, proteção contra injeção e envenenamento de dados.',
+    securityFeature6Title: 'Continuidade e Recuperação de Desastres',
+    securityFeature6Desc: 
+      'Plano de comunicação para manter a continuidade da segurança da informação em caso de grandes interrupções e indisponibilidade de pessoal-chave.',  
     sioBadge: 'Sistema Inteligente',
     sioTitle: 'SIO - Sistema Inteligente de Operações',
     sioSubtitle:
@@ -133,7 +205,7 @@ export const translations = {
     finalButton: 'Solicitar Demo Gratuita',
     agentLabel: 'Agente IA Notrus',
     footerRights: '© 2025 Notrus. Todos os direitos reservados.',
-    footerSubtitle: 'Transformando o futuro do atendimento ao cliente',
+    footerSubtitle: 'Transformando o futuro do atendimento ao cliente',    
   },
 }
 
