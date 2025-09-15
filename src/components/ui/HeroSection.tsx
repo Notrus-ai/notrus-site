@@ -2,7 +2,7 @@
 
 import { Badge } from "./badge";
 import { Button } from "./button";
-import { Bot, ArrowRight } from "lucide-react";
+import { Bot, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,7 +19,12 @@ export function HeroSection({ t }: HeroSectionProps) {
 
   return (
     <section id={t("product")} className="py-20 px-4 text-center">
-      <Badge className="mb-6 bg-blue-100 text-blue-800">{t("heroBadge")}</Badge>
+      <div className="text-blue-600 font-bold">
+        <div className="inline-flex items-center bg-[rgba(137,183,245,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
+          <Zap className="text-blue mr-2" size={20} />
+          {t("heroBadge")}
+        </div>
+      </div>
 
       <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
         {t("heroTitle1")}
