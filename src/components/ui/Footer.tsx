@@ -10,6 +10,10 @@ export default function Footer({ t }: { t: (k: string) => string }) {
 
   const localized = (en: string, pt: string) => (language === "en" ? en : pt);
   const contactLink = localized("/en/contact", "/pt/contato");
+  const privacyPolicyLink = localized(
+    "/en/privacy-policy",
+    "/pt/politica-privacidade"
+  );
 
   const linkedinUrl = isEnglish
     ? "https://www.linkedin.com/company/notrus-ai-international?locale=en_US"
@@ -65,6 +69,15 @@ export default function Footer({ t }: { t: (k: string) => string }) {
                   className="w-8 h-8"
                 />
                 <span>Email</span>
+              </Link>
+
+              <Link
+                href={privacyPolicyLink}
+                className="inline-flex items-center gap-2 hover:text-white transition-colors text-gray-300"
+              >
+                <span>
+                  {localized("Privacy Policy", "Política de Privacidade")}
+                </span>
               </Link>
             </div>
           </div>
