@@ -251,17 +251,18 @@ export const cookieTexts = {
 export interface PrivacyTexts {
   title: string;
   lastUpdated: string;
-  intro: string;
+  introPart1: string;
+  introPart2: string;
   sections: {
     informationWeCollect: {
       title: string;
       directInfo: {
         subtitle: string;
-        content: string;
+        items: string[];
       };
       automaticInfo: {
         subtitle: string;
-        content: string;
+        items: string[];
       };
       usageData: {
         subtitle: string;
@@ -303,9 +304,11 @@ export interface PrivacyTexts {
       content: string;
     };
     contact: {
-      title: string;
-      email: string;
+      title: string;      
+      generalEmail?: string;
+      privacyEmail?: string;
       website: string;
+      address?: string;
     };
   };
   navigation: {
@@ -320,201 +323,247 @@ export type Language = 'en' | 'pt';
 export const privacyTexts: Record<Language, PrivacyTexts> = {
   en: {
     title: 'Privacy Policy – Notrus AI',
-    lastUpdated: 'Last updated: 11/09/2025',
-    intro: 'At Notrus AI, we value and respect your privacy. This Privacy Policy explains how we collect, use, store, and protect personal and business data from users and customers who access our website and use our automation services.',
-    
+    lastUpdated: 'Last updated: September 11, 2025',
+    introPart1:
+      'Welcome to Notrus AI, LLC (“Notrus AI,” “we,” “us,” or “our”). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI-powered customer support automation services, visit our website, or interact with our platform.',
+    introPart2:
+      'As a Delaware limited liability company with its principal offices at 8 The Green STE B, Dover, DE 19901, United States, we provide AI-powered customer support solutions globally and recognize the importance of maintaining the highest standards of data protection and privacy. This policy complies with applicable privacy laws including GDPR, CCPA/CPRA, LGPD, and Delaware DPDPA.',
     sections: {
       informationWeCollect: {
         title: '1. Information We Collect',
         directInfo: {
-          subtitle: 'Information you provide directly',
-          content: 'Name, email, phone number, company, job title, and messages sent through forms or chats on the site.'
+          subtitle: 'Information You Provide Directly',
+          items: [
+            'Contact Information: Name, email, phone number, company, job title',
+            'Communications: Messages sent through forms, chats, or direct contact',
+            'Account Information: Registration details and preferences',
+          ],
         },
         automaticInfo: {
-          subtitle: 'Information collected automatically',
-          content: 'IP address, browser type, operating system, pages visited, date and time of access, cookies, and similar technologies for analytics and security purposes.'
+          subtitle: 'Information Collected Automatically',
+          items: [
+            'Technical Data: IP address, browser type, operating system, device information',
+            'Usage Data: Pages visited, date and time of access, interaction patterns',
+            'Cookies: Analytics and functional cookies (see Cookie Policy section)',
+          ],
         },
         usageData: {
-          subtitle: 'Service usage data',
-          content: 'When your company uses our automation services, we may process interaction metadata such as conversation identifiers, performance data, and technical logs (we never access the content of your customers\' messages without explicit authorization).'
-        }
+          subtitle: 'Service Usage Data',
+          content:
+            "When your company uses our automation services, we process conversation metadata and identifiers, performance data and technical logs, system analytics and optimization data. Note: We never access customer message content without explicit authorization.",
+        },
       },
-      
+
       howWeUse: {
-        title: '2. How We Use the Information',
+        title: '2. How We Use Your Information',
         items: [
-          'To provide, operate, and improve our automation services;',
-          'To contact you for support, demos, and business proposals;',
-          'To perform technical and statistical analyses to enhance our products;',
-          'To comply with applicable legal and regulatory obligations (LGPD, GDPR).'
-        ]
-      },
-      
-      dataSharing: {
-        title: '3. Data Sharing',
-        intro: 'We may share data with:',
-        items: [
-          'Service providers and technology partners that assist us in hosting, processing, and operating our systems;',
-          'Legal or regulatory authorities when required by law;',
-          'We never sell personal data to third parties.'
+          'Service Delivery: Provide, operate, and improve our AI automation services;',
+          'Communication: Contact you for support, demonstrations, and business proposals;',
+          'Analytics: Perform technical and statistical analyses to enhance our products;',
+          'Legal Compliance: Meet applicable legal and regulatory obligations (LGPD, GDPR, CCPA);',
+          'Security: Protect our services and prevent fraud or abuse.',
         ],
-        footer: 'All partners are contractually required to comply with confidentiality and data protection standards aligned with LGPD and GDPR.'
       },
-      
-      retentionSecurity: {
-        title: '4. Data Retention and Security',
+
+      dataSharing: {
+        title: '3. Information Sharing and Disclosure',
+        intro: 'We may share your information with:',
         items: [
-          'Data is securely stored using providers that follow international security standards (encryption, backups, access controls).',
-          'We retain data only for as long as necessary to fulfill the purposes described, unless legal obligations require a longer period.'
-        ]
+          'Service Providers: Technology partners for hosting, processing, and system operations;',
+          'Legal Authorities: When required by law or to protect our rights;',
+          'Business Partners: With your consent for joint services or integrations.',
+        ],
+        footer:
+          'We never sell personal data to third parties. All partners are contractually bound to maintain confidentiality and data protection standards compatible with LGPD and GDPR.',
       },
-      
+
+      retentionSecurity: {
+        title: '4. Data Security and Retention',
+        items: [
+          'Data encryption in transit and at rest;',
+          'International security standards compliance;',
+          'Regular security assessments and backups;',
+          'Strict access controls and authentication;',
+          'We retain data only as long as necessary to fulfill stated purposes, unless legal obligations require longer retention periods.',
+        ],
+      },
+
       yourRights: {
-        title: '5. Your Rights',
+        title: '5. Your Privacy Rights',
         intro: 'As a data subject, you have the right to:',
         items: [
-          'Confirm whether your data is being processed;',
-          'Access, correct, or delete your personal data;',
-          'Request data portability;',
-          'Withdraw previously given consent;',
-          'Object to specific data processing activities.'
+          'Access: Confirm and review your personal data processing;',
+          'Rectification: Correct inaccurate or incomplete data;',
+          'Erasure: Request deletion of your personal data;',
+          'Portability: Receive your data in a structured format;',
+          'Objection: Object to specific processing activities;',
+          'Consent Withdrawal: Revoke previously given consent.',
         ],
-        contact: '📧 To exercise your rights, email us at contact@notrus.ai'
+        contact: '📧 To exercise your rights: Email us at contact@notrus.ai',
       },
-      
+
       cookies: {
         title: '6. Cookies and Tracking Technologies',
-        intro: 'We use cookies to:',
+        intro: 'We use cookies for:',
         items: [
-          'Analyse website traffic and usage;',
-          'Improve user experience;',
-          'Manage marketing campaigns.'
+          'Website traffic analysis and usage statistics;',
+          'User experience improvement;',
+          'Marketing campaign management;',
+          'Essential website functionality.',
         ],
-        footer: 'You can manage or disable cookies in your browser settings.'
+        footer:
+          'You can manage or disable cookies in your browser settings. Essential cookies cannot be disabled without affecting website functionality.',
       },
-      
+
       internationalTransfers: {
         title: '7. International Data Transfers',
-        content: 'If data is transferred and stored outside Brazil, we will adopt appropriate safeguards and contractual clauses to ensure it is protected in accordance with the LGPD (Brazil) and GDPR (European Union).'
+        content:
+          'When data is transferred outside your country, we implement appropriate safeguards including Standard Contractual Clauses (SCCs), adequacy decisions where available, and additional security measures as required by applicable law.',
       },
-      
+
       policyChanges: {
         title: '8. Changes to This Policy',
-        content: 'Notrus AI may update this Privacy Policy from time to time. We will publish the new version with the updated date at the top of this page.'
+        content:
+          'We may update this Privacy Policy periodically. We will notify you of significant changes by posting the updated policy with a new effective date.',
       },
-      
+
       contact: {
-        title: '9. Contact',
-        email: 'contact@notrus.ai',
-        website: 'https://notrus.ai'
-      }
+        title: '9. Contact Information',
+        generalEmail: 'contact@notrus.ai',
+        website: 'https://notrus.ai',
+        address: 'Notrus AI, LLC, 8 The Green STE B, Dover, DE 19901, United States',
+      },
     },
-    
+
     navigation: {
       backToHome: '← Back to home',
       pageTitle: 'Privacy Policy - Notrus AI',
-      metaDescription: 'Privacy Policy of Notrus AI - How we collect, use and protect your data'
-    }
+      metaDescription: 'Privacy Policy of Notrus AI - How we collect, use, disclose and protect your data',
+    },
   },
-  
+
   pt: {
     title: 'Política de Privacidade – Notrus AI',
-    lastUpdated: 'Última atualização: 11/09/2025',
-    intro: 'A Notrus AI valoriza e respeita a sua privacidade. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos os dados pessoais e empresariais dos usuários e clientes que acessam nosso site e utilizam nossos serviços de automação.',
-    
+    lastUpdated: 'Última atualização: 11 de setembro de 2025',
+    introPart1:
+      'Bem-vindo à Notrus AI, LLC (“Notrus AI”, “nós”, “nos” ou “nosso”). Estamos comprometidos em proteger sua privacidade e garantir a segurança de suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você usa nossos serviços de automação de suporte ao cliente com IA, visita nosso site ou interage com nossa plataforma.',
+    introPart2:
+      'Como uma sociedade de responsabilidade limitada de Delaware com seus escritórios principais em 8 The Green STE B, Dover, DE 19901, Estados Unidos, fornecemos soluções de suporte ao cliente com IA globalmente e reconhecemos a importância de manter os mais altos padrões de proteção de dados e privacidade. Esta política cumpre as leis de privacidade aplicáveis incluindo GDPR, CCPA/CPRA, LGPD e Delaware DPDPA.',
+
     sections: {
       informationWeCollect: {
         title: '1. Informações que Coletamos',
         directInfo: {
-          subtitle: 'Informações fornecidas diretamente por você',
-          content: 'Nome, e-mail, telefone, empresa, cargo, mensagens enviadas através de formulários ou chats do site.'
+          subtitle: 'Informações Fornecidas Diretamente por Você',
+          items: [
+            'Informações de Contato: Nome, email, telefone, empresa, cargo',
+            'Comunicações: Mensagens enviadas através de formulários, chats ou contato direto',
+            'Informações de Conta: Detalhes de registro e preferências',
+          ],
         },
         automaticInfo: {
-          subtitle: 'Informações coletadas automaticamente',
-          content: 'Endereço IP, tipo de navegador, sistema operacional, páginas acessadas, data e hora do acesso, cookies e tecnologias similares para fins analíticos e de segurança.'
+          subtitle: 'Informações Coletadas Automaticamente',
+          items: [
+            'Dados Técnicos: Endereço IP, tipo de navegador, sistema operacional, informações do dispositivo',
+            'Dados de Uso: Páginas visitadas, data e hora do acesso, padrões de interação',
+            'Cookies: Cookies analíticos e funcionais (veja seção Política de Cookies)',
+          ],
         },
         usageData: {
-          subtitle: 'Dados de uso dos serviços',
-          content: 'Quando sua empresa utiliza nossos serviços de automação, podemos processar metadados de interações, como identificadores de conversas, dados de performance e logs técnicos (nunca acessamos o conteúdo das mensagens de seus clientes sem autorização explícita).'
-        }
+          subtitle: 'Dados de Uso dos Serviços',
+          content:
+            'Quando sua empresa utiliza nossos serviços de automação, processamos metadados de conversas e identificadores, dados de performance e logs técnicos, análises do sistema e dados de otimização. Nota: Nunca acessamos o conteúdo das mensagens dos clientes sem autorização explícita.',
+        },
       },
-      
+
       howWeUse: {
-        title: '2. Como Utilizamos as Informações',
+        title: '2. Como Usamos suas Informações',
         items: [
-          'Fornecer, operar e melhorar nossos serviços de automação;',
-          'Entrar em contato com você para suporte, demonstrações e propostas comerciais;',
-          'Realizar análises técnicas e estatísticas para aprimorar nossos produtos;',
-          'Cumprir obrigações legais e regulatórias aplicáveis (LGPD, GDPR).'
-        ]
+          'Entrega de Serviços: Fornecer, operar e melhorar nossos serviços de automação com IA;',
+          'Comunicação: Entrar em contato para suporte, demonstrações e propostas comerciais;',
+          'Análises: Realizar análises técnicas e estatísticas para aprimorar nossos produtos;',
+          'Conformidade Legal: Cumprir obrigações legais e regulatórias aplicáveis (LGPD, GDPR, CCPA);',
+          'Segurança: Proteger nossos serviços e prevenir fraudes ou abusos.',
+        ],
       },
-      
+
       dataSharing: {
-        title: '3. Compartilhamento de Dados',
-        intro: 'Compartilhamos dados com:',
+        title: '3. Compartilhamento e Divulgação de Informações',
+        intro: 'Podemos compartilhar suas informações com:',
         items: [
-          'Com provedores de serviços e parceiros tecnológicos que auxiliam na hospedagem, processamento e operação dos sistemas;',
-          'Com autoridades legais ou regulatórias, quando exigido por lei;',
-          'Nunca vendemos dados pessoais a terceiros.'
+          'Provedores de Serviços: Parceiros tecnológicos para hospedagem, processamento e operações do sistema;',
+          'Autoridades Legais: Quando exigido por lei ou para proteger nossos direitos;',
+          'Parceiros Comerciais: Com seu consentimento para serviços conjuntos ou integrações.',
         ],
-        footer: 'Todos os parceiros são contratualmente obrigados a cumprir normas de confidencialidade e proteção de dados compatíveis com a LGPD e o GDPR.'
+        footer:
+          'Nunca vendemos dados pessoais a terceiros. Todos os parceiros são contratualmente obrigados a manter padrões de confidencialidade e proteção de dados compatíveis com LGPD e GDPR.',
       },
-      
+
       retentionSecurity: {
-        title: '4. Retenção e Segurança dos Dados',
+        title: '4. Segurança e Retenção de Dados',
         items: [
-          'Os dados são armazenados de forma segura em provedores com padrões internacionais de segurança da informação (criptografia, backups, controle de acesso).',
-          'Mantemos os dados apenas pelo tempo necessário para cumprir as finalidades descritas, salvo quando houver obrigação legal de retenção por período superior.'
-        ]
-      },
-      
-      yourRights: {
-        title: '5. Seus Direitos',
-        intro: 'Você, como titular de dados pessoais, tem o direito de:',
-        items: [
-          'Confirmar a existência de tratamento de dados;',
-          'Acessar, corrigir ou excluir seus dados pessoais;',
-          'Solicitar a portabilidade dos dados;',
-          'Revogar consentimentos;',
-          'Opor-se ao tratamento de dados para finalidades específicas.'
+          'Criptografia de dados em trânsito e em repouso;',
+          'Conformidade com padrões internacionais de segurança;',
+          'Avaliações regulares de segurança e backups;',
+          'Controles rígidos de acesso e autenticação;',
+          'Mantemos os dados apenas pelo tempo necessário para cumprir as finalidades declaradas, salvo quando obrigações legais exigirem períodos de retenção mais longos.',
         ],
-        contact: '📧 Para exercer seus direitos, envie um e-mail para contact@notrus.ai'
       },
-      
+
+      yourRights: {
+        title: '5. Seus Direitos de Privacidade',
+        intro: 'Como titular de dados, você tem o direito de:',
+        items: [
+          'Acesso: Confirmar e revisar o processamento de seus dados pessoais;',
+          'Retificação: Corrigir dados imprecisos ou incompletos;',
+          'Apagamento: Solicitar a exclusão de seus dados pessoais;',
+          'Portabilidade: Receber seus dados em formato estruturado;',
+          'Objeção: Opor-se a atividades específicas de processamento;',
+          'Retirada de Consentimento: Revogar consentimento previamente dado.',
+        ],
+        contact: '📧 Para exercer seus direitos: Envie email para contact@notrus.ai',
+      },
+
       cookies: {
         title: '6. Cookies e Tecnologias de Rastreamento',
         intro: 'Utilizamos cookies para:',
         items: [
-          'Analisar o tráfego e o uso do site;',
-          'Melhorar a experiência do usuário;',
-          'Gerenciar campanhas de marketing.'
+          'Análise de tráfego do site e estatísticas de uso;',
+          'Melhoria da experiência do usuário;',
+          'Gerenciamento de campanhas de marketing;',
+          'Funcionalidade essencial do site.',
         ],
-        footer: 'Você pode gerenciar ou desativar os cookies nas configurações do seu navegador.'
+        footer:
+          'Você pode gerenciar ou desativar cookies nas configurações do seu navegador. Cookies essenciais não podem ser desativados sem afetar a funcionalidade do site.',
       },
-      
+
       internationalTransfers: {
         title: '7. Transferências Internacionais de Dados',
-        content: 'Caso os dados sejam transferidos e armazenados fora do Brasil, adotaremos medidas de segurança e contratos específicos para garantir que os dados sejam protegidos conforme exigido pela LGPD (Brasil) e pelo GDPR (União Europeia).'
+        content:
+          'Quando dados são transferidos para fora do seu país, implementamos salvaguardas apropriadas incluindo Cláusulas Contratuais Padrão (SCCs), decisões de adequação quando disponíveis, e medidas de segurança adicionais conforme exigido pela lei aplicável.',
       },
-      
+
       policyChanges: {
-        title: '8. Alterações a Esta Política',
-        content: 'A Notrus AI poderá atualizar esta Política de Privacidade periodicamente. Publicaremos a nova versão com a data de atualização no topo desta página.'
+        title: '8. Alterações nesta Política',
+        content:
+          'Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre mudanças significativas publicando a política atualizada com nova data de vigência.',
       },
-      
+
       contact: {
-        title: '9. Contato',
-        email: 'contact@notrus.ai',
-        website: 'https://notrus.ai'
-      }
+        title: '9. Informações de Contato',
+        generalEmail: 'contact@notrus.ai',
+        website: 'https://notrus.ai',
+        address: 'Notrus AI, LLC, 8 The Green STE B, Dover, DE 19901, Estados Unidos',
+      },
     },
-    
+
     navigation: {
       backToHome: '← Voltar ao início',
       pageTitle: 'Política de Privacidade - Notrus AI',
-      metaDescription: 'Política de Privacidade da Notrus AI - Como coletamos, usamos e protegemos seus dados'
-    }
-  }
+      metaDescription:
+        'Política de Privacidade da Notrus AI - Como coletamos, usamos, divulgamos e protegemos seus dados',
+    },
+  },
 };
 
 export const contactFormTranslations = {

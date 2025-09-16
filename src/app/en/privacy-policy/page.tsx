@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { privacyTexts, Language, PrivacyTexts } from "@/utils/translations";
 
@@ -106,8 +106,9 @@ const PrivacyPolicy: React.FC = () => {
           {texts.lastUpdated}
         </p>
 
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 rounded-lg mb-10 text-lg">
-          <p>{texts.intro}</p>
+        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 rounded-lg mb-10 text-lg space-y-4">
+          <p>{texts.introPart1}</p>
+          <p>{texts.introPart2}</p>
         </div>
 
         {/* Section 1: Information We Collect */}
@@ -115,16 +116,24 @@ const PrivacyPolicy: React.FC = () => {
           <h3 className="text-gray-600 text-xl font-semibold mt-6 mb-4">
             {texts.sections.informationWeCollect.directInfo.subtitle}
           </h3>
-          <p className="mb-4">
-            {texts.sections.informationWeCollect.directInfo.content}
-          </p>
+          <ul className="pl-8 mb-4 space-y-3 list-inside">
+            {texts.sections.informationWeCollect.directInfo.items?.map(
+              (item, index) => (
+                <ListItem key={index}>{item}</ListItem>
+              )
+            )}
+          </ul>
 
           <h3 className="text-gray-600 text-xl font-semibold mt-6 mb-4">
             {texts.sections.informationWeCollect.automaticInfo.subtitle}
           </h3>
-          <p className="mb-4">
-            {texts.sections.informationWeCollect.automaticInfo.content}
-          </p>
+          <ul className="pl-8 mb-4 space-y-3 list-inside">
+            {texts.sections.informationWeCollect.automaticInfo.items?.map(
+              (item, index) => (
+                <ListItem key={index}>{item}</ListItem>
+              )
+            )}
+          </ul>
 
           <h3 className="text-gray-600 text-xl font-semibold mt-6 mb-4">
             {texts.sections.informationWeCollect.usageData.subtitle}
@@ -137,11 +146,9 @@ const PrivacyPolicy: React.FC = () => {
         {/* Section 2: How We Use */}
         <Section title={texts.sections.howWeUse.title}>
           <ul className="pl-8 mb-4 space-y-3">
-            {texts.sections.howWeUse.items.map(
-              (item: string, index: number) => (
-                <ListItem key={index}>{item}</ListItem>
-              )
-            )}
+            {texts.sections.howWeUse.items.map((item, index) => (
+              <ListItem key={index}>{item}</ListItem>
+            ))}
           </ul>
         </Section>
 
@@ -149,23 +156,19 @@ const PrivacyPolicy: React.FC = () => {
         <Section title={texts.sections.dataSharing.title}>
           <p className="mb-4">{texts.sections.dataSharing.intro}</p>
           <ul className="pl-8 mb-4 space-y-3">
-            {texts.sections.dataSharing.items.map(
-              (item: string, index: number) => (
-                <ListItem key={index}>{item}</ListItem>
-              )
-            )}
+            {texts.sections.dataSharing.items.map((item, index) => (
+              <ListItem key={index}>{item}</ListItem>
+            ))}
           </ul>
           <p className="mt-4">{texts.sections.dataSharing.footer}</p>
         </Section>
 
-        {/* Section 4: Retention and Security */}
+        {/* Section 4: Data Security and Retention */}
         <Section title={texts.sections.retentionSecurity.title}>
           <ul className="pl-8 mb-4 space-y-3">
-            {texts.sections.retentionSecurity.items.map(
-              (item: string, index: number) => (
-                <ListItem key={index}>{item}</ListItem>
-              )
-            )}
+            {texts.sections.retentionSecurity.items.map((item, index) => (
+              <ListItem key={index}>{item}</ListItem>
+            ))}
           </ul>
         </Section>
 
@@ -173,11 +176,9 @@ const PrivacyPolicy: React.FC = () => {
         <Section title={texts.sections.yourRights.title}>
           <p className="mb-4">{texts.sections.yourRights.intro}</p>
           <ul className="pl-8 mb-4 space-y-3">
-            {texts.sections.yourRights.items.map(
-              (item: string, index: number) => (
-                <ListItem key={index}>{item}</ListItem>
-              )
-            )}
+            {texts.sections.yourRights.items.map((item, index) => (
+              <ListItem key={index}>{item}</ListItem>
+            ))}
           </ul>
           <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg my-6 text-center">
             <p className="m-0 font-medium">
@@ -186,34 +187,41 @@ const PrivacyPolicy: React.FC = () => {
           </div>
         </Section>
 
-        {/* Section 6: Cookies */}
+        {/* Section 6: Cookies and Tracking Technologies */}
         <Section title={texts.sections.cookies.title}>
           <p className="mb-4">{texts.sections.cookies.intro}</p>
           <ul className="pl-8 mb-4 space-y-3">
-            {texts.sections.cookies.items.map((item: string, index: number) => (
+            {texts.sections.cookies.items.map((item, index) => (
               <ListItem key={index}>{item}</ListItem>
             ))}
           </ul>
           <p className="mt-4">{texts.sections.cookies.footer}</p>
         </Section>
 
-        {/* Section 7: International Transfers */}
+        {/* Section 7: International Data Transfers */}
         <Section title={texts.sections.internationalTransfers.title}>
           <p>{texts.sections.internationalTransfers.content}</p>
         </Section>
 
-        {/* Section 8: Policy Changes */}
+        {/* Section 8: Changes to This Policy */}
         <Section title={texts.sections.policyChanges.title}>
           <p>{texts.sections.policyChanges.content}</p>
         </Section>
 
-        {/* Section 9: Contact */}
+        {/* Section 9: Contact Information */}
         <Section title={texts.sections.contact.title} isLast>
-          <div className="bg-gray-50 p-8 rounded-lg border-l-4 border-blue-500">
-            <p className="my-3 text-lg">
-              <strong>Email:</strong> {texts.sections.contact.email}
-            </p>
-            <p className="my-3 text-lg">
+          <div className="bg-gray-50 p-2 rounded-lg border-l-4 border-blue-500 space-y-4">
+            {texts.sections.contact.generalEmail && (
+              <p className="my-1 text-lg">
+                <strong>Contact:</strong> {texts.sections.contact.generalEmail}
+              </p>
+            )}
+            {texts.sections.contact.address && (
+              <p className="my-1 text-lg">
+                <strong>Address:</strong> {texts.sections.contact.address}
+              </p>
+            )}
+            <p className="my-1 text-lg">
               <strong>Website:</strong>{" "}
               <Link
                 href={texts.sections.contact.website}
