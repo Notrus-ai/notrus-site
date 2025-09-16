@@ -213,12 +213,12 @@ const PoliticaPrivacidade: React.FC = () => {
           <div className="bg-gray-50 p-2 rounded-lg border-l-4 border-blue-500 space-y-4">
             {texts.sections.contact.generalEmail && (
               <p className="my-1 text-lg">
-                <strong>Contact:</strong> {texts.sections.contact.generalEmail}
+                <strong>Contato:</strong> {texts.sections.contact.generalEmail}
               </p>
             )}
             {texts.sections.contact.address && (
               <p className="my-1 text-lg">
-                <strong>Address:</strong> {texts.sections.contact.address}
+                <strong>Endereço:</strong> {texts.sections.contact.address}
               </p>
             )}
             <p className="my-1 text-lg">
