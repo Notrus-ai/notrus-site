@@ -32,7 +32,7 @@ export default function SecurityFeatures({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-blue-50 to-blue-100">
             <CardHeader>
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -75,7 +75,7 @@ export default function SecurityFeatures({
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+          {/* <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-orange-50 to-orange-100">
             <CardHeader>
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Container className="text-white" size={32} />
@@ -87,7 +87,7 @@ export default function SecurityFeatures({
             <CardContent>
               <p className="text-gray-600">{t("securityFeature4Desc")}</p>
             </CardContent>
-          </Card>
+          </Card> */}
 
           <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-red-50 to-red-100">
             <CardHeader>
@@ -103,7 +103,7 @@ export default function SecurityFeatures({
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-teal-50 to-teal-100">
+          {/* <Card className="text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-teal-50 to-teal-100">
             <CardHeader>
               <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <LifeBuoy className="text-white" size={32} />
@@ -115,7 +115,7 @@ export default function SecurityFeatures({
             <CardContent>
               <p className="text-gray-600">{t("securityFeature6Desc")}</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>

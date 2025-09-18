@@ -5,7 +5,7 @@ export const translations = {
     benefits: 'benefits',
     security: 'security',
     navProduto: 'Product',
-    navSio: 'IOS',
+    navSio: 'Orbit',
     navBenefits: 'Benefits',
     navSecurity: 'Security',
     navContact: 'Contact',
@@ -42,33 +42,33 @@ export const translations = {
     benefit7Title: 'Security as a Priority',
     benefit7Desc: 
       'Designed for enterprises, built with security and data privacy guardrails',
-    benefit8Title: 'Instant ROI on the Metrics that Matter',
+    benefit8Title: 'Increase revenue',
     benefit8Desc: 
-      'See results from day one, driving impact on the metrics that truly matter to your business.',
+      'Create new opportunities to upsell and cross-sell to your clients',
     securityBadge: 'Security & Compliance',
     securityFeaturesTitle: 'Enterprise-Grade Security',
     securityFeaturesSubTitle: 
       'Built with security and data privacy at its core, with built-in enterprise-level grade compliance and security features.',
     securityFeature1Title: 'Data Security',
     securityFeature1Desc: 
-      'End-to-end encryption for all customer data with AES-128 and AES-256 encryption standards and secure data transmission and storage protocols.',
+      'End-to-end AES-128/256 encryption for all customer data in transit and at rest.',
     securityFeature2Title: 'Access Control',
     securityFeature2Desc: 
-      'Integration with Single Sign-on (SSO), multi-factor authentication, role-based access controls, and audit logs for complete security oversight.',
+      'SSO, MFA, role-based access, and audit logs for full security oversight.',
     securityFeature3Title: 'Data Protection Compliance',
     securityFeature3Desc: 
-      'Regular security audits, penetration testing, and compliance with international data protection standards (GDPR, LGPD).',
+      'Regular audits, pen tests, and GDPR/LGPD compliance.',
     securityFeature4Title: 'Containerization of Client Data',
     securityFeature4Desc: 
       'Default exclusion of client data from model training and separation of client data in containers.',
     securityFeature5Title: 'Cybersecurity',
     securityFeature5Desc: 
-      'Guardrails and safeguards against code vulnerabilities, protection against data injection and poisoning.',
+      'Guardrails against code flaws, data injection, and poisoning.',
     securityFeature6Title: 'Continuity and Disaster Recovery',
     securityFeature6Desc: 
       'Communication plan to maintain information security continuity in the event of major business disruptions and unavailability of key personnel.',
     sioBadge: 'Intelligent System',
-    sioTitle: 'IOS - Intelligent Operations System',
+    sioTitle: 'Orbit — The core that keeps your operations moving',
     sioSubtitle:
       'Automate any action of your business with advanced artificial intelligence',
     feature1Title: 'Automated Payments',
@@ -90,10 +90,10 @@ export const translations = {
     metricsTitle: 'Impressive results',
     metric1Title: 'Cost Reduction',
     metric1Desc: 'Average savings in operational costs',
-    metric2Title: 'Availability',
-    metric2Desc: 'Uninterrupted support every day',
-    metric3Title: 'Satisfaction',
-    metric3Desc: 'Customer satisfaction rate',
+    metric2Title: 'Higher CSAT',
+    metric2Desc: 'Driven by faster and more accurate responses',
+    metric3Title: 'Revenue Growth',
+    metric3Desc: 'Through higher conversion and average order value',
     finalTitle: 'Ready to Revolutionize Your Service?',
     finalSubtitle:
       'Join the companies that have already transformed their operation with Notrus',
@@ -108,7 +108,7 @@ export const translations = {
     benefits: 'beneficios',
     security: 'seguranca',
     navProduto: 'Produto',
-    navSio: 'IOS',
+    navSio: 'Orbit',
     navBenefits: 'Benefícios',
     navSecurity: 'Segurança',
     navContact: 'Contato',
@@ -146,33 +146,33 @@ export const translations = {
     benefit7Title: 'Segurança como Prioridade',
     benefit7Desc: 
       'Projetado para empresas, construído com diretrizes de segurança e privacidade de dados',
-    benefit8Title: 'Retorno Imediato nas Métricas que Importam',
+    benefit8Title: 'Aumente seu faturamento',
     benefit8Desc: 
-      'Resultados visíveis desde o início, com impacto direto nas métricas que mais importam para o seu negócio.',
+      'Crie novas oportunidades de upsell e cross-sell para seus clientes',
     securityBadge: 'Segurança e Conformidade',
     securityFeaturesTitle: 'Segurança de Nível Empresarial',
     securityFeaturesSubTitle: 
       'Construído com segurança e privacidade de dados no seu núcleo, com conformidade e recursos de segurança integrados em nível empresarial.',
     securityFeature1Title: 'Segurança de Dados',
     securityFeature1Desc: 
-      'Criptografia de ponta a ponta para todos os dados dos clientes com padrões AES-128 e AES-256 e protocolos seguros de transmissão e armazenamento.',
+      'Criptografia de ponta a ponta AES-128/256 para todos os dados de clientes em trânsito e em repouso.',
     securityFeature2Title: 'Controle de Acesso',
     securityFeature2Desc: 
-      'Integração com Single Sign-on (SSO), autenticação multifator, controles de acesso baseados em funções e logs de auditoria para supervisão completa da segurança.',
+      'SSO, MFA, controle de acesso por função e logs de auditoria para segurança completa.',
     securityFeature3Title: 'Conformidade com Proteção de Dados',
     securityFeature3Desc: 
-      'Auditorias regulares de segurança, testes de penetração e conformidade com padrões internacionais (GDPR, LGPD).',
+      'Auditorias regulares, testes de penetração e conformidade com GDPR/LGPD.',
     securityFeature4Title: 'Containerização dos Dados do Cliente',
     securityFeature4Desc: 
       'Exclusão padrão dos dados do cliente do treinamento de modelos e separação dos dados em containers.',
     securityFeature5Title: 'Cibersegurança',
     securityFeature5Desc: 
-      'Diretrizes e salvaguardas contra vulnerabilidades de código, proteção contra injeção e envenenamento de dados.',
+      'Proteções contra falhas de código, injeção e envenenamento de dados.',
     securityFeature6Title: 'Continuidade e Recuperação de Desastres',
     securityFeature6Desc: 
       'Plano de comunicação para manter a continuidade da segurança da informação em caso de grandes interrupções e indisponibilidade de pessoal-chave.',  
     sioBadge: 'Sistema Inteligente',
-    sioTitle: 'SIO - Sistema Inteligente de Operações',
+    sioTitle: 'Orbit — O núcleo que mantém suas operações em movimento',
     sioSubtitle:
       'Automatize qualquer ação do seu negócio com inteligência artificial avançada',
     feature1Title: 'Pagamentos Automatizados',
@@ -195,10 +195,10 @@ export const translations = {
     metricsTitle: 'Resultados que Impressionam',
     metric1Title: 'Redução de Custos',
     metric1Desc: 'Economia média nos custos operacionais',
-    metric2Title: 'Disponibilidade',
-    metric2Desc: 'Atendimento ininterrupto todos os dias',
-    metric3Title: 'Satisfação',
-    metric3Desc: 'Taxa de satisfação dos clientes',
+    metric2Title: 'Aumento de CSAT',
+    metric2Desc: 'Através de respostas mais rápida e precisas',
+    metric3Title: 'Aumento de Receita',
+    metric3Desc: 'Através de maior conversão e ticket médio',
     finalTitle: 'Pronto para Revolucionar seu Atendimento?',
     finalSubtitle:
       'Junte-se às empresas que já transformaram sua operação com a Notrus',
