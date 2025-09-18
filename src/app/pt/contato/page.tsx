@@ -271,16 +271,17 @@ export default function Contact() {
               <div className="text-white">
                 <div className="inline-flex items-center bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
                   <MessageCircle className="text-white-600 mr-2" size={20} />
-                  <span>Revolutionize Your Customer Service</span>
+                  <span>Revolucione o seu atendimento ao cliente</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
-                  Improve customer service with AI agents.
+                  Melhore o atendimento ao cliente com agentes de IA.
                 </h1>
 
                 <p className="text-lg sm:text-xl opacity-90 mb-8 sm:mb-12 leading-relaxed">
-                  Schedule a demo with our sales team to see how Notrus can help
-                  you improve customer service through AI.
+                  Agende uma demonstração com nossa equipe de vendas para ver
+                  como a Notrus pode ajudá-lo a melhorar o atendimento ao
+                  cliente por meio da IA.
                 </p>
 
                 {/* Benefits */}
@@ -291,12 +292,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Faster time to value
+                        Tempo de retorno mais rápido
                       </h3>
                       <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Build and iterate AI agents quickly, and seamlessly
-                        integrate with existing systems to deliver ROI in weeks,
-                        not months.
+                        Crie e itere agentes de IA rapidamente e integre-os
+                        perfeitamente aos sistemas existentes para obter ROI em
+                        semanas, e não em meses.
                       </p>
                     </div>
                   </div>
@@ -307,12 +308,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Unmatched transparency
+                        Transparência incomparável
                       </h3>
                       <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Get complete visibility into why AI agents make specific
-                        decisions, so you can iterate and improve agent
-                        behavior.
+                        Obtenha visibilidade completa sobre por que os agentes
+                        de IA tomam decisões específicas, para que você possa
+                        iterar e melhorar o comportamento dos agentes.
                       </p>
                     </div>
                   </div>
@@ -323,12 +324,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Reliable results at scale
+                        Resultados confiáveis em grande escala
                       </h3>
                       <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Enterprise-grade protections ensure safe, high-quality
-                        AI interactions that scale effortlessly with your
-                        business.
+                        Proteções de nível empresarial garantem interações de IA
+                        seguras e de alta qualidade que se adaptam facilmente ao
+                        seu negócio.
                       </p>
                     </div>
                   </div>
