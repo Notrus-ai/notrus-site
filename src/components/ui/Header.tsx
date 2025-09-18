@@ -29,7 +29,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     "/en/login",
     "/pt/contato",
   ];
+
   const shouldHideNav = hideNavRoutes.some((route) => pathname.includes(route));
+
+  const hideDemoButtonRoutes = ["/pt/contato", "/en/contact"];
+  const shouldHideDemoButton = hideDemoButtonRoutes.some((route) =>
+    pathname.startsWith(route)
+  );
 
   const productLink = "/#produto";
   const sioLink = "/#sio";
@@ -138,14 +144,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             </>
           )}
 
-          <Link href={demoLink}>
-            <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-              aria-label={t("navDemo")}
-            >
-              {t("navDemo")}
-            </Button>
-          </Link>
+          {!shouldHideDemoButton && (
+            <Link href={demoLink}>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                {t("navDemo")}
+              </Button>
+            </Link>
+          )}
 
           <select
             value={language}
@@ -207,14 +212,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navContact")}
           </Link>
 
-          <Link href={demoLink}>
-            <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 w-full"
-              aria-label={t("navDemo")}
-            >
-              {t("navDemo")}
-            </Button>
-          </Link>
+          {!shouldHideDemoButton && (
+            <Link href={demoLink}>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+                {t("navDemo")}
+              </Button>
+            </Link>
+          )}
 
           <select
             value={language}
