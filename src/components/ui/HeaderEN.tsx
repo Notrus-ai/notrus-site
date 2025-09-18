@@ -20,6 +20,17 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
 
+  const hideNavRoutes = [
+    "/privacy-policy",
+    "/en/privacy-policy",
+    "/terms",
+    "/en/terms",
+    "/login",
+    "/en/login",
+    "/en/contact",
+  ];
+  const shouldHideNav = hideNavRoutes.some((route) => pathname.includes(route));
+
   const productLink = "/#product";
   const sioLink = "/#sio";
   const benefitsLink = "/#benefits";
@@ -87,41 +98,46 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         </div>
 
         {/* Desktop */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link
-            href={productLink}
-            onClick={(e) => handleSmoothScroll(e, productLink)}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navProduto")}
-          </Link>
-          <Link
-            href={benefitsLink}
-            onClick={(e) => handleSmoothScroll(e, benefitsLink)}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navBenefits")}
-          </Link>
-          <Link
-            href={securityLink}
-            onClick={(e) => handleSmoothScroll(e, securityLink)}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navSecurity")}
-          </Link>
-          <Link
-            href={sioLink}
-            onClick={(e) => handleSmoothScroll(e, sioLink)}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navSio")}
-          </Link>
-          <Link
-            href={contactLink}
-            className="text-gray-700 hover:text-blue-600"
-          >
-            {t("navContact")}
-          </Link>
+        <div className="hidden md:flex items-center space-x-8">
+          {!shouldHideNav && (
+            <>
+              <Link
+                href={productLink}
+                onClick={(e) => handleSmoothScroll(e, productLink)}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navProduto")}
+              </Link>
+              <Link
+                href={benefitsLink}
+                onClick={(e) => handleSmoothScroll(e, benefitsLink)}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navBenefits")}
+              </Link>
+              <Link
+                href={securityLink}
+                onClick={(e) => handleSmoothScroll(e, securityLink)}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navSecurity")}
+              </Link>
+              <Link
+                href={sioLink}
+                onClick={(e) => handleSmoothScroll(e, sioLink)}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navSio")}
+              </Link>
+              <Link
+                href={contactLink}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navContact")}
+              </Link>
+            </>
+          )}
+
           <Link href={demoLink}>
             <Button
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
@@ -130,6 +146,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
               {t("navDemo")}
             </Button>
           </Link>
+
           <select
             value={language}
             onChange={(e) => handleToggle(e.target.value)}
@@ -138,19 +155,21 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             <option value="en">EN</option>
             <option value="pt">PT</option>
           </select>
-        </nav>
+        </div>
 
         {/* Mobile */}
-        <button
-          className="md:hidden"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {!shouldHideNav && (
+          <button
+            className="md:hidden"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
       </div>
 
-      {isMenuOpen && (
+      {isMenuOpen && !shouldHideNav && (
         <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 px-4 flex flex-col space-y-4">
           <Link
             href={productLink}
@@ -187,6 +206,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           >
             {t("navContact")}
           </Link>
+
           <Link href={demoLink}>
             <Button
               className="bg-gradient-to-r from-blue-600 to-purple-600 w-full"
@@ -195,6 +215,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
               {t("navDemo")}
             </Button>
           </Link>
+
           <select
             value={language}
             onChange={(e) => handleToggle(e.target.value)}
