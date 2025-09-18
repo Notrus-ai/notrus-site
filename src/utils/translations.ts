@@ -23,7 +23,7 @@ export const translations = {
       'Our platform provides complete solutions to transform your customer service',
     benefit1Title: 'Cost Reduction',
     benefit1Desc:
-      'Up to 70% reduction in operational costs with intelligent automation',
+      'Up to 60% reduction in operational costs with intelligent automation',
     benefit2Title: '24/7 Support',
     benefit2Desc:
       'Full availability without interruptions, every day of the week',
@@ -127,7 +127,7 @@ export const translations = {
       'Nossa plataforma oferece soluções completas para transformar seu atendimento ao cliente',
     benefit1Title: 'Redução de Custos',
     benefit1Desc:
-      'Até 70% de redução nos custos operacionais com automação inteligente',
+      'Até 60% de redução nos custos operacionais com automação inteligente',
     benefit2Title: 'Atendimento 24/7',
     benefit2Desc:
       'Disponibilidade total sem interrupções, todos os dias da semana',
