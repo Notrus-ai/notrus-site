@@ -6,6 +6,7 @@ import React from "react";
 import { translations } from "@/utils/translations";
 import { usePathname } from "next/navigation";
 import ContactForm from "@/components/ui/ContactForm";
+import { MessageCircle, Zap, Eye, Shield } from "lucide-react";
 
 export default function Contact() {
   const pathname = usePathname();
@@ -1565,8 +1566,9 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start pl-4 pr-4 sm:pl-6 sm:pr-6">
               {/* Left Side - Information */}
               <div className="text-white">
-                <div className="inline-block bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
-                  🚀 Revolutionize Your Customer Service
+                <div className="inline-flex items-center bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
+                  <MessageCircle className="text-white-600 mr-2" size={20} />
+                  <span>Revolutionize Your Customer Service</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
@@ -1581,8 +1583,8 @@ export default function Contact() {
                 {/* Benefits */}
                 <div className="space-y-6 sm:space-y-8">
                   <div className="flex gap-3 sm:gap-4 items-start">
-                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      ⚡
+                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+                      <Zap className="text-white" size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
@@ -1597,8 +1599,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex gap-3 sm:gap-4 items-start">
-                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      👁️
+                    <div className="bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+                      <Eye className="text-white" size={22} />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
@@ -1614,7 +1616,7 @@ export default function Contact() {
 
                   <div className="flex gap-3 sm:gap-4 items-start">
                     <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      🛡️
+                      <Shield className="text-white" size={22} />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
