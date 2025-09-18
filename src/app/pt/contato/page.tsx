@@ -7,6 +7,7 @@ import { translations } from "@/utils/translations";
 import { usePathname } from "next/navigation";
 import otherCountries from "./other-countries.json";
 import ContactForm from "@/components/ui/ContactForm";
+import { MessageCircle, Zap, Eye, Shield } from "lucide-react";
 
 export default function Contact() {
   const pathname = usePathname();
@@ -268,66 +269,66 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start pl-4 pr-4">
               {/* Left Side - Information */}
               <div className="text-white">
-                <div className="inline-block bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
-                  🚀 Revolucione seu atendimento ao cliente
+                <div className="inline-flex items-center bg-[rgba(255,255,255,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
+                  <MessageCircle className="text-white-600 mr-2" size={20} />
+                  <span>Revolutionize Your Customer Service</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
-                  Melhore o atendimento ao cliente com agentes de IA.
+                  Improve customer service with AI agents.
                 </h1>
 
                 <p className="text-lg sm:text-xl opacity-90 mb-8 sm:mb-12 leading-relaxed">
-                  Agende uma demonstração com nossa equipe de vendas para ver
-                  como a Notrus pode ajudar a melhorar o atendimento ao cliente
-                  por meio da IA.
+                  Schedule a demo with our sales team to see how Notrus can help
+                  you improve customer service through AI.
                 </p>
 
                 {/* Benefits */}
                 <div className="space-y-6 sm:space-y-8">
                   <div className="flex gap-3 sm:gap-4 items-start">
-                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      ⚡
+                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+                      <Zap className="text-white" size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Entrega de valor em menos tempo
+                        Faster time to value
                       </h3>
                       <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Construa e itere agentes de IA rapidamente,
-                        integrando-se facilmente aos sistemas existentes para
-                        entregar ROI em semanas, não em meses.
+                        Build and iterate AI agents quickly, and seamlessly
+                        integrate with existing systems to deliver ROI in weeks,
+                        not months.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 sm:gap-4 items-start">
+                    <div className="bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0 flex items-center justify-center">
+                      <Eye className="text-white" size={22} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                        Unmatched transparency
+                      </h3>
+                      <p className="opacity-90 leading-relaxed text-sm sm:text-base">
+                        Get complete visibility into why AI agents make specific
+                        decisions, so you can iterate and improve agent
+                        behavior.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex gap-3 sm:gap-4 items-start">
                     <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      👁️
+                      <Shield className="text-white" size={22} />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Transparência incomparável
+                        Reliable results at scale
                       </h3>
                       <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Tenha total visibilidade sobre por que os agentes de IA
-                        tomam determinadas decisões, permitindo melhorias
-                        contínuas no comportamento.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3 sm:gap-4 items-start">
-                    <div className="text-xl sm:text-2xl bg-[rgba(255,255,255,0.2)] bg-opacity-20 p-2 sm:p-3 rounded-xl backdrop-blur-sm flex-shrink-0">
-                      🛡️
-                    </div>
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                        Resultados confiáveis em escala
-                      </h3>
-                      <p className="opacity-90 leading-relaxed text-sm sm:text-base">
-                        Proteções de nível empresarial garantem interações
-                        seguras e de alta qualidade que escalam facilmente com
-                        sua empresa.
+                        Enterprise-grade protections ensure safe, high-quality
+                        AI interactions that scale effortlessly with your
+                        business.
                       </p>
                     </div>
                   </div>
