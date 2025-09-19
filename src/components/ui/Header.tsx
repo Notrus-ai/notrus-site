@@ -163,17 +163,30 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         </div>
 
         {/* Mobile */}
-        {!shouldHideNav && (
-          <button
-            className="md:hidden"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+        <div className="flex md:hidden items-center gap-3">
+          {/* seletor MOBILE - SEMPRE VISÍVEL */}
+          <select
+            value={language}
+            onChange={(e) => handleToggle(e.target.value)}
+            className="border border-gray-300 rounded-md px-2 py-1 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        )}
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+          </select>
+
+          {!shouldHideNav && (
+            <button
+              className="md:hidden"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
+        </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && !shouldHideNav && (
         <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 px-4 flex flex-col space-y-4">
           <Link
@@ -212,6 +225,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navContact")}
           </Link>
 
+          {/* Botão Demo */}
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
@@ -219,15 +233,6 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
               </Button>
             </Link>
           )}
-
-          <select
-            value={language}
-            onChange={(e) => handleToggle(e.target.value)}
-            className="border border-gray-300 rounded-md px-2 py-2 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-          </select>
         </nav>
       )}
     </header>
