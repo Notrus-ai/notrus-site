@@ -9,42 +9,43 @@ export const translations = {
     navBenefits: 'Benefits',
     navSecurity: 'Security',
     navContact: 'Contact',
-    navDemo: 'Request Demo',
-    heroBadge: 'Revolutionize Your Customer Service',
-    heroTitle1: 'Transform your customer experience with AI agents',
+    navDemo: 'Get a demo',
+    heroBadge: 'Transform Every Customer Experience',
+    heroTitle1: 'Automate, Analyze & Accelerate Customer Experience',
     heroSubtitle:
-      'Automate processes, reduce operating costs and improve customer experience with our platform of enterprise-grade AI agents',
-    heroButton: 'Request Free Demo',
+      'Boost revenue, reduce costs, and serve millions of customers with an enterprise-grade AI platform built for speed and scale.',
+    heroButton: 'Get a demo',
     chatUserMessage: 'Hello! I need to process a refund for order #12345',
     chatBotMessage:
       "Perfect! I've identified your order. The refund of $299.90 will be processed automatically within 2 business days. Can I help with anything else?",
-    whyTitle: 'Why choose Notrus?',
+    whyTitle: 'Why leading enterprises choose Notrus?',
     whySubtitle:
-      'Our platform provides complete solutions to transform your customer service',
-    benefit1Title: 'Cost Reduction',
+      'An AI platform designed for large-scale customer operations',
+    benefiBafge: 'Why leading enterprises choose Notrus',  
+    benefit1Title: 'Reduce Your Costs',
     benefit1Desc:
-      'Up to 60% reduction in operational costs with intelligent automation',
+      'Automate millions of support interactions monthly and cut operational costs by up to 60%',
     benefit2Title: '24/7 Support',
     benefit2Desc:
       'Full availability without interruptions, every day of the week',
-    benefit3Title: 'Data Analysis',
+    benefit3Title: 'Data-Driven Decisions',
     benefit3Desc:
-      'Real-time insights for strategic decision-making',
-    benefit4Title: 'Total Automation',
+      'Get real-time insights on performance and customer behavior to drive faster strategic decisions',
+    benefit4Title: 'Scalable, End-to-End Automation',
     benefit4Desc:
-      'Fully automated processes without human intervention',
-    benefit5Title: 'Seamless Integration',
+      'Eliminate manual work and cut response times with fully automated workflows',
+    benefit5Title: 'Seamless integrations',
     benefit5Desc: 
-      'Full Notrus support to set up Notrus and integrate AI in your CX teams',
+      'Connects with your existing systems — we’re 100% agnostic and provide dedicated support to integrate with your CRMs, ERPs, and legacy platforms',
     benefit6Title: 'The Notrus Way',
     benefit6Desc: 
       'Full customer solution improvement platform with insights and ways to upgrade the all-in customer experience',
-    benefit7Title: 'Security as a Priority',
+    benefit7Title: 'Security and Compliance',
     benefit7Desc: 
-      'Designed for enterprises, built with security and data privacy guardrails',
-    benefit8Title: 'Increase revenue',
+      'Keep your data protected with advanced encryption, access control, and data privacy guardrails',
+    benefit8Title: 'Increase Your Revenue',
     benefit8Desc: 
-      'Create new opportunities to upsell and cross-sell to your clients',
+      'Unlock opportunities to cross-sell and upsell at scale with AI-powered interactions',
     securityBadge: 'Security & Compliance',
     securityFeaturesTitle: 'Enterprise-Grade Security',
     securityFeaturesSubTitle: 
@@ -94,10 +95,10 @@ export const translations = {
     metric2Desc: 'Driven by faster and more accurate responses',
     metric3Title: 'Revenue Growth',
     metric3Desc: 'Through higher conversion and average order value',
-    finalTitle: 'Ready to Revolutionize Your Service?',
+    finalTitle: 'Ready to Transform Your Customer Operations at Scale?',
     finalSubtitle:
-      'Join the companies that have already transformed their operation with Notrus',
-    finalButton: 'Request Free Demo',
+      'Join the market leaders who trust Notrus to run their customer operations at enterprise scale',
+    finalButton: 'Get a demo',
     agentLabel: 'Notrus AI Agent',
     footerRights: '© 2025 Notrus. All rights reserved.',
     footerSubtitle: 'Transforming the future of customer service',    
@@ -112,43 +113,43 @@ export const translations = {
     navBenefits: 'Benefícios',
     navSecurity: 'Segurança',
     navContact: 'Contato',
-    navDemo: 'Solicitar Demo',
-    heroBadge: 'Revolucione seu Atendimento ao Cliente',
-    heroTitle1: 'Transforme a experiência do cliente com agentes de IA',
+    navDemo: 'Agende uma demo',
+    heroBadge: 'Transforme Toda Experiência do Cliente',
+    heroTitle1: 'Automatize, Analise e Acelere a Experiência do Cliente',
     heroSubtitle:
-      'Automatize processos, reduza custos operacionais e melhore a experiência do cliente com nossa plataforma de agentes de IA de nível empresarial',
-    heroButton: 'Solicitar Demo Gratuita',
+      'Aumente a receita, reduza custos e atenda milhões de clientes com uma plataforma de IA empresarial feita para velocidade e escala',
+    heroButton: 'Agende uma demo',
     chatUserMessage:
       'Olá! Preciso processar um reembolso para o pedido #12345',
     chatBotMessage:
       'Perfeito! Já identifiquei seu pedido. O reembolso de R$ 299,90 será processado automaticamente em até 2 dias úteis. Posso ajudar com mais alguma coisa?',
-    whyTitle: 'Por que escolher a Notrus?',
+    whyTitle: 'Por que grandes empresas escolhem a Notrus?',
     whySubtitle:
-      'Nossa plataforma oferece soluções completas para transformar seu atendimento ao cliente',
-    benefit1Title: 'Redução de Custos',
+      'Uma plataforma de IA projetada para operações de atendimento de alta escala',
+    benefit1Title: 'Reduza seus Custos',
     benefit1Desc:
-      'Até 60% de redução nos custos operacionais com automação inteligente',
+      'Automatize milhões de atendimentos por mês e reduza em até 60% seus custos operacionais',
     benefit2Title: 'Atendimento 24/7',
     benefit2Desc:
       'Disponibilidade total sem interrupções, todos os dias da semana',
-    benefit3Title: 'Análise de Dados',
+    benefit3Title: 'Decisões Orientadas por Dados',
     benefit3Desc:
-      'Insights em tempo real para tomada de decisões estratégicas',
-    benefit4Title: 'Automação Total',
+      'Obtenha insights em tempo real sobre performance e comportamento do cliente para decisões mais rápidas e estratégicas',
+    benefit4Title: 'Escala e Automação Total',
     benefit4Desc:
-      'Processos completamente automatizados sem intervenção humana',
-    benefit5Title: 'Integração Sem Complicações',
+      'Elimine tarefas manuais e reduza o tempo de resposta com fluxos totalmente automatizados',
+    benefit5Title: 'Integração com seus Sistemas',
     benefit5Desc: 
-      'Suporte completo da Notrus para configurar a Notrus e integrar IA nas suas equipes de CX',
+      'Integra com tudo o que sua empresa já usa — somos 100% agnósticos e oferecemos suporte dedicado para conectar aos seus CRMs, ERPs e plataformas legadas',
     benefit6Title: 'O Jeito Notrus',
     benefit6Desc: 
       'Plataforma completa de melhoria da solução para clientes, com insights e formas de aprimorar a experiência total do cliente',
-    benefit7Title: 'Segurança como Prioridade',
+    benefit7Title: 'Segurança e Conformidade',
     benefit7Desc: 
-      'Projetado para empresas, construído com diretrizes de segurança e privacidade de dados',
-    benefit8Title: 'Aumente seu faturamento',
+      'Proteja seus dados com criptografia avançada, controle de acesso e compliance com LGPD, GDPR e e outras diretrizes de segurança',
+    benefit8Title: 'Aumente sua Receita',
     benefit8Desc: 
-      'Crie novas oportunidades de upsell e cross-sell para seus clientes',
+      'Impulsione o ticket médio e gere upsell e cross-sell em grande escala com interações personalizadas por IA',
     securityBadge: 'Segurança e Conformidade',
     securityFeaturesTitle: 'Segurança de Nível Empresarial',
     securityFeaturesSubTitle: 
@@ -199,10 +200,10 @@ export const translations = {
     metric2Desc: 'Através de respostas mais rápida e precisas',
     metric3Title: 'Aumento de Receita',
     metric3Desc: 'Através de maior conversão e ticket médio',
-    finalTitle: 'Pronto para Revolucionar seu Atendimento?',
+    finalTitle: 'Pronto para transformar sua operação de atendimento em escala?',
     finalSubtitle:
-      'Junte-se às empresas que já transformaram sua operação com a Notrus',
-    finalButton: 'Solicitar Demo Gratuita',
+      'Junte-se aos líderes de mercado que confiam na Notrus para operar seus atendimentos em escala empresarial',
+    finalButton: 'Agende uma demo',
     agentLabel: 'Agente IA Notrus',
     footerRights: '© 2025 Notrus. Todos os direitos reservados.',
     footerSubtitle: 'Transformando o futuro do atendimento ao cliente',    
