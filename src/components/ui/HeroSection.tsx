@@ -19,16 +19,18 @@ export function HeroSection({ t }: HeroSectionProps) {
 
   return (
     <section id={t("product")} className="py-20 px-4 text-center">
-      <div className="text-blue-600 font-bold">
-        <div className="inline-flex items-center bg-[rgba(137,183,245,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
-          <Zap className="text-blue mr-2" size={20} />
-          {t("heroBadge")}
+      <div className="container mx-auto px-4">
+        <div className="text-blue-600 font-bold">
+          <div className="inline-flex items-center bg-[rgba(137,183,245,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
+            <Zap className="text-blue mr-2" size={20} />
+            {t("heroBadge")}
+          </div>
         </div>
-      </div>
 
-      <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
-        {t("heroTitle1")}
-      </h1>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+          {t("heroTitle1")}
+        </h1>
+      </div>
 
       <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
         {t("heroSubtitle")}
