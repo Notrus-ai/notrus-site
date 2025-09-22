@@ -15,6 +15,7 @@ export const translations = {
     heroSubtitle:
       'Boost revenue, reduce costs, and serve millions of customers with an enterprise-grade AI platform built for speed and scale.',
     heroButton: 'Get a demo',
+    heroBottonText: 'Trusted by leading enterprises to automate millions of interactions',
     chatUserMessage: 'Hello! I need to process a refund for order #12345',
     chatBotMessage:
       "Perfect! I've identified your order. The refund of $299.90 will be processed automatically within 2 business days. Can I help with anything else?",
@@ -119,6 +120,7 @@ export const translations = {
     heroSubtitle:
       'Aumente a receita, reduza custos e atenda milhões de clientes com uma plataforma de IA empresarial feita para velocidade e escala',
     heroButton: 'Agende uma demo',
+    heroBottonText: 'Confiado por grandes empresas para automatizar milhões de interações',
     chatUserMessage:
       'Olá! Preciso processar um reembolso para o pedido #12345',
     chatBotMessage:

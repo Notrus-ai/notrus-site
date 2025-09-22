@@ -18,7 +18,7 @@ export function HeroSection({ t }: HeroSectionProps) {
   const demoLink = contactLink;
 
   return (
-    <section id={t("product")} className="py-20 px-4 text-center">
+    <section id={t("product")} className="py-10 px-4 text-center">
       <div className="container mx-auto px-4">
         <div className="text-blue-600 font-bold">
           <div className="inline-flex items-center bg-[rgba(137,183,245,0.2)] bg-opacity-90 px-4 py-2 rounded-full text-sm mb-6 sm:mb-8 backdrop-blur-sm">
@@ -68,6 +68,10 @@ export function HeroSection({ t }: HeroSectionProps) {
               </div>
             </div>
           </div>
+          <div className="h-[1px] bg-gray-400 mt-12 mb-10" />
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            {t("heroBottonText")}
+          </p>
         </div>
       </div>
     </section>
