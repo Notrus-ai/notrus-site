@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Notrus AI",
   description: "Automate your customer service with artificial intelligence.",
+  alternates: {
+    canonical: "https://notrus.ai/",
+  },
   other: {
     "google-adsense-account": "ca-pub-5498699782273630",
   },
