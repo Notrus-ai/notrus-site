@@ -110,7 +110,7 @@ export default function SIO({ t }) {
                       {t("panel4Label")}
                     </span>
                     <Badge className="bg-orange-100 text-orange-800">
-                      R$ 45.230
+                      {t("panel4LabelText")}
                     </Badge>
                   </div>
                 </div>
