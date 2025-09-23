@@ -84,7 +84,7 @@ export const translations = {
       'Coordinate product returns, reverse logistics and inventory restocking',
     feature4Title: 'Complete Integration',
     feature4Desc: 'Connect with your existing systems effortlessly',
-    sioPanelTitle: 'IOS Control Panel',
+    sioPanelTitle: 'Orbit Control Panel',
     panel1Label: 'Processed Payments',
     panel2Label: 'Automatic Refunds',
     panel3Label: 'Managed Returns',
@@ -190,7 +190,7 @@ export const translations = {
     feature4Title: 'Integração Completa',
     feature4Desc:
       'Conecte-se com seus sistemas existentes sem complicações',
-    sioPanelTitle: 'Painel de Controle IOS',
+    sioPanelTitle: 'Painel de Controle Orbit',
     panel1Label: 'Pagamentos Processados',
     panel2Label: 'Reembolsos Automáticos',
     panel3Label: 'Retornos Gerenciados',
