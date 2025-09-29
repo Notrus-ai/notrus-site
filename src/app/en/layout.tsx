@@ -21,12 +21,13 @@ export const metadata: Metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Notrus AI - Automated Customer Service Platform with AI",
-    description: "Automate customer service with AI on channels like chat, WhatsApp, web and email. Resolve tickets quickly and reduce operational costs.",
+    description:
+      "Automate customer service with AI on channels like chat, WhatsApp, web and email. Resolve tickets quickly and reduce operational costs.",
     url: "https://notrus.ai/",
     type: "website",
     images: [
       {
-        url: "https://notrus.ai/notrus-logo.jpeg",
+        url: "https://notrus.ai/notrus-logo-transparent.webp",
         width: 1200,
         height: 630,
         alt: "Notrus AI Logo",
@@ -36,14 +37,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Notrus AI - Customer Service with Multichannel AI",
-    description: "With Notrus, automate service via chat, WhatsApp, web and email with artificial intelligence tailored to your business.",
-    images: ["https://www.notrus.ai/notrus-logo.jpeg"],
+    description:
+      "With Notrus, automate service via chat, WhatsApp, web and email with artificial intelligence tailored to your business.",
+    images: ["https://www.notrus.ai/notrus-logo-transparent.webp"],
   },
   other: {
-    'google-adsense-account': 'ca-pub-5498699782273630',
+    "google-adsense-account": "ca-pub-5498699782273630",
   },
 };
-
 
 export default function EnLayout({
   children,
