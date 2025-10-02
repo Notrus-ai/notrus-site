@@ -1896,18 +1896,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     )}
                   </button>
                 </form>
-
-                <div className="text-center mt-6 pt-6 border-t border-gray-200">
-                  <a
-                    href="https://wa.me/+447418638908"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 rounded bg-[rgb(37,211,102)] text-white text-sm 
-                                hover:bg-green-600 transition-colors duration-300"
-                  >
-                    {t("whatsappDirect")}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
