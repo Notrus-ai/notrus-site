@@ -639,3 +639,89 @@ Phone: {phone}
 export type ContactFormTranslations = typeof contactFormTranslations
 export type ContactFormLang = keyof ContactFormTranslations
 export type ContactFormKeys = keyof ContactFormTranslations["pt"]
+
+export const reportTranslations = {
+  pt: {
+    hero: {
+      badge: "Relatório",
+      title: "AI e a próxima geração da experiência do cliente",
+      subtitle:
+        "Descubra porque serviço excepcional é o novo diferencial de marca enquanto a IA redefine as expectativas dos consumidores.",
+      callToActionTitle: "Construa lealdade de marca com IA e atendimento inteligente",
+      callToActionSubtitle:
+        "Empresas perdem $1,6 trilhão/ano por mau atendimento — e 58% dos clientes já veem o suporte com IA como mais moderno e inovador. Preencha o formulário e descubra como transformar interações em confiança e engajamento duradouro."
+    },
+    form: {
+      title: "Baixe o relatório",
+      email: "Email",
+      firstName: "Nome",
+      lastName: "Sobrenome",
+      company: "Empresa",
+      tickets: "Tickets de suporte mensal",
+      ticketsOptions: {
+        one: "1 - 100",
+        two: "101 - 500",
+        three: "500+",
+      },
+      button: "Baixe agora",
+      success: "✅ Obrigado! Seu formulário foi enviado.",
+    },
+    highlights: {
+      title: "Principais insights do relatório:",
+      items: [
+        "58% dos consumidores dizem que uma experiência ruim de suporte os faria parar de comprar.",
+        "31% preferem ir ao dentista do que lidar com suporte frustrante.",
+        "86% dos consumidores de 18–44 anos preferem agentes de IA se forem rápidos e eficientes.",
+        "53% dizem que chatbots escutam melhor do que um parceiro.",
+      ],
+    },
+    cta: {
+      title: "Pronto para transformar a experiência do cliente?",
+      subtitle:
+        "Faça o download do relatório completo e descubra como a IA pode levar seu atendimento a outro nível.",
+      button: "Agendar uma demo",
+    },
+  },
+
+  en: {
+    hero: {
+      badge: "Report",
+      title: "AI and the Next Generation of Customer Experience",
+      subtitle:
+        "Discover why exceptional service is the new brand differentiator as AI reshapes consumer expectations.",
+      callToActionTitle: "Build brand loyalty with AI-powered service",
+      callToActionSubtitle:
+        "Companies lose $1.6 trillion annually from poor service — and 58% of customers see AI support as more modern and innovative. Fill out the form to discover how to turn interactions into trust and long-term engagement."
+    },
+    form: {
+      title: "Download the report",
+      email: "Email",
+      firstName: "First name",
+      lastName: "Last name",
+      company: "Company",
+      tickets: "Monthly support tickets",
+      ticketsOptions: {
+        one: "1 - 100",
+        two: "101 - 500",
+        three: "500+",
+      },
+      button: "Download Now",
+      success: "✅ Thank you! Your form has been submitted.",
+    },
+    highlights: {
+      title: "Key insights from the report:",
+      items: [
+        "58% of consumers say a single negative support experience would stop them from buying again.",
+        "31% would rather go to the dentist than deal with frustrating customer support.",
+        "86% of consumers aged 18–44 prefer AI agents over humans if they are fast and efficient.",
+        "53% say chatbots can listen better than a partner.",
+      ],
+    },
+    cta: {
+      title: "Ready to transform customer experience?",
+      subtitle:
+        "Download the full report and discover how AI can take your customer support to the next level.",
+      button: "Get a demo",
+    },
+  },
+} as const;

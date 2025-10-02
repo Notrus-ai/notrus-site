@@ -28,8 +28,8 @@ export default function Footer({ t }: { t: (k: string) => string }) {
               src="/notrus-logo-transparent.webp"
               alt="Notrus"
               priority
-              width={200}
-              height={200}
+              width={40}
+              height={40}
               className="h-8 w-8 rounded-lg"
             />
             <span className="text-xl font-bold">Notrus AI</span>
