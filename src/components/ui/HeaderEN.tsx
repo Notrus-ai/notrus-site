@@ -27,7 +27,10 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     "/en/terms",
     "/login",
     "/en/login",
+    "/pt/contato",
     "/en/contact",
+    "/pt/relatorio",
+    "/en/report",
   ];
   const shouldHideNav = hideNavRoutes.some((route) => pathname.includes(route));
 
@@ -90,10 +93,10 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           >
             <Image
               src="/notrus-logo-transparent.webp"
-              alt="Notrus"
+              alt="Notrus logo"
               priority
-              width={200}
-              height={200}
+              width={40}
+              height={40}
               className="h-10 w-10 rounded-lg"
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -164,6 +167,14 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         {/* Mobile */}
         <div className="flex md:hidden items-center gap-3">
           {/* seletor MOBILE - SEMPRE VISÍVEL */}
+          {!shouldHideDemoButton && (
+            <Link href={demoLink}>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm px-3 py-2">
+                {t("navDemo")}
+              </Button>
+            </Link>
+          )}
+
           <select
             value={language}
             onChange={(e) => handleToggle(e.target.value)}
