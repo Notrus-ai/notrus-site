@@ -241,6 +241,21 @@ const ArticlePageEN: React.FC = () => {
                 </p>
               ))}
           </section>
+          {/* References */}
+          <section className="mt-12 border-t border-gray-200 pt-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              {texts.referencesTitle || "References"}
+            </h2>
+            <ul className="space-y-3 text-md text-gray-700">
+              {texts.references &&
+                Object.entries(texts.references).map(([key, value]) => (
+                  <li key={key} className="flex gap-2">
+                    <span className="text-blue-600 mt-0.5">•</span>
+                    <span>{value}</span>
+                  </li>
+                ))}
+            </ul>
+          </section>
         </article>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
