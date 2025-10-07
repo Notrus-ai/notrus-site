@@ -14,10 +14,16 @@ interface HeaderProps {
   language: string;
 }
 
+function useLocaleFromPath(): "en" | "pt" {
+  const pathname = usePathname() || "/";
+  const seg = pathname.split("/").filter(Boolean)[0];
+  return seg === "pt" ? "pt" : "en";
+}
+
 export function Header({ t, setLanguage, language }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
   const router = useRouter();
 
   const hideNavRoutes = [
@@ -32,7 +38,6 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     "/pt/relatorio",
     "/en/report",
   ];
-
   const shouldHideNav = hideNavRoutes.some((route) => pathname.includes(route));
 
   const hideDemoButtonRoutes = ["/pt/contato", "/en/contact"];
@@ -40,18 +45,38 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     pathname.startsWith(route)
   );
 
-  const productLink = "/#produto";
-  const sioLink = "/#sio";
-  const benefitsLink = "/#beneficios";
-  const securityLink = "/#seguranca";
-  const contactLink = "/pt/contato";
+  const lang = useLocaleFromPath();
+  const homePrefix = lang === "pt" ? "/pt" : "/en";
+
+  const isHome =
+    (lang === "pt" &&
+      (pathname === "/" || pathname === "/pt" || pathname.startsWith("/#"))) ||
+    (lang === "en" &&
+      (pathname === "/en" || pathname === "/" || pathname.startsWith("/#")));
+
+  const productId = "produto";
+  const benefitsId = "beneficios";
+  const securityId = "seguranca";
+  const sioId = "sio";
+
+  const productLink = isHome ? `/#${productId}` : `${homePrefix}/#${productId}`;
+  const benefitsLink = isHome
+    ? `/#${benefitsId}`
+    : `${homePrefix}/#${benefitsId}`;
+  const securityLink = isHome
+    ? `/#${securityId}`
+    : `${homePrefix}/#${securityId}`;
+  const sioLink = isHome ? `/#${sioId}` : `${homePrefix}/#${sioId}`;
+
+  const resourcesLink = lang === "pt" ? "/pt/insights" : "/en/resources";
+  const contactLink = lang === "pt" ? "/pt/contato" : "/en/contact";
   const demoLink = contactLink;
 
   const handleToggle = (lng: string) => {
     setLanguage(lng);
 
     const segments = pathname.split("/");
-    const currentLang = segments[1];
+    const currentLang = segments[1] || (lang === "pt" ? "pt" : "en");
     const currentPath = "/" + segments.slice(2).join("/");
 
     let newPath = "/";
@@ -71,14 +96,19 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (href.startsWith("/#")) {
+    const hashIndex = href.indexOf("#");
+    if (hashIndex !== -1) {
       e.preventDefault();
-      const id = href.replace("/#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      const id = href.substring(hashIndex + 1);
+
+      if (isHome) {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+        setIsMenuOpen(false);
+      } else {
+        router.push(`${homePrefix}/#${id}`);
+        setIsMenuOpen(false);
       }
-      setIsMenuOpen(false);
     }
   };
 
@@ -88,10 +118,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Link
-            href={language === "pt" ? "/" : "/en"}
-            className="flex items-center space-x-3"
-          >
+          <Link href={`/${lang}`} className="flex items-center space-x-3">
             <Image
               src="/notrus-logo-transparent.webp"
               alt="Notrus logo"
@@ -139,6 +166,12 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
                 {t("navSio")}
               </Link>
               <Link
+                href={resourcesLink}
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {t("navResources")}
+              </Link>
+              <Link
                 href={contactLink}
                 className="text-gray-700 hover:text-blue-600"
               >
@@ -167,7 +200,6 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
         {/* Mobile */}
         <div className="flex md:hidden items-center gap-3">
-          {/* seletor MOBILE - SEMPRE VISÍVEL */}
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm px-3 py-2">
@@ -175,15 +207,6 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
               </Button>
             </Link>
           )}
-
-          <select
-            value={language}
-            onChange={(e) => handleToggle(e.target.value)}
-            className="border border-gray-300 rounded-md px-2 py-1 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-          </select>
 
           {!shouldHideNav && (
             <button
@@ -229,6 +252,13 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navSio")}
           </Link>
           <Link
+            href={resourcesLink}
+            onClick={closeMenu}
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {t("navResources")}
+          </Link>
+          <Link
             href={contactLink}
             onClick={closeMenu}
             className="text-gray-700 hover:text-blue-600"
@@ -236,7 +266,21 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
             {t("navContact")}
           </Link>
 
-          {/* Botão Demo */}
+          {/* Idioma no menu mobile */}
+          <div className="pt-2 border-t border-gray-100">
+            <label className="block text-xs font-medium text-gray-500 mb-2">
+              {language === "pt" ? "Idioma" : "Language"}
+            </label>
+            <select
+              value={language}
+              onChange={(e) => handleToggle(e.target.value)}
+              className="w-full border border-gray-300 rounded-md px-2 py-2 text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="en">EN</option>
+              <option value="pt">PT</option>
+            </select>
+          </div>
+
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
