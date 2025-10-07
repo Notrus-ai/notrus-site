@@ -109,7 +109,6 @@ const ArticlePagePT: React.FC = () => {
             </h2>
             <p className="mt-3 text-gray-700">{texts.cxFootprintIntro}</p>
 
-            {/* Imagem do gráfico - AGORA MENOR E CENTRALIZADA */}
             <div className="mt-6 flex justify-center">
               {" "}
               {/* Container para centralizar */}
@@ -117,11 +116,11 @@ const ArticlePagePT: React.FC = () => {
                 {" "}
                 {/* max-w-lg limita a largura */}
                 <Image
-                  src="/cx-failure-by-industry-pt.png" // ajuste o path conforme seu projeto
+                  src="/cx-failure-by-industry-pt.png"
                   alt="Falhas de atendimento e perda de receita por setor (Qualtrics XM Institute, 2024)"
-                  width={1280} // Mantenha as dimensões intrínsecas da imagem original
-                  height={720} // Mantenha as dimensões intrínsecas da imagem original
-                  className="w-full h-auto object-contain bg-white" // w-full para preencher o max-w-lg, h-auto para manter proporção
+                  width={1280}
+                  height={720}
+                  className="w-full h-auto object-contain bg-white"
                   priority={false}
                 />
                 <figcaption className="px-4 py-3 text-center text-sm text-gray-600 bg-gray-50">

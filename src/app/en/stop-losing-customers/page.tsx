@@ -103,17 +103,13 @@ const ArticlePageEN: React.FC = () => {
               ))}
           </section>
           {/* Metrics */}
-          import Image from "next/image"; // ...
-          {/* Global CX footprint */}
           <section className="mt-12">
             <h2 className="text-2xl font-bold text-gray-900">
               {texts.cxFootprintTitle}
             </h2>
             <p className="mt-3 text-gray-700">{texts.cxFootprintIntro}</p>
 
-            {/* Imagem do gráfico - AGORA MENOR E CENTRALIZADA */}
             <div className="mt-6 flex justify-center">
-              {" "}
               {/* Container para centralizar */}
               <figure className="max-w-sm w-full overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
                 <Image
