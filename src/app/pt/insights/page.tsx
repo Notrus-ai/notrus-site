@@ -116,61 +116,68 @@ const ResourcesPage: React.FC = () => {
             {resources.map((r) => (
               <article
                 key={r.id}
-                className={`group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 h-full flex flex-col ${
+                className={`h-full ${
                   resources.length === 1 ? "max-w-md w-full" : ""
                 }`}
               >
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={r.image}
-                    alt={texts.resources[r.titleKey]}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-fill group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-700">
-                      {texts.categories[r.category]}
-                    </span>
-                    <span className="text-sm text-gray-500">
-                      {new Date(r.date).toLocaleDateString(texts.locale, {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {texts.resources[r.titleKey]}
-                  </h3>
-
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    {texts.resources[r.descriptionKey]}
-                  </p>
-
-                  <Link href={r.link} className="mt-auto">
-                    <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all cursor-pointer">
-                      <span>{texts.readMore}</span>
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                <Link
+                  href={r.link}
+                  className="group block h-full focus:outline-none"
+                  aria-label={texts.resources[r.titleKey]}
+                >
+                  <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 h-full flex flex-col">
+                    <div className="relative h-48 w-full">
+                      <Image
+                        src={r.image}
+                        alt={texts.resources[r.titleKey]}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-fill group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                  </Link>
-                </div>
+
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-700">
+                          {texts.categories[r.category]}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {new Date(r.date).toLocaleDateString(texts.locale, {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                        {texts.resources[r.titleKey]}
+                      </h3>
+
+                      <p className="text-gray-600 mb-4 flex-grow">
+                        {texts.resources[r.descriptionKey]}
+                      </p>
+
+                      {/* Indicador visual de ação (não é mais um Link separado) */}
+                      <div className="mt-auto flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                        <span>{texts.readMore}</span>
+                        <svg
+                          className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>
