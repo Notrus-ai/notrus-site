@@ -99,7 +99,7 @@ const ArticlePagePT: React.FC = () => {
               ?.split("\n\n")
               .filter(Boolean)
               .map((p: string, i: number) => (
-                <p key={i}>{p}</p>
+                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
               ))}
           </section>
           {/* Metrics */}
@@ -133,28 +133,11 @@ const ArticlePagePT: React.FC = () => {
               ?.split("\n")
               .filter(Boolean)
               .map((p: string, i: number) => (
-                <p key={i} className="mt-4 text-gray-700">
-                  {p}
-                </p>
-              ))}
-          </section>
-          {/* CX Footprint */}
-          <section className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900">
-              {texts.cxFootprintTitle}
-            </h2>
-            <p className="mt-3 text-gray-700">{texts.cxFootprintIntro}</p>
-            <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-              <strong className="block text-gray-800">Note:</strong>
-              {texts.fig1}
-            </div>
-            {texts.cxFootprintBody
-              ?.split("\n")
-              .filter(Boolean)
-              .map((p: string, i: number) => (
-                <p key={i} className="mt-4 text-gray-700">
-                  {p}
-                </p>
+                <p
+                  key={i}
+                  className="mt-6 text-gray-700"
+                  dangerouslySetInnerHTML={{ __html: p }}
+                />
               ))}
           </section>
           {/* Seven AI Plays */}
@@ -243,21 +226,6 @@ const ArticlePagePT: React.FC = () => {
                   {p}
                 </p>
               ))}
-          </section>
-          {/* References */}
-          <section className="mt-12 border-t border-gray-200 pt-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              {texts.referencesTitle || "References"}
-            </h2>
-            <ul className="space-y-3 text-md text-gray-700">
-              {texts.references &&
-                Object.entries(texts.references).map(([key, value]) => (
-                  <li key={key} className="flex gap-2">
-                    <span className="text-blue-600 mt-0.5">•</span>
-                    <span>{value}</span>
-                  </li>
-                ))}
-            </ul>
           </section>
         </article>
       </main>
