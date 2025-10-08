@@ -891,8 +891,8 @@ export const articleTexts = {
     cxFootprintBody:
       "A recent CX <a href=\"https://success.qualtrics.com/rs/542-FMF-412/images/XMI_RR-DS_WhatHappensBadExperiences-2024.pdf?version=0/\"target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 hover:underline font-medium\">study</a> (Qualtrics XM Institute, 2024) examines how consumers reduce their spending after a bad service experience, revealing significant differences across industries. The fast-food sector sees the sharpest drop at 64%, with other notable mentions including mobile phone providers at 57% and online retail at 54%, compared with an overall average of 51% across 20 industries surveyed. These results highlight the steep financial impact of poor service and show where targeted improvements can most effectively protect revenue.\nWith failure rates this steep, the opportunity isn’t just to repair what’s broken—it’s to reimagine service through AI-driven precision and personalization. Understanding where service fails is only half the story, and so the next step is knowing how AI can transform those weak points into loyalty wins.",
     fig1:
-      "Service failures by sector and revenue impact — summary of Qualtrics XM Institute (2024).",
-    fig2: "The Seven AI Strategies to Transform Customer Service into Loyalty. Source: Qualtrics XM Institute (2024).",
+      "Consumer spending decline by industry following negative service experience — Source: Qualtrics XM Institute (2024). Visualization by Notrus AI.",
+    fig2: "The Seven AI Strategies to Transform Customer Service into Loyalty. Source and visualization by Notrus AI",
 
     sevenPlaysTitle: "Seven AI plays that turn service into loyalty",
     sevenPlays: [
@@ -1018,8 +1018,8 @@ export const articleTexts = {
     cxFootprintBody:
       "Um <a href=\"https://success.qualtrics.com/rs/542-FMF-412/images/XMI_RR-DS_WhatHappensBadExperiences-2024.pdf?version=0/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 hover:underline font-medium\">estudo</a> recente (Qualtrics XM Institute, 2024) analisou como os consumidores reduzem gastos após uma má experiência. O setor de fast food tem a maior queda (64%), seguido por operadoras móveis (57%) e varejo online (54%), com média geral de 51% em 20 setores pesquisados. Esses números evidenciam o impacto financeiro direto do mau atendimento e indicam onde melhorias direcionadas podem proteger a receita.\nCom taxas tão altas, a oportunidade não é apenas consertar o que está quebrado, mas reimaginar o atendimento com precisão e personalização movidas por IA. Entender onde o serviço falha é só metade da história — o próximo passo é saber como a IA pode transformar esses pontos fracos em fidelização.",
     fig1:
-      "Falhas de atendimento por setor e impacto na receita — síntese de Qualtrics XM Institute (2024).",
-    fig2: "As Sete Estratégias de IA para Transformar o Atendimento em Lealdade. Fonte: Qualtrics XM Institute (2024).",
+      "Queda de consumo por setor após experiência de serviço ruim — Fonte: Qualtrics XM Institute (2024). Visualização por Notrus AI.",
+    fig2: "As Sete Estratégias de IA para Transformar o Atendimento em Lealdade. Fonte e visualização por Notrus AI",
 
     sevenPlaysTitle: "Sete ações com IA que transformam atendimento em lealdade",
     sevenPlays: [
