@@ -32,7 +32,7 @@ const resources: Resource[] = [
     titleKey: "resource1Title",
     descriptionKey: "resource1Description",
     date: "2025-10-02",
-    image: "/article1.webp",
+    image: "/article1.png",
     link: "/en/stop-losing-customers",
   },
   // {
@@ -132,7 +132,7 @@ const ResourcesPage: React.FC = () => {
                         alt={texts.resources[r.titleKey]}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-fill group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
