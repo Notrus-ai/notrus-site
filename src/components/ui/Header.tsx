@@ -120,16 +120,12 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         <div className="flex items-center space-x-3">
           <Link href={`/${lang}`} className="flex items-center space-x-3">
             <Image
-              src="/notrus-logo-transparent.webp"
+              src="/notrus complete - color 1.svg"
               alt="Notrus logo"
               priority
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-lg"
+              width={120}
+              height={120}
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Notrus
-            </span>
           </Link>
         </div>
 
