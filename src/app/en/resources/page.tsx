@@ -29,21 +29,22 @@ const resources: Resource[] = [
   {
     id: 1,
     category: "article",
+    titleKey: "resource2Title",
+    descriptionKey: "resource2Description",
+    date: "2025-10-14",
+    image: "/customer-eperience-guide.png",
+    link: "/en/behind-every-polite-voice",
+  },
+  {
+    id: 2,
+    category: "article",
     titleKey: "resource1Title",
     descriptionKey: "resource1Description",
     date: "2025-10-02",
     image: "/article1.png",
     link: "/en/stop-losing-customers",
   },
-  {
-    id: 2,
-    category: "article",
-    titleKey: "resource2Title",
-    descriptionKey: "resource2Description",
-    date: "2025-03-10",
-    image: "/customer-eperience-guide.png",
-    link: "/en/behind-every-polite-voice",
-  },
+
   // {
   //   id: 3,
   //   category: "caseStudy",
