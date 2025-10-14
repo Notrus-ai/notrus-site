@@ -12,7 +12,7 @@ import {
 } from "@/utils/translations";
 import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
 
-const Article2PT: React.FC = () => {
+const Article2EN: React.FC = () => {
   const [language, setLanguage] = useState<Language>("en");
   const texts = article2Texts[language];
   const t = (key: string) => translations[language]?.[key] || key;
@@ -343,4 +343,4 @@ const Article2PT: React.FC = () => {
     </>
   );
 };
-export default Article2PT;
+export default Article2EN;
