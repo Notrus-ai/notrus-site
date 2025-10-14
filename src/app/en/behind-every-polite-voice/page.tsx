@@ -61,7 +61,7 @@ const Article2EN: React.FC = () => {
             </div>
             <figure className="mt-6 mb-2 mx-auto w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/call-center-chronicles-pt-2.png"
+                src="/call-center-chronicles-en.png"
                 alt="Visuals"
                 width={960}
                 height={540}
@@ -159,7 +159,7 @@ const Article2EN: React.FC = () => {
 
             <figure className="mt-8 mb-2 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/principais-fontes.png"
+                src="/main-sources-of-stress.png"
                 alt="Operational stressors in call centers"
                 width={960}
                 height={540}
@@ -177,7 +177,7 @@ const Article2EN: React.FC = () => {
 
             <figure className="mt-8 mb-2 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/rotatividade-no-atendimento.png"
+                src="/service-turnover-2.png"
                 alt="Operational stressors in call centers"
                 width={960}
                 height={540}
@@ -205,7 +205,7 @@ const Article2EN: React.FC = () => {
 
             <figure className="mt-8 mb-4 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/melhoria-de-desempenho.png"
+                src="/performance-improvement.png"
                 alt="Generative AI impact on contact center metrics"
                 width={960}
                 height={540}
@@ -255,7 +255,7 @@ const Article2EN: React.FC = () => {
 
             <figure className="mt-8 mb-4 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/funcoes-de-apoio.png"
+                src="/ai-supportive-roles.png"
                 alt="Agent reactions to AI types"
                 width={960}
                 height={540}
@@ -272,40 +272,6 @@ const Article2EN: React.FC = () => {
                 <p key={`s3b2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
-          </section>
-
-          <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
-          {/* Seção 4 */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
-              {texts.brRulesTitle}
-            </h2>
-
-            <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
-              {texts.brRulesBody.map((p, i) => (
-                <p key={`brRules-${i}`}>{renderTextWithLinks(p)}</p>
-              ))}
-            </div>
-
-            {USE_BRREG_AS_BULLETS ? (
-              <div className="rounded-lg border border-violet-100 bg-violet-50 space-y-3 p-5 my-5">
-                <ul className="space-y-3">
-                  {texts.brRulesBullets.map((p, i) => (
-                    <li key={`brb-${i}`} className="flex gap-3">
-                      <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
-                      <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {renderTextWithLinks(p)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            <h3 className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700 mb-6">
-              {renderTextWithLinks(texts.brRulesBody2)}
-            </h3>
           </section>
 
           <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
