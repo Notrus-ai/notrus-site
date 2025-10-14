@@ -78,7 +78,7 @@ const Article2EN: React.FC = () => {
             <ul className="space-y-3">
               {texts.tldrBullets.map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-none rounded-full bg-indigo-600" />
+                  <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-indigo-600" />
                   <span className="text-[15px] md:text-base leading-7 text-gray-800">
                     {item}
                   </span>
@@ -107,7 +107,7 @@ const Article2EN: React.FC = () => {
               <ul className="space-y-2">
                 {texts.whyItMattersBullets.map((b, i) => (
                   <li key={`why-${i}`} className="flex gap-3">
-                    <span className="mt-1.5 inline-block h-2 w-2 flex-none rounded-full bg-amber-600" />
+                    <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-amber-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800">
                       {b}
                     </span>
@@ -141,7 +141,7 @@ const Article2EN: React.FC = () => {
                 <ul className="space-y-2">
                   {texts.s1KeyStatsBullets.map((b, i) => (
                     <li key={`s1k-${i}`} className="flex gap-3">
-                      <span className="mt-1.5 inline-block h-2 w-2 flex-none rounded-full bg-sky-600" />
+                      <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-sky-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
                         {b}
                       </span>
@@ -218,7 +218,7 @@ const Article2EN: React.FC = () => {
               <ul className="space-y-2">
                 {texts.s2Bullets.map((bullet, i) => (
                   <li key={`s2b-${i}`} className="flex gap-3">
-                    <span className="mt-1.5 inline-block h-2 w-2 flex-none rounded-full bg-emerald-600" />
+                    <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-emerald-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800 font-medium">
                       {bullet}
                     </span>
@@ -281,7 +281,7 @@ const Article2EN: React.FC = () => {
                 <ul className="space-y-3">
                   {texts.brRegBody.map((p, i) => (
                     <li key={`brb-${i}`} className="flex gap-3">
-                      <span className="mt-1.5 inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
+                      <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
                         {p}
                       </span>

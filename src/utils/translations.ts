@@ -1200,7 +1200,20 @@ export const article2Texts = {
       "The data is clear: turnover isn’t just a human challenge—it’s an operational liability. But the solution isn’t more oversight or automation for automation’s sake. It’s about building intelligent systems that work with people, not against them. Treating workplace well-being as optional is no longer acceptable. Mental health is becoming a business metric, not a wellness perk.",
       "The companies that win in this new landscape will be those that align AI adoption with empathy, compliance, and culture. Because the future of customer service won’t belong to the fastest centers—it will belong to the healthiest, most human-centered ones. AI should support agents, not supervise them. Empowerment—not oversight—is what keeps talent.",
     ],
-  },
+
+    brRulesTitle: "The new rules for mental health at work in Brazil",
+    brRulesBody: [
+    "Brazil took a decisive step towards corporate well-being. In August 2024, the Ministry of Labor published NR-1, which introduces new requirements for identifying, monitoring, and assessing psychological risks in organizations. The new rules, effective May 26, 2025, demonstrate the government's commitment to strengthening mental health in the workplace.",
+    "The regulation is transformative: it requires companies to involve qualified mental health professionals—such as occupational physicians and safety technicians—in the assessment and management of psychological risks. This measure follows the World Health Organization's (WHO) decision in 2022 to recognize burnout as an occupational disease, highlighting its impact on global productivity.",
+    "According to Fius (2024), it is important to distinguish between burnout and burn-on—two equally harmful conditions.",
+    ],
+
+    brRulesBullets: ["The Burnout leads to total exhaustion, often requiring medical leave.",
+    "Burn-on, on the other hand, occurs in professionals who appear highly productive but live with constant anxiety, fear of failure, and an obsessive need to perform.",
+    ],
+
+    brRulesBody2: ["Recognizing and treating both cases is essential for team stability. By incorporating mental health into labor legislation, Brazil positions itself as a leader in preventing psychosocial risks, helping companies reduce turnover, protect productivity, and build more sustainable environments."],
+},
 
   pt: {
     locale: "pt-BR",
@@ -1216,9 +1229,9 @@ export const article2Texts = {
     ],
     heroTitle:
       "Por trás de cada voz educada: como a IA reduz o burnout em 40% e forma agentes melhores",
-    byline: "Visualizado por Notrus AI",
+    byline: "Visualização por Notrus AI",
 
-    tldrTitle: "TL;DR (Principais insights)",
+    tldrTitle: "RESUMO (PRINCIPAIS APRENDIZADOS)",
     tldrBullets: [
       "Por trás de cada voz educada, 87% dos agentes estão lutando contra o estresse.",
       "A IA pode curar o que a pressão quebrou quando apoia, e não vigia.",
@@ -1251,8 +1264,8 @@ export const article2Texts = {
     ],
 
     s1Figure1Caption:
-      "Estressores operacionais usuais que se combinam para criar uma carga mental persistente em call centers: Fonte: Doellgast e O’Braddy (2020). Visuals por Notrus AI.",
-    s1Figure2Caption: "Visualizado por Notrus AI",
+      "Estressores operacionais usuais que se combinam para criar uma carga mental persistente em call centers: Fonte: Doellgast e O’Braddy (2020). Visualização por Notrus AI.",
+    s1Figure2Caption: "Visualização por Notrus AI",
 
     s1Body2: [
       "A pressão raramente pausa. Agentes lidam com dezenas de conversas por hora, quase sem tempo de recuperação entre interações, muitas vezes com clientes já frustrados antes mesmo da ligação começar. “Quero falar com seu gerente” frequentemente surge antes do agente ter chance de dizer qualquer coisa — alimentando instantaneamente a ansiedade e o sentimento de impotência entre profissionais já sobrecarregados.",
@@ -1263,7 +1276,7 @@ export const article2Texts = {
       "O papel da IA no atendimento ao cliente está evoluindo, de uma automação que substitui pessoas para uma inteligência que amplia capacidades humanas. Estudos de Gudipati (2025) mostram que a IA Generativa melhora todos os principais indicadores de contact centers:",
     ],
     s2FigureCaption:
-      "Constatações sobre como a IA Generativa melhora métricas essenciais de contact centers: Fonte: Gudipati (2025). Visualizado por Notrus AI.",
+      "Constatações sobre como a IA Generativa melhora métricas essenciais de contact centers: Fonte: Gudipati (2025). Visualização por Notrus AI.",
     s2Bullets: [
       "Tempo Médio de Atendimento (TMA) ↓ 35%",
       "Satisfação do Cliente (CSAT) ↑ 21%",
@@ -1279,7 +1292,7 @@ export const article2Texts = {
       "A figura abaixo, baseada em Doellgast et al. (2023), analisa como agentes de contact centers nos EUA e Canadá percebem diferentes formas de adoção da IA. A pesquisa revela um ponto crucial: o impacto da IA muda radicalmente dependendo se ela é usada para apoiar (assistência e automação) ou vigiar (monitoramento e métricas) os funcionários.",
     ],
     s3FigureCaption:
-      "Figura comparando as reações dos agentes a dois tipos de IA: Fonte: Doellgast et al. (2023). Visualizado por Notrus AI.",
+      "Figura comparando as reações dos agentes a dois tipos de IA: Fonte: Doellgast et al. (2023). Visualização por Notrus AI.",
     s3Body2: [
       "Resultados-chave: 88% dos agentes nos EUA e 80% no Canadá já usaram ferramentas de IA, mas as reações variam muito conforme a aplicação. A IA voltada à automação de tarefas (chatbots e assistentes em tempo real) foi majoritariamente vista como positiva: 53% disseram que melhorou o atendimento, e 40% afirmaram que tornou o trabalho mais fácil.",
       "Já a IA voltada à automação de gestão (monitoramento e pontuação de performance) foi percebida negativamente: 70% relataram aumento de estresse. Ambientes com uso intenso de IA apresentaram maior vigilância, carga de trabalho elevada e mais incidentes de abuso de clientes. Nesses contextos, agentes passam até 88% do tempo em chamadas, com apenas 14% de pausa entre interações (contra 33% em ambientes com menor uso de IA). Além disso, entre 60% e 65% dos trabalhadores temem demissões nos próximos dois anos devido à automação.",
@@ -1291,5 +1304,18 @@ export const article2Texts = {
       "Os dados são claros: a rotatividade não é apenas um desafio humano, é um passivo operacional. Mas a resposta não está em mais vigilância, nem em automação pelo simples fato de automatizar. A solução está em criar sistemas inteligentes que trabalhem com as pessoas, não contra elas. Tratar a saúde mental como opcional já não é aceitável, ela virou métrica de negócio, não benefício de bem-estar.",
       "As empresas que prosperarão neste novo cenário serão aquelas que alinham adoção de IA com empatia, conformidade e cultura. Porque o futuro do atendimento ao cliente não pertencerá aos contact centers mais rápidos, e sim aos mais saudáveis e humanos. A IA deve apoiar agentes, não supervisioná-los. É o empoderamento, não o controle, que retém talentos.",
     ],
+
+    brRulesTitle: "As novas regras de saúde mental no trabalho no Brasil",
+    brRulesBody:  [
+      "O Brasil deu um passo decisivo em direção ao bem-estar corporativo. Em agosto de 2024, o Ministério do Trabalho publicou a NR-1, que introduz novas exigências para identificar, monitorar e avaliar riscos psicológicos nas organizações. As novas regras, válidas a partir de 26 de maio de 2025, demonstram o compromisso do governo em fortalecer a saúde mental no ambiente de trabalho.",
+      "A norma é transformadora: ela obriga empresas a envolver profissionais qualificados de saúde mental — como médicos do trabalho e técnicos de segurança — na avaliação e gestão dos riscos psicológicos. A medida segue a decisão da Organização Mundial da Saúde (OMS), em 2022, de reconhecer o burnout como uma doença ocupacional, destacando seu impacto na produtividade global.",
+      "Segundo Fius (2024), é importante distinguir entre burnout e burn-on — dois estados igualmente prejudiciais.",
+    ],
+
+    brRulesBullets: ["O burnout leva à exaustão total, frequentemente exigindo afastamento médico.",
+     "O burn-on, por outro lado, ocorre em profissionais que aparentam alta produtividade, mas vivem sob ansiedade constante, medo de falhar e uma necessidade obsessiva de performar.",
+    ],
+    
+    brRulesBody2: ["Reconhecer e tratar ambos os casos é essencial para a estabilidade das equipes. Ao incorporar a saúde mental à legislação trabalhista, o Brasil se posiciona como líder em prevenção de riscos psicossociais, ajudando empresas a reduzir rotatividade, proteger produtividade e construir ambientes mais sustentáveis."],
   },
 } as const;
