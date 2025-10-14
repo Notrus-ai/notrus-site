@@ -10,6 +10,7 @@ import {
   Article2Texts,
   article2Texts,
 } from "@/utils/translations";
+import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
 
 const Article2PT: React.FC = () => {
   const [language, setLanguage] = useState<Language>("pt");
@@ -85,7 +86,7 @@ const Article2PT: React.FC = () => {
                 <li key={i} className="flex gap-3">
                   <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-indigo-600" />
                   <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                    {item}
+                    {renderTextWithLinks(item)}
                   </span>
                 </li>
               ))}
@@ -114,7 +115,7 @@ const Article2PT: React.FC = () => {
                   <li key={`why-${i}`} className="flex gap-3">
                     <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-amber-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                      {b}
+                      {renderTextWithLinks(b)}
                     </span>
                   </li>
                 ))}
@@ -133,7 +134,7 @@ const Article2PT: React.FC = () => {
 
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s1Body.map((p, i) => (
-                <p key={`s1-${i}`}>{p}</p>
+                <p key={`s1-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
@@ -148,7 +149,7 @@ const Article2PT: React.FC = () => {
                     <li key={`s1k-${i}`} className="flex gap-3">
                       <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-sky-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {b}
+                        {renderTextWithLinks(b)}
                       </span>
                     </li>
                   ))}
@@ -171,7 +172,7 @@ const Article2PT: React.FC = () => {
             </figure>
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
-              {texts.s1Body2}
+              <p>{renderTextWithLinks(texts.s1Body2)}</p>
             </div>
 
             <figure className="mt-8 mb-2 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -198,7 +199,7 @@ const Article2PT: React.FC = () => {
             </h2>
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s2Body.map((p, i) => (
-                <p key={`s2-${i}`}>{p}</p>
+                <p key={`s2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
@@ -225,7 +226,7 @@ const Article2PT: React.FC = () => {
                   <li key={`s2b-${i}`} className="flex gap-3">
                     <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-emerald-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800 font-medium">
-                      {bullet}
+                      {renderTextWithLinks(bullet)}
                     </span>
                   </li>
                 ))}
@@ -234,7 +235,7 @@ const Article2PT: React.FC = () => {
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s2Body2.map((p, i) => (
-                <p key={`s2b2-${i}`}>{p}</p>
+                <p key={`s2b2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
           </section>
@@ -248,7 +249,7 @@ const Article2PT: React.FC = () => {
             </h2>
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s3Body.map((p, i) => (
-                <p key={`s3-${i}`}>{p}</p>
+                <p key={`s3-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
@@ -268,7 +269,7 @@ const Article2PT: React.FC = () => {
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s3Body2.map((p, i) => (
-                <p key={`s3b2-${i}`}>{p}</p>
+                <p key={`s3b2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
           </section>
@@ -283,7 +284,7 @@ const Article2PT: React.FC = () => {
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.brRulesBody.map((p, i) => (
-                <p key={`s3b2-${i}`}>{p}</p>
+                <p key={`brRules-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
@@ -294,7 +295,7 @@ const Article2PT: React.FC = () => {
                     <li key={`brb-${i}`} className="flex gap-3">
                       <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {p}
+                        {renderTextWithLinks(p)}
                       </span>
                     </li>
                   ))}
@@ -303,7 +304,7 @@ const Article2PT: React.FC = () => {
             ) : null}
 
             <h3 className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700 mb-6">
-              {texts.brRulesBody2}
+              {renderTextWithLinks(texts.brRulesBody2)}
             </h3>
           </section>
 
@@ -319,10 +320,10 @@ const Article2PT: React.FC = () => {
               <div className="rounded-lg border border-violet-100 bg-violet-50 p-5">
                 <ul className="space-y-3">
                   {texts.brRegBody.map((p, i) => (
-                    <li key={`brb-${i}`} className="flex gap-3">
+                    <li key={`brReg-${i}`} className="flex gap-3">
                       <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {p}
+                        {renderTextWithLinks(p)}
                       </span>
                     </li>
                   ))}
@@ -331,7 +332,7 @@ const Article2PT: React.FC = () => {
             ) : (
               <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
                 {texts.brRegBody.map((p, i) => (
-                  <p key={`br-${i}`}>{p}</p>
+                  <p key={`br-${i}`}>{renderTextWithLinks(p)}</p>
                 ))}
               </div>
             )}

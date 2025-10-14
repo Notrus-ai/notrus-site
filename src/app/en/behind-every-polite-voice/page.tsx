@@ -4,9 +4,15 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Header } from "@/components/ui/HeaderEN";
 import Footer from "@/components/ui/Footer";
-import { Language, translations, article2Texts } from "@/utils/translations";
+import {
+  Language,
+  translations,
+  Article2Texts,
+  article2Texts,
+} from "@/utils/translations";
+import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
 
-const Article2EN: React.FC = () => {
+const Article2PT: React.FC = () => {
   const [language, setLanguage] = useState<Language>("en");
   const texts = article2Texts[language];
   const t = (key: string) => translations[language]?.[key] || key;
@@ -55,7 +61,7 @@ const Article2EN: React.FC = () => {
             </div>
             <figure className="mt-6 mb-2 mx-auto w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/call-center-chronicles-en.png"
+                src="/call-center-chronicles-pt-2.png"
                 alt="Visuals"
                 width={960}
                 height={540}
@@ -80,7 +86,7 @@ const Article2EN: React.FC = () => {
                 <li key={i} className="flex gap-3">
                   <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-indigo-600" />
                   <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                    {item}
+                    {renderTextWithLinks(item)}
                   </span>
                 </li>
               ))}
@@ -109,7 +115,7 @@ const Article2EN: React.FC = () => {
                   <li key={`why-${i}`} className="flex gap-3">
                     <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-amber-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                      {b}
+                      {renderTextWithLinks(b)}
                     </span>
                   </li>
                 ))}
@@ -128,7 +134,7 @@ const Article2EN: React.FC = () => {
 
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s1Body.map((p, i) => (
-                <p key={`s1-${i}`}>{p}</p>
+                <p key={`s1-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
@@ -143,7 +149,7 @@ const Article2EN: React.FC = () => {
                     <li key={`s1k-${i}`} className="flex gap-3">
                       <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-sky-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {b}
+                        {renderTextWithLinks(b)}
                       </span>
                     </li>
                   ))}
@@ -153,7 +159,7 @@ const Article2EN: React.FC = () => {
 
             <figure className="mt-8 mb-2 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/main-sources-of-stress.png"
+                src="/principais-fontes.png"
                 alt="Operational stressors in call centers"
                 width={960}
                 height={540}
@@ -166,12 +172,12 @@ const Article2EN: React.FC = () => {
             </figure>
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
-              {texts.s1Body2}
+              <p>{renderTextWithLinks(texts.s1Body2)}</p>
             </div>
 
             <figure className="mt-8 mb-2 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/service-turnover-2.png"
+                src="/rotatividade-no-atendimento.png"
                 alt="Operational stressors in call centers"
                 width={960}
                 height={540}
@@ -193,13 +199,13 @@ const Article2EN: React.FC = () => {
             </h2>
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s2Body.map((p, i) => (
-                <p key={`s2-${i}`}>{p}</p>
+                <p key={`s2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
             <figure className="mt-8 mb-4 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/performance-improvement.png"
+                src="/melhoria-de-desempenho.png"
                 alt="Generative AI impact on contact center metrics"
                 width={960}
                 height={540}
@@ -220,7 +226,7 @@ const Article2EN: React.FC = () => {
                   <li key={`s2b-${i}`} className="flex gap-3">
                     <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-emerald-600" />
                     <span className="text-[15px] md:text-base leading-7 text-gray-800 font-medium">
-                      {bullet}
+                      {renderTextWithLinks(bullet)}
                     </span>
                   </li>
                 ))}
@@ -229,7 +235,7 @@ const Article2EN: React.FC = () => {
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s2Body2.map((p, i) => (
-                <p key={`s2b2-${i}`}>{p}</p>
+                <p key={`s2b2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
           </section>
@@ -243,13 +249,13 @@ const Article2EN: React.FC = () => {
             </h2>
             <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s3Body.map((p, i) => (
-                <p key={`s3-${i}`}>{p}</p>
+                <p key={`s3-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
 
             <figure className="mt-8 mb-4 mx-auto w-full max-w-lg overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
               <Image
-                src="/ai-supportive-roles.png"
+                src="/funcoes-de-apoio.png"
                 alt="Agent reactions to AI types"
                 width={960}
                 height={540}
@@ -263,9 +269,43 @@ const Article2EN: React.FC = () => {
 
             <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
               {texts.s3Body2.map((p, i) => (
-                <p key={`s3b2-${i}`}>{p}</p>
+                <p key={`s3b2-${i}`}>{renderTextWithLinks(p)}</p>
               ))}
             </div>
+          </section>
+
+          <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+
+          {/* Seção 4 */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
+              {texts.brRulesTitle}
+            </h2>
+
+            <div className="mt-6 space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
+              {texts.brRulesBody.map((p, i) => (
+                <p key={`brRules-${i}`}>{renderTextWithLinks(p)}</p>
+              ))}
+            </div>
+
+            {USE_BRREG_AS_BULLETS ? (
+              <div className="rounded-lg border border-violet-100 bg-violet-50 space-y-3 p-5 my-5">
+                <ul className="space-y-3">
+                  {texts.brRulesBullets.map((p, i) => (
+                    <li key={`brb-${i}`} className="flex gap-3">
+                      <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
+                      <span className="text-[15px] md:text-base leading-7 text-gray-800">
+                        {renderTextWithLinks(p)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            <h3 className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700 mb-6">
+              {renderTextWithLinks(texts.brRulesBody2)}
+            </h3>
           </section>
 
           <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
@@ -280,10 +320,10 @@ const Article2EN: React.FC = () => {
               <div className="rounded-lg border border-violet-100 bg-violet-50 p-5">
                 <ul className="space-y-3">
                   {texts.brRegBody.map((p, i) => (
-                    <li key={`brb-${i}`} className="flex gap-3">
+                    <li key={`brReg-${i}`} className="flex gap-3">
                       <span className="mt-[0.6rem] inline-block h-2 w-2 flex-none rounded-full bg-violet-600" />
                       <span className="text-[15px] md:text-base leading-7 text-gray-800">
-                        {p}
+                        {renderTextWithLinks(p)}
                       </span>
                     </li>
                   ))}
@@ -292,7 +332,7 @@ const Article2EN: React.FC = () => {
             ) : (
               <div className="space-y-5 text-[15px] md:text-base leading-7 text-gray-700">
                 {texts.brRegBody.map((p, i) => (
-                  <p key={`br-${i}`}>{p}</p>
+                  <p key={`br-${i}`}>{renderTextWithLinks(p)}</p>
                 ))}
               </div>
             )}
@@ -303,5 +343,4 @@ const Article2EN: React.FC = () => {
     </>
   );
 };
-
-export default Article2EN;
+export default Article2PT;

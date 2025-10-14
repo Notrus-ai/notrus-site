@@ -1133,7 +1133,7 @@ export const article2Texts = {
       "AI can heal what pressure has broken—when it supports, not surveils.",
       "With the right tools, agents learn 40% faster and feel 21% more satisfied at work.",
       "AI tools can increase customer service representatives’ confidence by 28% and improve overall role performance by 53%.",
-      "AI-driven performance metric boost: 35% lower AHT, 21% higher CSAT, 40% faster training (ATD), and 18% greater resolution efficiency (Gudipati, 2025) not reflective of internal performance data from Notrus AI.",
+      'AI-driven performance metric boost: 35% lower AHT, 21% higher CSAT, 40% faster training (ATD), and 18% greater resolution efficiency [(Gudipati, 2025)](https://thesai.org/Downloads/Volume16No6/Paper_2-Transforming_the_Working_Style_of_Call_Center_Agents.pdf?utm_source=chatgpt.com) not reflective of internal performance data from Notrus AI.'
     ],
     pullQuote:
       "“AI should support agents, not supervise them. Empowerment—not oversight—is what keeps talent.”",
@@ -1148,7 +1148,7 @@ export const article2Texts = {
     s1Title: "The Pressure That Never Pauses",
     s1Body: [
       "Customer service powers everyday life but for those on the front lines, the job can feel relentless. Agents juggle high call volumes, rigid scripts, and intense emotional labor. Despite training, many struggle to perform under constant scrutiny. The result: rising burnout.",
-      "Survey data by Doellgast and O’Braddy (2020) show just how heavy that load has become. 87% of agents report high workplace stress, and more than half face emotional exhaustion and sleep problems. 70% say excessive monitoring is a major strain, while 83% battle slow or failing systems that make every task harder. Nearly 3 in 4 agents endure customer abuse, and rigid scripting plus fear of layoffs strip away their sense of control. Those under the most pressure show 2.5× higher absenteeism and are 5 times more likely to quit.",     
+      'Survey data by [Doellgast e O’Braddy (2020)](https://www.researchgate.net/publication/375922335_AI_in_contact_centers_Artificial_intelligence_and_algorithmic_management_in_frontline_service_workplaces) show just how heavy that load has become. 87% of agents report high workplace stress, and more than half face emotional exhaustion and sleep problems. 70% say excessive monitoring is a major strain, while 83% battle slow or failing systems that make every task harder. Nearly 3 in 4 agents endure customer abuse, and rigid scripting plus fear of layoffs strip away their sense of control. Those under the most pressure show 2.5× higher absenteeism and are 5 times more likely to quit.',
     ],
     s1KeyStatsTitle: "Key stats",
     s1KeyStatsBullets: [
@@ -1169,7 +1169,7 @@ export const article2Texts = {
 
     s2Title: "How Generative AI Is Changing the Equation",
     s2Body: [
-      "AI’s role in customer service is shifting—from automation that replaces people to intelligence that amplifies human capability. A study by Gudipati (2025) shows that Generative AI improves every major contact center metric:",
+      "AI’s role in customer service is shifting—from automation that replaces people to intelligence that amplifies human capability. A study by [Gudipati (2025)](https://thesai.org/Downloads/Volume16No6/Paper_2-Transforming_the_Working_Style_of_Call_Center_Agents.pdf?utm_source=chatgpt.com) shows that Generative AI improves every major contact center metric:",
     ],
     s2FigureCaption:
       "Findings on how Generative AI improves key contact center metrics: Source: Gudipati (2025). Visuals by Notrus AI.",
@@ -1185,7 +1185,7 @@ export const article2Texts = {
 
     s3Title: "AI’s Double-Edged Sword: Support vs. Surveillance",
     s3Body: [
-      "The figure below draws on findings from Doellgast et al. (2023), examining how contact center employees in the U.S. and Canada perceive various forms of AI adoption. The research underscores AI’s dual impact—its effects shift dramatically depending on whether it is deployed to support employees (through assistance and automation) or to supervise them (through monitoring and metrics).",
+      "The figure below draws on findings from [Doellgast et al. (2023)](https://www.researchgate.net/publication/375922335_AI_in_contact_centers_Artificial_intelligence_and_algorithmic_management_in_frontline_service_workplaces), examining how contact center employees in the U.S. and Canada perceive various forms of AI adoption. The research underscores AI’s dual impact—its effects shift dramatically depending on whether it is deployed to support employees (through assistance and automation) or to supervise them (through monitoring and metrics).",
     ],
     s3FigureCaption:
       "Figure comparing agent reactions to two types of AI: Source: Doellgast et al. (2023). Visuals by Notrus AI.",
@@ -1237,7 +1237,7 @@ export const article2Texts = {
       "A IA pode curar o que a pressão quebrou quando apoia, e não vigia.",
       "Com as ferramentas certas, agentes aprendem 40% mais rápido e se sentem 21% mais satisfeitos no trabalho.",
       "Soluções de IA aumentam a confiança dos representantes de atendimento em 28% e melhoram a performance geral do cargo em 53%.",
-      "Ganhos médios com IA: 35% menos TMA, 21% mais CSAT, 40% menos tempo de treinamento (ATD) e 18% mais eficiência na resolução (Gudipati, 2025) dados não refletem performance interna da Notrus AI.",
+      'Ganhos médios com IA: 35% menos TMA, 21% mais CSAT, 40% menos tempo de treinamento (ATD) e 18% mais eficiência na resolução [(Gudipati, 2025)](https://thesai.org/Downloads/Volume16No6/Paper_2-Transforming_the_Working_Style_of_Call_Center_Agents.pdf?utm_source=chatgpt.com) dados não refletem performance interna da Notrus AI.',
     ],
     pullQuote:
       "“A IA deve apoiar os agentes, não supervisioná-los. É o empoderamento, não o controle, que retém talentos.”",
@@ -1252,7 +1252,7 @@ export const article2Texts = {
     s1Title: "A pressão que nunca pausa",
     s1Body: [
       "O atendimento ao cliente impulsiona o dia a dia das empresas, mas, para quem está na linha de frente, o trabalho pode ser exaustivo. Agentes lidam com altos volumes de chamadas, roteiros rígidos e intensa carga emocional. Apesar do treinamento, muitos têm dificuldade em manter a performance sob constante vigilância. O resultado: um burnout crescente.",
-      "Pesquisas de Doellgast e O’Braddy (2020) mostram o peso desse fardo: 87% dos agentes relatam alto nível de estresse, e mais da metade sofre com exaustão emocional e problemas de sono. 70% apontam o monitoramento excessivo como uma das principais fontes de pressão, enquanto 83% enfrentam sistemas lentos ou falhos que tornam cada tarefa mais difícil. Quase 3 em cada 4 agentes relatam abuso de clientes, e roteiros rígidos somados ao medo de demissões corroem a sensação de controle. Os que sofrem maior pressão têm 2,5× mais absenteísmo e são 5 vezes mais propensos a pedir demissão.",
+      'Pesquisas de [Doellgast e O’Braddy (2020)](https://www.researchgate.net/publication/375922335_AI_in_contact_centers_Artificial_intelligence_and_algorithmic_management_in_frontline_service_workplaces) mostram o peso desse fardo: 87% dos agentes relatam alto nível de estresse, e mais da metade sofre com exaustão emocional e problemas de sono. 70% apontam o monitoramento excessivo como uma das principais fontes de pressão, enquanto 83% enfrentam sistemas lentos ou falhos que tornam cada tarefa mais difícil. Quase 3 em cada 4 agentes relatam abuso de clientes, e roteiros rígidos somados ao medo de demissões corroem a sensação de controle. Os que sofrem maior pressão têm 2,5× mais absenteísmo e são 5 vezes mais propensos a pedir demissão.',
     ],
     s1KeyStatsTitle: "Números-chave",
     s1KeyStatsBullets: [
@@ -1273,7 +1273,7 @@ export const article2Texts = {
 
     s2Title: "Como a IA Generativa está mudando o jogo",
     s2Body: [
-      "O papel da IA no atendimento ao cliente está evoluindo, de uma automação que substitui pessoas para uma inteligência que amplia capacidades humanas. Estudos de Gudipati (2025) mostram que a IA Generativa melhora todos os principais indicadores de contact centers:",
+      "O papel da IA no atendimento ao cliente está evoluindo, de uma automação que substitui pessoas para uma inteligência que amplia capacidades humanas. Estudos de [Gudipati (2025)](https://thesai.org/Downloads/Volume16No6/Paper_2-Transforming_the_Working_Style_of_Call_Center_Agents.pdf?utm_source=chatgpt.com) mostram que a IA Generativa melhora todos os principais indicadores de contact centers:",
     ],
     s2FigureCaption:
       "Constatações sobre como a IA Generativa melhora métricas essenciais de contact centers: Fonte: Gudipati (2025). Visualização por Notrus AI.",
@@ -1289,7 +1289,7 @@ export const article2Texts = {
 
     s3Title: "O duplo fio da IA: apoio vs. vigilância",
     s3Body: [
-      "A figura abaixo, baseada em Doellgast et al. (2023), analisa como agentes de contact centers nos EUA e Canadá percebem diferentes formas de adoção da IA. A pesquisa revela um ponto crucial: o impacto da IA muda radicalmente dependendo se ela é usada para apoiar (assistência e automação) ou vigiar (monitoramento e métricas) os funcionários.",
+      "A figura abaixo, baseada em [Doellgast et al. (2023)](https://www.researchgate.net/publication/375922335_AI_in_contact_centers_Artificial_intelligence_and_algorithmic_management_in_frontline_service_workplaces), analisa como agentes de contact centers nos EUA e Canadá percebem diferentes formas de adoção da IA. A pesquisa revela um ponto crucial: o impacto da IA muda radicalmente dependendo se ela é usada para apoiar (assistência e automação) ou vigiar (monitoramento e métricas) os funcionários.",
     ],
     s3FigureCaption:
       "Figura comparando as reações dos agentes a dois tipos de IA: Fonte: Doellgast et al. (2023). Visualização por Notrus AI.",
