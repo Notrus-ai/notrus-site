@@ -35,15 +35,15 @@ const resources: Resource[] = [
     image: "/article1.png",
     link: "/en/stop-losing-customers",
   },
-  // {
-  //   id: 2,
-  //   category: "insights",
-  //   titleKey: "resource2Title",
-  //   descriptionKey: "resource2Description",
-  //   date: "2025-03-10",
-  //   image: "/customer-eperience-guide.png",
-  //   link: "/en/resources",
-  // },
+  {
+    id: 2,
+    category: "article",
+    titleKey: "resource2Title",
+    descriptionKey: "resource2Description",
+    date: "2025-03-10",
+    image: "/customer-eperience-guide.png",
+    link: "/en/behind-every-polite-voice",
+  },
   // {
   //   id: 3,
   //   category: "caseStudy",
@@ -110,7 +110,7 @@ const ResourcesPage: React.FC = () => {
             className={`${
               resources.length === 1
                 ? "flex justify-center"
-                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                : "flex justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             } gap-8`}
           >
             {resources.map((r) => (
