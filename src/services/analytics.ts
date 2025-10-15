@@ -35,7 +35,24 @@ export type GtagEvent = BaseGtagEvent & Partial<{
   cta_location: string;
 }>;
 
-export const GA_TRACKING_ID = 'G-FMYBGJ967S';
+import { GA_TRACKING_ID } from '@/config/analytics';
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+  }
+}
+
+type GtagFunction = (
+  command: 'config' | 'event',
+  targetId: string,
+  params?: Record<string, unknown>
+) => void;
+
+declare global {
+  // eslint-disable-next-line no-var
+  var gtag: GtagFunction;
+}
 
 type PageViewParams = {
   page_path: string;
