@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://notrus.ai/notrus-logo-transparent.webp",
+        url: "https://notrus.ai/Notrus-logo-new.png",
         width: 1200,
         height: 630,
         alt: "Notrus AI Logo",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Notrus AI - Atendimento ao Cliente Multicanal com IA",
     description:
       "Com a Notrus, automatize o atendimento via chat, WhatsApp, web e email com inteligência artificial adaptada ao seu negócio.",
-    images: ["https://www.notrus.ai/notrus-logo-transparent.webp"],
+    images: ["https://www.notrus.ai/Notrus-logo-new.png"],
   },
   other: {
     "google-adsense-account": "ca-pub-5498699782273630",
