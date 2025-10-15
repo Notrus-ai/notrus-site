@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { routeMap } from "@/utils/routeMap";
 import Link from "next/link";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface HeaderProps {
   t: (key: string) => string;
@@ -92,6 +93,8 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     router.push(`/${lng}${newPath}`);
   };
 
+  const analytics = useAnalytics();
+
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -100,6 +103,9 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     if (hashIndex !== -1) {
       e.preventDefault();
       const id = href.substring(hashIndex + 1);
+
+      // Rastreia o clique na navegação
+      analytics.navigation.click(id);
 
       if (isHome) {
         const element = document.getElementById(id);
@@ -177,8 +183,17 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           )}
 
           {!shouldHideDemoButton && (
-            <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <Link
+              href={demoLink}
+              onClick={() =>
+                analytics.cta.click("demo_button_desktop", "header")
+              }
+            >
+              <Button
+                variant="default"
+                size="default"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
@@ -197,8 +212,17 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         {/* Mobile */}
         <div className="flex md:hidden items-center gap-3">
           {!shouldHideDemoButton && (
-            <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm px-3 py-2">
+            <Link
+              href={demoLink}
+              onClick={() =>
+                analytics.cta.click("demo_button_mobile", "header")
+              }
+            >
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm px-3 py-2"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
@@ -278,8 +302,17 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
           </div>
 
           {!shouldHideDemoButton && (
-            <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+            <Link
+              href={demoLink}
+              onClick={() =>
+                analytics.cta.click("demo_button_mobile_menu", "header")
+              }
+            >
+              <Button
+                variant="default"
+                size="default"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 w-full"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
