@@ -102,8 +102,20 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
       const id = href.substring(hashIndex + 1);
 
       if (isHome) {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: "smooth" });
+        // Usamos requestAnimationFrame para evitar forced reflow
+        requestAnimationFrame(() => {
+          const element = document.getElementById(id);
+          if (!element) return;
+
+          const elementRect = element.getBoundingClientRect();
+          const absoluteElementTop = elementRect.top + window.pageYOffset;
+          const middle = absoluteElementTop - window.innerHeight / 2;
+
+          window.scrollTo({
+            top: middle,
+            behavior: "smooth",
+          });
+        });
         setIsMenuOpen(false);
       } else {
         router.push(`${homePrefix}/#${id}`);
@@ -178,7 +190,11 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              <Button
+                variant="default"
+                size="default"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
@@ -198,7 +214,11 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
         <div className="flex md:hidden items-center gap-3">
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm px-3 py-2">
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
@@ -279,7 +299,11 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
 
           {!shouldHideDemoButton && (
             <Link href={demoLink}>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full">
+              <Button
+                variant="default"
+                size="default"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 w-full"
+              >
                 {t("navDemo")}
               </Button>
             </Link>
