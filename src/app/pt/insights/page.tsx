@@ -33,7 +33,7 @@ const resources: Resource[] = [
     descriptionKey: "resource2Description",
     date: "2025-10-14",
     image: "/customer-eperience-guide.png",
-    link: "/en/behind-every-polite-voice",
+    link: "/pt/por-tras-de-cada-voz-educada",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const resources: Resource[] = [
     descriptionKey: "resource1Description",
     date: "2025-10-02",
     image: "/article1.png",
-    link: "/en/stop-losing-customers",
+    link: "/pt/pare-de-perder-clientes",
   },
   // {
   //   id: 3,
