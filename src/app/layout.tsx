@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import { GA_TRACKING_ID } from "@/config/analytics";
+import { GA_CONFIG } from "@/config/analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         {/* Google Analytics */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_CONFIG.id}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics-global" strategy="afterInteractive">
@@ -45,11 +45,9 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-              anonymize_ip: true,
-              cookie_flags: 'SameSite=None;Secure'
-            });
+            gtag('config', '${GA_CONFIG.id}', ${JSON.stringify(
+            GA_CONFIG.options
+          )});
           `}
         </Script>
 

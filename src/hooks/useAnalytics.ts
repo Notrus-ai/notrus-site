@@ -15,6 +15,6 @@ export const useAnalytics = () => {
 
   return {
     ...gtag.commonEvents,
-    trackEvent: gtag.event,
+    trackEvent: gtag.sendEvent,
   };
 };
