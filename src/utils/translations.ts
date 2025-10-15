@@ -1148,7 +1148,7 @@ export const article2Texts = {
     s1Title: "The Pressure That Never Pauses",
     s1Body: [
       "Customer service powers everyday life but for those on the front lines, the job can feel relentless. Agents juggle high call volumes, rigid scripts, and intense emotional labor. Despite training, many struggle to perform under constant scrutiny. The result: rising burnout.",
-      'Survey data by [Doellgast e O’Braddy (2020)](https://www.researchgate.net/publication/375922335_AI_in_contact_centers_Artificial_intelligence_and_algorithmic_management_in_frontline_service_workplaces) show just how heavy that load has become. 87% of agents report high workplace stress, and more than half face emotional exhaustion and sleep problems. 70% say excessive monitoring is a major strain, while 83% battle slow or failing systems that make every task harder. Nearly 3 in 4 agents endure customer abuse, and rigid scripting plus fear of layoffs strip away their sense of control. Those under the most pressure show 2.5× higher absenteeism and are 5 times more likely to quit.',
+      'Survey data by [Doellgast and O’Braddy (2020)](https://ecommons.cornell.edu/items/62ab7fa3-8e8d-4e43-9737-02ce0e22fea2) show just how heavy that load has become. 87% of agents report high workplace stress, and more than half face emotional exhaustion and sleep problems. 70% say excessive monitoring is a major strain, while 83% battle slow or failing systems that make every task harder. Nearly 3 in 4 agents endure customer abuse, and rigid scripting plus fear of layoffs strip away their sense of control. Those under the most pressure show 2.5× higher absenteeism and are 5 times more likely to quit.',
     ],
     s1KeyStatsTitle: "Key stats",
     s1KeyStatsBullets: [
