@@ -1,3 +1,4 @@
+import { article3Texts } from './translations';
 export const translations = {
   en: {
     floatingNewsletterTitle: 'Get exclusive insights',
@@ -783,9 +784,9 @@ export const resourcesTexts: Record<Language, ResourcesTexts> = {
       resource2Description:
         "AI tools can increase customer service representatives’ confidence by 28% and improve overall role performance by 53%.",
 
-      resource3Title: "How Leading Enterprises Achieve 60% Cost Reduction",
+      resource3Title: "Generative AI Is Accelerating Skill Development — 68% of Workers Agree",
       resource3Description:
-        "Real-world case studies showing how companies transformed their operations with Notrus AI.",
+        "Here's how AI accelerates onboarding, coaching, and multilingual coverage.",
 
       resource4Title: "AI Agents for Enterprise: Everything You Need to Know",
       resource4Description:
@@ -826,9 +827,9 @@ export const resourcesTexts: Record<Language, ResourcesTexts> = {
       resource2Description:
         "Soluções de IA aumentam a confiança dos representantes de atendimento em 28% e melhoram a performance geral do cargo em 53%.",
 
-      resource3Title: "Como Grandes Empresas Alcançam 60% de Redução de Custos",
+      resource3Title: "A IA Generativa Está Acelerando o Desenvolvimento de Habilidades — 68% dos Profissionais Concordam",
       resource3Description:
-        "Casos reais mostrando como empresas transformaram suas operações com Notrus AI.",
+        "Veja como a IA acelera onboarding, coaching e cobertura multilíngue.",
 
       resource4Title: "Agentes de IA para Empresas: Tudo que Você Precisa Saber",
       resource4Description:
@@ -1318,4 +1319,275 @@ export const article2Texts = {
     
     brRulesBody2: ["Reconhecer e tratar ambos os casos é essencial para a estabilidade das equipes. Ao incorporar a saúde mental à legislação trabalhista, o Brasil se posiciona como líder em prevenção de riscos psicossociais, ajudando empresas a reduzir rotatividade, proteger produtividade e construir ambientes mais sustentáveis."],
   },
+} as const;
+
+export type Article3Texts = typeof article3Texts["en"];
+
+export const article3Texts = {
+  en: {
+    locale: "en-US",
+    metaType: "Article",
+    metaDateOct2025: "October 2025",
+
+    seoTitle: "Generative AI Is Accelerating Skill Development — 68% of Workers Agree",
+    metaDescription:
+      "68% say GenAI expands upskilling. Case data shows 18%-25% gains in support and pre-sale workflows. Here's how AI accelerates onboarding, coaching, and multilingual coverage.",
+    linkedinHook:
+      "68% of professionals say GenAI is opening new upskilling paths. In support, we're seeing 18%-25% performance lifts translate into faster onboarding and stronger soft skills. Here's the playbook teams are using now.",
+
+    author: "Felipe Gomez @ Notrus AI",
+    keywords: [
+      "customer service skills",
+      "AI in customer support",
+      "generative AI productivity",
+      "upskilling",
+      "sales enablement"
+    ],
+
+    heroTitle: "Generative AI Is Accelerating Skill Development — 68% of Workers Agree",
+    heroSubtitle: "",
+    heroImageCaption:
+      "AI and humans may stumble, but together they accelerate growth. Real-time support means faster learning, smarter service. Visuals by Notrus AI",
+
+    tldrTitle: "TL;DR (Key Takeaways)",
+    tldrBullets: [
+      "68% of professionals say GenAI is expanding upskilling opportunities.",
+      "In support/pre-sale workflows, GenAI delivers ~18%–25% performance gains.",
+      "Productivity lifts translate into faster onboarding and stronger soft skills.",
+      "Best results pair bots + agents with clear handoffs and feedback loops.",
+      "Instrumentation and governance turn daily interactions into a learning engine."
+    ],
+
+    pullQuote:
+      "Generative AI is shifting from automation to augmentation—turning every support interaction into a coaching moment.",
+
+    s1Title: "Generative AI Is Accelerating Skill Development—And It's Reshaping Support",
+    s1Body: [
+      "AI-powered assistants have become routine—from collaboration to customer service. As organizations embed them deeper into workflows, their influence on how people learn and adapt is growing fast. [PwC's 2024](https://www.pwc.co.uk/services/human-resource-services/insights/uk-hopes-and-fears-survey.html) workforce report found that 68% of professionals believe generative AI opens new upskilling opportunities, expanding real-time learning and digital literacy.",
+      "This shift is especially visible in customer support, where skill agility matters most. In our client work, GenAI tools help teams:"
+    ],
+    s1FigureCaption: "",
+    s1KeyStats: {
+      title: "",
+      stats: [
+        "Accelerate onboarding with instant answers, scenario simulations, and guided next-best actions.",
+        "Reinforce soft-skill coaching—empathy, tone, and clarity—through in-flow AI feedback.",
+        "Enable multilingual coverage, cutting wait times in global queues.",
+        "Surface 'learn-by-doing' moments, ajudando agentes a praticar e reter novas habilidades."
+      ]
+    },
+
+    s1Body2: "Industry analyses show that AI-assisted service and sales interactions can lift performance between 18% and 25% ([Fang et al., 2025;](https://arxiv.org/pdf/2510.12049) [Brynjolfsson et al., 2023](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED)) when models are embedded in agent workflows. Gains often come from dynamic objection handling, competitive prompts, and AI-driven cross-sell recommendations—producing faster ramp times, higher CSAT, and measurable ROI.",
+    
+    s2Title: "Where GenAI Moves the Needle Most",
+    s2Body: "The biggest impact identified by [Fang et al. (2025)](https://arxiv.org/pdf/2510.12049) clusters around human-in-the-loop service and pre-sale support, where automation and coaching intersect:"
+    ,
+    s2FigureCaption:
+      "GenAI impact on sales and operational performance across business workflows. Source: [Fang et al. (2025)](https://arxiv.org/pdf/2510.12049). Visuals by Notrus AI.",
+    s2Figure2Caption:
+      "Generative AI improves productivity without hurting quality (Brynjolfsson et al., 2023).",
+    s2BulletPoints: [
+      "Pre-sale chat + hybrid support: Up to 25% uplift when bots and agents co-guide buyers in-flow—reducing friction and resolving objections.",
+      "Product discovery/search: Smaller but consistent lifts (~2–3%) through better description and knowledge generation.",
+      "Operational assist: Non-revenue benefits like +15% improvement in chargeback defense success and +5.2% CSAT from live-chat translation."
+    ],
+
+    s2Body2: "Together, these patterns point to a broader truth: GenAI doesn’t just streamline service—it amplifies sales. Each conversation becomes both a conversion opportunity and a micro-coaching session.",
+
+    s3Title: "AI Boosts Productivity — and Supercharges Skill Growth",
+
+    s3FigureCaption:
+      "The figure shows the performance gains that later translate to skill development. Source: [Brynjolfsson et al. (2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED). Visuals by Notrus AI.",
+
+    s3Body:
+      "Data from customer-service pilots [(Brynjolfsson et al. 2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED) show how GenAI improves day-to-day metrics without hurting satisfaction:",
+    s3BulletPoints: [
+      "Resolutions per hour: +18%",
+      "Average handle time: −9%",
+      "Multitasking efficiency: +14%"
+    ],
+    s3Body2: [
+      "These productivity gains map directly to accelerated skill development:"
+    ],
+    s3BulletPoints2: [
+      "Efficiency → sharper prioritization. Handling more queries builds execution speed and judgment.",
+      "Multitasking → cognitive flexibility. AI task assist lets agents juggle concurrent interactions confidently.",
+      "Problem-solving → applied learning. Real-time suggestions strengthen reasoning and decision-making."
+    ],
+    s3Body3: [
+      "The analysis above demonstrates measurable improvements across key operational areas, as shown in the figure below: an 18% increase in efficiency, a 14% boost in multitasking capacity, and a 1.6% gain in problem-solving ability. While the latter is a modest improvement, it is nevertheless meaningful—it indicates that productivity enhancements, such as faster response times and increased task handling, were achieved without compromising resolution quality, a common concern in accelerated service environments."
+    ],
+    s3FigureCaption2:
+      "Skill development in this study was identified in three key areas: Efficiency, multitasking, and problem-solving. Source: [Brynjolfsson et al. (2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED). Visuals by Notrus AI.",
+
+    s4Title: "How to Operationalize Skill Acceleration (Playbook)",
+    playbook: [
+      {
+        title: "1. Start with high-leverage journeys",
+        description:
+          "Prioritize pre-sale chat and Tier-1 support with clear guardrails. Define success metrics and 'assisted vs. automated' thresholds."
+      },
+      {
+        title: "2. Instrument learning loops",
+        description:
+          "Capture AI recommendations, agent choices, and results for post-shift reviews. Convert wins into repeatable playbooks."
+      },
+      {
+        title: "3. Coach soft skills in-flow",
+        description:
+          "Add tone, empathy, and clarity checks as agents write—delivering instant micro-feedback drawn from top-quartile peers."
+      },
+      {
+        title: "4. Reduce time-to-productive",
+        description:
+          "Provide curated scenarios, safe sandboxes, and guided next-best actions. Track time-to-first-resolution and QA pass rate weekly."
+      },
+      {
+        title: "5. Govern responsibly",
+        description:
+          "Keep humans in the loop for edge cases. Log prompts and outcomes, monitor for bias or hallucination, and retrain models using approved content."
+      }
+    ],
+
+    conclusionTitle:
+      "Conclusion: Generative AI as a Force Multiplier for Capability and Growth",
+    conclusion: [
+      "Taken together, the evidence makes one point clear: Generative AI is no longer just an operational enhancer—it's a human capability amplifier. By embedding adaptive intelligence into everyday workflows, organizations are accelerating not only service quality and sales outcomes but also workforce development itself.",
+      "Employees learn faster, perform better, and adapt continuously—creating a self-reinforcing cycle of productivity and upskilling. As AI systems mature and integrate across functions, their role will increasingly shift from automation to augmentation—helping people reason, decide, and grow at scale.",
+      "For leaders, the strategic priority now lies in designing environments where this human-AI synergy thrives: transparent governance, real-time learning infrastructure, and metrics that value skill acceleration alongside efficiency. In that balance lies the next competitive advantage—one defined not just by technology adoption, but by how intelligently organizations help their people evolve with it."
+    ],
+  },
+
+  pt: {
+    locale: "pt-BR",
+    metaType: "Artigo",
+    metaDateOct2025: "Outubro de 2025",
+
+    seoTitle:
+      "A IA Generativa Está Acelerando o Desenvolvimento de Habilidades — 68% dos Profissionais Concordam",
+    metaDescription:
+      "68% afirmam que a IA Generativa amplia o aprimoramento profissional. Dados mostram ganhos de 18%–25% em suporte e pré-vendas. Veja como a IA acelera onboarding, coaching e cobertura multilíngue.",
+    linkedinHook:
+      "68% dos profissionais dizem que a IA generativa está abrindo novos caminhos de capacitação. Em suporte, estamos vendo ganhos de desempenho de 18%–25%, traduzindo-se em onboarding mais rápido e habilidades interpessoais mais fortes. Veja o playbook que as equipes estão usando agora.",
+
+    author: "Felipe Gomez @ Notrus AI",
+    keywords: [
+      "habilidades em atendimento ao cliente",
+      "IA no suporte ao cliente",
+      "produtividade com IA generativa",
+      "aprimoramento profissional",
+      "capacitação em vendas"
+    ],
+
+    heroTitle:
+      "A IA Generativa Está Acelerando o Desenvolvimento de Habilidades — 68% dos Profissionais Concordam",
+    heroSubtitle: "",
+    heroImageCaption:
+      "IA e humanos podem tropeçar, mas juntos aceleram o crescimento. Suporte em tempo real significa aprendizado mais rápido e um serviço mais inteligente. Visualização por Notrus AI",
+
+    tldrTitle: "RESUMO (Principais Insights)",
+    tldrBullets: [
+      "68% dos profissionais dizem que a IA generativa está ampliando as oportunidades de capacitação.",
+      "Em fluxos de suporte e pré-venda, a IA generativa entrega ganhos de desempenho entre ~18% e 25%.",
+      "Esses ganhos se traduzem em onboarding mais rápido e habilidades interpessoais mais sólidas.",
+      "Os melhores resultados acontecem quando bots e agentes trabalham com repasses claros e ciclos de feedback.",
+      "Instrumentação e governança transformam interações diárias em um motor de aprendizado."
+    ],
+
+    pullQuote:
+      "A IA generativa está evoluindo da automação para a amplificação — transformando cada interação de suporte em um momento de coaching.",
+
+    s1Title: "A IA Generativa Está Acelerando o Desenvolvimento de Habilidades — e Redefinindo o Suporte",
+    s1Body: [
+      "Assistentes com IA se tornaram rotina — de colaboração a atendimento ao cliente. À medida que as organizações os integram mais profundamente em seus fluxos de trabalho, sua influência sobre como as pessoas aprendem e se adaptam cresce rapidamente. O relatório de força de trabalho da [PwC's (2024)](https://www.pwc.co.uk/services/human-resource-services/insights/uk-hopes-and-fears-survey.html) mostrou que 68% dos profissionais acreditam que a IA generativa abre novas oportunidades de aprimoramento profissional, expandindo o aprendizado em tempo real e a alfabetização digital.",
+      "Essa mudança é especialmente visível no suporte ao cliente, onde a agilidade de habilidades é essencial. Em nossos projetos, as ferramentas de IA generativa ajudam as equipes a:"
+    ],
+    s1FigureCaption: "",
+    s1KeyStats: {
+      title: "",
+      stats: [
+        "Acelerar o onboarding com respostas instantâneas, simulações de cenários e ações guiadas.",
+        "Reforçar o coaching de soft skills — empatia, tom e clareza — com feedback em tempo real.",
+        "Permitir cobertura multilíngue, reduzindo o tempo de espera em filas globais.",
+        "Destacar momentos de 'aprender fazendo', ajudando agentes a praticar e reter novas habilidades."
+      ]
+    },
+
+    s1Body2: "Análises do setor mostram que interações de serviço e vendas assistidas por IA podem aumentar o desempenho entre 18% e 25% ([Fang et al., 2025;](https://arxiv.org/pdf/2510.12049) [Brynjolfsson et al., 2023](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED)) quando os modelos são incorporados aos fluxos de trabalho dos agentes. Os ganhos geralmente vêm do manejo dinâmico de objeções, prompts competitivos e recomendações de cross-sell impulsionadas por IA — resultando em tempos de ramp-up mais rápidos, CSAT mais altos e ROI mensurável.",
+
+    s2Title: "Onde a IA Generativa Move Mais a Agulha",
+    s2Body: "O maior impacto identificado por [Fang et al. (2025)](https://arxiv.org/pdf/2510.12049) se concentra em serviços com humano no loop e suporte pré-venda, onde automação e coaching se cruzam:",
+
+    s2FigureCaption:
+      "Impacto da IA generativa em vendas e performance operacional por fluxo [Fang et al. (2025)](https://arxiv.org/pdf/2510.12049). Visualização por Notrus AI.",
+    s2Figure2Caption:
+      "IA generativa melhora produtividade sem prejudicar a qualidade [Brynjolfsson et al. (2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED).",
+    s2BulletPoints: [
+      "Chat de pré-venda + suporte híbrido: até 25% de aumento quando bots e agentes coorientam o comprador em tempo real — reduzindo fricções e resolvendo objeções.",
+      "Descoberta e busca de produtos: ganhos menores, porém consistentes (~2–3%), com melhor geração de descrições e conhecimento.",
+      "Assistência operacional: benefícios não relacionados à receita, como +15% de sucesso em defesa de chargeback e +5,2% de CSAT com tradução em tempo real no chat."
+    ],
+
+    s2Body2: "Juntos, esses padrões apontam para uma verdade mais ampla: a IA generativa não apenas otimiza o atendimento — ela amplifica as vendas. Cada conversa se torna tanto uma oportunidade de conversão quanto uma micro-sessão de aprendizado.",
+      
+    s3Title: "IA Impulsiona a Produtividade — e Turbina o Crescimento de Habilidades",
+    s3Body: 
+      "Dados de pilotos de atendimento [(Brynjolfsson et al. 2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED) mostram como a IA generativa melhora métricas do dia a dia sem prejudicar a satisfação:",
+    s3BulletPoints: [
+      "Resoluções por hora: +18%",
+      "Tempo médio de atendimento: −9%",
+      "Eficiência em multitarefa: +14%"
+    ],
+    s3Body2: [
+      "Esses ganhos de produtividade se traduzem diretamente em aceleração de aprendizado:"
+    ],
+    s3BulletPoints2: [
+      "Eficiência → priorização mais apurada. Lidar com mais consultas desenvolve velocidade de execução e discernimento.",
+      "Multitarefa → flexibilidade cognitiva. A IA permite gerenciar interações simultâneas com confiança.",
+      "Resolução de problemas → aprendizado aplicado. Sugestões em tempo real fortalecem o raciocínio e a tomada de decisão."
+    ],
+    s3Body3: [ "A análise demonstra melhorias mensuráveis nas áreas operacionais-chave, conforme mostrado abaixo: +18% de eficiência, +14% de capacidade multitarefa e +1,6% em resolução de problemas. Embora o último seja um ganho modesto, ele é significativo — indica que os aumentos de produtividade (como respostas mais rápidas e maior volume de tarefas) foram obtidos sem comprometer a qualidade das resoluções, uma preocupação comum em ambientes acelerados."
+    ],
+    s3FigureCaption:
+      "O gráfico mostra ganhos de performance que se traduzem depois em desenvolvimento de habilidades. Fonte: [Brynjolfsson et al. (2023)](https://www.nber.org/system/files/working_papers/w31161/w31161.pdf?utm_source=PANTHEON_STRIPPED). Visualização por Notrus AI.",
+    s3FigureCaption2:
+      "Desenvolvimento de habilidades neste estudo foi identificado em três áreas-chave: eficiência, multitarefa e resolução de problemas. Fonte: Brynjolfsson et al. (2023). Visualização por Notrus AI.",
+
+    s4Title: "Como Operacionalizar a Aceleração de Habilidades (Playbook)",
+    playbook: [
+      {
+        title: "1. Comece pelas jornadas de alto impacto",
+        description:
+          "Priorize chat de pré-venda e suporte de Nível 1 com limites claros. Defina métricas de sucesso e quando a assistência deve ser automatizada ou humana."
+      },
+      {
+        title: "2. Instrumente ciclos de aprendizado",
+        description:
+          "Capture recomendações da IA, escolhas dos agentes e resultados para revisões pós-turno. Transforme boas práticas em playbooks replicáveis."
+      },
+      {
+        title: "3. Treine soft skills em tempo real",
+        description:
+          "Adicione verificações de tom, empatia e clareza enquanto os agentes escrevem — fornecendo microfeedback instantâneo com base nos melhores desempenhos."
+      },
+      {
+        title: "4. Reduza o tempo até a produtividade",
+        description:
+          "Ofereça cenários curados, ambientes seguros e ações guiadas. Monitore semanalmente o tempo até a primeira resolução e a taxa de aprovação em QA."
+      },
+      {
+        title: "5. Governe com responsabilidade",
+        description:
+          "Mantenha humanos no loop para casos complexos. Registre prompts e resultados, monitore viés e alucinações, e reentrene modelos com conteúdo aprovado."
+      }
+    ],
+
+    conclusionTitle:
+      "IA Generativa como Multiplicador de Capacidade e Crescimento",
+    conclusion: [
+      "Em conjunto, as evidências deixam claro: a IA generativa não é mais apenas um reforço operacional — é um amplificador de capacidade humana. Ao incorporar inteligência adaptativa aos fluxos de trabalho diários, as organizações estão acelerando não apenas a qualidade do atendimento e as vendas, mas também o desenvolvimento da própria força de trabalho.",
+      "Os colaboradores aprendem mais rápido, desempenham melhor e se adaptam continuamente — criando um ciclo virtuoso de produtividade e aprimoramento. À medida que os sistemas de IA amadurecem e se integram entre funções, seu papel migrará de automatizar para aumentar — ajudando as pessoas a raciocinar, decidir e crescer em escala.",
+      "Para líderes, a prioridade estratégica agora é criar ambientes onde essa sinergia humano-IA floresça: governança transparente, infraestrutura de aprendizado em tempo real e métricas que valorizem a aceleração de habilidades tanto quanto a eficiência. Nesse equilíbrio está a próxima vantagem competitiva — definida não apenas pela adoção tecnológica, mas por como inteligentemente as empresas ajudam suas pessoas a evoluir com ela."
+    ],
+  }
 } as const;

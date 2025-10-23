@@ -27,7 +27,16 @@ interface Resource {
 
 const resources: Resource[] = [
   {
-    id: 1,
+    id: 3,
+    category: "article",
+    titleKey: "resource3Title",
+    descriptionKey: "resource3Description",
+    date: "2025-10-22",
+    image: "/generative-ai.webp",
+    link: "/pt/ia-generativa-acelerando-habilidades",
+  },
+  {
+    id: 2,
     category: "article",
     titleKey: "resource2Title",
     descriptionKey: "resource2Description",
@@ -36,7 +45,7 @@ const resources: Resource[] = [
     link: "/pt/por-tras-de-cada-voz-educada",
   },
   {
-    id: 2,
+    id: 1,
     category: "article",
     titleKey: "resource1Title",
     descriptionKey: "resource1Description",
@@ -44,15 +53,7 @@ const resources: Resource[] = [
     image: "/article1.png",
     link: "/pt/pare-de-perder-clientes",
   },
-  // {
-  //   id: 3,
-  //   category: "caseStudy",
-  //   titleKey: "resource3Title",
-  //   descriptionKey: "resource3Description",
-  //   date: "2025-03-05",
-  //   image: "/how-leading-enterprises.jpg",
-  //   link: "/pt/insights",
-  // },
+
   // {
   //   id: 4,
   //   category: "guide",
