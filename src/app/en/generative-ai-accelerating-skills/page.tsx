@@ -79,7 +79,7 @@ const Article3EN: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">
               {texts.heroTitle}
             </h1>
 
@@ -172,7 +172,7 @@ const Article3EN: React.FC = () => {
         <article className="mx-auto max-w-3xl px-6 py-6 md:py-10 text-gray-800">
           {/* Seção 1 */}
           <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
               {texts.s1Title}
             </h2>
 
@@ -208,7 +208,7 @@ const Article3EN: React.FC = () => {
 
           {/* Seção 2 */}
           <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
               {texts.s2Title}
             </h2>
 
@@ -259,7 +259,7 @@ const Article3EN: React.FC = () => {
 
           {/* Seção 3 */}
           <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
               {texts.s3Title}
             </h2>
 
@@ -352,7 +352,7 @@ const Article3EN: React.FC = () => {
 
           {/* Playbook (Seção 4) */}
           <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
               {texts.s4Title}
             </h2>
 
@@ -376,7 +376,7 @@ const Article3EN: React.FC = () => {
 
           {/* Conclusão */}
           <section className="mb-10">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 mb-5">
               {texts.conclusionTitle}
             </h2>
 
