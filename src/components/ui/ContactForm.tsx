@@ -12,25 +12,82 @@ type ContactFormProps = {
 export default function ContactForm({ language: lang }: ContactFormProps) {
   const track = useGtagEvent();
   const pathname = usePathname();
+
+  // Detecta idioma pela URL
   const getLangFromPath = (path?: string) => {
     if (!path) return "en";
     const seg = path.split("/")[1];
     return seg === "pt" ? "pt" : "en";
   };
 
+  // Estado de idioma
   const [language, setLanguage] = useState(
     lang || getLangFromPath(pathname) || "en"
   );
+
+  // Traduções
   const t = (key: string) => {
     return contactFormTranslations[language]?.[key] || key;
   };
+
+  // Atualiza idioma ao mudar pathname
   React.useEffect(() => {
     const lng = getLangFromPath(pathname);
     if (lng !== language) {
       setLanguage(lng);
+      // Quando idioma muda, ajusta país padrão do seletor
       setSelectedCountry(getDefaultCountryByLanguage(lng));
     }
   }, [pathname, language]);
+
+  // ===================== Validação de e-mail corporativo =====================
+
+  // Denylist de domínios pessoais
+  const personalDomains = React.useMemo(
+    () =>
+      new Set<string>([
+        "gmail.com",
+        "googlemail.com",
+        "hotmail.com",
+        "outlook.com",
+        "live.com",
+        "yahoo.com",
+        "ymail.com",
+        "aol.com",
+        "icloud.com",
+        "me.com",
+        "proton.me",
+        "protonmail.com",
+        "zoho.com",
+        "mail.com",
+        "gmx.com",
+        "yandex.com",
+        "bol.com.br",
+        "uol.com.br",
+        "terra.com.br",
+        "ig.com.br",
+        "r7.com",
+        "globo.com",
+        // adicione outros conforme sua política
+      ]),
+    []
+  );
+
+  const getEmailDomain = (email: string) => {
+    const m = String(email)
+      .toLowerCase()
+      .match(/^[^\s@]+@([^\s@]+\.[^\s@]+)$/);
+    return m ? m[1] : null;
+  };
+
+  const isProfessionalEmail = (email: string) => {
+    const domain = getEmailDomain(email);
+    if (!domain) return false;
+    if (personalDomains.has(domain)) return false;
+    return true;
+  };
+
+  // ===================== Países e formatação de telefone =====================
 
   const priorityCountries = [
     {
@@ -1352,23 +1409,14 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
 
   const allCountries = [...priorityCountries, ...otherCountries];
 
-  const [formData, setFormData] = React.useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    company: "",
-    phone: "",
-    tickets: "",
-    message: "",
-  });
-
+  // Funções auxiliares para o seletor de país
   const getCountryDisplayName = (
     country: { code: string; name: string },
     lng: string
   ) => {
     try {
-      if (typeof Intl !== "undefined" && Intl.DisplayNames) {
-        const dn = new Intl.DisplayNames([lng], { type: "region" });
+      if (typeof Intl !== "undefined" && (Intl as any).DisplayNames) {
+        const dn = new (Intl as any).DisplayNames([lng], { type: "region" });
         const localized = dn.of(country.code);
         if (localized) return localized;
       }
@@ -1378,21 +1426,20 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
 
   const getDefaultCountryByLanguage = (lang: string) => {
     if (lang === "pt") {
-      return priorityCountries[0];
+      return priorityCountries[0]; // Brasil
     } else {
-      return priorityCountries[1];
+      return priorityCountries[1]; // Reino Unido
     }
   };
 
+  // Estados do seletor de país
   const [selectedCountry, setSelectedCountry] = React.useState(
     getDefaultCountryByLanguage(language)
   );
   const [showCountryDropdown, setShowCountryDropdown] = React.useState(false);
   const [countrySearch, setCountrySearch] = React.useState("");
-  const [errors, setErrors] = React.useState({});
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [showSuccess, setShowSuccess] = React.useState(false);
 
+  // Lista filtrada de países (busca)
   const filteredCountries = React.useMemo(() => {
     if (!countrySearch) return allCountries;
     const q = countrySearch.toLowerCase();
@@ -1407,7 +1454,8 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     });
   }, [countrySearch, language]);
 
-  const formatPhoneByCountry = (value, country) => {
+  // Formatação do telefone com base no país selecionado
+  const formatPhoneByCountry = (value: string, country: { format: string }) => {
     const numbers = value.replace(/\D/g, "");
     const format = country.format;
     let formatted = "";
@@ -1421,26 +1469,69 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
         formatted += format[i];
       }
     }
-
     return formatted;
   };
 
-  const validateField = (name, value) => {
+  const handleCountrySelect = (country: any) => {
+    setSelectedCountry(country);
+    setShowCountryDropdown(false);
+    setCountrySearch("");
+
+    if (formData.phone) {
+      const formattedPhone = formatPhoneByCountry(formData.phone, country);
+      setFormData((prev) => ({
+        ...prev,
+        phone: formattedPhone,
+      }));
+    }
+  };
+
+  // ===================== Formulário: estados e validações =====================
+
+  const [formData, setFormData] = React.useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    company: "",
+    phone: "",
+    tickets: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [showSuccess, setShowSuccess] = React.useState(false);
+
+  const validateField = (name: string, value: string) => {
     switch (name) {
-      case "email":
+      case "email": {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return value && !emailRegex.test(value) ? "Invalid email" : "";
-      case "phone":
-        if (value && value.length < 8) {
-          return "Phone number too short";
+        if (!value || !emailRegex.test(value)) return "Invalid email";
+        if (!isProfessionalEmail(value)) {
+          return language === "pt"
+            ? "Use um e-mail corporativo (não aceitamos domínios pessoais)."
+            : "Please use a corporate email (personal domains are not accepted).";
         }
         return "";
+      }
+      case "phone": {
+        if (value && value.replace(/\D/g, "").length < 8) {
+          return language === "pt"
+            ? "Telefone muito curto"
+            : "Phone number too short";
+        }
+        return "";
+      }
       default:
         return "";
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
 
     let formattedValue = value;
@@ -1461,34 +1552,23 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     }
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = (
+    e: React.FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     const error = validateField(name, value);
-
     setErrors((prev) => ({
       ...prev,
       [name]: error,
     }));
   };
 
-  const handleCountrySelect = (country) => {
-    setSelectedCountry(country);
-    setShowCountryDropdown(false);
-    setCountrySearch("");
-
-    if (formData.phone) {
-      const formattedPhone = formatPhoneByCountry(formData.phone, country);
-      setFormData((prev) => ({
-        ...prev,
-        phone: formattedPhone,
-      }));
-    }
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
     const requiredFields = [
       "email",
       "firstName",
@@ -1498,26 +1578,37 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     ];
 
     requiredFields.forEach((field) => {
-      if (!formData[field].trim()) {
-        newErrors[field] = "Required field";
+      const v = (formData as any)[field];
+      if (!String(v || "").trim()) {
+        newErrors[field] =
+          language === "pt" ? "Campo obrigatório" : "Required field";
       } else {
-        const fieldError = validateField(field, formData[field]);
+        const fieldError = validateField(field, v);
         if (fieldError) newErrors[field] = fieldError;
       }
     });
 
+    // Revalidar opcionais preenchidos
     Object.keys(formData).forEach((field) => {
-      if (!requiredFields.includes(field) && formData[field]) {
-        const fieldError = validateField(field, formData[field]);
-        if (fieldError) newErrors[field] = fieldError;
+      if (!requiredFields.includes(field)) {
+        const v = (formData as any)[field];
+        if (v) {
+          const fieldError = validateField(field, v);
+          if (fieldError) newErrors[field] = fieldError;
+        }
       }
     });
+
+    // Segurança extra — checar novamente e-mail corporativo
+    if (!newErrors.email && !isProfessionalEmail(formData.email)) {
+      newErrors.email =
+        language === "pt"
+          ? "Use um e-mail corporativo (não aceitamos domínios pessoais)."
+          : "Please use a corporate email (personal domains are not accepted).";
+    }
 
     setErrors(newErrors);
-
-    if (Object.keys(newErrors).length > 0) {
-      return;
-    }
+    if (Object.keys(newErrors).length > 0) return;
 
     setIsLoading(true);
 
@@ -1526,14 +1617,14 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       formDataToSend.append(
         "access_key",
         "9a1df9df-6912-4d9c-95af-17e7ca56cb3c"
-      );
+      ); // sua chave Web3Forms
       formDataToSend.append("email", formData.email);
       formDataToSend.append("firstName", formData.firstName);
       formDataToSend.append("lastName", formData.lastName);
       formDataToSend.append("company", formData.company);
       formDataToSend.append(
         "phone",
-        selectedCountry.dialCode + " " + formData.phone
+        `${selectedCountry.dialCode} ${formData.phone}`
       );
       formDataToSend.append("tickets", formData.tickets);
       formDataToSend.append("message", formData.message);
@@ -1541,6 +1632,10 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
         "country",
         getCountryDisplayName(selectedCountry, language)
       );
+
+      // Campo auxiliar para automações/filtros no destino (Zapier/Make/Regra de e-mail)
+      const domain = getEmailDomain(formData.email) || "";
+      formDataToSend.append("email_domain", domain);
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -1570,19 +1665,23 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       }
     } catch (error) {
       console.error("Error sending form:", error);
-      alert("Erro ao enviar mensagem. Tente novamente.");
+      alert(
+        language === "pt"
+          ? "Erro ao enviar mensagem. Tente novamente."
+          : "Error sending message. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
   };
 
+  // =============================== JSX ===============================
+
   return (
     <>
       <div>
-        {/* Main Content */}
         <main className="py-8 sm:py-12 md:py-16">
           <div className="container max-w-6xl mx-auto px-4">
-            {/* Right Side - Form */}
             <div className="flex justify-center">
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 w-full shadow-2xl mx-2 sm:mx-0">
                 <h2 className="text-gray-800 text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-center">
@@ -1595,6 +1694,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                   method="POST"
                   className="space-y-4 sm:space-y-6"
                 >
+                  {/* Email */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
                       {t("email")} *
@@ -1606,6 +1706,11 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
+                      placeholder={
+                        language === "pt"
+                          ? "seu.nome@empresa.com"
+                          : "your.name@company.com"
+                      }
                       className={`w-full bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
                         errors.email
                           ? "border-red-400 bg-red-50"
@@ -1617,8 +1722,14 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                         {errors.email}
                       </p>
                     )}
+                    <p className="text-xs text-gray-500 mt-1">
+                      {language === "pt"
+                        ? "Use seu e-mail corporativo. Domínios pessoais (ex.: gmail.com, outlook.com) não são aceitos."
+                        : "Use your corporate email. Personal domains (e.g., gmail.com, outlook.com) are not accepted."}
+                    </p>
                   </div>
 
+                  {/* Nome e Sobrenome */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-600 text-sm font-medium mb-2">
@@ -1668,6 +1779,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     </div>
                   </div>
 
+                  {/* Empresa */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
                       {t("company")} *
@@ -1692,7 +1804,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     )}
                   </div>
 
-                  {/* Phone with Country Selector */}
+                  {/* Telefone com seletor de país */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
                       {t("phone")}
@@ -1834,6 +1946,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     )}
                   </div>
 
+                  {/* Tickets */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
                       {t("monthlyTickets")}
@@ -1863,6 +1976,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     )}
                   </div>
 
+                  {/* Mensagem */}
                   <div>
                     <label className="block text-gray-600 text-sm font-medium mb-2">
                       {t("message")}
@@ -1877,6 +1991,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                     />
                   </div>
 
+                  {/* Submit */}
                   <button
                     type="submit"
                     disabled={isLoading}
@@ -1914,7 +2029,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           </div>
         )}
 
-        {/* Overlay to close dropdown */}
+        {/* Overlay para fechar o dropdown de países */}
         {showCountryDropdown && (
           <div
             className="fixed inset-0 z-40"
