@@ -788,9 +788,9 @@ export const resourcesTexts: Record<Language, ResourcesTexts> = {
       resource3Description:
         "Here's how AI accelerates onboarding, coaching, and multilingual coverage.",
 
-      resource4Title: "AI Agents for Enterprise: Everything You Need to Know",
+      resource4Title: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
       resource4Description:
-        "A practical guide for CX, product, and ops leaders evaluating AI platforms for customer experience.",
+        "AI hallucinations affect up to 40% of generated outputs in some domains.",
 
       resource5Title: "Automated Payments and Smart Refunds with Orbit",
       resource5Description:
@@ -831,9 +831,9 @@ export const resourcesTexts: Record<Language, ResourcesTexts> = {
       resource3Description:
         "Veja como a IA acelera onboarding, coaching e cobertura multilíngue.",
 
-      resource4Title: "Agentes de IA para Empresas: Tudo que Você Precisa Saber",
+      resource4Title: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
       resource4Description:
-        "Um guia prático para líderes de CX, produto e operações avaliando plataformas de IA para experiência do cliente.",
+        "Alucinações de IA afetam até 40% das saídas geradas em alguns domínios.",
 
       resource5Title:
         "Pagamentos Automatizados e Reembolsos Inteligentes com Orbit",
