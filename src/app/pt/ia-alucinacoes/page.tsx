@@ -12,7 +12,6 @@ import {
   aiHallucinationsTexts,
 } from "@/utils/translations";
 import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
-import { FloatingNewsletter } from "@/components/ui/FloatingNewsletter";
 
 const AIHallucinationsArticlePT: React.FC = () => {
   const [language, setLanguage] = useState<Language>("pt");
@@ -71,12 +70,6 @@ const AIHallucinationsArticlePT: React.FC = () => {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">
               {texts.heroTitle}
             </h1>
-
-            {showHeroSubtitle ? (
-              <p className="mt-3 text-base md:text-lg text-gray-700">
-                {renderTextWithLinks(texts.heroSubtitle)}
-              </p>
-            ) : null}
 
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-gray-600">
               <div className="h-8 w-8 overflow-hidden rounded-full bg-gray-100 ring-1 ring-gray-200 flex items-center justify-center">
@@ -344,12 +337,6 @@ const AIHallucinationsArticlePT: React.FC = () => {
         </article>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
-      <FloatingNewsletter
-        t={t}
-        language={language}
-        setLanguage={setLanguage}
-        showAfterScroll={10}
-      />
     </>
   );
 };
