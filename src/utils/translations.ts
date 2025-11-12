@@ -3890,6 +3890,7 @@ export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
     metaType: "Article",
     metaDate: "November 2025",
     heroTitle: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
+    heroSubtitle: "",
     heroImageCaption: "When AI is prone to hallucination, it needs… better deployment and supervision. Visuals by Notrus AI.",
     linkedinHook: "Up to 40% of AI outputs may contain factual errors - a risk no business can afford. In 2025, companies using Gen AI must prioritize factual reliability over fluency. Here's how leaders can build AI systems that tell the truth, not just talk well.",
     tldrTitle: "TL;DR (Key Takeaways):",
@@ -3992,6 +3993,7 @@ export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
     metaType: "Artigo",
     metaDate: "Novembro 2025",
     heroTitle: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
+    heroSubtitle: "",
     heroImageCaption: "Quando a IA é propensa a alucinações, ela precisa de... melhor implantação e supervisão. Visualização por Notrus AI.",
     linkedinHook: "Até 40% das saídas de IA podem conter erros factuais - um risco que nenhuma empresa pode se dar ao luxo de correr. Em 2025, empresas que usam IA Generativa devem priorizar confiabilidade factual sobre fluência. Veja como líderes podem construir sistemas de IA que dizem a verdade, não apenas falam bem.",
     tldrTitle: "Resumo (Principais Conclusões):",
@@ -4078,4 +4080,4 @@ export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
       "Em um cenário onde dados impulsionam cada decisão, empresas que fundamentam seus sistemas de IA na verdade liderarão com confiança, credibilidade e vantagem competitiva. As organizações mais inteligentes em 2025 não estão apenas implantando IA, estão ensinando-a a pensar, verificar e permanecer real. Porque na nova era da inteligência, confiança é a inovação definitiva."
     ]
   }
-};
+}as const;
