@@ -1591,3 +1591,248 @@ export const article3Texts = {
     ],
   }
 } as const;
+export interface AIHallucinationsTexts {
+  locale: string;
+  seoTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  author: string;
+  metaType: string;
+  metaDate: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroImageCaption: string;
+  linkedinHook: string;
+  tldrTitle: string;
+  tldrBullets: string[];
+  pullQuote: string;
+  s1Title: string;
+  s1Body: string[];
+  s1FigureCaption: string;
+  s1Body2: string[];
+  s2Title: string;
+  s2Body: string[];
+  s2FigureCaption: string;
+  s2Body2: string[];
+  s3Title: string;
+  s3Body: string[];
+  s4Title: string;
+  s4PromptBasedTitle: string;
+  s4PromptBasedItems: { title: string; description: string }[];
+  s4ModelBasedTitle: string;
+  s4ModelBasedItems: { title: string; description: string }[];
+  s4HybridTitle: string;
+  s4HybridBody: string;
+  s4HybridFigureCaption: string;
+  s5Title: string;
+  s5Body: string[];
+}
+
+export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
+  en: {
+    locale: "en_US",
+    seoTitle: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
+    metaDescription: "Discover how companies can minimize AI hallucinations in 2025 through better prompting, factual grounding, and advanced training strategies.",
+    keywords: [
+      "AI hallucinations",
+      "generative AI reliability",
+      "factual accuracy in AI",
+      "large language model hallucinations",
+      "retrieval-augmented generation (RAG)",
+      "prompt engineering"
+    ],
+    author: "Felipe Gomez @ Notrus AI",
+    metaType: "Article",
+    metaDate: "November 2025",
+    heroTitle: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
+    heroSubtitle: "",
+    heroImageCaption: "When AI is prone to hallucination, it needs… better deployment and supervision. Visuals by Notrus AI.",
+    linkedinHook: "Up to 40% of AI outputs may contain factual errors - a risk no business can afford. In 2025, companies using Gen AI must prioritize factual reliability over fluency. Here's how leaders can build AI systems that tell the truth, not just talk well.",
+    tldrTitle: "TL;DR (Key Takeaways):",
+    tldrBullets: [
+      "AI hallucinations affect up to 40% of generated outputs in some domains.",
+      "Business-critical AI systems must balance fluency and factual accuracy.",
+      "Smarter prompting and retrieval-based models can reduce hallucinations by 20-30%.",
+      "Combining human feedback, grounded data, and RAG pipelines boosts reliability.",
+      "Industry leaders are investing in truthfulness optimization as a 2025 AI priority."
+    ],
+    pullQuote: "In the new age of intelligence, trust is the ultimate innovation.",
+    s1Title: "The Rising Cost of AI Hallucinations in Business",
+    s1Body: [
+      "In the era of generative AI and large language models (LLMs), business leaders are embracing tools that accelerate research, automate content, and streamline operations. Yet these same systems present a major risk: AI hallucination. When models generate false or unverifiable information, credibility and decision-making suffer, with potentially serious financial consequences. AI hallucinations occur when models produce information that sounds plausible but lacks factual grounding. This undermines the trust required for real-world deployment, particularly in industries like finance, healthcare, and legal services where accuracy is non-negotiable.",
+      "According to recent research and visual frameworks, hallucinations in AI generally fall into four categories:"
+    ],
+    s1FigureCaption: "Types of AI hallucinations by Anh-Hoang et al. (2025). Visuals by Notrus AI.",
+    s1Body2: [
+      "These categories highlight how hallucinations can arise from different stages of the model's reasoning and data interpretation processes. Understanding them helps business and technical teams target mitigation strategies more precisely. To address these challenges, researchers and developers are quantifying the issue and designing strategies to make AI more reliable—balancing the tension between fluency and factual truth."
+    ],
+    s2Title: "How Hallucinations Appear: A Data-Backed View",
+    s2Body: [
+      "Chelli et al. (2024) conducted a comparative study across major large language models (LLMs) using three core metrics: precision, recall, and hallucination rate. While their results, showing a 39.6% hallucination rate for GPT-3.5 and a reduced 28.6% for GPT-4, reflect clear progress in factual reliability, these models are now somewhat outdated given the rapid evolution of LLMs. Nonetheless, the findings remain valuable as they illustrate a consistent trend across generations: even advanced models are prone to factual hallucinations, underscoring the ongoing importance of rigorous validation and human oversight in AI-generated content.",
+      "Recent literature supports this trend, with most models showing hallucination rates between 25–40%, depending on domain complexity and prompt clarity (Li et al., 2024; Bayat et al., 2024). While precision and recall continue to improve, the most critical benchmark for business adoption remains the reduction of hallucinations—ensuring AI systems deliver accurate, verifiable insights."
+    ],
+    s2FigureCaption: "Performance comparison of few LLMs based on hallucination rates. Sources: Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025. Visuals by Notrus AI.",
+    s2Body2: [
+      "Across multiple studies, as shown in the graph above (Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025) GPT-4 consistently outperformed GPT-3.5 and Gemini (Bard) in factual accuracy, averaging 26–28% hallucination rates. This signals a maturing landscape where factual grounding and retrieval mechanisms are increasingly central to enterprise AI reliability."
+    ],
+    s3Title: "Understanding the Sources: Prompt vs. Model-Based Hallucinations",
+    s3Body: [
+      "Anh-Hoang et al. (2025) categorize AI hallucinations into two types: prompt-based and model-internal. Prompt-based hallucinations arise from poorly structured or misleading instructions, which cause the model to misinterpret intent. In contrast, model-internal hallucinations stem from architectural or data limitations within the LLM itself.",
+      "For business users, this means some hallucinations can be mitigated simply by improving prompt quality. Clear, structured communication with AI tools, sometimes referred to as prompt literacy, can dramatically reduce false outputs. In other cases, organizations must rely on model-level solutions that address deeper systemic issues."
+    ],
+    s4Title: "Techniques That Work: From Smarter Prompts to Grounded Models",
+    s4PromptBasedTitle: "Prompt-Based Methods",
+    s4PromptBasedItems: [
+      {
+        title: "Chain-of-thought prompting:",
+        description: "Encourages step-by-step reasoning to minimize factual errors."
+      },
+      {
+        title: "Instruction prompting:",
+        description: "Uses structured commands to guide accurate responses."
+      },
+      {
+        title: "Negative prompting:",
+        description: "Tells models explicitly what not to generate."
+      },
+      {
+        title: "Prompt calibration & filtering:",
+        description: "Screens for misleading instructions before generation."
+      }
+    ],
+    s4ModelBasedTitle: "Model-Based Techniques",
+    s4ModelBasedItems: [
+      {
+        title: "Instruction fine-tuning:",
+        description: "Aligns models to domain-specific truth patterns."
+      },
+      {
+        title: "Reinforcement learning from human feedback (RLHF):",
+        description: "Shapes model behavior using human evaluations."
+      },
+      {
+        title: "Contrastive decoding:",
+        description: "Filters out low-confidence, likely false completions."
+      },
+      {
+        title: "Retrieval-Augmented Generation (RAG):",
+        description: "Grounds responses with verified, real-time external data."
+      },
+      {
+        title: "Factuality scorers:",
+        description: "Automatically flag or correct hallucinated content post-generation."
+      }
+    ],
+    s4HybridTitle: "Hybrid Pipelines",
+    s4HybridBody: "The most advanced enterprises now use layered systems combining prompting, retrieval, and post-output validation. Platforms like Haystack and HuggingFace RAG are helping organizations deploy fact-grounded pipelines for safer, enterprise-grade AI.",
+    s4HybridFigureCaption: "A workflow diagram showing hybrid AI reliability pipelines (Prompting → Retrieval → Verification). Visuals by Notrus AI.",
+    s5Title: "The Road Ahead: Reliability as a Competitive Advantage",
+    s5Body: [
+      "Despite recent advances, key challenges remain: from the absence of universal hallucination benchmarks to limited access to fine-tuning infrastructure. Yet the direction is clear. Reducing hallucinations is no longer a technical afterthought but a strategic imperative. AI hallucinations aren't just a technical glitch, they're a business risk that separates the frontrunners from the followers.",
+      "In a landscape where data drives every decision, companies that ground their AI systems in truth will lead with confidence, credibility, and competitive edge. The smartest organizations in 2025 aren't just deploying AI, they're teaching it to think, verify, and stay real. Because in the new age of intelligence, trust is the ultimate innovation."
+    ]
+  },
+  pt: {
+    locale: "pt_BR",
+    seoTitle: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
+    metaDescription: "Descubra como as empresas podem minimizar alucinações de IA em 2025 através de melhores prompts, fundamentação factual e estratégias avançadas de treinamento.",
+    keywords: [
+      "alucinações de IA",
+      "confiabilidade da IA generativa",
+      "precisão factual em IA",
+      "alucinações de modelos de linguagem",
+      "geração aumentada por recuperação (RAG)",
+      "engenharia de prompts"
+    ],
+    author: "Felipe Gomez @ Notrus AI",
+    metaType: "Artigo",
+    metaDate: "Novembro 2025",
+    heroTitle: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
+    heroSubtitle: "",
+    heroImageCaption: "Quando a IA é propensa a alucinações, ela precisa de... melhor implantação e supervisão. Visualização por Notrus AI.",
+    linkedinHook: "Até 40% das saídas de IA podem conter erros factuais - um risco que nenhuma empresa pode se dar ao luxo de correr. Em 2025, empresas que usam IA Generativa devem priorizar confiabilidade factual sobre fluência. Veja como líderes podem construir sistemas de IA que dizem a verdade, não apenas falam bem.",
+    tldrTitle: "Resumo (Principais Conclusões):",
+    tldrBullets: [
+      "Alucinações de IA afetam até 40% das saídas geradas em alguns domínios.",
+      "Sistemas de IA críticos para negócios devem equilibrar fluência e precisão factual.",
+      "Prompts mais inteligentes e modelos baseados em recuperação podem reduzir alucinações em 20-30%.",
+      "Combinar feedback humano, dados fundamentados e pipelines RAG aumenta a confiabilidade.",
+      "Líderes da indústria estão investindo em otimização de veracidade como prioridade de IA para 2025."
+    ],
+    pullQuote: "Na nova era da inteligência, confiança é a inovação definitiva.",
+    s1Title: "O Custo Crescente das Alucinações de IA nos Negócios",
+    s1Body: [
+      "Na era da IA generativa e dos grandes modelos de linguagem (LLMs), líderes empresariais estão adotando ferramentas que aceleram pesquisas, automatizam conteúdo e otimizam operações. No entanto, esses mesmos sistemas apresentam um grande risco: alucinação de IA. Quando modelos geram informações falsas ou não verificáveis, a credibilidade e a tomada de decisões sofrem, com consequências financeiras potencialmente sérias. Alucinações de IA ocorrem quando modelos produzem informações que parecem plausíveis, mas carecem de fundamentação factual. Isso prejudica a confiança necessária para implantação no mundo real, particularmente em indústrias como finanças, saúde e serviços jurídicos, onde a precisão é inegociável.",
+      "De acordo com pesquisas recentes e frameworks visuais, alucinações em IA geralmente se enquadram em quatro categorias:"
+    ],
+    s1FigureCaption: "Tipos de alucinações de IA por Anh-Hoang et al. (2025). Visualização por Notrus AI.",
+    s1Body2: [
+      "Essas categorias destacam como as alucinações podem surgir de diferentes estágios dos processos de raciocínio e interpretação de dados do modelo. Compreendê-las ajuda equipes empresariais e técnicas a direcionar estratégias de mitigação com mais precisão. Para enfrentar esses desafios, pesquisadores e desenvolvedores estão quantificando o problema e projetando estratégias para tornar a IA mais confiável—equilibrando a tensão entre fluência e verdade factual."
+    ],
+    s2Title: "Como as Alucinações Aparecem: Uma Visão Baseada em Dados",
+    s2Body: [
+      "Chelli et al. (2024) conduziram um estudo comparativo entre os principais grandes modelos de linguagem (LLMs) usando três métricas principais: precisão, recall e taxa de alucinação. Embora seus resultados, mostrando uma taxa de alucinação de 39,6% para GPT-3.5 e uma reduzida de 28,6% para GPT-4, reflitam um progresso claro na confiabilidade factual, esses modelos agora estão um tanto desatualizados dada a rápida evolução dos LLMs. No entanto, as descobertas permanecem valiosas, pois ilustram uma tendência consistente entre gerações: mesmo modelos avançados são propensos a alucinações factuais, ressaltando a importância contínua de validação rigorosa e supervisão humana no conteúdo gerado por IA.",
+      "A literatura recente apoia essa tendência, com a maioria dos modelos mostrando taxas de alucinação entre 25–40%, dependendo da complexidade do domínio e clareza do prompt (Li et al., 2024; Bayat et al., 2024). Embora precisão e recall continuem a melhorar, o benchmark mais crítico para adoção empresarial permanece a redução de alucinações—garantindo que sistemas de IA entreguem insights precisos e verificáveis."
+    ],
+    s2FigureCaption: "Comparação de desempenho de alguns LLMs baseada em taxas de alucinação. Fontes: Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025. Visualização por Notrus AI.",
+    s2Body2: [
+      "Em múltiplos estudos, como mostrado no gráfico acima (Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025) GPT-4 consistentemente superou GPT-3.5 e Gemini (Bard) em precisão factual, com média de 26–28% de taxas de alucinação. Isso sinaliza um cenário em amadurecimento onde fundamentação factual e mecanismos de recuperação são cada vez mais centrais para a confiabilidade da IA empresarial."
+    ],
+    s3Title: "Compreendendo as Fontes: Alucinações Baseadas em Prompt vs. Modelo",
+    s3Body: [
+      "Anh-Hoang et al. (2025) categorizam alucinações de IA em dois tipos: baseadas em prompt e internas ao modelo. Alucinações baseadas em prompt surgem de instruções mal estruturadas ou enganosas, que fazem o modelo interpretar mal a intenção. Em contraste, alucinações internas ao modelo derivam de limitações arquiteturais ou de dados dentro do próprio LLM.",
+      "Para usuários empresariais, isso significa que algumas alucinações podem ser mitigadas simplesmente melhorando a qualidade do prompt. Comunicação clara e estruturada com ferramentas de IA, às vezes chamada de alfabetização em prompts, pode reduzir drasticamente saídas falsas. Em outros casos, organizações devem confiar em soluções no nível do modelo que abordam problemas sistêmicos mais profundos."
+    ],
+    s4Title: "Técnicas que Funcionam: De Prompts Mais Inteligentes a Modelos Fundamentados",
+    s4PromptBasedTitle: "Métodos Baseados em Prompt",
+    s4PromptBasedItems: [
+      {
+        title: "Prompting de cadeia de pensamento:",
+        description: "Incentiva raciocínio passo a passo para minimizar erros factuais."
+      },
+      {
+        title: "Prompting de instrução:",
+        description: "Usa comandos estruturados para guiar respostas precisas."
+      },
+      {
+        title: "Prompting negativo:",
+        description: "Diz explicitamente aos modelos o que não gerar."
+      },
+      {
+        title: "Calibração e filtragem de prompt:",
+        description: "Filtra instruções enganosas antes da geração."
+      }
+    ],
+    s4ModelBasedTitle: "Técnicas Baseadas em Modelo",
+    s4ModelBasedItems: [
+      {
+        title: "Ajuste fino de instrução:",
+        description: "Alinha modelos a padrões de verdade específicos do domínio."
+      },
+      {
+        title: "Aprendizado por reforço com feedback humano (RLHF):",
+        description: "Molda o comportamento do modelo usando avaliações humanas."
+      },
+      {
+        title: "Decodificação contrastiva:",
+        description: "Filtra conclusões de baixa confiança e provavelmente falsas."
+      },
+      {
+        title: "Geração Aumentada por Recuperação (RAG):",
+        description: "Fundamenta respostas com dados externos verificados em tempo real."
+      },
+      {
+        title: "Pontuadores de factualidade:",
+        description: "Sinalizam ou corrigem automaticamente conteúdo alucinado pós-geração."
+      }
+    ],
+    s4HybridTitle: "Pipelines Híbridos",
+    s4HybridBody: "As empresas mais avançadas agora usam sistemas em camadas combinando prompting, recuperação e validação pós-saída. Plataformas como Haystack e HuggingFace RAG estão ajudando organizações a implantar pipelines fundamentados em fatos para IA empresarial mais segura.",
+    s4HybridFigureCaption: "Um diagrama de fluxo de trabalho mostrando pipelines híbridos de confiabilidade de IA (Prompting → Recuperação → Verificação). Visualização por Notrus AI.",
+    s5Title: "O Caminho à Frente: Confiabilidade como Vantagem Competitiva",
+    s5Body: [
+      "Apesar dos avanços recentes, desafios-chave permanecem: desde a ausência de benchmarks universais de alucinação até acesso limitado à infraestrutura de ajuste fino. No entanto, a direção é clara. Reduzir alucinações não é mais uma reflexão técnica tardia, mas um imperativo estratégico. Alucinações de IA não são apenas uma falha técnica, são um risco empresarial que separa os líderes dos seguidores.",
+      "Em um cenário onde dados impulsionam cada decisão, empresas que fundamentam seus sistemas de IA na verdade liderarão com confiança, credibilidade e vantagem competitiva. As organizações mais inteligentes em 2025 não estão apenas implantando IA, estão ensinando-a a pensar, verificar e permanecer real. Porque na nova era da inteligência, confiança é a inovação definitiva."
+    ]
+  }
+}as const;

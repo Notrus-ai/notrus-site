@@ -27,6 +27,15 @@ interface Resource {
 
 const resources: Resource[] = [
   {
+    id: 4,
+    category: "article",
+    titleKey: "resource4Title",
+    descriptionKey: "resource4Description",
+    date: "2025-11-12",
+    image: "/ai-agents-for-enterprise.webp",
+    link: "/en/ai-hallucinations",
+  },
+  {
     id: 3,
     category: "article",
     titleKey: "resource3Title",
@@ -53,15 +62,7 @@ const resources: Resource[] = [
     image: "/article1.png",
     link: "/en/stop-losing-customers",
   },
-  // {
-  //   id: 4,
-  //   category: "guide",
-  //   titleKey: "resource4Title",
-  //   descriptionKey: "resource4Description",
-  //   date: "2025-02-28",
-  //   image: "/ai-agents-for-enterprise.webp",
-  //   link: "/en/resource",
-  // },
+  //
   // {
   //   id: 5,
   //   category: "product",
