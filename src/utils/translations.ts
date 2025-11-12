@@ -1591,3 +1591,2491 @@ export const article3Texts = {
     ],
   }
 } as const;
+
+export type Locale = "pt" | "en";
+export type IndustryKey =
+  | "E-commerce"
+  | "Imobiliário"
+  | "Varejo"
+  | "Educação"
+  | "Saúde"
+  | "Financeiro"
+  | "SaaS"
+  | "Serviços";
+
+export type NotrusLandingTexts = typeof notrusLandingTexts["pt"];
+
+export const notrusLandingTexts = {
+  pt: {
+    locale: "pt-BR",
+
+    labels: {
+      resultsTitle: "Resultados Comprovados",
+      solutionsTitle: "Soluções para Cada Etapa da Jornada de Compra",
+      solutionsSubtitle:
+        "Automatize desde a recuperação de carrinho até o suporte pós-venda.",
+      howItWorksTitle: "Como Funciona, na Prática",
+      howItWorksSubtitle: "Veja exemplos reais de automação no dia a dia",
+      benefitsTitle: "Benefícios que Transformam seu Negócio",
+      casesTitle: "Cases de Sucesso",
+    },
+
+    modal: {
+      openButton: "Personalizar experiência",
+      title: "Personalizar experiência",
+      subtitle: "Informe seus dados para adaptar a página ao seu segmento.",
+      nameLabel: "Nome do cliente",
+      namePlaceholder: "Ex.: Ana Paula",
+      industryLabel: "Indústria",
+      industryPlaceholder: "Selecione a indústria",
+      statusLabel: "Tipo de cliente",
+      statusNew: "Novo",
+      statusReturning: "Retornando",
+      cancel: "Cancelar",
+      save: "Salvar preferências",
+    },
+
+    segments: {
+      "E-commerce": {
+        hero: {
+          gradient: "from-orange-600 to-orange-800",
+          badge: "Solução Especializada para E-commerce",
+          greetingReturning: " — bom te ver de volta!",
+          headline: "Venda mais todos os dias com automações que não dormem",
+          subheadline:
+            "Recupere carrinhos, reduza atritos no checkout e ofereça suporte 24/7. Tudo com IA treinada para converter.",
+          ctaPrimary: "Ver automações para lojas",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-orange-100",
+          iconText: "text-orange-600",
+          image: "/ecommerce-hero.jpg",
+          imageAlt:
+            "Dashboard de e-commerce com automações de IA e análise de vendas",
+          Icon: "ShoppingCart",
+        },
+        stats: [
+          { value: "40%", label: "Maior Taxa de Conversão" },
+          { value: "3x", label: "Redução no CAC" },
+          { value: "90%", label: "Melhora no CSAT" },
+          { value: "24h", label: "Atendimento Disponível" },
+        ],
+        solutions: [
+          {
+            color: "orange",
+            icon: "ShoppingCart",
+            title: "Pré-Venda e Conversão",
+            description:
+              "Automatize a captação e a conversão desde a primeira visita.",
+            features: [
+              "Recuperação automática de Carrinhos Abandonados (+8–15%)",
+              "Recomendação de produtos personalizada",
+              "Respostas instantâneas sobre estoque e frete",
+              "Qualificação de leads para produtos de alto valor",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "CreditCard",
+            title: "Venda e Transação",
+            description:
+              "Reduza fricção no checkout e aumente o ticket no momento da compra.",
+            features: [
+              "Acompanhamento de Pedidos e Rastreio",
+              "Suporte para Pagamentos e Cupons",
+              "Confirmação e Detalhes da Compra",
+              "Upsell e Cross-sell no momento da compra",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat",
+            title: "Pós-Venda e Fidelização",
+            description:
+              "Suporte 24/7 e ofertas relevantes para aumentar a recorrência.",
+            features: [
+              "Gerenciamento de Trocas e Devoluções (menos tickets no SAC)",
+              "Pesquisas de Satisfação (CSAT) automáticas",
+              "Suporte para Dúvidas de Uso e Manutenção",
+              "Ofertas exclusivas para clientes recorrentes (mais recompra)",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Visitante adicionou ao carrinho e saiu",
+            automation:
+              "IA identifica o abandono, envia lembrete com incentivo e recupera a venda automaticamente (+8–15%).",
+          },
+          {
+            step: 2,
+            scenario: "Cliente em checkout com dúvidas de frete",
+            automation:
+              "Respostas instantâneas sobre prazos e custos de envio, com sugestão de produtos complementares.",
+          },
+          {
+            step: 3,
+            scenario: "Pedido confirmado e em trânsito",
+            automation:
+              "Envio proativo de status e rastreio, reduzindo contatos no SAC e ansiedade do cliente.",
+          },
+          {
+            step: 4,
+            scenario: "Pós-compra e suporte",
+            automation:
+              "Pesquisa de satisfação automática, suporte a trocas e ofertas personalizadas para recompra.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BarChart3",
+            colorClass: "text-orange-600 bg-orange-100",
+            title: "Aumento de Faturamento",
+            description:
+              "IA recupera vendas perdidas e realiza upsell/cross-sell de forma inteligente. +12–25% em 60 dias.",
+          },
+          {
+            icon: "TrendingUp",
+            colorClass: "text-blue-600 bg-blue-100",
+            title: "Redução do CAC",
+            description:
+              "Melhor qualificação de leads e reengajamento reduzem a dependência de mídia paga.",
+          },
+          {
+            icon: "Star",
+            colorClass: "text-green-600 bg-green-100",
+            title: "Melhora do CSAT",
+            description:
+              "Atendimento imediato e preciso para rastreio, trocas e dúvidas transforma a experiência.",
+          },
+          {
+            icon: "Gift",
+            colorClass: "text-purple-600 bg-purple-100",
+            title: "Escalabilidade",
+            description:
+              "Atenda picos como Black Friday sem contratar e treinar equipes adicionais.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "A automação de carrinho abandonado nos deu um aumento de 25% no faturamento em um mês.",
+            author: "Mariana Silva",
+            position: "Gerente de E-commerce, Loja Fashion",
+          },
+          {
+            quote:
+              "Reduzimos em 30% os custos com SAC e o tempo de resposta caiu para segundos.",
+            author: "João Pedro",
+            position: "Diretor de Operações, Tech Store",
+          },
+        ],
+        cta: {
+          title: "Pronto para Revolucionar seu Negócio?",
+          subtitle:
+            "Agende uma demonstração personalizada e veja a Notrus AI em ação com os dados da sua operação.",
+        },
+      },
+
+      "Imobiliário": {
+        hero: {
+          gradient: "from-rose-600 to-rose-800",
+          badge: "Solução Especializada para Imobiliário",
+          greetingReturning: " — seguimos acelerando suas oportunidades!",
+          headline: "Transforme leads em visitas e propostas com IA 24/7",
+          subheadline:
+            "Qualificação, agendamento e documentação no piloto automático para corretores focarem no fechamento.",
+          ctaPrimary: "Ver fluxo de captação e visitas",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-rose-100",
+          iconText: "text-rose-600",
+          image: "/real-estate-hero.jpg",
+          imageAlt:
+            "Corretor de imóveis usando tablet com clientes em apartamento moderno",
+          Icon: "Building2",
+        },
+        stats: [
+          { value: "5x", label: "Mais visitas agendadas" },
+          { value: "60%", label: "Leads qualificados automaticamente" },
+          { value: "90%", label: "Resposta em menos de 1 min" },
+          { value: "24h", label: "Atendimento a qualquer hora" },
+        ],
+        solutions: [
+          {
+            color: "rose",
+            icon: "Building2",
+            title: "Captação e Qualificação",
+            description:
+              "Respostas instantâneas a portais e WhatsApp, com filtro de perfil.",
+            features: [
+              "Qualificação automática (budget, região, tipologia)",
+              "Integração com agenda dos corretores",
+              "Envio de opções similares e follow-ups",
+              "Prioridade para leads de alto potencial",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "CalendarDays",
+            title: "Visitas e Propostas",
+            description:
+              "Agendamento e lembretes automáticos, documentos e propostas.",
+            features: [
+              "Envio de documentação e termos",
+              "Roteirização de visitas",
+              "Geração de proposta padrão",
+              "Follow-up pós-visita",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat",
+            title: "Pós-venda e Relacionamento",
+            description:
+              "Acompanhamento do processo e atualização do cliente.",
+            features: [
+              "Status do processo em tempo real",
+              "Solicitação de documentos pendentes",
+              "Pesquisa de satisfação pós-compra/locação",
+              "Reengajamento com imóveis similares",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead chega do portal",
+            automation:
+              "IA qualifica perfil e agenda visita no mesmo contato.",
+          },
+          {
+            step: 2,
+            scenario: "Visita confirmada",
+            automation:
+              "Lembretes, rota e materiais enviados automaticamente.",
+          },
+          {
+            step: 3,
+            scenario: "Proposta e documentos",
+            automation:
+              "Geração/envio de proposta e checklist de documentação.",
+          },
+          {
+            step: 4,
+            scenario: "Negociação",
+            automation:
+              "Follow-ups guiados por IA e status em tempo real.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BarChart3",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Mais visitas qualificadas",
+            description:
+              "Automatize do interesse à visita, reduzindo tempo de ciclo.",
+          },
+          {
+            icon: "TrendingUp",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Corretores mais produtivos",
+            description:
+              "Foquem no fechamento enquanto a IA cuida do resto.",
+          },
+          {
+            icon: "Star",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Experiência do cliente",
+            description:
+              "Atualizações e respostas imediatas elevam a satisfação.",
+          },
+          {
+            icon: "Gift",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Operação escalável",
+            description:
+              "Atenda picos de demanda sem perder qualidade.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "A taxa de visitas confirmadas disparou. O time foca no que importa.",
+            author: "Felipe A.",
+            position: "Diretor Comercial, Alpha Imóveis",
+          },
+        ],
+        cta: {
+          title: "Pronto para acelerar suas visitas?",
+          subtitle:
+            "Agende uma demonstração e veja como qualificar e agendar no automático.",
+        },
+      },
+
+      "Varejo": {
+        hero: {
+          gradient: "from-emerald-600 to-emerald-800",
+          badge: "Solução Especializada para Varejo",
+          greetingReturning: " — vamos otimizar suas lojas, de novo!",
+          headline: "Converta mais no online e traga fluxo qualificado para a loja",
+          subheadline:
+            "Atração, atendimento e pós-venda com IA que entende estoque, preços e promoções em tempo real.",
+          ctaPrimary: "Ver automações para varejo",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-emerald-100",
+          iconText: "text-emerald-700",
+          image: "/retail-hero.jpg",
+          imageAlt: "Vitrine de loja com dados e automações em overlay",
+          Icon: "Store",
+        },
+        stats: [
+          { value: "15%", label: "Ticket médio maior" },
+          { value: "2x", label: "Mais leads para loja física" },
+          { value: "−25%", label: "Menos rupturas de estoque" },
+          { value: "90%", label: "Respostas em <60s" },
+        ],
+        solutions: [
+          {
+            color: "emerald",
+            icon: "Megaphone",
+            title: "Atração e Conversão",
+            description:
+              "Campanhas e atendimento que guiam o cliente até a compra.",
+            features: [
+              "Chat com catálogo e disponibilidade por unidade",
+              "Ofertas hiperlocais baseadas em estoque",
+              "Reserva e retirada na loja (Click & Collect)",
+              "Perguntas frequentes automáticas (tamanhos, garantias, etc.)",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Route",
+            title: "Experiência Omnichannel",
+            description:
+              "Integração entre e-commerce, marketplace e loja física.",
+            features: [
+              "Handoff entre bot e atendente da loja",
+              "Roteirização para loja mais próxima",
+              "Cupom de retorno pós-atendimento",
+              "Sincronização de promoções",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Headphones",
+            title: "Pós-venda",
+            description: "Atendimento que fideliza e reduz custos.",
+            features: [
+              "Trocas e devoluções automatizadas",
+              "Status de entrega e SLA",
+              "Pesquisa de satisfação",
+              "Reengajamento por preferências",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Cliente procura tamanho específico",
+            automation:
+              "IA checa estoque por unidade e recomenda alternativas.",
+          },
+          {
+            step: 2,
+            scenario: "Interesse em oferta local",
+            automation:
+              "Atribui cupom vinculado à loja mais próxima.",
+          },
+          {
+            step: 3,
+            scenario: "Compra feita no marketplace",
+            automation:
+              "Status e suporte via chat no seu site, com integração.",
+          },
+          {
+            step: 4,
+            scenario: "Pós-compra",
+            automation: "Trocas guiadas e reengajamento personalizado.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Mais receita por cliente",
+            description:
+              "Recomendações e ofertas certas elevam ticket e recorrência.",
+          },
+          {
+            icon: "Sparkles",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Experiência consistente",
+            description:
+              "Mesma qualidade em todos os canais, sem fricção.",
+          },
+          {
+            icon: "ShieldCheck",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Menos custo de suporte",
+            description:
+              "Automatize o operacional e libere a equipe para o consultivo.",
+          },
+          {
+            icon: "ScanSearch",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Visão de estoque em tempo real",
+            description:
+              "Reduza rupturas e melhore a disponibilidade.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Conseguimos unificar atendimento e estoque por loja. Vendeu mais e atendeu melhor.",
+            author: "Carolina M.",
+            position: "Head de CX, Grupo Varejista",
+          },
+        ],
+        cta: {
+          title: "Pronto para uma experiência omnichannel de verdade?",
+          subtitle:
+            "Agende uma demo e veja a integração do estoque à conversão em ação.",
+        },
+      },
+
+      "Educação": {
+        hero: {
+          gradient: "from-indigo-600 to-indigo-800",
+          badge: "Solução Especializada para Educação",
+          greetingReturning: " — bom te ver progredindo!",
+          headline: "Capte, engaje e retenha alunos com IA orientada a resultados",
+          subheadline:
+            "Da descoberta ao suporte acadêmico, automatize jornadas críticas sem perder o toque humano.",
+          ctaPrimary: "Ver fluxos para captação e suporte",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-indigo-100",
+          iconText: "text-indigo-700",
+          image: "/education-hero.jpg",
+          imageAlt: "Alunos e dashboard acadêmico com IA",
+          Icon: "GraduationCap",
+        },
+        stats: [
+          { value: "2.5x", label: "Mais leads qualificados" },
+          { value: "−30%", label: "Menos evasão no semestre" },
+          { value: "24/7", label: "Suporte acadêmico contínuo" },
+          { value: "90%", label: "Resolução no primeiro contato" },
+        ],
+        solutions: [
+          {
+            color: "indigo",
+            icon: "UserPlus",
+            title: "Captação e Matrícula",
+            description:
+              "Nutrição automatizada que converte interesse em matrícula.",
+            features: [
+              "FAQ sobre cursos, bolsas e prazos",
+              "Agendamento de visitas e provas",
+              "Qualificação por perfil e área",
+              "Lembretes de documentos e pagamentos",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "BookOpen",
+            title: "Suporte Acadêmico",
+            description:
+              "Ajuda imediata sobre disciplinas, grade e plataformas.",
+            features: [
+              "Orientação em EAD e ferramentas",
+              "Tira-dúvidas sobre conteúdos",
+              "Alertas de prazos",
+              "Encaminhamento ao coordenador",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Users",
+            title: "Engajamento e Retenção",
+            description:
+              "Evite evasão com acompanhamento proativo.",
+            features: [
+              "Identificação de risco de evasão",
+              "Planos de estudo personalizados",
+              "Pesquisas de satisfação",
+              "Comunicação segmentada por curso",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Interessado no vestibular",
+            automation:
+              "IA envia guia, agenda prova e tira dúvidas frequentes.",
+          },
+          {
+            step: 2,
+            scenario: "Aluno com dificuldade em disciplina",
+            automation:
+              "Sugere trilhas de estudo e contato com monitor.",
+          },
+          {
+            step: 3,
+            scenario: "Prazos de matrícula",
+            automation:
+              "Lembretes e checagem de documentos pendentes.",
+          },
+          {
+            step: 4,
+            scenario: "Risco de evasão",
+            automation:
+              "Ações proativas conforme comportamento e engajamento.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "UserRoundCheck",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Mais matrículas",
+            description:
+              "Nutrição e atendimento que convertem mais interessados.",
+          },
+          {
+            icon: "Gauge",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Retenção",
+            description:
+              "Apoio contínuo reduz evasão e atrito acadêmico.",
+          },
+          {
+            icon: "LineChart",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Eficácia operacional",
+            description:
+              "Automatize o operacional e foque no pedagógico.",
+          },
+          {
+            icon: "MessageSquare",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Satisfação",
+            description:
+              "Respostas rápidas elevam NPS e experiência.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "A admissão ficou fluida e os alunos têm suporte imediato.",
+            author: "Renata P.",
+            position: "Diretora de Marketing, Centro Universitário",
+          },
+        ],
+        cta: {
+          title: "Vamos acelerar captação e retenção?",
+          subtitle:
+            "Solicite uma demo com os fluxos críticos do seu curso.",
+        },
+      },
+
+      "Saúde": {
+        hero: {
+          gradient: "from-green-600 to-green-800",
+          badge: "Solução Especializada para Saúde",
+          greetingReturning: " — seguimos cuidando do seu paciente!",
+          headline:
+            "Agendamentos, orientações e pós-consulta com IA segura e humanizada",
+          subheadline:
+            "Agende, lembre, oriente e acompanhe os pacientes com fluxos que reduzem faltas e melhoram a experiência.",
+          ctaPrimary: "Ver automações para clínicas e hospitais",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-green-100",
+          iconText: "text-green-700",
+          image: "/health-hero.jpg",
+          imageAlt: "Profissional de saúde com tablet e painel de IA",
+          Icon: "HeartPulse",
+        },
+        stats: [
+          { value: "−35%", label: "Faltas em consultas" },
+          { value: "20%", label: "Aumento em taxa de retorno" },
+          { value: "24/7", label: "Atendimento automatizado" },
+          { value: "HIPAA", label: "Boas práticas de privacidade" },
+        ],
+        solutions: [
+          {
+            color: "red",
+            icon: "CalendarClock",
+            title: "Agendamento e Confirmação",
+            description:
+              "Automatize marcação e confirmação com lembretes.",
+            features: [
+              "Pré-triagem de sintomas",
+              "Confirmação via WhatsApp/SMS",
+              "Reagendamento rápido",
+              "Fila de encaixe inteligente",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Stethoscope",
+            title: "Orientação e Triagem",
+            description: "Informações confiáveis e encaminhamento.",
+            features: [
+              "Instruções pré e pós-procedimento",
+              "Materiais educativos",
+              "Encaminhamento para especialista",
+              "Sinalização de urgências",
+            ],
+          },
+          {
+            color: "green",
+            icon: "HeartHandshake",
+            title: "Pós-consulta",
+            description:
+              "Acompanhamento e engajamento do paciente.",
+            features: [
+              "Lembretes de medicação",
+              "Retorno e exames",
+              "Satisfação do paciente",
+              "Programas de acompanhamento",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Paciente marca consulta",
+            automation:
+              "Confirmação e lembrete automático com orientações.",
+          },
+          {
+            step: 2,
+            scenario: "Pré-triagem de sintomas",
+            automation:
+              "Coleta informações e encaminha adequadamente.",
+          },
+          {
+            step: 3,
+            scenario: "Pós-consulta",
+            automation:
+              "Lembretes, materiais e agendamento de retorno.",
+          },
+          {
+            step: 4,
+            scenario: "Exames e resultados",
+            automation:
+              "Atualiza status e orienta próximos passos.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BellMinus",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Menos faltas",
+            description:
+              "Lembretes e confirmação ativa reduzem no-shows.",
+          },
+          {
+            icon: "UserCog",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Fluxos eficientes",
+            description:
+              "Automatize o que é repetitivo e ganhe escala.",
+          },
+          {
+            icon: "ShieldCheck",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Segurança e privacidade",
+            description:
+              "Boas práticas e registros do atendimento.",
+          },
+          {
+            icon: "Smile",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Melhor experiência",
+            description:
+              "Informação clara reduz ansiedade e ligações.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Quedas expressivas nas faltas e pacientes mais bem informados.",
+            author: "Dr. Lucas R.",
+            position: "Diretor Clínico, Grupo Saúde",
+          },
+        ],
+        cta: {
+          title: "Quer reduzir faltas e melhorar a jornada do paciente?",
+          subtitle:
+            "Veja como a IA cuida da comunicação antes e depois da consulta.",
+        },
+      },
+
+      "Financeiro": {
+        hero: {
+          gradient: "from-sky-600 to-sky-800",
+          badge: "Solução Especializada para Financeiro",
+          greetingReturning: " — prontos para o próximo ciclo?",
+          headline:
+            "Atendimento seguro e eficiente do onboarding à retenção do cliente",
+          subheadline:
+            "Automatize verificações, suporte e atualizações com IA que respeita compliance e privacidade.",
+          ctaPrimary: "Ver automações para bancos e fintechs",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-sky-100",
+          iconText: "text-sky-700",
+          image: "/finance-hero.jpg",
+          imageAlt: "Aplicativo financeiro com automações e segurança",
+          Icon: "Banknote",
+        },
+        stats: [
+          { value: "−40%", label: "Tempo de onboarding" },
+          { value: "98%", label: "Resolução de FAQ regulatório" },
+          { value: "24/7", label: "Cobertura de atendimento" },
+          { value: "NPS↑", label: "Melhora de satisfação" },
+        ],
+        solutions: [
+          {
+            color: "sky",
+            icon: "IdCard",
+            title: "Onboarding e KYC",
+            description:
+              "Verificação guiada e rápida, com menos atrito.",
+            features: [
+              "Checklist de documentos",
+              "Validação automatizada",
+              "Acompanhamento de status",
+              "Suporte a dúvidas de cadastro",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Shield",
+            title: "Suporte e Compliance",
+            description:
+              "Respostas seguras e auditáveis, com encaminhamento.",
+            features: [
+              "Políticas e limites explicados",
+              "Encaminhamento humano para casos sensíveis",
+              "Registro de interações",
+              "Alertas de segurança",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat2",
+            title: "Retenção e Engajamento",
+            description:
+              "Acompanhamento proativo e ofertas adequadas ao perfil.",
+            features: [
+              "Lembretes de faturas",
+              "Educação financeira",
+              "Ofertas de upgrade personalizadas",
+              "Reengajamento por eventos",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Abertura de conta",
+            automation:
+              "Guia documentos, valida e informa status em tempo real.",
+          },
+          {
+            step: 2,
+            scenario: "Dúvida sobre limites e tarifas",
+            automation:
+              "Respostas claras e com trilhas de auditoria.",
+          },
+          {
+            step: 3,
+            scenario: "Atraso de pagamento",
+            automation:
+              "Lembretes empáticos e opções de renegociação.",
+          },
+          {
+            step: 4,
+            scenario: "Oferta de upgrade",
+            automation:
+              "Sugestões baseadas em uso e perfil de risco.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Clock8",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Onboarding mais rápido",
+            description:
+              "Menos atrito e validações automatizadas.",
+          },
+          {
+            icon: "FileLock2",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Conformidade",
+            description:
+              "Registros e políticas sempre claras ao cliente.",
+          },
+          {
+            icon: "BarChart3",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Eficiência",
+            description:
+              "Reduza custos com alto volume de perguntas repetidas.",
+          },
+          {
+            icon: "HeartHandshake",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Lealdade",
+            description:
+              "Comunicação proativa aumenta retenção.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Onboarding passou a levar minutos, não dias. E o suporte ficou muito mais claro.",
+            author: "Rafael S.",
+            position: "COO, Fintech XYZ",
+          },
+        ],
+        cta: {
+          title: "Quer acelerar onboarding e reduzir atrito?",
+          subtitle:
+            "Veja como a IA guia o cliente em cada etapa com segurança.",
+        },
+      },
+
+      "SaaS": {
+        hero: {
+          gradient: "from-purple-600 to-purple-800",
+          badge: "Solução Especializada para SaaS",
+          greetingReturning: " — vamos bater a meta de expansão!",
+          headline:
+            "Desde o trial até a expansão: IA que remove barreiras e aumenta adoção",
+          subheadline:
+            "Onboarding guiado, suporte contextual e recomendações aumentam ativação, uso e upsell.",
+          ctaPrimary: "Ver fluxos para trial e onboarding",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-purple-100",
+          iconText: "text-purple-700",
+          image: "/saas-hero.jpg",
+          imageAlt: "Dashboard SaaS com tutoriais e suporte com IA",
+          Icon: "Settings",
+        },
+        stats: [
+          { value: "↑AHA", label: "Tempo até Aha! reduzido" },
+          { value: "−20%", label: "Menos tickets L1" },
+          { value: "30%", label: "Aumento em ativação" },
+          { value: "NDR↑", label: "Expansão de receita" },
+        ],
+        solutions: [
+          {
+            color: "purple",
+            icon: "PlayCircle",
+            title: "Onboarding e Ativação",
+            description:
+              "Ajuda embarcada e guias passo a passo no produto.",
+            features: [
+              "Checklists contextuais",
+              "Sugestões com base no uso",
+              "Respostas no app (widget)",
+              "Eventos para ativação",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "LifeBuoy",
+            title: "Suporte e Conteúdo",
+            description:
+              "Central de ajuda e respostas com contexto do usuário.",
+            features: [
+              "Base de conhecimento conversacional",
+              "Explicações de erros e limites",
+              "Handoff para agente com logs",
+              "Feedback para priorizar roadmap",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Rocket",
+            title: "Expansão e Retenção",
+            description:
+              "Recomendações e ofertas no timing certo.",
+            features: [
+              "Sinais de valor para upsell",
+              "Alertas de risco de churn",
+              "Playbooks de expansão",
+              "Comunicações segmentadas",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Novo usuário em trial",
+            automation:
+              "Checklist de ativação e tutoriais no contexto da tela.",
+          },
+          {
+            step: 2,
+            scenario: "Erro ou bloqueio",
+            automation:
+              "Explica o motivo e oferece solução imediata.",
+          },
+          {
+            step: 3,
+            scenario: "Engajamento baixo",
+            automation:
+              "Sugere próximos passos e materiais relevantes.",
+          },
+          {
+            step: 4,
+            scenario: "Conta com forte uso",
+            automation:
+              "Sinaliza oportunidades de upgrade/expansão.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Zap",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Adoção mais rápida",
+            description:
+              "Usuários entendem valor sem depender do suporte.",
+          },
+          {
+            icon: "MessageSquare",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Suporte eficiente",
+            description:
+              "Reduza tickets repetitivos e acelere resolução.",
+          },
+          {
+            icon: "Gauge",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Produtos melhores",
+            description:
+              "Insights de dúvidas orientam o roadmap.",
+          },
+          {
+            icon: "Sparkle",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Receita em expansão",
+            description:
+              "Upsell e cross-sell guiados por dados de uso.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "A ativação subiu e o suporte L1 caiu drasticamente.",
+            author: "Bianca T.",
+            position: "VP Customer Success, SaaS B2B",
+          },
+        ],
+        cta: {
+          title: "Quer acelerar ativação e expansão?",
+          subtitle:
+            "Veja a experiência embarcada no produto com IA.",
+        },
+      },
+
+      "Serviços": {
+        hero: {
+          gradient: "from-stone-600 to-stone-800",
+          badge: "Solução Especializada para Serviços",
+          greetingReturning: " — vamos fechar mais contratos!",
+          headline:
+            "Captação, triagem e atendimento que convertem mais propostas",
+          subheadline:
+            "Da primeira pergunta ao pós-serviço: fluxos que reduzem atrito e aumentam a confiança.",
+          ctaPrimary: "Ver fluxos para serviços",
+          ctaSecondary: "Agendar demonstração",
+          iconBg: "bg-stone-100",
+          iconText: "text-stone-700",
+          image: "/services-hero.jpg",
+          imageAlt:
+            "Profissional de serviços conversando com cliente e IA auxiliando",
+          Icon: "Wrench",
+        },
+        stats: [
+          { value: "2x", label: "Mais propostas enviadas" },
+          { value: "−35%", label: "Menos tempo até orçamento" },
+          { value: "24/7", label: "Atendimento automático" },
+          { value: "CSAT↑", label: "Clientes mais satisfeitos" },
+        ],
+        solutions: [
+          {
+            color: "stone",
+            icon: "FileSpreadsheet",
+            title: "Captação e Qualificação",
+            description:
+              "De perguntas a briefing claro e completo.",
+            features: [
+              "Coleta de requisitos e orçamento inicial",
+              "Priorização por potencial",
+              "Agendamento com equipe",
+              "Envio de portfólio relevante",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "FileCheck2",
+            title: "Proposta e Fechamento",
+            description:
+              "Tire dúvidas, gere proposta e avance no funil.",
+            features: [
+              "Templates de proposta",
+              "Checklist de escopo",
+              "Follow-up automático",
+              "Assinatura integrada (via integração)",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Handshake",
+            title: "Execução e Pós-serviço",
+            description:
+              "Acompanhe entregas e feedback.",
+            features: [
+              "Atualizações de status",
+              "Coleta de feedback/NPS",
+              "Materiais e manuais",
+              "Oportunidades de recompra",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Novo lead no site",
+            automation:
+              "IA coleta briefing e agenda reunião.",
+          },
+          {
+            step: 2,
+            scenario: "Proposta enviada",
+            automation:
+              "Follow-ups contextuais até a decisão.",
+          },
+          {
+            step: 3,
+            scenario: "Projeto em execução",
+            automation:
+              "Atualizações e centralização de dúvidas.",
+          },
+          {
+            step: 4,
+            scenario: "Entrega e avaliação",
+            automation:
+              "Coleta feedback e sugere próximos serviços.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Filter",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Leads melhores",
+            description:
+              "Qualificação e triagem elevam a taxa de fechamento.",
+          },
+          {
+            icon: "Clock5",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Ciclos mais curtos",
+            description:
+              "Propostas saem mais rápido, com menos idas e vindas.",
+          },
+          {
+            icon: "FileText",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Transparência",
+            description:
+              "Escopo claro reduz retrabalho e conflito.",
+          },
+          {
+            icon: "Smile",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Fidelização",
+            description:
+              "Pós-serviço bem feito gera recompra e indicação.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "A equipe foca no atendimento consultivo — o resto flui no automático.",
+            author: "Gustavo C.",
+            position: "Sócio, Agência de Serviços",
+          },
+        ],
+        cta: {
+          title: "Quer aumentar propostas e reduzir atrito?",
+          subtitle:
+            "Veja como a IA conduz briefing, proposta e acompanhamento.",
+        },
+      },
+    },
+  },
+
+  en: {
+    locale: "en-US",
+
+    labels: {
+      resultsTitle: "Proven Results",
+      solutionsTitle: "Solutions for Every Stage of the Buying Journey",
+      solutionsSubtitle:
+        "Automate from cart recovery to post-purchase support.",
+      howItWorksTitle: "How It Works in Practice",
+      howItWorksSubtitle: "Real examples of day-to-day automation",
+      benefitsTitle: "Benefits that Transform Your Business",
+      casesTitle: "Success Stories",
+    },
+
+    modal: {
+      openButton: "Personalize experience",
+      title: "Personalize experience",
+      subtitle: "Provide your info to tailor the page to your segment.",
+      nameLabel: "Client name",
+      namePlaceholder: "e.g., Ana Paula",
+      industryLabel: "Industry",
+      industryPlaceholder: "Select industry",
+      statusLabel: "Client type",
+      statusNew: "New",
+      statusReturning: "Returning",
+      cancel: "Cancel",
+      save: "Save preferences",
+    },
+
+    segments: {
+      "E-commerce": {
+        hero: {
+          gradient: "from-orange-600 to-orange-800",
+          badge: "E-commerce Specialized Solution",
+          greetingReturning: " — great to have you back!",
+          headline: "Sell more every day with automations that never sleep",
+          subheadline:
+            "Recover carts, cut checkout friction, and offer 24/7 support. All with AI trained to convert.",
+          ctaPrimary: "View store automations",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-orange-100",
+          iconText: "text-orange-600",
+          image: "/ecommerce-hero.jpg",
+          imageAlt:
+            "E-commerce dashboard with AI automations and sales analytics",
+          Icon: "ShoppingCart",
+        },
+        stats: [
+          { value: "40%", label: "Higher Conversion Rate" },
+          { value: "3x", label: "Lower CAC" },
+          { value: "90%", label: "CSAT Improvement" },
+          { value: "24h", label: "Always-on Support" },
+        ],
+        solutions: [
+          {
+            color: "orange",
+            icon: "ShoppingCart",
+            title: "Pre-sale and Conversion",
+            description:
+              "Automate capture and conversion from first visit.",
+            features: [
+              "Abandoned cart recovery (+8–15%)",
+              "Personalized product recommendations",
+              "Instant answers on stock and shipping",
+              "Lead qualification for high-ticket items",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "CreditCard",
+            title: "Checkout and Transaction",
+            description:
+              "Reduce checkout friction and lift AOV at purchase time.",
+            features: [
+              "Order tracking and updates",
+              "Payments and coupons support",
+              "Purchase confirmation and details",
+              "Upsell and cross-sell during checkout",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat",
+            title: "Post-purchase and Loyalty",
+            description:
+              "24/7 support and relevant offers to drive repeat buys.",
+            features: [
+              "Returns and exchanges automation",
+              "Automatic CSAT surveys",
+              "Usage and maintenance FAQs",
+              "Exclusive offers for returning customers",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Visitor added to cart and left",
+            automation:
+              "AI detects abandonment, sends incentive reminder, and recovers the sale (+8–15%).",
+          },
+          {
+            step: 2,
+            scenario: "Checkout doubts about shipping",
+            automation:
+              "Instant shipping times and costs, with complementary suggestions.",
+          },
+          {
+            step: 3,
+            scenario: "Order confirmed and in transit",
+            automation:
+              "Proactive status and tracking updates, reducing support contacts.",
+          },
+          {
+            step: 4,
+            scenario: "Post-purchase support",
+            automation:
+              "Automatic CSAT, returns support, and personalized re-engagement offers.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BarChart3",
+            colorClass: "text-orange-600 bg-orange-100",
+            title: "Revenue Uplift",
+            description:
+              "AI recovers lost sales and performs smart upsell/cross-sell. +12–25% in 60 days.",
+          },
+          {
+            icon: "TrendingUp",
+            colorClass: "text-blue-600 bg-blue-100",
+            title: "Lower CAC",
+            description:
+              "Better lead qualification and re-engagement reduce paid media dependence.",
+          },
+          {
+            icon: "Star",
+            colorClass: "text-green-600 bg-green-100",
+            title: "Higher CSAT",
+            description:
+              "Instant, accurate support for tracking, returns, and FAQs.",
+          },
+          {
+            icon: "Gift",
+            colorClass: "text-purple-600 bg-purple-100",
+            title: "Scalability",
+            description:
+              "Handle peaks like Black Friday without extra headcount.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Abandoned-cart automation delivered +25% revenue in a month.",
+            author: "Mariana Silva",
+            position: "E-commerce Manager, Fashion Store",
+          },
+          {
+            quote:
+              "We cut support costs by 30% and response time is now seconds.",
+            author: "João Pedro",
+            position: "COO, Tech Store",
+          },
+        ],
+        cta: {
+          title: "Ready to transform your business?",
+          subtitle:
+            "Book a personalized demo and see Notrus AI in action with your data.",
+        },
+      },
+
+      "Imobiliário": {
+        hero: {
+          gradient: "from-rose-600 to-rose-800",
+          badge: "Real Estate Specialized Solution",
+          greetingReturning: " — let’s keep fueling your pipeline!",
+          headline: "Turn leads into visits and offers with 24/7 AI",
+          subheadline:
+            "Qualification, scheduling, and paperwork on autopilot so agents can focus on closing.",
+          ctaPrimary: "View lead-to-visit flows",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-rose-100",
+          iconText: "text-rose-600",
+          image: "/real-estate-hero.jpg",
+          imageAlt:
+            "Real estate agent using a tablet with clients in a modern apartment",
+          Icon: "Building2",
+        },
+        stats: [
+          { value: "5x", label: "More scheduled visits" },
+          { value: "60%", label: "Auto-qualified leads" },
+          { value: "90%", label: "Replies under 1 minute" },
+          { value: "24h", label: "Anytime assistance" },
+        ],
+        solutions: [
+          {
+            color: "rose",
+            icon: "Building2",
+            title: "Acquisition and Qualification",
+            description:
+              "Instant responses to portals and WhatsApp with profile filtering.",
+            features: [
+              "Automatic qualification (budget, area, type)",
+              "Calendar integration",
+              "Similar options and follow-ups",
+              "Priority for high-potential leads",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "CalendarDays",
+            title: "Visits and Proposals",
+            description:
+              "Automated scheduling and reminders, documents and offers.",
+            features: [
+              "Document and terms handling",
+              "Visit routing",
+              "Standard proposal generation",
+              "Post-visit follow-up",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat",
+            title: "Post-sale and Relationship",
+            description:
+              "Process tracking and client updates.",
+            features: [
+              "Real-time status updates",
+              "Pending document requests",
+              "Satisfaction surveys",
+              "Re-engagement with similar properties",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead from portal",
+            automation:
+              "AI qualifies the profile and schedules a visit in the same interaction.",
+          },
+          {
+            step: 2,
+            scenario: "Visit confirmed",
+            automation:
+              "Reminders, route, and materials sent automatically.",
+          },
+          {
+            step: 3,
+            scenario: "Proposal and documents",
+            automation:
+              "Proposal generation and document checklist.",
+          },
+          {
+            step: 4,
+            scenario: "Negotiation",
+            automation:
+              "AI-guided follow-ups and real-time status.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BarChart3",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "More qualified visits",
+            description:
+              "Automate from interest to visit, reducing cycle time.",
+          },
+          {
+            icon: "TrendingUp",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "More productive agents",
+            description:
+              "Focus on closing while AI handles the rest.",
+          },
+          {
+            icon: "Star",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Customer experience",
+            description:
+              "Immediate updates and answers increase satisfaction.",
+          },
+          {
+            icon: "Gift",
+            colorClass: "text-rose-600 bg-rose-100",
+            title: "Scalable operations",
+            description:
+              "Handle demand peaks without losing quality.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Confirmed visits skyrocketed. The team focuses on what matters.",
+            author: "Felipe A.",
+            position: "Commercial Director, Alpha Imóveis",
+          },
+        ],
+        cta: {
+          title: "Ready to accelerate your visits?",
+          subtitle:
+            "Book a demo and see qualification and scheduling on autopilot.",
+        },
+      },
+
+      "Varejo": {
+        hero: {
+          gradient: "from-emerald-600 to-emerald-800",
+          badge: "Retail Specialized Solution",
+          greetingReturning: " — let’s optimize your stores again!",
+          headline:
+            "Convert more online and drive qualified traffic to stores",
+          subheadline:
+            "Acquisition, service, and post-sale with AI that understands stock, prices, and promos in real time.",
+          ctaPrimary: "View retail automations",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-emerald-100",
+          iconText: "text-emerald-700",
+          image: "/retail-hero.jpg",
+          imageAlt: "Storefront with data and automations overlay",
+          Icon: "Store",
+        },
+        stats: [
+          { value: "15%", label: "Higher AOV" },
+          { value: "2x", label: "More in-store leads" },
+          { value: "−25%", label: "Lower stockouts" },
+          { value: "90%", label: "Replies under 60s" },
+        ],
+        solutions: [
+          {
+            color: "emerald",
+            icon: "Megaphone",
+            title: "Acquisition and Conversion",
+            description:
+              "Campaigns and service that guide the shopper to purchase.",
+            features: [
+              "Chat with catalog and per-store availability",
+              "Hyperlocal offers based on inventory",
+              "Reserve and pickup (Click & Collect)",
+              "Automated FAQs (sizes, warranty, etc.)",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Route",
+            title: "Omnichannel Experience",
+            description:
+              "E-commerce, marketplace, and stores working together.",
+            features: [
+              "Bot-to-human handoffs to store associates",
+              "Routing to nearest store",
+              "Return coupon after support",
+              "Promo sync across channels",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Headphones",
+            title: "Post-sale",
+            description: "Support that builds loyalty and cuts costs.",
+            features: [
+              "Automated returns and exchanges",
+              "Delivery status and SLA",
+              "Satisfaction surveys",
+              "Preference-based re-engagement",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Looking for a specific size",
+            automation:
+              "AI checks per-store stock and suggests alternatives.",
+          },
+          {
+            step: 2,
+            scenario: "Interested in local promo",
+            automation:
+              "Assigns coupon tied to the nearest store.",
+          },
+          {
+            step: 3,
+            scenario: "Marketplace order",
+            automation:
+              "Status and support via your site chat, integrated.",
+          },
+          {
+            step: 4,
+            scenario: "Post-purchase",
+            automation: "Guided returns and personalized re-engagement.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "More revenue per customer",
+            description:
+              "Right recommendations and offers increase ticket and repeat rate.",
+          },
+          {
+            icon: "Sparkles",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Consistent experience",
+            description:
+              "Same quality across channels, without friction.",
+          },
+          {
+            icon: "ShieldCheck",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Lower support costs",
+            description:
+              "Automate repetitive tasks and free up staff for advisory service.",
+          },
+          {
+            icon: "ScanSearch",
+            colorClass: "text-emerald-700 bg-emerald-100",
+            title: "Real-time stock view",
+            description:
+              "Reduce stockouts and improve availability.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "We unified service and per-store stock. Sales up, better service.",
+            author: "Carolina M.",
+            position: "Head of CX, Retail Group",
+          },
+        ],
+        cta: {
+          title: "Ready for true omnichannel?",
+          subtitle:
+            "Book a demo to see inventory-to-conversion working in sync.",
+        },
+      },
+
+      "Educação": {
+        hero: {
+          gradient: "from-indigo-600 to-indigo-800",
+          badge: "Education Specialized Solution",
+          greetingReturning: " — great to see your progress!",
+          headline:
+            "Acquire, engage, and retain students with outcomes-driven AI",
+          subheadline:
+            "From discovery to academic support, automate critical journeys without losing the human touch.",
+          ctaPrimary: "View acquisition and support flows",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-indigo-100",
+          iconText: "text-indigo-700",
+          image: "/education-hero.jpg",
+          imageAlt: "Students and academic dashboard with AI",
+          Icon: "GraduationCap",
+        },
+        stats: [
+          { value: "2.5x", label: "More qualified leads" },
+          { value: "−30%", label: "Lower semester churn" },
+          { value: "24/7", label: "Continuous academic support" },
+          { value: "90%", label: "First-contact resolution" },
+        ],
+        solutions: [
+          {
+            color: "indigo",
+            icon: "UserPlus",
+            title: "Acquisition and Enrollment",
+            description:
+              "Automated nurturing that turns interest into enrollment.",
+            features: [
+              "FAQ on courses, scholarships, deadlines",
+              "Visit and exam scheduling",
+              "Profile and area qualification",
+              "Document and payment reminders",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "BookOpen",
+            title: "Academic Support",
+            description:
+              "Instant help on courses, curricula, and platforms.",
+            features: [
+              "Guidance for online tools",
+              "Content Q&A",
+              "Deadline alerts",
+              "Escalation to coordinators",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Users",
+            title: "Engagement and Retention",
+            description:
+              "Prevent churn with proactive tracking.",
+            features: [
+              "Churn risk identification",
+              "Personalized study plans",
+              "Satisfaction surveys",
+              "Segmented comms per course",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Prospect for admissions",
+            automation:
+              "AI sends guide, schedules exam, and answers FAQs.",
+          },
+          {
+            step: 2,
+            scenario: "Student struggling in a class",
+            automation:
+              "Suggests study paths and contact with a tutor.",
+          },
+          {
+            step: 3,
+            scenario: "Enrollment deadlines",
+            automation:
+              "Reminders and pending document checks.",
+          },
+          {
+            step: 4,
+            scenario: "Churn risk",
+            automation:
+              "Proactive actions based on behavior and engagement.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "UserRoundCheck",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "More enrollments",
+            description:
+              "Nurturing and service that convert more prospects.",
+          },
+          {
+            icon: "Gauge",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Retention",
+            description:
+              "Continuous support reduces churn and friction.",
+          },
+          {
+            icon: "LineChart",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Operational effectiveness",
+            description:
+              "Automate ops and focus on pedagogy.",
+          },
+          {
+            icon: "MessageSquare",
+            colorClass: "text-indigo-700 bg-indigo-100",
+            title: "Higher satisfaction",
+            description:
+              "Fast answers lift NPS and experience.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Admissions became fluid and students get instant help.",
+            author: "Renata P.",
+            position: "Marketing Director, University Center",
+          },
+        ],
+        cta: {
+          title: "Ready to boost acquisition and retention?",
+          subtitle:
+            "Request a demo with the critical flows for your course.",
+        },
+      },
+
+      "Saúde": {
+        hero: {
+          gradient: "from-green-600 to-green-800",
+          badge: "Healthcare Specialized Solution",
+          greetingReturning: " — we keep caring for your patients!",
+          headline:
+            "Scheduling, guidance, and post-visit with secure, human-centered AI",
+          subheadline:
+            "Schedule, remind, guide, and follow-up with flows that reduce no-shows and improve experience.",
+          ctaPrimary: "View automations for clinics and hospitals",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-green-100",
+          iconText: "text-green-700",
+          image: "/health-hero.jpg",
+          imageAlt: "Healthcare professional with tablet and AI dashboard",
+          Icon: "HeartPulse",
+        },
+        stats: [
+          { value: "−35%", label: "Appointment no-shows" },
+          { value: "20%", label: "Higher return rate" },
+          { value: "24/7", label: "Automated assistance" },
+          { value: "HIPAA", label: "Privacy best practices" },
+        ],
+        solutions: [
+          {
+            color: "red",
+            icon: "CalendarClock",
+            title: "Scheduling and Confirmation",
+            description:
+              "Automate booking and confirmations with reminders.",
+            features: [
+              "Pre-screening",
+              "WhatsApp/SMS confirmations",
+              "Fast rescheduling",
+              "Smart waitlist",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Stethoscope",
+            title: "Guidance and Triage",
+            description: "Trusted info and routing.",
+            features: [
+              "Pre/post-procedure instructions",
+              "Educational materials",
+              "Specialist routing",
+              "Urgency flagging",
+            ],
+          },
+          {
+            color: "green",
+            icon: "HeartHandshake",
+            title: "Post-visit",
+            description:
+              "Follow-up and patient engagement.",
+            features: [
+              "Medication reminders",
+              "Return and exams",
+              "Patient satisfaction",
+              "Care programs",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Appointment booked",
+            automation:
+              "Confirmation and reminder with instructions.",
+          },
+          {
+            step: 2,
+            scenario: "Symptom pre-screening",
+            automation:
+              "Collects info and routes appropriately.",
+          },
+          {
+            step: 3,
+            scenario: "After the visit",
+            automation:
+              "Reminders, materials, and return scheduling.",
+          },
+          {
+            step: 4,
+            scenario: "Exams and results",
+            automation:
+              "Status updates and next-step guidance.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "BellMinus",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Fewer no-shows",
+            description:
+              "Active reminders and confirmations reduce misses.",
+          },
+          {
+            icon: "UserCog",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Efficient workflows",
+            description:
+              "Automate repetitive tasks and gain scale.",
+          },
+          {
+            icon: "ShieldCheck",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Security and privacy",
+            description:
+              "Best practices and logged interactions.",
+          },
+          {
+            icon: "Smile",
+            colorClass: "text-red-700 bg-red-100",
+            title: "Better experience",
+            description:
+              "Clear info reduces anxiety and call volume.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "No-shows dropped significantly; patients are better informed.",
+            author: "Dr. Lucas R.",
+            position: "Medical Director, Health Group",
+          },
+        ],
+        cta: {
+          title: "Want to reduce no-shows and improve patient journeys?",
+          subtitle:
+            "See how AI manages pre and post-visit communications.",
+        },
+      },
+
+      "Financeiro": {
+        hero: {
+          gradient: "from-sky-600 to-sky-800",
+          badge: "Financial Services Specialized Solution",
+          greetingReturning: " — ready for the next cycle?",
+          headline:
+            "Secure, efficient service from onboarding to retention",
+          subheadline:
+            "Automate verification, support, and updates with AI that respects compliance and privacy.",
+          ctaPrimary: "View automations for banks and fintechs",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-sky-100",
+          iconText: "text-sky-700",
+          image: "/finance-hero.jpg",
+          imageAlt: "Finance app with automations and security",
+          Icon: "Banknote",
+        },
+        stats: [
+          { value: "−40%", label: "Onboarding time" },
+          { value: "98%", label: "Regulatory FAQ resolution" },
+          { value: "24/7", label: "Support coverage" },
+          { value: "NPS↑", label: "Satisfaction improvement" },
+        ],
+        solutions: [
+          {
+            color: "sky",
+            icon: "IdCard",
+            title: "Onboarding and KYC",
+            description:
+              "Guided, fast verification with less friction.",
+            features: [
+              "Document checklist",
+              "Automated validation",
+              "Real-time status",
+              "Signup FAQs",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "Shield",
+            title: "Support and Compliance",
+            description:
+              "Secure, auditable answers with human handoff.",
+            features: [
+              "Policies and limits explained",
+              "Escalation for sensitive cases",
+              "Interaction logs",
+              "Security alerts",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Repeat2",
+            title: "Retention and Engagement",
+            description:
+              "Proactive follow-up and profile-based offers.",
+            features: [
+              "Invoice reminders",
+              "Financial education",
+              "Personalized upgrades",
+              "Event-based re-engagement",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Account opening",
+            automation:
+              "Guides documents, validates, and updates status.",
+          },
+          {
+            step: 2,
+            scenario: "Limits and fees doubts",
+            automation:
+              "Clear answers with audit trails.",
+          },
+          {
+            step: 3,
+            scenario: "Late payment",
+            automation:
+              "Empathetic reminders and renegotiation options.",
+          },
+          {
+            step: 4,
+            scenario: "Upgrade offer",
+            automation:
+              "Suggestions based on usage and risk profile.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Clock8",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Faster onboarding",
+            description:
+              "Less friction, automated validations.",
+          },
+          {
+            icon: "FileLock2",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Compliance",
+            description:
+              "Transparent policies and records for clients.",
+          },
+          {
+            icon: "BarChart3",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Efficiency",
+            description:
+              "Reduce costs on repetitive queries at scale.",
+          },
+          {
+            icon: "HeartHandshake",
+            colorClass: "text-sky-700 bg-sky-100",
+            title: "Loyalty",
+            description:
+              "Proactive comms increase retention.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Onboarding now takes minutes, not days. Support is much clearer.",
+            author: "Rafael S.",
+            position: "COO, Fintech XYZ",
+          },
+        ],
+        cta: {
+          title: "Want to accelerate onboarding and cut friction?",
+          subtitle:
+            "See how AI guides customers securely at every step.",
+        },
+      },
+
+      "SaaS": {
+        hero: {
+          gradient: "from-purple-600 to-purple-800",
+          badge: "SaaS Specialized Solution",
+          greetingReturning: " — let’s hit expansion goals!",
+          headline:
+            "From trial to expansion: AI that removes friction and increases adoption",
+          subheadline:
+            "Guided onboarding, contextual support, and recommendations increase activation, usage, and upsell.",
+          ctaPrimary: "View trial and onboarding flows",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-purple-100",
+          iconText: "text-purple-700",
+          image: "/saas-hero.jpg",
+          imageAlt: "SaaS dashboard with AI-guided help",
+          Icon: "Settings",
+        },
+        stats: [
+          { value: "↓TTA", label: "Time-to-Aha reduced" },
+          { value: "−20%", label: "Fewer L1 tickets" },
+          { value: "30%", label: "Higher activation" },
+          { value: "NDR↑", label: "Revenue expansion" },
+        ],
+        solutions: [
+          {
+            color: "purple",
+            icon: "PlayCircle",
+            title: "Onboarding and Activation",
+            description:
+              "In-app guidance and step-by-step product tours.",
+            features: [
+              "Contextual activation checklists",
+              "Usage-based suggestions",
+              "In-app answers (widget)",
+              "Activation events",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "LifeBuoy",
+            title: "Support and Content",
+            description:
+              "Help center and answers with user context.",
+            features: [
+              "Conversational knowledge base",
+              "Error and limit explanations",
+              "Agent handoff with logs",
+              "Feedback to inform roadmap",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Rocket",
+            title: "Expansion and Retention",
+            description:
+              "Right-time recommendations and offers.",
+            features: [
+              "Value signals for upsell",
+              "Churn risk alerts",
+              "Expansion playbooks",
+              "Segmented communications",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "New trial user",
+            automation:
+              "Activation checklist and contextual tutorials.",
+          },
+          {
+            step: 2,
+            scenario: "Error or block",
+            automation:
+              "Explains the reason and provides immediate fix.",
+          },
+          {
+            step: 3,
+            scenario: "Low engagement",
+            automation:
+              "Suggests next steps and relevant content.",
+          },
+          {
+            step: 4,
+            scenario: "Heavy usage account",
+            automation:
+              "Signals upgrade/expansion opportunities.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Zap",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Faster adoption",
+            description:
+              "Users realize value without relying on support.",
+          },
+          {
+            icon: "MessageSquare",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Efficient support",
+            description:
+              "Reduce repetitive tickets and speed resolution.",
+          },
+          {
+            icon: "Gauge",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Better products",
+            description:
+              "Insights from questions inform the roadmap.",
+          },
+          {
+            icon: "Sparkle",
+            colorClass: "text-purple-700 bg-purple-100",
+            title: "Revenue expansion",
+            description:
+              "Data-driven upsell and cross-sell.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Activation climbed while L1 support dropped considerably.",
+            author: "Bianca T.",
+            position: "VP Customer Success, B2B SaaS",
+          },
+        ],
+        cta: {
+          title: "Want faster activation and expansion?",
+          subtitle:
+            "See the in-product AI experience in action.",
+        },
+      },
+
+      "Serviços": {
+        hero: {
+          gradient: "from-stone-600 to-stone-800",
+          badge: "Services Specialized Solution",
+          greetingReturning: " — let’s close more deals!",
+          headline:
+            "Acquisition, triage, and service that convert more proposals",
+          subheadline:
+            "From the first question to post-service: flows that reduce friction and build trust.",
+          ctaPrimary: "View service flows",
+          ctaSecondary: "Book a demo",
+          iconBg: "bg-stone-100",
+          iconText: "text-stone-700",
+          image: "/services-hero.jpg",
+          imageAlt:
+            "Service professional with client assisted by AI",
+          Icon: "Wrench",
+        },
+        stats: [
+          { value: "2x", label: "More proposals sent" },
+          { value: "−35%", label: "Shorter time-to-quote" },
+          { value: "24/7", label: "Automated assistance" },
+          { value: "CSAT↑", label: "Happier clients" },
+        ],
+        solutions: [
+          {
+            color: "stone",
+            icon: "FileSpreadsheet",
+            title: "Acquisition and Qualification",
+            description:
+              "From questions to a clear, complete brief.",
+            features: [
+              "Requirements intake and initial budget",
+              "Potential-based prioritization",
+              "Team scheduling",
+              "Relevant portfolio sharing",
+            ],
+          },
+          {
+            color: "blue",
+            icon: "FileCheck2",
+            title: "Proposal and Closing",
+            description:
+              "Answer doubts, generate proposals, and advance the funnel.",
+            features: [
+              "Proposal templates",
+              "Scope checklist",
+              "Automated follow-ups",
+              "Integrated e-sign (via integration)",
+            ],
+          },
+          {
+            color: "green",
+            icon: "Handshake",
+            title: "Delivery and Post-service",
+            description:
+              "Track milestones and feedback.",
+            features: [
+              "Status updates",
+              "Feedback/NPS collection",
+              "Docs and manuals",
+              "Rebuy opportunities",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "New website lead",
+            automation:
+              "AI gathers the brief and schedules a call.",
+          },
+          {
+            step: 2,
+            scenario: "Proposal sent",
+            automation:
+              "Contextual follow-ups until decision.",
+          },
+          {
+            step: 3,
+            scenario: "Project execution",
+            automation:
+              "Updates and centralizes questions.",
+          },
+          {
+            step: 4,
+            scenario: "Delivery and review",
+            automation:
+              "Collects feedback and suggests next services.",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Filter",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Better leads",
+            description:
+              "Qualification and triage increase close rates.",
+          },
+          {
+            icon: "Clock5",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Shorter cycles",
+            description:
+              "Proposals go out faster with less back-and-forth.",
+          },
+          {
+            icon: "FileText",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Transparency",
+            description:
+              "Clear scope reduces rework and conflict.",
+          },
+          {
+            icon: "Smile",
+            colorClass: "text-stone-700 bg-stone-100",
+            title: "Loyalty",
+            description:
+              "Great post-service drives repeat and referrals.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "The team focuses on advisory work — everything else flows automatically.",
+            author: "Gustavo C.",
+            position: "Partner, Services Agency",
+          },
+        ],
+        cta: {
+          title: "Want more proposals and less friction?",
+          subtitle:
+            "See how AI handles brief, proposal, and follow-up.",
+        },
+      },
+    },
+  },
+} as const;
+export interface AIHallucinationsTexts {
+  locale: string;
+  seoTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  author: string;
+  metaType: string;
+  metaDate: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroImageCaption: string;
+  linkedinHook: string;
+  tldrTitle: string;
+  tldrBullets: string[];
+  pullQuote: string;
+  s1Title: string;
+  s1Body: string[];
+  s1FigureCaption: string;
+  s1Body2: string[];
+  s2Title: string;
+  s2Body: string[];
+  s2FigureCaption: string;
+  s2Body2: string[];
+  s3Title: string;
+  s3Body: string[];
+  s4Title: string;
+  s4PromptBasedTitle: string;
+  s4PromptBasedItems: { title: string; description: string }[];
+  s4ModelBasedTitle: string;
+  s4ModelBasedItems: { title: string; description: string }[];
+  s4HybridTitle: string;
+  s4HybridBody: string;
+  s4HybridFigureCaption: string;
+  s5Title: string;
+  s5Body: string[];
+}
+
+export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
+  en: {
+    locale: "en_US",
+    seoTitle: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
+    metaDescription: "Discover how companies can minimize AI hallucinations in 2025 through better prompting, factual grounding, and advanced training strategies.",
+    keywords: [
+      "AI hallucinations",
+      "generative AI reliability",
+      "factual accuracy in AI",
+      "large language model hallucinations",
+      "retrieval-augmented generation (RAG)",
+      "prompt engineering"
+    ],
+    author: "Felipe Gomez @ Notrus AI",
+    metaType: "Article",
+    metaDate: "November 2025",
+    heroTitle: "The 2025 AI Reality Check: How Businesses Are Winning the War on Hallucinations",
+    heroImageCaption: "When AI is prone to hallucination, it needs… better deployment and supervision. Visuals by Notrus AI.",
+    linkedinHook: "Up to 40% of AI outputs may contain factual errors - a risk no business can afford. In 2025, companies using Gen AI must prioritize factual reliability over fluency. Here's how leaders can build AI systems that tell the truth, not just talk well.",
+    tldrTitle: "TL;DR (Key Takeaways):",
+    tldrBullets: [
+      "AI hallucinations affect up to 40% of generated outputs in some domains.",
+      "Business-critical AI systems must balance fluency and factual accuracy.",
+      "Smarter prompting and retrieval-based models can reduce hallucinations by 20-30%.",
+      "Combining human feedback, grounded data, and RAG pipelines boosts reliability.",
+      "Industry leaders are investing in truthfulness optimization as a 2025 AI priority."
+    ],
+    pullQuote: "In the new age of intelligence, trust is the ultimate innovation.",
+    s1Title: "The Rising Cost of AI Hallucinations in Business",
+    s1Body: [
+      "In the era of generative AI and large language models (LLMs), business leaders are embracing tools that accelerate research, automate content, and streamline operations. Yet these same systems present a major risk: AI hallucination. When models generate false or unverifiable information, credibility and decision-making suffer, with potentially serious financial consequences. AI hallucinations occur when models produce information that sounds plausible but lacks factual grounding. This undermines the trust required for real-world deployment, particularly in industries like finance, healthcare, and legal services where accuracy is non-negotiable.",
+      "According to recent research and visual frameworks, hallucinations in AI generally fall into four categories:"
+    ],
+    s1FigureCaption: "Types of AI hallucinations by Anh-Hoang et al. (2025). Visuals by Notrus AI.",
+    s1Body2: [
+      "These categories highlight how hallucinations can arise from different stages of the model's reasoning and data interpretation processes. Understanding them helps business and technical teams target mitigation strategies more precisely. To address these challenges, researchers and developers are quantifying the issue and designing strategies to make AI more reliable—balancing the tension between fluency and factual truth."
+    ],
+    s2Title: "How Hallucinations Appear: A Data-Backed View",
+    s2Body: [
+      "Chelli et al. (2024) conducted a comparative study across major large language models (LLMs) using three core metrics: precision, recall, and hallucination rate. While their results, showing a 39.6% hallucination rate for GPT-3.5 and a reduced 28.6% for GPT-4, reflect clear progress in factual reliability, these models are now somewhat outdated given the rapid evolution of LLMs. Nonetheless, the findings remain valuable as they illustrate a consistent trend across generations: even advanced models are prone to factual hallucinations, underscoring the ongoing importance of rigorous validation and human oversight in AI-generated content.",
+      "Recent literature supports this trend, with most models showing hallucination rates between 25–40%, depending on domain complexity and prompt clarity (Li et al., 2024; Bayat et al., 2024). While precision and recall continue to improve, the most critical benchmark for business adoption remains the reduction of hallucinations—ensuring AI systems deliver accurate, verifiable insights."
+    ],
+    s2FigureCaption: "Performance comparison of few LLMs based on hallucination rates. Sources: Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025. Visuals by Notrus AI.",
+    s2Body2: [
+      "Across multiple studies, as shown in the graph above (Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025) GPT-4 consistently outperformed GPT-3.5 and Gemini (Bard) in factual accuracy, averaging 26–28% hallucination rates. This signals a maturing landscape where factual grounding and retrieval mechanisms are increasingly central to enterprise AI reliability."
+    ],
+    s3Title: "Understanding the Sources: Prompt vs. Model-Based Hallucinations",
+    s3Body: [
+      "Anh-Hoang et al. (2025) categorize AI hallucinations into two types: prompt-based and model-internal. Prompt-based hallucinations arise from poorly structured or misleading instructions, which cause the model to misinterpret intent. In contrast, model-internal hallucinations stem from architectural or data limitations within the LLM itself.",
+      "For business users, this means some hallucinations can be mitigated simply by improving prompt quality. Clear, structured communication with AI tools, sometimes referred to as prompt literacy, can dramatically reduce false outputs. In other cases, organizations must rely on model-level solutions that address deeper systemic issues."
+    ],
+    s4Title: "Techniques That Work: From Smarter Prompts to Grounded Models",
+    s4PromptBasedTitle: "Prompt-Based Methods",
+    s4PromptBasedItems: [
+      {
+        title: "Chain-of-thought prompting:",
+        description: "Encourages step-by-step reasoning to minimize factual errors."
+      },
+      {
+        title: "Instruction prompting:",
+        description: "Uses structured commands to guide accurate responses."
+      },
+      {
+        title: "Negative prompting:",
+        description: "Tells models explicitly what not to generate."
+      },
+      {
+        title: "Prompt calibration & filtering:",
+        description: "Screens for misleading instructions before generation."
+      }
+    ],
+    s4ModelBasedTitle: "Model-Based Techniques",
+    s4ModelBasedItems: [
+      {
+        title: "Instruction fine-tuning:",
+        description: "Aligns models to domain-specific truth patterns."
+      },
+      {
+        title: "Reinforcement learning from human feedback (RLHF):",
+        description: "Shapes model behavior using human evaluations."
+      },
+      {
+        title: "Contrastive decoding:",
+        description: "Filters out low-confidence, likely false completions."
+      },
+      {
+        title: "Retrieval-Augmented Generation (RAG):",
+        description: "Grounds responses with verified, real-time external data."
+      },
+      {
+        title: "Factuality scorers:",
+        description: "Automatically flag or correct hallucinated content post-generation."
+      }
+    ],
+    s4HybridTitle: "Hybrid Pipelines",
+    s4HybridBody: "The most advanced enterprises now use layered systems combining prompting, retrieval, and post-output validation. Platforms like Haystack and HuggingFace RAG are helping organizations deploy fact-grounded pipelines for safer, enterprise-grade AI.",
+    s4HybridFigureCaption: "A workflow diagram showing hybrid AI reliability pipelines (Prompting → Retrieval → Verification). Visuals by Notrus AI.",
+    s5Title: "The Road Ahead: Reliability as a Competitive Advantage",
+    s5Body: [
+      "Despite recent advances, key challenges remain: from the absence of universal hallucination benchmarks to limited access to fine-tuning infrastructure. Yet the direction is clear. Reducing hallucinations is no longer a technical afterthought but a strategic imperative. AI hallucinations aren't just a technical glitch, they're a business risk that separates the frontrunners from the followers.",
+      "In a landscape where data drives every decision, companies that ground their AI systems in truth will lead with confidence, credibility, and competitive edge. The smartest organizations in 2025 aren't just deploying AI, they're teaching it to think, verify, and stay real. Because in the new age of intelligence, trust is the ultimate innovation."
+    ]
+  },
+  pt: {
+    locale: "pt_BR",
+    seoTitle: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
+    metaDescription: "Descubra como as empresas podem minimizar alucinações de IA em 2025 através de melhores prompts, fundamentação factual e estratégias avançadas de treinamento.",
+    keywords: [
+      "alucinações de IA",
+      "confiabilidade da IA generativa",
+      "precisão factual em IA",
+      "alucinações de modelos de linguagem",
+      "geração aumentada por recuperação (RAG)",
+      "engenharia de prompts"
+    ],
+    author: "Felipe Gomez @ Notrus AI",
+    metaType: "Artigo",
+    metaDate: "Novembro 2025",
+    heroTitle: "A Realidade da IA em 2025: Como as Empresas Estão Vencendo a Guerra Contra as Alucinações",
+    heroImageCaption: "Quando a IA é propensa a alucinações, ela precisa de... melhor implantação e supervisão. Visualização por Notrus AI.",
+    linkedinHook: "Até 40% das saídas de IA podem conter erros factuais - um risco que nenhuma empresa pode se dar ao luxo de correr. Em 2025, empresas que usam IA Generativa devem priorizar confiabilidade factual sobre fluência. Veja como líderes podem construir sistemas de IA que dizem a verdade, não apenas falam bem.",
+    tldrTitle: "Resumo (Principais Conclusões):",
+    tldrBullets: [
+      "Alucinações de IA afetam até 40% das saídas geradas em alguns domínios.",
+      "Sistemas de IA críticos para negócios devem equilibrar fluência e precisão factual.",
+      "Prompts mais inteligentes e modelos baseados em recuperação podem reduzir alucinações em 20-30%.",
+      "Combinar feedback humano, dados fundamentados e pipelines RAG aumenta a confiabilidade.",
+      "Líderes da indústria estão investindo em otimização de veracidade como prioridade de IA para 2025."
+    ],
+    pullQuote: "Na nova era da inteligência, confiança é a inovação definitiva.",
+    s1Title: "O Custo Crescente das Alucinações de IA nos Negócios",
+    s1Body: [
+      "Na era da IA generativa e dos grandes modelos de linguagem (LLMs), líderes empresariais estão adotando ferramentas que aceleram pesquisas, automatizam conteúdo e otimizam operações. No entanto, esses mesmos sistemas apresentam um grande risco: alucinação de IA. Quando modelos geram informações falsas ou não verificáveis, a credibilidade e a tomada de decisões sofrem, com consequências financeiras potencialmente sérias. Alucinações de IA ocorrem quando modelos produzem informações que parecem plausíveis, mas carecem de fundamentação factual. Isso prejudica a confiança necessária para implantação no mundo real, particularmente em indústrias como finanças, saúde e serviços jurídicos, onde a precisão é inegociável.",
+      "De acordo com pesquisas recentes e frameworks visuais, alucinações em IA geralmente se enquadram em quatro categorias:"
+    ],
+    s1FigureCaption: "Tipos de alucinações de IA por Anh-Hoang et al. (2025). Visualização por Notrus AI.",
+    s1Body2: [
+      "Essas categorias destacam como as alucinações podem surgir de diferentes estágios dos processos de raciocínio e interpretação de dados do modelo. Compreendê-las ajuda equipes empresariais e técnicas a direcionar estratégias de mitigação com mais precisão. Para enfrentar esses desafios, pesquisadores e desenvolvedores estão quantificando o problema e projetando estratégias para tornar a IA mais confiável—equilibrando a tensão entre fluência e verdade factual."
+    ],
+    s2Title: "Como as Alucinações Aparecem: Uma Visão Baseada em Dados",
+    s2Body: [
+      "Chelli et al. (2024) conduziram um estudo comparativo entre os principais grandes modelos de linguagem (LLMs) usando três métricas principais: precisão, recall e taxa de alucinação. Embora seus resultados, mostrando uma taxa de alucinação de 39,6% para GPT-3.5 e uma reduzida de 28,6% para GPT-4, reflitam um progresso claro na confiabilidade factual, esses modelos agora estão um tanto desatualizados dada a rápida evolução dos LLMs. No entanto, as descobertas permanecem valiosas, pois ilustram uma tendência consistente entre gerações: mesmo modelos avançados são propensos a alucinações factuais, ressaltando a importância contínua de validação rigorosa e supervisão humana no conteúdo gerado por IA.",
+      "A literatura recente apoia essa tendência, com a maioria dos modelos mostrando taxas de alucinação entre 25–40%, dependendo da complexidade do domínio e clareza do prompt (Li et al., 2024; Bayat et al., 2024). Embora precisão e recall continuem a melhorar, o benchmark mais crítico para adoção empresarial permanece a redução de alucinações—garantindo que sistemas de IA entreguem insights precisos e verificáveis."
+    ],
+    s2FigureCaption: "Comparação de desempenho de alguns LLMs baseada em taxas de alucinação. Fontes: Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025. Visualização por Notrus AI.",
+    s2Body2: [
+      "Em múltiplos estudos, como mostrado no gráfico acima (Chelli et al., 2024; Yan et al., 2024; Tarris & Martin, 2025; Erdem et al., 2025; Huang et al., 2025) GPT-4 consistentemente superou GPT-3.5 e Gemini (Bard) em precisão factual, com média de 26–28% de taxas de alucinação. Isso sinaliza um cenário em amadurecimento onde fundamentação factual e mecanismos de recuperação são cada vez mais centrais para a confiabilidade da IA empresarial."
+    ],
+    s3Title: "Compreendendo as Fontes: Alucinações Baseadas em Prompt vs. Modelo",
+    s3Body: [
+      "Anh-Hoang et al. (2025) categorizam alucinações de IA em dois tipos: baseadas em prompt e internas ao modelo. Alucinações baseadas em prompt surgem de instruções mal estruturadas ou enganosas, que fazem o modelo interpretar mal a intenção. Em contraste, alucinações internas ao modelo derivam de limitações arquiteturais ou de dados dentro do próprio LLM.",
+      "Para usuários empresariais, isso significa que algumas alucinações podem ser mitigadas simplesmente melhorando a qualidade do prompt. Comunicação clara e estruturada com ferramentas de IA, às vezes chamada de alfabetização em prompts, pode reduzir drasticamente saídas falsas. Em outros casos, organizações devem confiar em soluções no nível do modelo que abordam problemas sistêmicos mais profundos."
+    ],
+    s4Title: "Técnicas que Funcionam: De Prompts Mais Inteligentes a Modelos Fundamentados",
+    s4PromptBasedTitle: "Métodos Baseados em Prompt",
+    s4PromptBasedItems: [
+      {
+        title: "Prompting de cadeia de pensamento:",
+        description: "Incentiva raciocínio passo a passo para minimizar erros factuais."
+      },
+      {
+        title: "Prompting de instrução:",
+        description: "Usa comandos estruturados para guiar respostas precisas."
+      },
+      {
+        title: "Prompting negativo:",
+        description: "Diz explicitamente aos modelos o que não gerar."
+      },
+      {
+        title: "Calibração e filtragem de prompt:",
+        description: "Filtra instruções enganosas antes da geração."
+      }
+    ],
+    s4ModelBasedTitle: "Técnicas Baseadas em Modelo",
+    s4ModelBasedItems: [
+      {
+        title: "Ajuste fino de instrução:",
+        description: "Alinha modelos a padrões de verdade específicos do domínio."
+      },
+      {
+        title: "Aprendizado por reforço com feedback humano (RLHF):",
+        description: "Molda o comportamento do modelo usando avaliações humanas."
+      },
+      {
+        title: "Decodificação contrastiva:",
+        description: "Filtra conclusões de baixa confiança e provavelmente falsas."
+      },
+      {
+        title: "Geração Aumentada por Recuperação (RAG):",
+        description: "Fundamenta respostas com dados externos verificados em tempo real."
+      },
+      {
+        title: "Pontuadores de factualidade:",
+        description: "Sinalizam ou corrigem automaticamente conteúdo alucinado pós-geração."
+      }
+    ],
+    s4HybridTitle: "Pipelines Híbridos",
+    s4HybridBody: "As empresas mais avançadas agora usam sistemas em camadas combinando prompting, recuperação e validação pós-saída. Plataformas como Haystack e HuggingFace RAG estão ajudando organizações a implantar pipelines fundamentados em fatos para IA empresarial mais segura.",
+    s4HybridFigureCaption: "Um diagrama de fluxo de trabalho mostrando pipelines híbridos de confiabilidade de IA (Prompting → Recuperação → Verificação). Visualização por Notrus AI.",
+    s5Title: "O Caminho à Frente: Confiabilidade como Vantagem Competitiva",
+    s5Body: [
+      "Apesar dos avanços recentes, desafios-chave permanecem: desde a ausência de benchmarks universais de alucinação até acesso limitado à infraestrutura de ajuste fino. No entanto, a direção é clara. Reduzir alucinações não é mais uma reflexão técnica tardia, mas um imperativo estratégico. Alucinações de IA não são apenas uma falha técnica, são um risco empresarial que separa os líderes dos seguidores.",
+      "Em um cenário onde dados impulsionam cada decisão, empresas que fundamentam seus sistemas de IA na verdade liderarão com confiança, credibilidade e vantagem competitiva. As organizações mais inteligentes em 2025 não estão apenas implantando IA, estão ensinando-a a pensar, verificar e permanecer real. Porque na nova era da inteligência, confiança é a inovação definitiva."
+    ]
+  }
+};
