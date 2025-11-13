@@ -11,6 +11,7 @@ import {
   article2Texts,
 } from "@/utils/translations";
 import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
+import { FloatingNewsletter } from "@/components/ui/FloatingNewsletter";
 
 const Article2PT: React.FC = () => {
   const [language, setLanguage] = useState<Language>("pt");
@@ -340,6 +341,12 @@ const Article2PT: React.FC = () => {
         </article>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
+      <FloatingNewsletter
+        t={t}
+        language={language}
+        setLanguage={setLanguage}
+        showAfterScroll={10}
+      />
     </>
   );
 };
