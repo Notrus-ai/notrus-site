@@ -12,6 +12,7 @@ import {
   aiHallucinationsTexts,
 } from "@/utils/translations";
 import { renderTextWithLinks } from "@/components/ui/renderTextWithLinks";
+import { FloatingNewsletter } from "@/components/ui/FloatingNewsletter";
 
 const AIHallucinationsArticle: React.FC = () => {
   const [language, setLanguage] = useState<Language>("en");
@@ -337,6 +338,12 @@ const AIHallucinationsArticle: React.FC = () => {
         </article>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
+      <FloatingNewsletter
+        t={t}
+        language={language}
+        setLanguage={setLanguage}
+        showAfterScroll={3}
+      />
     </>
   );
 };

@@ -14,6 +14,7 @@ import {
   resourcesTexts,
 } from "@/utils/translations";
 import { ArrowRight } from "lucide-react";
+import { FloatingNewsletter } from "@/components/ui/FloatingNewsletter";
 
 interface Resource {
   id: number;
@@ -111,7 +112,7 @@ const ResourcesPage: React.FC = () => {
             className={`${
               resources.length === 1
                 ? "flex justify-center"
-                : "flex justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             } gap-8`}
           >
             {resources.map((r) => (
@@ -203,6 +204,12 @@ const ResourcesPage: React.FC = () => {
         </section>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
+      <FloatingNewsletter
+        t={t}
+        language={language}
+        setLanguage={setLanguage}
+        showAfterScroll={3}
+      />
     </>
   );
 };

@@ -10,6 +10,7 @@ import {
   ArticleTexts,
   articleTexts,
 } from "@/utils/translations";
+import { FloatingNewsletter } from "@/components/ui/FloatingNewsletter";
 
 const ArticlePageEN: React.FC = () => {
   const [language, setLanguage] = useState<Language>("en");
@@ -227,6 +228,12 @@ const ArticlePageEN: React.FC = () => {
         </article>
       </main>
       <Footer t={t} language={language} setLanguage={setLanguage} />
+      <FloatingNewsletter
+        t={t}
+        language={language}
+        setLanguage={setLanguage}
+        showAfterScroll={10}
+      />
     </>
   );
 };
