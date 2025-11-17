@@ -1410,7 +1410,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     useState<boolean>(false);
   const [countrySearch, setCountrySearch] = useState<string>("");
 
-  // Estados do hCaptcha
   const recaptchaRef = useRef<HCaptcha>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string>("");
 
@@ -1602,7 +1601,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
   ): Promise<void> => {
     e.preventDefault();
 
-    // Validação do hCaptcha
     if (!recaptchaToken) {
       alert(
         language === "pt"
@@ -1678,7 +1676,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       const domain = getEmailDomain(formData.email) ?? "";
       formDataToSend.append("email_domain", domain);
 
-      // Adicionar token do hCaptcha
       formDataToSend.append("g-recaptcha-response", recaptchaToken);
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -1698,7 +1695,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           message: "",
         });
 
-        // Resetar hCaptcha
         setRecaptchaToken("");
         recaptchaRef.current?.resetCaptcha();
 
@@ -1718,7 +1714,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           ? "Erro ao enviar mensagem. Tente novamente."
           : "Error sending message. Please try again."
       );
-      // Resetar hCaptcha em caso de erro
       recaptchaRef.current?.resetCaptcha();
       setRecaptchaToken("");
     } finally {
