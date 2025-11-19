@@ -31,6 +31,11 @@ type FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
+type Web3FormsResponse = {
+  success: boolean;
+  message?: string;
+};
+
 export default function ContactForm({ language: lang }: ContactFormProps) {
   const track = useGtagEvent();
   const pathname = usePathname();
@@ -1664,7 +1669,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
         body: formDataToSend,
       });
 
-      let result: any = null;
+      let result: Web3FormsResponse | null = null;
       try {
         result = await response.json();
       } catch (e) {
