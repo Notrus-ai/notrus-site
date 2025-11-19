@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useMemo, useState, useEffect, useRef } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { contactFormTranslations } from "@/utils/translations";
 import { useGtagEvent } from "@/components/ui/gtagNavigation";
-// import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 type SupportedLang = "pt" | "en";
 
@@ -1410,9 +1409,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     useState<boolean>(false);
   const [countrySearch, setCountrySearch] = useState<string>("");
 
-  // const recaptchaRef = useRef<HCaptcha>(null);
-  // const [recaptchaToken, setRecaptchaToken] = useState<string>("");
-
   useEffect(() => {
     const lng = getLangFromPath(pathname);
     if (lng !== language) {
@@ -1592,23 +1588,10 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
     }));
   };
 
-  // const handleRecaptchaChange = (token: string) => {
-  //   setRecaptchaToken(token);
-  // };
-
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
-
-    // if (!recaptchaToken) {
-    //   alert(
-    //     language === "pt"
-    //       ? "Por favor, confirme que você não é um robô."
-    //       : "Please confirm you are not a robot."
-    //   );
-    //   return;
-    // }
 
     const newErrors: FormErrors = {};
     const requiredFields: (keyof FormState)[] = [
@@ -1676,8 +1659,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
       const domain = getEmailDomain(formData.email) ?? "";
       formDataToSend.append("email_domain", domain);
 
-      // formDataToSend.append("g-recaptcha-response", recaptchaToken);
-
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formDataToSend,
@@ -1705,15 +1686,12 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           message: "",
         });
 
-        // setRecaptchaToken("");
-        // recaptchaRef.current?.resetCaptcha();
-
         track("conversion_event_submit_lead_form", {
           event_category: "lead",
           event_label: "botao_principal",
         });
 
-        window.setTimeout(() => setShowSuccess(false), 3000);
+        setTimeout(() => setShowSuccess(false), 3000);
       } else {
         console.error("Web3Forms error (handled branch):", {
           status: response.status,
@@ -1728,8 +1706,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
           ? "Erro ao enviar mensagem. Tente novamente."
           : "Error sending message. Please try again."
       );
-      // recaptchaRef.current?.resetCaptcha();
-      // setRecaptchaToken("");
     } finally {
       setIsLoading(false);
     }
@@ -2045,18 +2021,6 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-3 text-gray-800 transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 resize-vertical min-h-24"
                     />
                   </div>
-
-                  {/* hCaptcha */}
-                  {/* <div className="flex justify-center">
-                    <HCaptcha
-                      ref={recaptchaRef}
-                      sitekey={
-                        process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY as string
-                      }
-                      onVerify={handleRecaptchaChange}
-                      languageOverride={language}
-                    />
-                  </div> */}
 
                   {/* Submit */}
                   <button
