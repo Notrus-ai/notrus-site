@@ -2088,7 +2088,10 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                         : "Security verification *"}
                     </label>
                     <div className="flex items-center gap-3">
-                      <div className="bg-gradient-to-r from-indigo-100 to-purple-100 border-2 border-indigo-300 rounded-lg px-6 py-4 font-mono text-2xl font-bold text-indigo-700 select-none">
+                      <div
+                        className="
+    bg-gradient-to-r from-indigo-100 to-purple-100 border-2 border-indigo-300 rounded-lg px-2 py-1 sm:px-4 sm:py-2 font-mono text-base sm:text-lg md:text-xl font-bold text-indigo-700 select-none max-w-[110px] sm:max-w-none text-center"
+                      >
                         {captchaQuestion} = ?
                       </div>
                       <input
@@ -2099,7 +2102,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                           setCaptchaError("");
                         }}
                         placeholder={language === "pt" ? "?" : "?"}
-                        className={`w-24 bg-gray-100 border rounded-lg px-4 py-3 text-gray-800 text-center text-lg font-semibold transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
+                        className={`w-24 bg-gray-100 border rounded-lg px-4 py-2 text-gray-800 text-center text-lg font-semibold transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:bg-gray-50 ${
                           captchaError
                             ? "border-red-400 bg-red-50"
                             : "border-gray-300"
@@ -2109,7 +2112,7 @@ export default function ContactForm({ language: lang }: ContactFormProps) {
                       <button
                         type="button"
                         onClick={generateCaptcha}
-                        className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg px-3 py-3 transition-colors flex items-center justify-center"
+                        className="bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg px-2 py-1 transition-colors flex items-center justify-center"
                         title={
                           language === "pt" ? "Gerar novo" : "Generate new"
                         }
