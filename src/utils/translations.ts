@@ -1836,3 +1836,1864 @@ export const aiHallucinationsTexts: Record<Language, AIHallucinationsTexts> = {
     ]
   }
 }as const;
+ 
+// utils/translations.ts - VERSÃO LIMPA (SEM CORES)
+
+export type Locale = "pt" | "en";
+export type IndustryKey =
+  | "E-commerce"
+  | "Imobiliário"
+  | "Varejo"
+  | "Educação"
+  | "Saúde"
+  | "Financeiro"
+  | "SaaS"
+  | "Serviços";
+
+export const notrusLandingTexts = {
+  pt: {
+    modal: {
+      openButton: "Personalizar experiência",
+      title: "Personalize sua experiência",
+      subtitle: "Conte-nos um pouco sobre você para personalizar o conteúdo",
+      nameLabel: "Seu nome",
+      namePlaceholder: "Digite seu nome",
+      industryLabel: "Seu segmento",
+      industryPlaceholder: "Selecione seu segmento",
+      statusLabel: "Você é",
+      statusNew: "Novo cliente",
+      statusReturning: "Cliente retornando",
+      cancel: "Cancelar",
+      save: "Salvar",
+    },
+    labels: {
+      resultsTitle: "Resultados comprovados",
+      solutionsTitle: "Soluções para seu negócio",
+      solutionsSubtitle: "Automatize processos e aumente resultados",
+      howItWorksTitle: "Como funciona",
+      howItWorksSubtitle: "Veja casos práticos de automação",
+      benefitsTitle: "Benefícios para seu negócio",
+      casesTitle: "Cases de sucesso",
+    },
+    segments: {
+      "E-commerce": {
+        hero: {
+          Icon: "ShoppingCart",
+          badge: "IA para E-commerce",
+          headline: "Transforme visitantes em clientes fiéis",
+          subheadline:
+            "Automatize jornadas, aumente o LTV e reduza o churn com IA.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/ecommerce-hero.jpg",
+          imageAlt: "Equipe de e-commerce analisando performance",
+        },
+        stats: [
+          { value: "+35%", label: "Aumento em conversão" },
+          { value: "-40%", label: "Redução de churn" },
+          { value: "+50%", label: "Aumento em LTV" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "Gift",
+            title: "Recomendações inteligentes",
+            description:
+              "Recomende o produto certo no momento certo para cada cliente.",
+            features: [
+              "Análise de comportamento em tempo real",
+              "Sugestões personalizadas por perfil",
+              "Aumento de ticket médio",
+            ],
+          },
+          {
+            icon: "Repeat",
+            title: "Recuperação de carrinho",
+            description:
+              "Recupere vendas perdidas com mensagens personalizadas.",
+            features: [
+              "Lembretes automáticos via WhatsApp/Email",
+              "Ofertas personalizadas",
+              "Recuperação de até 30% dos carrinhos",
+            ],
+          },
+          {
+            icon: "Star",
+            title: "Programa de fidelidade",
+            description: "Crie programas de pontos e recompensas automatizados.",
+            features: [
+              "Gamificação de compras",
+              "Recompensas personalizadas",
+              "Aumento de recompra",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Cliente abandona carrinho",
+            automation:
+              "Sistema envia WhatsApp personalizado em 1h com desconto exclusivo",
+          },
+          {
+            step: 2,
+            scenario: "Cliente faz primeira compra",
+            automation:
+              "Jornada de boas-vindas ativada com dicas e cupom para próxima compra",
+          },
+          {
+            step: 3,
+            scenario: "Cliente inativo há 30 dias",
+            automation:
+              "Campanha de reativação com produtos baseados em histórico",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            title: "Mais receita por cliente",
+            description:
+              "Aumente o ticket médio e LTV com jornadas personalizadas.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Redução de custos",
+            description:
+              "Automatize atendimento e marketing, reduzindo custos operacionais.",
+          },
+          {
+            icon: "Repeat",
+            title: "Aumento de recompra",
+            description:
+              "Fidelize clientes com comunicação relevante e no momento certo.",
+          },
+          {
+            icon: "CheckCircle",
+            title: "Experiência personalizada",
+            description:
+              "Cada cliente recebe uma jornada única baseada em seu comportamento.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Aumentamos nossa taxa de conversão em 40% no primeiro mês usando a Notrus.",
+            author: "Maria Silva",
+            position: "CEO, Loja Virtual XYZ",
+          },
+          {
+            quote:
+              "A recuperação de carrinho automatizada nos trouxe R$ 50k em vendas recuperadas.",
+            author: "João Santos",
+            position: "Gerente de E-commerce, Fashion Store",
+          },
+        ],
+        cta: {
+          title: "Pronto para transformar seu e-commerce?",
+          subtitle:
+            "Agende uma demonstração gratuita e veja como podemos ajudar",
+        },
+      },
+      Imobiliário: {
+        hero: {
+          Icon: "Building2",
+          badge: "IA para Imobiliário",
+          headline: "Venda e alugue mais rápido com IA",
+          subheadline:
+            "Automatize o atendimento e qualificação de leads imobiliários.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/real-estate-hero.jpg",
+          imageAlt: "Corretor mostrando imóvel",
+        },
+        stats: [
+          { value: "+45%", label: "Mais leads qualificados" },
+          { value: "-60%", label: "Redução no tempo de resposta" },
+          { value: "+30%", label: "Aumento em visitas" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "MessageSquare",
+            title: "Atendimento inteligente",
+            description:
+              "Responda leads instantaneamente via WhatsApp com IA.",
+            features: [
+              "Qualificação automática de leads",
+              "Agendamento de visitas",
+              "Envio de fotos e vídeos dos imóveis",
+            ],
+          },
+          {
+            icon: "CalendarDays",
+            title: "Agendamento automático",
+            description: "Agende visitas automaticamente sem intervenção manual.",
+            features: [
+              "Integração com calendário",
+              "Confirmações automáticas",
+              "Lembretes para clientes e corretores",
+            ],
+          },
+          {
+            icon: "ScanSearch",
+            title: "Match inteligente",
+            description:
+              "Conecte clientes aos imóveis ideais usando IA preditiva.",
+            features: [
+              "Análise de preferências",
+              "Recomendações personalizadas",
+              "Alertas de novos imóveis",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead entra em contato via site",
+            automation:
+              "IA responde em segundos, qualifica e agenda visita automaticamente",
+          },
+          {
+            step: 2,
+            scenario: "Cliente visita imóvel",
+            automation:
+              "Sistema envia follow-up personalizado com opções similares",
+          },
+          {
+            step: 3,
+            scenario: "Novo imóvel disponível",
+            automation:
+              "Clientes com perfil compatível recebem alerta automático",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Gauge",
+            title: "Resposta instantânea",
+            description:
+              "Atenda leads em segundos, 24/7, sem perder oportunidades.",
+          },
+          {
+            icon: "UserRoundCheck",
+            title: "Leads qualificados",
+            description:
+              "IA filtra e qualifica leads automaticamente antes do contato humano.",
+          },
+          {
+            icon: "CalendarClock",
+            title: "Mais visitas agendadas",
+            description:
+              "Automatize agendamentos e aumente o número de visitas realizadas.",
+          },
+          {
+            icon: "LineChart",
+            title: "Aumento de conversão",
+            description:
+              "Converta mais leads em vendas com follow-up inteligente.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Triplicamos o número de visitas agendadas com a automação da Notrus.",
+            author: "Carlos Mendes",
+            position: "Diretor, Imobiliária Prime",
+          },
+          {
+            quote:
+              "Nossos corretores agora focam em fechar negócios, não em responder WhatsApp.",
+            author: "Ana Paula",
+            position: "Gerente Comercial, Rede Imóveis",
+          },
+        ],
+        cta: {
+          title: "Pronto para vender mais imóveis?",
+          subtitle:
+            "Agende uma demonstração e veja a IA trabalhando para você",
+        },
+      },
+      Varejo: {
+        hero: {
+          Icon: "Store",
+          badge: "IA para Varejo",
+          headline: "Fidelize clientes e aumente vendas",
+          subheadline:
+            "Automatize promoções, programas de fidelidade e atendimento.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/retail-hero.jpg",
+          imageAlt: "Loja de varejo moderna",
+        },
+        stats: [
+          { value: "+40%", label: "Aumento em recompra" },
+          { value: "-35%", label: "Redução de churn" },
+          { value: "+55%", label: "Engajamento em promoções" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "Gift",
+            title: "Programa de fidelidade",
+            description: "Crie programas de pontos automatizados e gamificados.",
+            features: [
+              "Pontos por compra automáticos",
+              "Recompensas personalizadas",
+              "Gamificação e desafios",
+            ],
+          },
+          {
+            icon: "Megaphone",
+            title: "Promoções inteligentes",
+            description:
+              "Envie ofertas personalizadas baseadas em comportamento.",
+            features: [
+              "Segmentação automática",
+              "Ofertas por perfil de cliente",
+              "Campanhas multicanal",
+            ],
+          },
+          {
+            icon: "Headphones",
+            title: "Atendimento omnichannel",
+            description:
+              "Unifique atendimento em WhatsApp, Instagram e loja física.",
+            features: [
+              "Histórico unificado",
+              "Respostas automáticas",
+              "Transferência inteligente para humanos",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Cliente faz compra na loja",
+            automation:
+              "Pontos creditados automaticamente e cupom enviado via WhatsApp",
+          },
+          {
+            step: 2,
+            scenario: "Aniversário do cliente",
+            automation:
+              "Mensagem personalizada com desconto especial é enviada automaticamente",
+          },
+          {
+            step: 3,
+            scenario: "Cliente inativo há 45 dias",
+            automation:
+              "Campanha de reativação com oferta baseada em compras anteriores",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Repeat2",
+            title: "Mais clientes recorrentes",
+            description:
+              "Fidelize com comunicação relevante e programas de recompensa.",
+          },
+          {
+            icon: "Sparkles",
+            title: "Experiência omnichannel",
+            description:
+              "Unifique online e offline para experiência sem fricção.",
+          },
+          {
+            icon: "TrendingUp",
+            title: "Aumento de ticket médio",
+            description:
+              "Ofertas personalizadas aumentam valor por transação.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Dados acionáveis",
+            description:
+              "Entenda comportamento e tome decisões baseadas em dados.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Nosso programa de fidelidade automatizado aumentou a recompra em 50%.",
+            author: "Roberto Lima",
+            position: "Dono, Rede de Lojas Fashion",
+          },
+          {
+            quote:
+              "A Notrus nos ajudou a unificar online e offline de forma simples.",
+            author: "Juliana Costa",
+            position: "Gerente de Marketing, SuperMercado Bom Preço",
+          },
+        ],
+        cta: {
+          title: "Pronto para fidelizar seus clientes?",
+          subtitle: "Veja como a automação pode transformar seu varejo",
+        },
+      },
+      Educação: {
+        hero: {
+          Icon: "GraduationCap",
+          badge: "IA para Educação",
+          headline: "Aumente matrículas e engajamento",
+          subheadline:
+            "Automatize captação, onboarding e comunicação com alunos.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/education-hero.jpg",
+          imageAlt: "Estudantes em sala de aula moderna",
+        },
+        stats: [
+          { value: "+50%", label: "Aumento em matrículas" },
+          { value: "-45%", label: "Redução de evasão" },
+          { value: "+60%", label: "Engajamento de alunos" },
+          { value: "24/7", label: "Suporte automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "UserPlus",
+            title: "Captação inteligente",
+            description:
+              "Qualifique e converta leads em matrículas automaticamente.",
+            features: [
+              "Chatbot para dúvidas frequentes",
+              "Agendamento de visitas",
+              "Follow-up automatizado",
+            ],
+          },
+          {
+            icon: "BookOpen",
+            title: "Onboarding automatizado",
+            description: "Guie novos alunos com jornadas personalizadas.",
+            features: [
+              "Boas-vindas automatizadas",
+              "Envio de materiais",
+              "Integração com plataforma de ensino",
+            ],
+          },
+          {
+            icon: "HeartHandshake",
+            title: "Engajamento contínuo",
+            description: "Mantenha alunos engajados com comunicação relevante.",
+            features: [
+              "Lembretes de aulas e provas",
+              "Conteúdo personalizado",
+              "Detecção de risco de evasão",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead preenche formulário no site",
+            automation:
+              "IA responde dúvidas, envia material e agenda visita automaticamente",
+          },
+          {
+            step: 2,
+            scenario: "Aluno faz matrícula",
+            automation:
+              "Jornada de boas-vindas com materiais, acesso à plataforma e orientações",
+          },
+          {
+            step: 3,
+            scenario: "Aluno com baixa frequência",
+            automation:
+              "Sistema detecta risco e aciona equipe pedagógica com alerta",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Users",
+            title: "Mais matrículas",
+            description:
+              "Converta mais leads com atendimento rápido e personalizado.",
+          },
+          {
+            icon: "ShieldCheck",
+            title: "Redução de evasão",
+            description:
+              "Identifique alunos em risco e aja antes que desistam.",
+          },
+          {
+            icon: "Smile",
+            title: "Alunos mais satisfeitos",
+            description:
+              "Comunicação relevante aumenta satisfação e engajamento.",
+          },
+          {
+            icon: "Rocket",
+            title: "Escalabilidade",
+            description:
+              "Atenda mais alunos sem aumentar proporcionalmente a equipe.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Reduzimos a evasão em 40% com as automações de engajamento da Notrus.",
+            author: "Prof. Ricardo Alves",
+            position: "Diretor, Escola Técnica Futuro",
+          },
+          {
+            quote:
+              "Nosso time de captação agora converte 3x mais leads em matrículas.",
+            author: "Fernanda Rocha",
+            position: "Coordenadora de Marketing, Universidade Digital",
+          },
+        ],
+        cta: {
+          title: "Pronto para transformar sua instituição?",
+          subtitle: "Veja como a IA pode aumentar matrículas e reduzir evasão",
+        },
+      },
+      Saúde: {
+        hero: {
+          Icon: "HeartPulse",
+          badge: "IA para Saúde",
+          headline: "Melhore atendimento e reduza faltas",
+          subheadline:
+            "Automatize agendamentos, lembretes e comunicação com pacientes.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/health-hero.jpg",
+          imageAlt: "Médica atendendo paciente",
+        },
+        stats: [
+          { value: "-70%", label: "Redução de faltas" },
+          { value: "+80%", label: "Satisfação de pacientes" },
+          { value: "-50%", label: "Redução de ligações" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "CalendarClock",
+            title: "Agendamento inteligente",
+            description:
+              "Pacientes agendam consultas via WhatsApp automaticamente.",
+            features: [
+              "Integração com agenda médica",
+              "Confirmação automática",
+              "Reagendamento facilitado",
+            ],
+          },
+          {
+            icon: "Clock8",
+            title: "Lembretes automáticos",
+            description: "Reduza faltas com lembretes personalizados.",
+            features: [
+              "Lembretes 48h e 24h antes",
+              "Confirmação de presença",
+              "Instruções pré-consulta",
+            ],
+          },
+          {
+            icon: "FileCheck2",
+            title: "Pré-atendimento digital",
+            description: "Colete informações antes da consulta automaticamente.",
+            features: [
+              "Anamnese digital",
+              "Envio de exames prévios",
+              "Documentação automatizada",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Paciente quer agendar consulta",
+            automation:
+              "WhatsApp bot mostra horários disponíveis e agenda automaticamente",
+          },
+          {
+            step: 2,
+            scenario: "Consulta agendada para daqui 2 dias",
+            automation:
+              "Sistema envia lembrete com instruções e link para pré-atendimento",
+          },
+          {
+            step: 3,
+            scenario: "Paciente não confirma presença",
+            automation:
+              "Sistema libera horário e oferece para lista de espera automaticamente",
+          },
+        ],
+        benefits: [
+          {
+            icon: "CalendarDays",
+            title: "Agenda otimizada",
+            description:
+              "Reduza faltas e otimize agenda com lembretes inteligentes.",
+          },
+          {
+            icon: "HeartHandshake",
+            title: "Melhor experiência",
+            description:
+              "Pacientes valorizam comunicação clara e atendimento ágil.",
+          },
+          {
+            icon: "LifeBuoy",
+            title: "Equipe mais produtiva",
+            description:
+              "Libere recepção de tarefas repetitivas para focar no humano.",
+          },
+          {
+            icon: "Shield",
+            title: "Conformidade LGPD",
+            description:
+              "Dados seguros e em conformidade com legislação de saúde.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Reduzimos faltas em 65% e nossa recepção agora foca no atendimento presencial.",
+            author: "Dra. Mariana Souza",
+            position: "Diretora, Clínica Vida Saudável",
+          },
+          {
+            quote:
+              "Pacientes adoram agendar pelo WhatsApp. Nossa satisfação subiu 40%.",
+            author: "Dr. Paulo Henrique",
+            position: "Coordenador, Rede de Clínicas Bem Estar",
+          },
+        ],
+        cta: {
+          title: "Pronto para modernizar sua clínica?",
+          subtitle:
+            "Veja como reduzir faltas e melhorar a experiência dos pacientes",
+        },
+      },
+      Financeiro: {
+        hero: {
+          Icon: "Banknote",
+          badge: "IA para Serviços Financeiros",
+          headline: "Automatize atendimento e recuperação",
+          subheadline:
+            "Reduza inadimplência e melhore experiência do cliente com IA.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/finance-hero.jpg",
+          imageAlt: "Consultor financeiro",
+        },
+        stats: [
+          { value: "+45%", label: "Recuperação de crédito" },
+          { value: "-60%", label: "Redução de inadimplência" },
+          { value: "+70%", label: "Satisfação do cliente" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "Banknote",
+            title: "Cobrança inteligente",
+            description:
+              "Recupere crédito com abordagem humanizada e automatizada.",
+            features: [
+              "Mensagens personalizadas por perfil",
+              "Negociação automática",
+              "Múltiplos canais (WhatsApp, Email, SMS)",
+            ],
+          },
+          {
+            icon: "ShieldCheck",
+            title: "Onboarding digital",
+            description: "Aprove clientes mais rápido com verificação automática.",
+            features: [
+              "Análise de documentos com IA",
+              "Verificação facial",
+              "Aprovação em minutos",
+            ],
+          },
+          {
+            icon: "MessageSquare",
+            title: "Atendimento 24/7",
+            description: "Responda dúvidas sobre produtos e serviços com IA.",
+            features: [
+              "Chatbot financeiro especializado",
+              "Consulta de saldo e extratos",
+              "Solicitação de serviços",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Cliente atrasa pagamento",
+            automation:
+              "Sistema envia lembrete amigável e oferece opções de negociação",
+          },
+          {
+            step: 2,
+            scenario: "Cliente quer contratar produto",
+            automation:
+              "IA coleta documentos, analisa e aprova em minutos automaticamente",
+          },
+          {
+            step: 3,
+            scenario: "Cliente tem dúvida sobre fatura",
+            automation:
+              "Chatbot responde instantaneamente e resolve 80% das dúvidas",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            title: "Mais recuperação",
+            description:
+              "Abordagem humanizada e no momento certo aumenta recuperação.",
+          },
+          {
+            icon: "Gauge",
+            title: "Aprovação mais rápida",
+            description:
+              "Onboarding digital reduz tempo de aprovação de dias para minutos.",
+          },
+          {
+            icon: "Smile",
+            title: "Clientes mais satisfeitos",
+            description:
+              "Atendimento rápido e eficiente melhora NPS e retenção.",
+          },
+          {
+            icon: "FileLock2",
+            title: "Segurança e compliance",
+            description:
+              "Processos auditáveis e em conformidade com regulações.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Aumentamos a recuperação de crédito em 50% com a abordagem humanizada da Notrus.",
+            author: "Carlos Eduardo",
+            position: "Diretor de Cobrança, Financeira Crédito Fácil",
+          },
+          {
+            quote:
+              "Nosso onboarding agora leva 5 minutos. Antes eram 3 dias.",
+            author: "Beatriz Martins",
+            position: "Gerente de Operações, Banco Digital Novo",
+          },
+        ],
+        cta: {
+          title: "Pronto para reduzir inadimplência?",
+          subtitle:
+            "Veja como a IA pode transformar cobrança e atendimento financeiro",
+        },
+      },
+      SaaS: {
+        hero: {
+          Icon: "Rocket",
+          badge: "IA para SaaS",
+          headline: "Reduza churn e aumente expansão",
+          subheadline:
+            "Automatize onboarding, suporte e expansão de contas com IA.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/saas-hero.jpg",
+          imageAlt: "Time de SaaS trabalhando",
+        },
+        stats: [
+          { value: "-50%", label: "Redução de churn" },
+          { value: "+60%", label: "Aumento em expansão" },
+          { value: "+75%", label: "Ativação de usuários" },
+          { value: "24/7", label: "Suporte automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "PlayCircle",
+            title: "Onboarding automatizado",
+            description: "Ative usuários mais rápido com jornadas guiadas.",
+            features: [
+              "Tours interativos personalizados",
+              "Emails de ativação",
+              "Detecção de pontos de fricção",
+            ],
+          },
+          {
+            icon: "LifeBuoy",
+            title: "Suporte inteligente",
+            description: "Resolva dúvidas instantaneamente com IA.",
+            features: [
+              "Base de conhecimento com IA",
+              "Respostas contextuais",
+              "Escalação inteligente para humanos",
+            ],
+          },
+          {
+            icon: "TrendingUp",
+            title: "Expansão de contas",
+            description: "Identifique oportunidades de upsell automaticamente.",
+            features: [
+              "Análise de uso e comportamento",
+              "Ofertas personalizadas",
+              "Campanhas de expansão",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Usuário se cadastra",
+            automation:
+              "Jornada de onboarding personalizada é ativada automaticamente",
+          },
+          {
+            step: 2,
+            scenario: "Usuário não usa recurso chave",
+            automation:
+              "Sistema envia tutorial e oferece ajuda proativa",
+          },
+          {
+            step: 3,
+            scenario: "Conta atinge limite do plano",
+            automation:
+              "Oferta de upgrade é enviada no momento ideal",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Sparkle",
+            title: "Ativação mais rápida",
+            description:
+              "Usuários chegam ao 'aha moment' mais rápido com onboarding guiado.",
+          },
+          {
+            icon: "Shield",
+            title: "Menos churn",
+            description:
+              "Identifique usuários em risco e aja antes que cancelem.",
+          },
+          {
+            icon: "Rocket",
+            title: "Mais expansão",
+            description:
+              "Ofertas no momento certo aumentam upgrade e cross-sell.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Dados acionáveis",
+            description:
+              "Entenda comportamento e otimize produto baseado em dados.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Reduzimos churn em 45% com as automações de engajamento da Notrus.",
+            author: "Lucas Ferreira",
+            position: "CEO, SaaS de Gestão Cloud",
+          },
+          {
+            quote:
+              "Nossa taxa de ativação subiu de 40% para 75% em 3 meses.",
+            author: "Camila Rodrigues",
+            position: "Head of Growth, Plataforma de Marketing",
+          },
+        ],
+        cta: {
+          title: "Pronto para escalar seu SaaS?",
+          subtitle:
+            "Veja como reduzir churn e aumentar expansão com automação",
+        },
+      },
+      Serviços: {
+        hero: {
+          Icon: "Wrench",
+          badge: "IA para Serviços",
+          headline: "Automatize agendamentos e atendimento",
+          subheadline:
+            "Aumente produtividade e satisfação com automação inteligente.",
+          ctaPrimary: "Ver soluções",
+          ctaSecondary: "Ver simulação",
+          greetingReturning: ", bem-vindo de volta!",
+          image: "/services-hero.jpg",
+          imageAlt: "Profissional prestando serviço",
+        },
+        stats: [
+          { value: "+55%", label: "Aumento em agendamentos" },
+          { value: "-65%", label: "Redução de no-shows" },
+          { value: "+70%", label: "Satisfação do cliente" },
+          { value: "24/7", label: "Atendimento automatizado" },
+        ],
+        solutions: [
+          {
+            icon: "CalendarDays",
+            title: "Agendamento online",
+            description: "Clientes agendam serviços via WhatsApp ou site.",
+            features: [
+              "Calendário em tempo real",
+              "Confirmação automática",
+              "Reagendamento facilitado",
+            ],
+          },
+          {
+            icon: "Route",
+            title: "Gestão de rotas",
+            description: "Otimize rotas de atendimento automaticamente.",
+            features: [
+              "Roteirização inteligente",
+              "Notificações para equipe",
+              "Rastreamento em tempo real",
+            ],
+          },
+          {
+            icon: "Handshake",
+            title: "Follow-up automatizado",
+            description: "Mantenha contato com clientes após o serviço.",
+            features: [
+              "Pesquisa de satisfação",
+              "Solicitação de avaliações",
+              "Ofertas de manutenção",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Cliente quer agendar serviço",
+            automation:
+              "WhatsApp bot mostra horários e agenda automaticamente",
+          },
+          {
+            step: 2,
+            scenario: "Serviço agendado para amanhã",
+            automation:
+              "Sistema envia lembrete e confirma presença do profissional",
+          },
+          {
+            step: 3,
+            scenario: "Serviço concluído",
+            automation:
+              "Cliente recebe pesquisa de satisfação e oferta de manutenção",
+          },
+        ],
+        benefits: [
+          {
+            icon: "CalendarClock",
+            title: "Agenda otimizada",
+            description:
+              "Reduza tempo ocioso e aumente número de atendimentos.",
+          },
+          {
+            icon: "Smile",
+            title: "Clientes mais satisfeitos",
+            description:
+              "Comunicação clara e pontualidade aumentam satisfação.",
+          },
+          {
+            icon: "TrendingUp",
+            title: "Mais produtividade",
+            description:
+              "Equipe foca em executar serviços, não em tarefas administrativas.",
+          },
+          {
+            icon: "Repeat",
+            title: "Mais recorrência",
+            description:
+              "Follow-up automatizado aumenta contratos de manutenção.",
+          },
+        ],
+        testimonials: [
+          {
+            quote:
+              "Aumentamos nossos agendamentos em 60% e reduzimos faltas pela metade.",
+            author: "André Oliveira",
+            position: "Dono, Empresa de Manutenção Residencial",
+          },
+          {
+            quote:
+              "Nossa equipe agora atende 40% mais clientes por dia com a otimização de rotas.",
+            author: "Patrícia Santos",
+            position: "Gerente Operacional, Serviços de Limpeza Pro",
+          },
+        ],
+        cta: {
+          title: "Pronto para otimizar seus serviços?",
+          subtitle:
+            "Veja como automação pode aumentar produtividade e satisfação",
+        },
+      },
+    },
+  },
+  en: {
+    modal: {
+      openButton: "Customize experience",
+      title: "Customize your experience",
+      subtitle: "Tell us a bit about yourself to personalize the content",
+      nameLabel: "Your name",
+      namePlaceholder: "Enter your name",
+      industryLabel: "Your industry",
+      industryPlaceholder: "Select your industry",
+      statusLabel: "You are",
+      statusNew: "New customer",
+      statusReturning: "Returning customer",
+      cancel: "Cancel",
+      save: "Save",
+    },
+    labels: {
+      resultsTitle: "Proven results",
+      solutionsTitle: "Solutions for your business",
+      solutionsSubtitle: "Automate processes and increase results",
+      howItWorksTitle: "How it works",
+      howItWorksSubtitle: "See practical automation cases",
+      benefitsTitle: "Benefits for your business",
+      casesTitle: "Success stories",
+    },
+    segments: {
+      "E-commerce": {
+        hero: {
+          Icon: "ShoppingCart",
+          badge: "AI for E-commerce",
+          headline: "Turn visitors into loyal customers",
+          subheadline: "Automate journeys, increase LTV and reduce churn with AI.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/ecommerce-hero.jpg",
+          imageAlt: "E-commerce team analyzing performance",
+        },
+        stats: [
+          { value: "+35%", label: "Increase in conversion" },
+          { value: "-40%", label: "Churn reduction" },
+          { value: "+50%", label: "Increase in LTV" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "Gift",
+            title: "Smart recommendations",
+            description: "Recommend the right product at the right time for each customer.",
+            features: [
+              "Real-time behavior analysis",
+              "Personalized suggestions by profile",
+              "Increased average ticket",
+            ],
+          },
+          {
+            icon: "Repeat",
+            title: "Cart recovery",
+            description: "Recover lost sales with personalized messages.",
+            features: [
+              "Automatic reminders via WhatsApp/Email",
+              "Personalized offers",
+              "Recovery of up to 30% of carts",
+            ],
+          },
+          {
+            icon: "Star",
+            title: "Loyalty program",
+            description: "Create automated points and rewards programs.",
+            features: [
+              "Shopping gamification",
+              "Personalized rewards",
+              "Increased repurchase",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Customer abandons cart",
+            automation: "System sends personalized WhatsApp in 1h with exclusive discount",
+          },
+          {
+            step: 2,
+            scenario: "Customer makes first purchase",
+            automation: "Welcome journey activated with tips and coupon for next purchase",
+          },
+          {
+            step: 3,
+            scenario: "Customer inactive for 30 days",
+            automation: "Reactivation campaign with products based on history",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            title: "More revenue per customer",
+            description: "Increase average ticket and LTV with personalized journeys.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Cost reduction",
+            description: "Automate support and marketing, reducing operational costs.",
+          },
+          {
+            icon: "Repeat",
+            title: "Increased repurchase",
+            description: "Build loyalty with relevant communication at the right time.",
+          },
+          {
+            icon: "CheckCircle",
+            title: "Personalized experience",
+            description: "Each customer receives a unique journey based on their behavior.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We increased our conversion rate by 40% in the first month using Notrus.",
+            author: "Maria Silva",
+            position: "CEO, XYZ Online Store",
+          },
+          {
+            quote: "Automated cart recovery brought us $50k in recovered sales.",
+            author: "João Santos",
+            position: "E-commerce Manager, Fashion Store",
+          },
+        ],
+        cta: {
+          title: "Ready to transform your e-commerce?",
+          subtitle: "Schedule a free demo and see how we can help",
+        },
+      },
+      Imobiliário: {
+        hero: {
+          Icon: "Building2",
+          badge: "AI for Real Estate",
+          headline: "Sell and rent faster with AI",
+          subheadline: "Automate support and lead qualification for real estate.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/real-estate-hero.jpg",
+          imageAlt: "Real estate agent showing property",
+        },
+        stats: [
+          { value: "+45%", label: "More qualified leads" },
+          { value: "-60%", label: "Reduction in response time" },
+          { value: "+30%", label: "Increase in visits" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "MessageSquare",
+            title: "Smart support",
+            description: "Respond to leads instantly via WhatsApp with AI.",
+            features: [
+              "Automatic lead qualification",
+              "Visit scheduling",
+              "Sending photos and videos of properties",
+            ],
+          },
+          {
+            icon: "CalendarDays",
+            title: "Automatic scheduling",
+            description: "Schedule visits automatically without manual intervention.",
+            features: [
+              "Calendar integration",
+              "Automatic confirmations",
+              "Reminders for clients and agents",
+            ],
+          },
+          {
+            icon: "ScanSearch",
+            title: "Smart matching",
+            description: "Connect clients to ideal properties using predictive AI.",
+            features: [
+              "Preference analysis",
+              "Personalized recommendations",
+              "New property alerts",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead contacts via website",
+            automation: "AI responds in seconds, qualifies and schedules visit automatically",
+          },
+          {
+            step: 2,
+            scenario: "Client visits property",
+            automation: "System sends personalized follow-up with similar options",
+          },
+          {
+            step: 3,
+            scenario: "New property available",
+            automation: "Clients with compatible profile receive automatic alert",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Gauge",
+            title: "Instant response",
+            description: "Serve leads in seconds, 24/7, without missing opportunities.",
+          },
+          {
+            icon: "UserRoundCheck",
+            title: "Qualified leads",
+            description: "AI filters and qualifies leads automatically before human contact.",
+          },
+          {
+            icon: "CalendarClock",
+            title: "More scheduled visits",
+            description: "Automate scheduling and increase number of completed visits.",
+          },
+          {
+            icon: "LineChart",
+            title: "Increased conversion",
+            description: "Convert more leads into sales with smart follow-up.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We tripled the number of scheduled visits with Notrus automation.",
+            author: "Carlos Mendes",
+            position: "Director, Prime Real Estate",
+          },
+          {
+            quote: "Our agents now focus on closing deals, not answering WhatsApp.",
+            author: "Ana Paula",
+            position: "Commercial Manager, Real Estate Network",
+          },
+        ],
+        cta: {
+          title: "Ready to sell more properties?",
+          subtitle: "Schedule a demo and see AI working for you",
+        },
+      },
+      Varejo: {
+        hero: {
+          Icon: "Store",
+          badge: "AI for Retail",
+          headline: "Build customer loyalty and increase sales",
+          subheadline: "Automate promotions, loyalty programs and support.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/retail-hero.jpg",
+          imageAlt: "Modern retail store",
+        },
+        stats: [
+          { value: "+40%", label: "Increase in repurchase" },
+          { value: "-35%", label: "Churn reduction" },
+          { value: "+55%", label: "Engagement in promotions" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "Gift",
+            title: "Loyalty program",
+            description: "Create automated and gamified points programs.",
+            features: [
+              "Automatic points per purchase",
+              "Personalized rewards",
+              "Gamification and challenges",
+            ],
+          },
+          {
+            icon: "Megaphone",
+            title: "Smart promotions",
+            description: "Send personalized offers based on behavior.",
+            features: [
+              "Automatic segmentation",
+              "Offers by customer profile",
+              "Multichannel campaigns",
+            ],
+          },
+          {
+            icon: "Headphones",
+            title: "Omnichannel support",
+            description: "Unify support on WhatsApp, Instagram and physical store.",
+            features: [
+              "Unified history",
+              "Automatic responses",
+              "Smart transfer to humans",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Customer makes purchase in store",
+            automation: "Points credited automatically and coupon sent via WhatsApp",
+          },
+          {
+            step: 2,
+            scenario: "Customer's birthday",
+            automation: "Personalized message with special discount is sent automatically",
+          },
+          {
+            step: 3,
+            scenario: "Customer inactive for 45 days",
+            automation: "Reactivation campaign with offer based on previous purchases",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Repeat2",
+            title: "More recurring customers",
+            description: "Build loyalty with relevant communication and reward programs.",
+          },
+          {
+            icon: "Sparkles",
+            title: "Omnichannel experience",
+            description: "Unify online and offline for frictionless experience.",
+          },
+          {
+            icon: "TrendingUp",
+            title: "Increased average ticket",
+            description: "Personalized offers increase value per transaction.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Actionable data",
+            description: "Understand behavior and make data-driven decisions.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "Our automated loyalty program increased repurchase by 50%.",
+            author: "Roberto Lima",
+            position: "Owner, Fashion Store Chain",
+          },
+          {
+            quote: "Notrus helped us unify online and offline simply.",
+            author: "Juliana Costa",
+            position: "Marketing Manager, Good Price Supermarket",
+          },
+        ],
+        cta: {
+          title: "Ready to build customer loyalty?",
+          subtitle: "See how automation can transform your retail",
+        },
+      },
+      Educação: {
+        hero: {
+          Icon: "GraduationCap",
+          badge: "AI for Education",
+          headline: "Increase enrollments and engagement",
+          subheadline: "Automate acquisition, onboarding and student communication.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/education-hero.jpg",
+          imageAlt: "Students in modern classroom",
+        },
+        stats: [
+          { value: "+50%", label: "Increase in enrollments" },
+          { value: "-45%", label: "Dropout reduction" },
+          { value: "+60%", label: "Student engagement" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "UserPlus",
+            title: "Smart acquisition",
+            description: "Qualify and convert leads into enrollments automatically.",
+            features: [
+              "Chatbot for FAQs",
+              "Visit scheduling",
+              "Automated follow-up",
+            ],
+          },
+          {
+            icon: "BookOpen",
+            title: "Automated onboarding",
+            description: "Guide new students with personalized journeys.",
+            features: [
+              "Automated welcome",
+              "Material sending",
+              "Integration with learning platform",
+            ],
+          },
+          {
+            icon: "HeartHandshake",
+            title: "Continuous engagement",
+            description: "Keep students engaged with relevant communication.",
+            features: [
+              "Class and exam reminders",
+              "Personalized content",
+              "Dropout risk detection",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Lead fills form on website",
+            automation: "AI answers questions, sends material and schedules visit automatically",
+          },
+          {
+            step: 2,
+            scenario: "Student enrolls",
+            automation: "Welcome journey with materials, platform access and guidance",
+          },
+          {
+            step: 3,
+            scenario: "Student with low attendance",
+            automation: "System detects risk and alerts pedagogical team",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Users",
+            title: "More enrollments",
+            description: "Convert more leads with fast and personalized support.",
+          },
+          {
+            icon: "ShieldCheck",
+            title: "Dropout reduction",
+            description: "Identify at-risk students and act before they quit.",
+          },
+          {
+            icon: "Smile",
+            title: "More satisfied students",
+            description: "Relevant communication increases satisfaction and engagement.",
+          },
+          {
+            icon: "Rocket",
+            title: "Scalability",
+            description: "Serve more students without proportionally increasing staff.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We reduced dropout by 40% with Notrus engagement automations.",
+            author: "Prof. Ricardo Alves",
+            position: "Director, Future Technical School",
+          },
+          {
+            quote: "Our acquisition team now converts 3x more leads into enrollments.",
+            author: "Fernanda Rocha",
+            position: "Marketing Coordinator, Digital University",
+          },
+        ],
+        cta: {
+          title: "Ready to transform your institution?",
+          subtitle: "See how AI can increase enrollments and reduce dropout",
+        },
+      },
+      Saúde: {
+        hero: {
+          Icon: "HeartPulse",
+          badge: "AI for Healthcare",
+          headline: "Improve care and reduce no-shows",
+          subheadline: "Automate scheduling, reminders and patient communication.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/health-hero.jpg",
+          imageAlt: "Doctor attending patient",
+        },
+        stats: [
+          { value: "-70%", label: "Reduction in no-shows" },
+          { value: "+80%", label: "Patient satisfaction" },
+          { value: "-50%", label: "Reduction in calls" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "CalendarClock",
+            title: "Smart scheduling",
+            description: "Patients schedule appointments via WhatsApp automatically.",
+            features: [
+              "Integration with medical calendar",
+              "Automatic confirmation",
+              "Facilitated rescheduling",
+            ],
+          },
+          {
+            icon: "Clock8",
+            title: "Automatic reminders",
+            description: "Reduce no-shows with personalized reminders.",
+            features: [
+              "Reminders 48h and 24h before",
+              "Presence confirmation",
+              "Pre-appointment instructions",
+            ],
+          },
+          {
+            icon: "FileCheck2",
+            title: "Digital pre-care",
+            description: "Collect information before appointment automatically.",
+            features: [
+              "Digital anamnesis",
+              "Sending previous exams",
+              "Automated documentation",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Patient wants to schedule appointment",
+            automation: "WhatsApp bot shows available times and schedules automatically",
+          },
+          {
+            step: 2,
+            scenario: "Appointment scheduled for 2 days from now",
+            automation: "System sends reminder with instructions and pre-care link",
+          },
+          {
+            step: 3,
+            scenario: "Patient doesn't confirm presence",
+            automation: "System releases time and offers to waiting list automatically",
+          },
+        ],
+        benefits: [
+          {
+            icon: "CalendarDays",
+            title: "Optimized schedule",
+            description: "Reduce no-shows and optimize schedule with smart reminders.",
+          },
+          {
+            icon: "HeartHandshake",
+            title: "Better experience",
+            description: "Patients value clear communication and agile service.",
+          },
+          {
+            icon: "LifeBuoy",
+            title: "More productive team",
+            description: "Free reception from repetitive tasks to focus on human touch.",
+          },
+          {
+            icon: "Shield",
+            title: "GDPR compliance",
+            description: "Secure data in compliance with health legislation.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We reduced no-shows by 65% and our reception now focuses on in-person service.",
+            author: "Dr. Mariana Souza",
+            position: "Director, Healthy Life Clinic",
+          },
+          {
+            quote: "Patients love scheduling via WhatsApp. Our satisfaction increased 40%.",
+            author: "Dr. Paulo Henrique",
+            position: "Coordinator, Well Being Clinic Network",
+          },
+        ],
+        cta: {
+          title: "Ready to modernize your clinic?",
+          subtitle: "See how to reduce no-shows and improve patient experience",
+        },
+      },
+      Financeiro: {
+        hero: {
+          Icon: "Banknote",
+          badge: "AI for Financial Services",
+          headline: "Automate support and recovery",
+          subheadline: "Reduce default and improve customer experience with AI.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/finance-hero.jpg",
+          imageAlt: "Financial consultant",
+        },
+        stats: [
+          { value: "+45%", label: "Credit recovery" },
+          { value: "-60%", label: "Default reduction" },
+          { value: "+70%", label: "Customer satisfaction" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "Banknote",
+            title: "Smart collection",
+            description: "Recover credit with humanized and automated approach.",
+            features: [
+              "Personalized messages by profile",
+              "Automatic negotiation",
+              "Multiple channels (WhatsApp, Email, SMS)",
+            ],
+          },
+          {
+            icon: "ShieldCheck",
+            title: "Digital onboarding",
+            description: "Approve clients faster with automatic verification.",
+            features: [
+              "Document analysis with AI",
+              "Facial verification",
+              "Approval in minutes",
+            ],
+          },
+          {
+            icon: "MessageSquare",
+            title: "24/7 support",
+            description: "Answer questions about products and services with AI.",
+            features: [
+              "Specialized financial chatbot",
+              "Balance and statement queries",
+              "Service requests",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Customer delays payment",
+            automation: "System sends friendly reminder and offers negotiation options",
+          },
+          {
+            step: 2,
+            scenario: "Customer wants to contract product",
+            automation: "AI collects documents, analyzes and approves in minutes automatically",
+          },
+          {
+            step: 3,
+            scenario: "Customer has question about invoice",
+            automation: "Chatbot responds instantly and resolves 80% of questions",
+          },
+        ],
+        benefits: [
+          {
+            icon: "TrendingUp",
+            title: "More recovery",
+            description: "Humanized approach at the right time increases recovery.",
+          },
+          {
+            icon: "Gauge",
+            title: "Faster approval",
+            description: "Digital onboarding reduces approval time from days to minutes.",
+          },
+          {
+            icon: "Smile",
+            title: "More satisfied customers",
+            description: "Fast and efficient service improves NPS and retention.",
+          },
+          {
+            icon: "FileLock2",
+            title: "Security and compliance",
+            description: "Auditable processes in compliance with regulations.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We increased credit recovery by 50% with Notrus humanized approach.",
+            author: "Carlos Eduardo",
+            position: "Collection Director, Easy Credit Finance",
+          },
+          {
+            quote: "Our onboarding now takes 5 minutes. Before it was 3 days.",
+            author: "Beatriz Martins",
+            position: "Operations Manager, New Digital Bank",
+          },
+        ],
+        cta: {
+          title: "Ready to reduce default?",
+          subtitle: "See how AI can transform collection and financial support",
+        },
+      },
+      SaaS: {
+        hero: {
+          Icon: "Rocket",
+          badge: "AI for SaaS",
+          headline: "Reduce churn and increase expansion",
+          subheadline: "Automate onboarding, support and account expansion with AI.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/saas-hero.jpg",
+          imageAlt: "SaaS team working",
+        },
+        stats: [
+          { value: "-50%", label: "Churn reduction" },
+          { value: "+60%", label: "Increase in expansion" },
+          { value: "+75%", label: "User activation" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "PlayCircle",
+            title: "Automated onboarding",
+            description: "Activate users faster with guided journeys.",
+            features: [
+              "Personalized interactive tours",
+              "Activation emails",
+              "Friction point detection",
+            ],
+          },
+          {
+            icon: "LifeBuoy",
+            title: "Smart support",
+            description: "Resolve questions instantly with AI.",
+            features: [
+              "Knowledge base with AI",
+              "Contextual responses",
+              "Smart escalation to humans",
+            ],
+          },
+          {
+            icon: "TrendingUp",
+            title: "Account expansion",
+            description: "Identify upsell opportunities automatically.",
+            features: [
+              "Usage and behavior analysis",
+              "Personalized offers",
+              "Expansion campaigns",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "User signs up",
+            automation: "Personalized onboarding journey is activated automatically",
+          },
+          {
+            step: 2,
+            scenario: "User doesn't use key feature",
+            automation: "System sends tutorial and offers proactive help",
+          },
+          {
+            step: 3,
+            scenario: "Account reaches plan limit",
+            automation: "Upgrade offer is sent at ideal moment",
+          },
+        ],
+        benefits: [
+          {
+            icon: "Sparkle",
+            title: "Faster activation",
+            description: "Users reach 'aha moment' faster with guided onboarding.",
+          },
+          {
+            icon: "Shield",
+            title: "Less churn",
+            description: "Identify at-risk users and act before they cancel.",
+          },
+          {
+            icon: "Rocket",
+            title: "More expansion",
+            description: "Offers at the right time increase upgrade and cross-sell.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Actionable data",
+            description: "Understand behavior and optimize product based on data.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We reduced churn by 45% with Notrus engagement automations.",
+            author: "Lucas Ferreira",
+            position: "CEO, Cloud Management SaaS",
+          },
+          {
+            quote: "Our activation rate went from 40% to 75% in 3 months.",
+            author: "Camila Rodrigues",
+            position: "Head of Growth, Marketing Platform",
+          },
+        ],
+        cta: {
+          title: "Ready to scale your SaaS?",
+          subtitle: "See how to reduce churn and increase expansion with automation",
+        },
+      },
+      Serviços: {
+        hero: {
+          Icon: "Wrench",
+          badge: "AI for Services",
+          headline: "Automate scheduling and support",
+          subheadline: "Increase productivity and satisfaction with smart automation.",
+          ctaPrimary: "See solutions",
+          ctaSecondary: "See simulation",
+          greetingReturning: ", welcome back!",
+          image: "/services-hero.jpg",
+          imageAlt: "Professional providing service",
+        },
+        stats: [
+          { value: "+55%", label: "Increase in bookings" },
+          { value: "-65%", label: "Reduction in no-shows" },
+          { value: "+70%", label: "Customer satisfaction" },
+          { value: "24/7", label: "Automated support" },
+        ],
+        solutions: [
+          {
+            icon: "CalendarDays",
+            title: "Online scheduling",
+            description: "Customers schedule services via WhatsApp or website.",
+            features: [
+              "Real-time calendar",
+              "Automatic confirmation",
+              "Facilitated rescheduling",
+            ],
+          },
+          {
+            icon: "Route",
+            title: "Route management",
+            description: "Optimize service routes automatically.",
+            features: [
+              "Smart routing",
+              "Team notifications",
+              "Real-time tracking",
+            ],
+          },
+          {
+            icon: "Handshake",
+            title: "Automated follow-up",
+            description: "Keep in touch with customers after service.",
+            features: [
+              "Satisfaction survey",
+              "Review requests",
+              "Maintenance offers",
+            ],
+          },
+        ],
+        useCases: [
+          {
+            step: 1,
+            scenario: "Customer wants to schedule service",
+            automation: "WhatsApp bot shows times and schedules automatically",
+          },
+          {
+            step: 2,
+            scenario: "Service scheduled for tomorrow",
+            automation: "System sends reminder and confirms professional's presence",
+          },
+          {
+            step: 3,
+            scenario: "Service completed",
+            automation: "Customer receives satisfaction survey and maintenance offer",
+          },
+        ],
+        benefits: [
+          {
+            icon: "CalendarClock",
+            title: "Optimized schedule",
+            description: "Reduce idle time and increase number of services.",
+          },
+          {
+            icon: "Smile",
+            title: "More satisfied customers",
+            description: "Clear communication and punctuality increase satisfaction.",
+          },
+          {
+            icon: "TrendingUp",
+            title: "More productivity",
+            description: "Team focuses on executing services, not administrative tasks.",
+          },
+          {
+            icon: "Repeat",
+            title: "More recurrence",
+            description: "Automated follow-up increases maintenance contracts.",
+          },
+        ],
+        testimonials: [
+          {
+            quote: "We increased our bookings by 60% and reduced no-shows by half.",
+            author: "André Oliveira",
+            position: "Owner, Residential Maintenance Company",
+          },
+          {
+            quote: "Our team now serves 40% more clients per day with route optimization.",
+            author: "Patrícia Santos",
+            position: "Operations Manager, Pro Cleaning Services",
+          },
+        ],
+        cta: {
+          title: "Ready to optimize your services?",
+          subtitle: "See how automation can increase productivity and satisfaction",
+        },
+      },
+    },
+  },
+} as const;
