@@ -2855,7 +2855,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/ecommerce-hero.jpg",
+          image: "/ecommerce-hero.jpg",
           imageAlt: "E-commerce team analyzing performance",
         },
         stats: [
@@ -2961,7 +2961,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/real-estate-hero.jpg",
+          image: "/real-estate-hero.jpg",
           imageAlt: "Real estate agent showing property",
         },
         stats: [
@@ -3067,7 +3067,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/retail-hero.jpg",
+          image: "/retail-hero.jpg",
           imageAlt: "Modern retail store",
         },
         stats: [
@@ -3173,7 +3173,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/education-hero.jpg",
+          image: "/education-hero.jpg",
           imageAlt: "Students in modern classroom",
         },
         stats: [
@@ -3279,7 +3279,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/healthcare-hero.jpg",
+          image: "/health-hero.jpg",
           imageAlt: "Doctor attending patient",
         },
         stats: [
@@ -3385,7 +3385,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/finance-hero.jpg",
+          image: "/finance-hero.jpg",
           imageAlt: "Financial consultant",
         },
         stats: [
@@ -3491,7 +3491,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/saas-hero.jpg",
+          image: "/saas-hero.jpg",
           imageAlt: "SaaS team working",
         },
         stats: [
@@ -3597,7 +3597,7 @@ export const notrusLandingTexts = {
           ctaPrimary: "See solutions",
           ctaSecondary: "See simulation",
           greetingReturning: ", welcome back!",
-          image: "/images/services-hero.jpg",
+          image: "/services-hero.jpg",
           imageAlt: "Professional providing service",
         },
         stats: [

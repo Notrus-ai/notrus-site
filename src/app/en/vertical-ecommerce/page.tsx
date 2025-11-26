@@ -139,9 +139,9 @@ type SegmentTheme = {
 
 const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
   "E-commerce": {
-    gradient: "from-orange-500 to-red-500",
+    gradient: "from-orange-500 to-orange-500",
     iconBg: "bg-white/20",
-    iconText: "text-orange-100",
+    iconText: "text-orange-700",
     solutionColors: {
       primary: "text-orange-600 bg-orange-100",
       secondary: "text-blue-600 bg-blue-100",
@@ -150,9 +150,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-orange-100 text-orange-700",
   },
   Imobiliário: {
-    gradient: "from-sky-500 via-cyan-500 to-emerald-500",
+    gradient: "from-blue-500 to-blue-500",
     iconBg: "bg-white/20",
-    iconText: "text-sky-100",
+    iconText: "text-sky-700",
     solutionColors: {
       primary: "text-sky-600 bg-sky-100",
       secondary: "text-emerald-600 bg-emerald-100",
@@ -161,9 +161,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-sky-100 text-sky-700",
   },
   Varejo: {
-    gradient: "from-purple-300 to-purple-500",
+    gradient: "from-purple-500 to-purple-500",
     iconBg: "bg-white/20",
-    iconText: "text-purple-100",
+    iconText: "text-purple-700",
     solutionColors: {
       primary: "text-purple-600 bg-purple-100",
       secondary: "text-pink-600 bg-pink-100",
@@ -172,9 +172,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-purple-100 text-purple-700",
   },
   Educação: {
-    gradient: "from-blue-500 via-indigo-500 to-purple-500",
+    gradient: "from-blue-400 to-blue-500",
     iconBg: "bg-white/20",
-    iconText: "text-blue-100",
+    iconText: "text-blue-700",
     solutionColors: {
       primary: "text-blue-600 bg-blue-100",
       secondary: "text-indigo-600 bg-indigo-100",
@@ -183,9 +183,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-blue-100 text-blue-700",
   },
   Saúde: {
-    gradient: "from-emerald-500 to-green-500",
+    gradient: "from-green-600 to-green-600",
     iconBg: "bg-white/20",
-    iconText: "text-teal-100",
+    iconText: "text-teal-700",
     solutionColors: {
       primary: "text-teal-600 bg-teal-100",
       secondary: "text-emerald-600 bg-emerald-100",
@@ -194,9 +194,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-teal-100 text-teal-700",
   },
   Financeiro: {
-    gradient: "from-green-500 via-emerald-500 to-teal-500",
+    gradient: "from-emerald-500 to-emerald-500",
     iconBg: "bg-white/20",
-    iconText: "text-green-100",
+    iconText: "text-green-700",
     solutionColors: {
       primary: "text-green-600 bg-green-100",
       secondary: "text-emerald-600 bg-emerald-100",
@@ -205,9 +205,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-green-100 text-green-700",
   },
   SaaS: {
-    gradient: "from-violet-500 to-fuchsia-500",
+    gradient: "from-violet-700 to-violet-700",
     iconBg: "bg-white/20",
-    iconText: "text-violet-100",
+    iconText: "text-violet-700",
     solutionColors: {
       primary: "text-violet-600 bg-violet-100",
       secondary: "text-purple-600 bg-purple-100",
@@ -216,9 +216,9 @@ const SEGMENT_THEME: Record<IndustryKey, SegmentTheme> = {
     benefitColor: "bg-violet-100 text-violet-700",
   },
   Serviços: {
-    gradient: "from-amber-500 via-orange-500 to-red-500",
+    gradient: "from-amber-500 to-amber-500",
     iconBg: "bg-white/20",
-    iconText: "text-amber-100",
+    iconText: "text-amber-700",
     solutionColors: {
       primary: "text-amber-600 bg-amber-100",
       secondary: "text-orange-600 bg-orange-100",
@@ -236,7 +236,6 @@ export default function VerticalEcommerce() {
     status: "novo",
   });
 
-  // 🔥 TROQUE AQUI PARA "pt" OU "en" CONFORME A PÁGINA
   const locale: Locale = "en";
   const t = notrusLandingTexts[locale];
 
@@ -322,7 +321,7 @@ export default function VerticalEcommerce() {
         aria-label={t.modal.openButton}
         title={t.modal.openButton}
         className={`
-          group fixed left-6 top-1/2 -translate-y-1/2 z-50
+          group fixed left-6 bottom-6 z-50
           flex items-center gap-3
           rounded-full
           bg-gradient-to-r ${theme.gradient}
@@ -379,7 +378,9 @@ export default function VerticalEcommerce() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className={`${theme.iconBg} ${theme.iconText} mb-4`}>
+              <Badge
+                className={`${theme.iconBg} ${theme.iconText} mb-4 text-white`}
+              >
                 {seg.hero.badge}
               </Badge>
 
@@ -403,7 +404,7 @@ export default function VerticalEcommerce() {
                   title={seg.hero.ctaPrimary}
                   onClick={scrollToSolutions}
                 >
-                  <hero.Icon className={`mr-2 h-5 w-5 ${theme.iconText}`} />
+                  <hero.Icon className={`mr-2 h-7 w-7 ${theme.iconText}`} />
                   {seg.hero.ctaPrimary}
                 </Button>
 
