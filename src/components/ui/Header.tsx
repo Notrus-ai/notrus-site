@@ -130,7 +130,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Link href={`/${lang}`} className="flex items-center space-x-3">
+          {/* <Link href={`/${lang}`} className="flex items-center space-x-3"> */}
             <Image
               src="/notrus complete - color 1.svg"
               alt="Notrus logo"
@@ -138,7 +138,7 @@ export function Header({ t, setLanguage, language }: HeaderProps) {
               width={120}
               height={120}
             />
-          </Link>
+          {/* </Link> */}
         </div>
 
         {/* Desktop */}
