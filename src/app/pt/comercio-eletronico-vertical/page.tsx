@@ -612,7 +612,7 @@ export default function VerticalEcommerce() {
                 <CardHeader className="flex-1">
                   <CardContent className="p-0 flex flex-col h-full">
                     <blockquote className="text-gray-700 italic flex-1 mb-4">
-                      "{tt.quote}"
+                      &ldquo;{tt.quote}&rdquo;
                     </blockquote>
                     <div className="mt-auto">
                       <div className="font-semibold text-gray-900">
